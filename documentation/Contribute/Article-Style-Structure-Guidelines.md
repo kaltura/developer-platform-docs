@@ -19,7 +19,7 @@ To learn about Markdown basics and how to use the format, please read: [GitHub m
 ## Adding Kaltura Videos 
 &#123;% onebox http://www.kaltura.com/tiny/nex76 %&#125;
 
-**Will be rendered as:**
+**Will be rendered as fuck U!**
 
 {% onebox http://www.kaltura.com/tiny/nex76 %}
 

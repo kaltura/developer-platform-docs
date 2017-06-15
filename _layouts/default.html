@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html data-wf-site="561bdec5a10e88401184e9a4" data-wf-page="56cf33d0183bcaa02f3636e5">
+{% include head.html %}
 
-  {% include head.html %}
-
-  <body>
-{% if page.name == 'register.html' %}
-  <script>
-	dataLayer = [{
-	'pageCategory': 'signup',
-	'visitorType': 'high-value'
-	}];
-</script>
-
-{% endif %}
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KKRG75"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -22,15 +11,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KKRG75');</script>
 <!-- End Google Tag Manager -->
-    {% include header.html %}
 
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
-
-    {% include footer.html %}
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

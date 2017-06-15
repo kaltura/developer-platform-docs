@@ -12,11 +12,13 @@ module Jekyll
     def render(context)
       # pipe param through liquid to make additional replacements possible
       url = Liquid::Template.parse(@text).render context
-	#print url
 	#url ="http://videos.kaltura.com/media/1_is3qd1az"
       # oembed look up
+#print "HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLO\n" + context.to_s
+#print "HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLO\n" + url
       preview = Onebox.preview(url) 
       "#{preview}"
+	#print "ahhh" + "#{preview}"
 
     end
   end
