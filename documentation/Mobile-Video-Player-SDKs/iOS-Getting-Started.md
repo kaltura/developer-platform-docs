@@ -138,7 +138,7 @@ This section describes how to use the iOS Player SDK basic embedding option.
     [self presentViewController:self.player animated:YES completion:nil];
 }
 ```
-![iOS-fullscreen](./images/iOS-fullscreen-embed.png)
+![iOS-fullscreen](assets/images/iOS-fullscreen-embed.png)
 
 
 ### Initialize PlayerViewController for Inline  

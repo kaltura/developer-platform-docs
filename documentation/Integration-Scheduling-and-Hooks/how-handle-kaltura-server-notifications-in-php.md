@@ -44,7 +44,7 @@ To use the API notifications client in your application, follow these steps:
  
  b. Add the following field to the profile:
 
- ![Profile Field](./images/custom-metadata-field.PNG)
+ ![Profile Field](assets/images/custom-metadata-field.PNG)
 
 4 . Make sure the configuration settings are properly populated:
 
@@ -66,7 +66,7 @@ Access the KMC and set up notifications under Settings>Integration Settings>Noti
 1. Open the following file: lib/Kaltura/Notification/Handler/SyncEntry.php.
 2. Find line 190 and add your code inline:
 
- ![Code inline](./images/codeline.png)
+ ![Code inline](assets/images/codeline.png)
 
 ### Set up the Notifications Handler Endpoint  
 
@@ -78,7 +78,7 @@ To setup the Notifications endpoint, follow these steps:
 3.  Enter the Integration Settings sub-tab.
 4.  In the "Enter Notification URL" field, paste the URL to your notifications handler script.
 
- ![Notification URL](./images/notifications.jpg)
+ ![Notification URL](assets/images/notifications.jpg)
 
 
 

@@ -11,8 +11,8 @@ email: community@kaltura.com
 description: > # this means to ignore newlines until "baseurl:"
       VPaaS allows you to build cloud video services, supplies SDKs, and works on all devices, media workflows, and applications. Pay as you go. 
 baseurl: "" # the subpath of your site, e.g. /blog
-domain: "54.204.64.66"
-url: "http://54.204.64.66:4000" # the base hostname & protocol for your site
+domain: "localhost"
+url: "http://localhost:4000" # the base hostname & protocol for your site
 #url: "http://localhost:8888" # the base hostname & protocol for your site
 twitter_username: kaltura
 github_username:  kaltura

@@ -20,7 +20,7 @@ The role determines the allowed API actions that this Application Token will be 
 **Note:** This role dictates the use case, since it tells the API which role to call; therefore, verify that you've set up the role according to your current needs.
 
 1. To set the role, in the Add User window, select **Add Role**. 
- ![Add Role](./images/roles1.PNG)
+ ![Add Role](assets/images/roles1.PNG)
 2. Enter the role name and description, then and select the relevant set of permissions in the Add Role window. You can select which functions are available to the role. 
 3. Clicking the checkmark next to each permission group name will toggle the permission level for the specific function, according to the following modes:
 
@@ -28,7 +28,7 @@ The role determines the allowed API actions that this Application Token will be 
  * View-Only Permission (partially checked) – Read-only (get/list) functions will be allowed. Write actions will be blocked.
  * No Permission (cleared) – No access to the API service(s) assocaited with the listed functions.
 
- ![Setting Role Permissions](./images/roles2.PNG)
+ ![Setting Role Permissions](assets/images/roles2.PNG)
 
 When done, save your changes.
 
@@ -44,7 +44,7 @@ If you're using entitlements or MediaSpace, you may use a "service user" to rest
 2. Fill in the details in the Add User window (the service user will never need to log in, so use the Password Generator to create a difficult password for it). 
 3. Once the user is created, give that user permissions to Channels and Galleries (or categories) using the MediaSpace Channel Manager, or KMC Entitlements Manager. These permissions will be passed to the Application Token.
 
-![Add User Window](./images/adduser1.png)
+![Add User Window](assets/images/adduser1.png)
 
 
 ### Privileges Line

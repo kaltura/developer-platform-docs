@@ -1,32 +1,10 @@
-<head>
-{% if page.name == 'index.html' %}
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='121876908-0',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-<meta name="google-site-verification" content="eCsPknr-P4BkdOLI61hdhotMYXlbop2K1pkdrBW0Rjc" />
-{% endif %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta property="st:title" content="{{ page.title }}" >
     <meta property="st:published_at" content="{{ page.date | date: "%B %-d, %Y" }}">
   <!--link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}"-->
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <!--link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml" />
   
@@ -35,20 +13,22 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/kaltura-dev-site.webflow.css">
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/syntax.css">
 <link rel="stylesheet" type="text/css" href="{{ site.url }}/css/opentip.css">
-<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/moving-logo.css">
+<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/moving-logo.css"-->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jekyll-code-example-buttons.js"></script>
-<link rel="stylesheet" href="/css/highlightjs.css">
-    <script src="/js/highlight.pack.js"></script>
+<script>
+window.jQuery = window.jquery;
+</script>
+<!--script type="text/javascript" src="assets/js/jekyll-code-example-buttons.js"></script-->
+<!--link rel="stylesheet" href="/css/highlightjs.css"-->
+    <!--script src="assets/js/highlight.pack.js"></script-->
     <script>hljs.initHighlightingOnLoad();</script>
     
   <script type="text/javascript" src="https://use.typekit.net/rlx4cjm.js"></script>
   <script type="text/javascript">
     try{Typekit.load();}catch(e){}
   </script>
-  <script type="text/javascript" src="{{ site.url }}/js/modernizr.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ site.url }}/favicon.ico">
+  <!--script type="text/javascript" src="assets/js/modernizr.js"></script-->
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script type="text/javascript">
@@ -64,12 +44,11 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
     <!-- End Cookie Consent plugin -->
   
-<script src="{{ site.url }}/js/country.js"></script>
+<!--script src="assets/js/country.js"></script-->
 
-<script type="text/javascript" src="/js/jQuery.exLink/jquery.exLink.js"></script>
-<link rel="stylesheet" type="text/css" href="/js/jQuery.exLink/jquery.exLink.css">
+<!--script type="text/javascript" src="assets/js/jQuery.exLink/jquery.exLink.js"></script-->
+<link rel="stylesheet" type="text/css" href="assets/js/jQuery.exLink/jquery.exLink.css">
 <script type="text/javascript">
-$( document ).ready(function() {
 exLink.init({
     	parentElementPath: '.template-page-content-column .post-content',
  	linkWarning: false,
@@ -82,6 +61,7 @@ exLink.init({
 	fileWarning: false
     });
 	//turn all headings into clicable anchors:
+    /*
 	$('.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6').filter('[id]').each(function () {
 	    $(this).html('<a href="#'+$(this).attr('id')+'" class="post-content" aria-hidden="true">'+$(this).text()+'</a>');
 	});
@@ -99,7 +79,7 @@ exLink.init({
 	  hasHeaders = true;
 	  el = $(this);
 	  title = el.text();
-	  link = "#" + el.attr("id");
+	  link = "{{page.path}}#" + el.attr("id");
 	
 	  newLine =
 	    "<li>" +
@@ -117,7 +97,7 @@ exLink.init({
 	  "</nav>";
 	
 	if (hasHeaders) $("div.post-content").prepend(ToC);
-	
+	*/
     	
 	//back to top
 	if ($('#back-to-top').length) {
@@ -141,7 +121,6 @@ exLink.init({
 	        }, 700);
 	    });
 	}
-});
 
 </script>
 
@@ -161,15 +140,15 @@ function verify_recapcha()
 
 }
 </script>
-<script type="text/javascript" src="{{ site.url }}/js/webflow.js"></script>
-<script type="text/javascript" src="{{ site.url }}/js/opentip-jquery.js"></script>
+<!--script type="text/javascript" src="assets/js/webflow.js"></script>
+<script type="text/javascript" src="assets/js/opentip-jquery.js"></script-->
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
         heap.load("176893769");
   </script>
 
-<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/lity.min.css">
-<script type="text/javascript" src="{{ site.url }}/js/lity.min.js"></script>
+<!--link rel="stylesheet" type="text/css" href="assets/css/lity.min.css"-->
+<!--script type="text/javascript" src="assets/js/lity.min.js"></script-->
 
   <!-- RTP tag -->
 <script type='text/javascript'>
@@ -181,5 +160,4 @@ rtp('send','view');
 rtp('get', 'campaign',true);
 </script>
 <!-- End of RTP tag -->
-</head>
 

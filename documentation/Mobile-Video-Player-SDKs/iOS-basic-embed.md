@@ -52,7 +52,7 @@ To initialize the a PlayerViewController for fullscreen, use the following comma
     [self presentViewController:self.player animated:YES completion:nil];
 }
 ```
-![iOS-fullscreen](./images/iOS-fullscreen-embed.png)
+![iOS-fullscreen](assets/images/iOS-fullscreen-embed.png)
 
 
 ## Initializing the PlayerViewController for Inline  

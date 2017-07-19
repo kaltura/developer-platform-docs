@@ -1,6 +1,6 @@
+gem 'onebox', '=1.5.31'
 require "onebox"
 
-Onebox::Engine::WhitelistedGenericOnebox.whitelist << "www.kaltura.com"
 
 module Jekyll
   class OneboxP < Liquid::Tag
@@ -12,13 +12,9 @@ module Jekyll
     def render(context)
       # pipe param through liquid to make additional replacements possible
       url = Liquid::Template.parse(@text).render context
-	#url ="http://videos.kaltura.com/media/1_is3qd1az"
-      # oembed look up
-#print "HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLO\n" + context.to_s
-#print "HELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLO\n" + url
-      preview = Onebox.preview(url) 
-      "#{preview}"
+      preview = Onebox.preview(url.strip) 
 	#print "ahhh" + "#{preview}"
+      "#{preview}"
 
     end
   end
