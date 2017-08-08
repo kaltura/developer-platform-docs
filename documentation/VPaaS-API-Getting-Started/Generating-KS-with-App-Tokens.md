@@ -17,8 +17,8 @@ The Application Token is comprised of an ID (ApplicationToken.id) and token (App
 
 See the following articles for details:
 
-* For Account Administrators: [Creating an Application Token](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Account-Representative-Steps.html)
-* For Application Developers: [Authorizing with an Application Token](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html)
+* For Account Administrators: [Creating an Application Token](/api-docs/VPaaS-API-Getting-Started/Account-Representative-Steps.html)
+* For Application Developers: [Authorizing with an Application Token](/api-docs/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html)
 
 ## Security Considerations  
 

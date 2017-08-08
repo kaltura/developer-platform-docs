@@ -69,7 +69,7 @@ Kaltura's multi-platform support ensures easy integration for iOS and Android pl
 
 ### Customizable  Design
 
-The Kaltura Web Video Player features an easy-to-customize, unified flat design, which enables you to configure skins once using standard HTML / CSS. In addition, you can create customized cross-browser/cross-device players in the Kaltura Player Studio. To learn more, read this [customization] (https://vpaas.kaltura.com/documentation/Web-Video-Player/Player-Customization.html) article.
+The Kaltura Web Video Player features an easy-to-customize, unified flat design, which enables you to configure skins once using standard HTML / CSS. In addition, you can create customized cross-browser/cross-device players in the Kaltura Player Studio. To learn more, read this [customization] (/api-docs/Web-Video-Player/Player-Customization.html) article.
 
 ### Standardized Features  
 

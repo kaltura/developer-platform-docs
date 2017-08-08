@@ -14,7 +14,7 @@ To get started, let's review the foundational building blocks of a video experie
 
 To access the Kaltura API, you will need the following:
 
-* A Kaltura publisher account - To obtain a Kaltura account, start a [free trail](http://corp.kaltura.com/free-trial), [contact us](http://corp.kaltura.com/company/contact-us), or [download Kaltura CE](http://www.kaltura.org/project/community_edition_video_platform).
+* A Kaltura publisher account - To obtain a Kaltura account, start a [free trail](http://corp.kaltura.com/free-trial), [contact us](http://corp.kaltura.com/company/contact-us), or [download Kaltura CE](https://github.com/kaltura/platform-install-packages).
 * Your Kaltura API publisher credentials, which are available through the [KMC Integration Settings](http://www.kaltura.com/index.php/kmc/kmc4#account/integration).
 
 ## Your Kaltura Account ID (PartnerId)  
@@ -29,13 +29,13 @@ The Kaltura API is [stateless](https://en.wikipedia.org/wiki/Stateless_protocol)
 
 > Remember: For every API call you make, you will need to provide a Kaltura Session. 
 
-To learn more about creating a Kaltura Session, see [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html).
+To learn more about creating a Kaltura Session, see [How to Create a Kaltura Session](/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html).
 
 ## Uploading Your Media Files  
 
 Media files are uploaded to Kaltura through [CORS-enabled](https://www.w3.org/wiki/CORS_Enabled) REST API.  
 You can implement an upload flow by using a Kaltura tested JavaScript widget for web pages, or by implementing direct calls to the API.  
-Alternatively, Kaltura also provides methods for bulk-ingest and import of content. To learn more, read the [Kaltura Bulk Content Ingestion API article](https://vpaas.kaltura.com/documentation/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion.html).
+Alternatively, Kaltura also provides methods for bulk-ingest and import of content. To learn more, read the [Kaltura Bulk Content Ingestion API article](/api-docs/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion.html).
 
 > Note: Kaltura manages all forms of media files, including video, image, and audio files. It even provides APIs to host, deliver and process document files, such as PDF and PPT files, to create rich experiences such as synchronized side-by-side video and presentation slides.
 
@@ -98,7 +98,7 @@ We recommend reading these guides and reviewing the [Interactive Code Workflows]
 An important tool for dealing with video and building video experiences are thumbnails, images that represent your video file. Kaltura provides two methods for creating and handling thumbnails: 
 
 * The [thumbAsset Service](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/thumbAsset/): Enables you to edit and manage editorial thumbnail assets that are associated with your video.
-* The [Dynamic Thumbnail API](https://vpaas.kaltura.com/documentation/Engage_and_Publish/kaltura-thumbnail-api.html): Provides a simple API for creating thumbnails on-the-fly (in real-time) from the source media (the file originally uploaded).
+* The [Dynamic Thumbnail API](/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html): Provides a simple API for creating thumbnails on-the-fly (in real-time) from the source media (the file originally uploaded).
 
 The images are generated on-demand (with caching on disk and via CDN) by calling the following URL:  
 
@@ -114,12 +114,13 @@ The result of the thumbnail API is a JPEG image with one or more of the followin
 * Preparation of Imahe Stripes for animating thumbnails via CSS
 * And more.
 
-> Read more about the [Dynamic Thumbnail API](https://vpaas.kaltura.com/documentation/Engage_and_Publish/kaltura-thumbnail-api.html) and explore the [Thumbnail Animation with CSS Stripes Code Recipe](https://developer.kaltura.com/workflows/Engage_and_Publish/Animated_Thumbnails_with_CSS_Stripes).
+> Read more about the [Dynamic Thumbnail API](/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html) and explore the [Thumbnail Animation with CSS Stripes Code Recipe](https://developer.kaltura.com/workflows/Engage_and_Publish/Animated_Thumbnails_with_CSS_Stripes).
 
 
 ## Embed and Customize Your Video Player  
 
 The example below shows the most basic Player embed. Player embed is a JavaScript code that references your partnerId, entryId and the uiConfId - a Player widget instance ID. 
+
 
 <div class="w-row">
 <div class="w-col w-col-6">
@@ -146,15 +147,19 @@ The example below shows the most basic Player embed. Player embed is a JavaScrip
         <div id="kaltura_player_1461185766" style="position:absolute;top:0;left:0;left: 0;right: 0;bottom:0;border:none;"></div>
       </div>
       <script>
-        kWidget.embed({
-          "targetId": "kaltura_player_1461185766",
-          "wid": "_811441",
-          "uiconf_id": 35015842,
-          "flashvars": {
-            "streamerType": "auto"
-          },
-          "entry_id": "0_4kwzg46z"
-        });
+      function embedVideo() {
+        if (!window.kWidget) return setTimeout(embedVideo, 100);
+          window.kWidget.embed({
+            "targetId": "kaltura_player_1461185766",
+            "wid": "_811441",
+            "uiconf_id": 35015842,
+            "flashvars": {
+              "streamerType": "auto"
+            },
+            "entry_id": "0_4kwzg46z"
+          });
+      }
+      embedVideo();
       </script>
   </div>
 </div>
@@ -199,24 +204,24 @@ This section details the Kaltura API documentation that is available to develope
 |--------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Interactive Code Workflows and Examples](https://developer.kaltura.com/)                  | Kaltura provides APIs for every core feature. You can use the Kaltura API to incorporate Kaltura features in web applications and web sites.                                                                                                                                                                                                                                                            |
 | [Kaltura Knowledge Center Glossary](http://knowledge.kaltura.com/glossary)                     | As a reference for understanding technical terms related to Online Video, Media Asset Management and Kaltura.                                                                                                                                                                                                                                                                                          |
-| [Kaltura's API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)              | Protecting personal user data, video streaming and limiting access to features are at the heart of the Kaltura Media Asset Management Platform. This guide will take you through the basic concepts and practices of authentication and security in the Kaltura API v3.                                                                                                                                 |
+| [Kaltura's API Authentication and Security](/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)              | Protecting personal user data, video streaming and limiting access to features are at the heart of the Kaltura Media Asset Management Platform. This guide will take you through the basic concepts and practices of authentication and security in the Kaltura API v3.                                                                                                                                 |
 | The Kaltura Media Access Control Model                 | An Access Control Profile defines authorized and restricted domains where your content can or cannot be displayed, countries from which it can or cannot be viewed, white and black lists of IP addresses and authorized and unauthorized domains and devices in which your media can be embedded.                                                                                                      |
-| [Introduction to Kaltura Client Libraries](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.hmtl)               | Kaltura client libraries are SDKs in numerous programming languages that provide easy access to the Kaltura API and facilitate developing Kaltura applications.                                                                                                                                                                                                                                         |
+| [Introduction to Kaltura Client Libraries](/api-docs/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.hmtl)               | Kaltura client libraries are SDKs in numerous programming languages that provide easy access to the Kaltura API and facilitate developing Kaltura applications.                                                                                                                                                                                                                                         |
 |                                                        |                                                                                                                                                                                                                                                                                                                                                                                                         |
-| [The Kaltura Thumbnail API](https://vpaas.kaltura.com/documentation/Engage_and_Publish/kaltura-thumbnail-api.html)                              | The Thumbnail API provides an easy interface to dynamically manipulate images or video snapshots to be used as thumbnails. Using the thumbnail API it is possible to resize, cropped versions of the original Kaltura video thumbnail, a specific frame from in the video and manipulate the thumbnail image and various ways.                                                                          |
-| [How To Create a Video Thumbnail Rotator in JavaScript](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/how-create-video-thumbnail-rotator-javascrip.html)  | Case Study of using Kaltura's Thumbnail API to create a rotating video thumbnail.                                                                                                                                                                                                                                                                                                                       |
-| [How To Handle Kaltura Server Notifications in PHP](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/examples/how-handle-kaltura-server-notifications-in-php.html)      | Often applications require the ability to respond to asynchronous events that occurred on the Kaltura server. For example, when a Media Entry was uploaded, finished transcoding or any other status update.                                                                                                                                                                                            |
-| [Introduction to Kaltura's Cross-Platform Media Players](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/introduction-kalturas-cross-platform-media-players.html) | Kaltura's flexible HTML5 and Adobe OSMF (Flash)-based media players provide media online publishing solutions that are easy to use and embed.                                                                                                                                                                                                                                                           |
-| [JavaScript API for Kaltura Media Players](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/javascript-api-kaltura-media-players.html)                | Kaltura's powerful media player JavaScript API enables you to design flexible, multifaceted interaction with the player.                                                                                                                                                                                                                                                                                |
+| [The Kaltura Thumbnail API](/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html)                              | The Thumbnail API provides an easy interface to dynamically manipulate images or video snapshots to be used as thumbnails. Using the thumbnail API it is possible to resize, cropped versions of the original Kaltura video thumbnail, a specific frame from in the video and manipulate the thumbnail image and various ways.                                                                          |
+| [How To Create a Video Thumbnail Rotator in JavaScript](/api-docs/Mobile-Video-Player-SDKs/how-create-video-thumbnail-rotator-javascrip.html)  | Case Study of using Kaltura's Thumbnail API to create a rotating video thumbnail.                                                                                                                                                                                                                                                                                                                       |
+| [How To Handle Kaltura Server Notifications in PHP](/api-docs/VPaaS-API-Getting-Started/examples/how-handle-kaltura-server-notifications-in-php.html)      | Often applications require the ability to respond to asynchronous events that occurred on the Kaltura server. For example, when a Media Entry was uploaded, finished transcoding or any other status update.                                                                                                                                                                                            |
+| [Introduction to Kaltura's Cross-Platform Media Players](/api-docs/Mobile-Video-Player-SDKs/introduction-kalturas-cross-platform-media-players.html) | Kaltura's flexible HTML5 and Adobe OSMF (Flash)-based media players provide media online publishing solutions that are easy to use and embed.                                                                                                                                                                                                                                                           |
+| [JavaScript API for Kaltura Media Players](/api-docs/Mobile-Video-Player-SDKs/javascript-api-kaltura-media-players.html)                | Kaltura's powerful media player JavaScript API enables you to design flexible, multifaceted interaction with the player.                                                                                                                                                                                                                                                                                |
 | [Kaltura Exchange](http://exchange.kaltura.com/)                        | If you use a CMS such as Drupal or WordPress, or an LMS such as Moodle, Sakai or Blackboard, make sure to check the Kaltura Exchange for a Kaltura integration to your CMS of choice. |
                                                                                                                                    
 ## Common API Related Tasks  
 
-* [Create A New Kaltura Entry And Upload Video File Using The Kaltura API](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/examples/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html)
+* [Create A New Kaltura Entry And Upload Video File Using The Kaltura API](/api-docs/VPaaS-API-Getting-Started/examples/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html)
 * [Getting Started with the Kaltura API - Blog post and Webinar](http://blog.kaltura.org/kaltura-api-how-to-get-started-video)
-* [How to retrieve the download or streaming URL using API calls?](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/examples/how-retrieve-download-or-streaming-url-using-api-calls.html)
-* [How to retrieve a media entry details and metadata?](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/examples/how-retrieve-metadata-media-entry-using-api.html)
-* [How the Search in Kaltura Works (How to perform AND, OR, NOT and Exact Match searches in API)](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/examples/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html).               
+* [How to retrieve the download or streaming URL using API calls?](/api-docs/VPaaS-API-Getting-Started/examples/how-retrieve-download-or-streaming-url-using-api-calls.html)
+* [How to retrieve a media entry details and metadata?](/api-docs/VPaaS-API-Getting-Started/examples/how-retrieve-metadata-media-entry-using-api.html)
+* [How the Search in Kaltura Works (How to perform AND, OR, NOT and Exact Match searches in API)](/api-docs/VPaaS-API-Getting-Started/examples/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html).               
 
 
 ## Kaltura API Usage Guidelines  
@@ -258,26 +263,26 @@ You can write a custom generator class in PHP that generates code in the languag
 
 If you provide the generator class to Kaltura, Kaltura will include your generator class in the Kaltura core generator. The new client library will be automatically generated and will be publicly available.
 
-For more information on creating a client library generator, refer to [Adding New Kaltura API Client Library Generator](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html).
+For more information on creating a client library generator, refer to [Adding New Kaltura API Client Library Generator](/api-docs/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html).
 
 
 ### API Authentication and Kaltura Sessions  
 
 Most Kaltura API calls require you to authenticate before executing a call. Calls that require authentication usually have a response that cannot be shared between different accounts. For the Kaltura server to know that you are allowed to “ask that question,” you must authenticate before executing the call.
 
-To learn more about the Kaltura Session and API Authentication, read: [Kaltura's API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html).
+To learn more about the Kaltura Session and API Authentication, read: [Kaltura's API Authentication and Security](/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html).
 
 
-| Error Code                         | Error Message                                                                                                       |   |
-|------------------------------------|---------------------------------------------------------------------------------------------------------------------|---|
-| INTERNAL_SERVERL_ERROR             | Internal server error occurred                                                                                      |   |
-| MISSING_KS                         | Missing KS, session not established                                                                                 |   |
-| INVALID_KS                         | Invalid KS "%KS%", Error "%KS_ERROR_CODE%,%KS_ERROR_DESCRIPTION%"                                                   |   |
-| SERVICE_NOT_SPECIFIED              | Service name was not specified, please specify one                                                                  |   |
-| SERVICE_DOES_NOT_EXISTS            | Service "%SERVICE_NAME%" does not exist                                                                             |   |
-| ACTION_NOT_SPECIFIED               | Action name was not specified, please specify one                                                                   |   |
-| ACTION_DOES_NOT_EXISTS             | Action "%ACTION_NAME%" does not exist for service "%SERVICE_NAME%"                                                  |   |
-| MISSING_MANDATORY_PARAMETER        | Missing parameter "%PARAMETER_NAME%"                                                                                |   |
+| Error Code                         | Error Message                                                                                                       |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| INTERNAL_SERVERL_ERROR             | Internal server error occurred                                                                                      |
+| MISSING_KS                         | Missing KS, session not established                                                                                 |
+| INVALID_KS                         | Invalid KS "%KS%", Error "%KS_ERROR_CODE%,%KS_ERROR_DESCRIPTION%"                                                   |
+| SERVICE_NOT_SPECIFIED              | Service name was not specified, please specify one                                                                  |
+| SERVICE_DOES_NOT_EXISTS            | Service "%SERVICE_NAME%" does not exist                                                                             |
+| ACTION_NOT_SPECIFIED               | Action name was not specified, please specify one                                                                   |
+| ACTION_DOES_NOT_EXISTS             | Action "%ACTION_NAME%" does not exist for service "%SERVICE_NAME%"                                                  |
+| MISSING_MANDATORY_PARAMETER        | Missing parameter "%PARAMETER_NAME%"                                                                                |
 
 ### Kaltura API Response/Request Format  
 

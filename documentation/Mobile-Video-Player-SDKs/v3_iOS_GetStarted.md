@@ -11,7 +11,7 @@ This article will help you get started with the development of Kaltura's Video P
 
 Recommended reading before you begin:
 
-1. [**Media Providers**](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_ConnectingServices.html): These are components that are capable of loading media data as `MediaEntry` representation.
+1. [**Media Providers**](/api-docs/Mobile-Video-Player-SDKs/v3_iOS_ConnectingServices.html): These are components that are capable of loading media data as `MediaEntry` representation.
 2. [**CocoaPods**](https://guides.cocoapods.org/using/using-cocoapods.html) The Kaltura Video Player SDK for iOS and its plugins can be added to your project using the CocoaPods dependency manager. 
 
 >Note: You'll need to use CocoaPods version 1.0 or newer.
@@ -27,7 +27,7 @@ Recommended reading before you begin:
 
 In this section, you'll learn how to build a basic video playback application using the Kaltura Player SDK for iOS.
 
-[Quick Start Document for Swift & Obj-C](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_QuickStart.html)
+[Quick Start Document for Swift & Obj-C](/api-docs/Mobile-Video-Player-SDKs/v3_iOS_QuickStart.html)
 
 
 ## Have Questions or Need Help?

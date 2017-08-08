@@ -10,8 +10,8 @@ The following casting schemes are supported on iOS devices:
 
 |                                         |      About      | Sample |
 |:---------------------------------------:|:---------------:|:------:|
-| ![help](./v3-images/iOS/airPlay.png)    | [AirPlay](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_Casting.html#airplay)     | [x]()  |
-| ![help](./v3-images/iOS/chromecast.png) | [Google Cast](https://https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_Casting.html#google-cast) | [Cast basic sample](https://github.com/kaltura/playkit-ios-samples/tree/master/ChromecastSample)  |            |
+| ![help](./v3-images/iOS/airPlay.png)    | [AirPlay](/api-docs/Mobile-Video-Player-SDKs/v3_iOS_Casting.html#airplay)     | [x]()  |
+| ![help](./v3-images/iOS/chromecast.png) | [Google Cast](https:///api-docs/Mobile-Video-Player-SDKs/v3_iOS_Casting.html#google-cast) | [Cast basic sample](https://github.com/kaltura/playkit-ios-samples/tree/master/ChromecastSample)  |            |
 
 
 

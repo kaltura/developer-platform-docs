@@ -178,6 +178,7 @@ The following examples are in PHP and effectively will be the same across all
 Condition #1: User agent MATCH 'ipad' (regular expression)
   
 {% highlight php %} 
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = '.*ipad.*';
 $condition1 = new KalturaUserAgentCondition();
@@ -188,6 +189,7 @@ $condition1->values = array($value1);
 Condition #2: Current time => entry's {metadata_123/ipadSunrise}
     
 {% highlight php %}
+<?php
 $condition2 = new KalturaCompareMetadataCondition();
 $condition2->comparison = KalturaSearchConditionComparison::LESS_THAN_OR_EQUAL;
 $condition2->xPath = 'ipadSunrise';
@@ -199,6 +201,7 @@ $condition2->value = new KalturaTimeContextField();
 Condition #3: Current time <= entry's {metadata_123/ipadSunset}
     
 {% highlight php %}
+<?php
 $condition3 = new KalturaCompareMetadataCondition();
 $condition3->comparison = KalturaSearchConditionComparison::GREATER_THAN_OR_EQUAL;
 $condition3->xPath = 'ipadSunset';
@@ -209,6 +212,7 @@ $condition3->value = new KalturaTimeContextField();
 **Actions: none**
     
 {% highlight php %}
+<?php
 $rule->conditions = array($condition1, $condition2, $condition3);
 $rule->stopProcessing = true;
 {% endhighlight %}
@@ -220,6 +224,7 @@ $rule->stopProcessing = true;
 Condition #1: User agent MATCH ‘Mobile devices of brands X, Y, Z’ (regular expression) 
     
 {% highlight php %}
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = '.*X.*';
 $value2 = new KalturaStringValue();
@@ -233,6 +238,7 @@ $condition1->values = array($value1, $value2, $value3);
 Condition #2: Entry’s {metadata_123/FormatType} Equals 'Long Form'
     
 {% highlight php %}
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = 'Long Form';
 $condition2 = new KalturaMatchMetadataCondition();
@@ -245,6 +251,7 @@ $rule->conditions = array($condition1, $condition2);
 **Actions: Block**
     
 {% highlight php %}
+<?php
 $rule->actions = array(new KalturaAccessControlBlockAction());
 {% endhighlight %}
     
@@ -253,6 +260,7 @@ $rule->actions = array(new KalturaAccessControlBlockAction());
 Condition #1: Region Equals Quebec (First phase will be limited to countries)
     
 {% highlight php %}
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = 'Quebec';
 $condition1 = new KalturaCountryCondition();
@@ -262,6 +270,7 @@ $condition1->values = array($value1);
 Condition #2: entry’s {metadata_123/AudioLanguage} NOT Equals 'French'
     
 {% highlight php %}
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = 'French';
 $condition2 = new KalturaMatchMetadataCondition();
@@ -274,6 +283,7 @@ $condition2->not = true;
 **Actions: Block**
     
 {% highlight php %}
+<?php
 $rule->actions = array(new KalturaAccessControlBlockAction());
 {% endhighlight %}
     
@@ -282,6 +292,7 @@ $rule->actions = array(new KalturaAccessControlBlockAction());
 Condition #1: User agent NOT MATCH ‘Mobile devices of brands X, Y, Z’ (regular expression)
     
 {% highlight php %}
+<?php
 $value1 = new KalturaStringValue();
 $value1->value = '.*X.*';
 $value2 = new KalturaStringValue();
@@ -296,5 +307,6 @@ $condition1->not = true;
 **Actions: Block**
 
 {% highlight php %}   
+<?php
 $rule->actions = array(new KalturaAccessControlBlockAction());
 {% endhighlight %}

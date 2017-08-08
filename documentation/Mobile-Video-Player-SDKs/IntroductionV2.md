@@ -62,9 +62,9 @@ One of the key features of the Player-SDK is the ability to use the HTML/CSS UI,
 
 #### Before You Begin  
 
-Before getting started, we recommend you read the following article on [configuring the Kaltura Media Player](https://vpaas.kaltura.com/documentation/04_Web-Video-Player/Player-Configuration.html). You should also verify that you have your Player configured via KMC.
+Before getting started, we recommend you read the following article on [configuring the Kaltura Media Player](/api-docs/04_Web-Video-Player/Player-Configuration.html). You should also verify that you have your Player configured via KMC.
 
-Additionally, the following article provides a detailed explanation on [accessing the iOS Player API base methods](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/Kaltura-iOS-player-API-Base-Methods.html).
+Additionally, the following article provides a detailed explanation on [accessing the iOS Player API base methods](/api-docs/05_Mobile-Video-Player-SDKs/Kaltura-iOS-player-API-Base-Methods.html).
 
 #### Removing html5 UI Controls  
 
@@ -116,7 +116,7 @@ Set this on your own discretion, as it is dependent of application usage (weathe
 
 ## Player Version Managment  
 
-The Mobile Video Player SDKs are native iOS and Android wrapper libraries for the [Kaltura Web Video Player Library](https://vpaas.kaltura.com/documentation/04_Web-Video-Player/Player-Configuration.html).  
+The Mobile Video Player SDKs are native iOS and Android wrapper libraries for the [Kaltura Web Video Player Library](/api-docs/04_Web-Video-Player/Player-Configuration.html).  
 We recommend using the latest version of both the Kaltura Web Video Player and the native Mobile Player SDKs.  
 
 * You can upgrade the version of your Kaltura Web Video Player by using the [Player Studio](https://knowledge.kaltura.com/node/1148#Updating the Player) and clicking **Upgrade**.  
@@ -175,7 +175,7 @@ config.addConfig("loadingSpinner.plugin", "false");
 
 ##### Creating Custom Plugins  
 
-To create custom plugins, follow the steps in the article [Extending the Kaltura Web Video Player Functionality Using Plugins](https://vpaas.kaltura.com/documentation/Web-Video-Player/Player-Plugins.html).
+To create custom plugins, follow the steps in the article [Extending the Kaltura Web Video Player Functionality Using Plugins](/api-docs/Web-Video-Player/Player-Plugins.html).
 
 #### How to Detect if Configured Plugins are Loaded  
 

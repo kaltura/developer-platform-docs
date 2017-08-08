@@ -132,7 +132,7 @@ A more advanced use case of the Thumbnail API is to create "animated-thumbnails"
 
 Slicing can also be used in advanced CSS techniques using sprites.
 
-To learn how to put slicing together in a JavaScript based animated thumbnail, read: [How To Create a Video Thumbnail Rotator in JavaScript](https://vpaas.kaltura.com/documentation/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html)
+To learn how to put slicing together in a JavaScript based animated thumbnail, read: [How To Create a Video Thumbnail Rotator in JavaScript](/api-docs/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html)
 
 To create thumbnail slices, use the `vid_slices and vid_slice` parameters. `vid_slices` defines the number of frame-slices the video will be divided to and the `vid_slice` indicates the specific frame-slice to retrieve in that specific call (think of it as pager size and page number).
 

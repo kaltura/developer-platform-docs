@@ -13,7 +13,7 @@ The Cast functionality allows your videos to be cast from an iOS mobile device, 
 
 ### Before You Begin  
 
-Before you begin setting up the Cast feature, make sure you've read the article [iOS Player SDK and Environment Setup - Getting Started](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/iOS-Getting-Started.html).
+Before you begin setting up the Cast feature, make sure you've read the article [iOS Player SDK and Environment Setup - Getting Started](/api-docs/05_Mobile-Video-Player-SDKs/iOS-Getting-Started.html).
 
 ## Basic Definitions
 

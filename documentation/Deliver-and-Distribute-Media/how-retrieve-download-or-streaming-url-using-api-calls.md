@@ -92,7 +92,7 @@ To retrieve a specific video flavor:
 
 ### Considerations of Access Control and Entitlements  
 
-It is important to note that Kaltura entries can be set for private or protected modes, where access is only allowed when providing a valid admin [Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html).
+It is important to note that Kaltura entries can be set for private or protected modes, where access is only allowed when providing a valid admin [Kaltura Session](/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html).
 
 For best practice, to retrieve the download URL for an entry, use the following steps:
 
@@ -175,5 +175,5 @@ To retrieve the URL of the video that is being played in the player, use the fol
 
 [`kWidget.getSources`](http://player.kaltura.com/kWidget/tests/kWidget.getSources.html)
 
-To learn more about the [evaluate function](http://www.kaltura.org/demos/kdp3/docs.html#evaluate) and the KDP API, read: [JavaScript API for Kaltura Media Players](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/javascript-api-kaltura-media-players.html).
+To learn more about the [evaluate function](http://www.kaltura.org/demos/kdp3/docs.html#evaluate) and the KDP API, read: [JavaScript API for Kaltura Media Players](/api-docs/Mobile-Video-Player-SDKs/javascript-api-kaltura-media-players.html).
 

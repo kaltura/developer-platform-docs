@@ -213,7 +213,7 @@ if (state.equals(KPlayerState.PLAYING)){
 
 If you want the application to react to web events, add the function "mPlayerView.addKPlayerEventListener".
 
-See [Supported Events](https://vpaas.kaltura.com/documentation/04_Web-Video-Player/Kaltura-Media-Player-API.html#commonly-used-player-events) for information about the types of supported events.
+See [Supported Events](/api-docs/04_Web-Video-Player/Kaltura-Media-Player-API.html#commonly-used-player-events) for information about the types of supported events.
 
 
 * Example: Listening to a show play controls event

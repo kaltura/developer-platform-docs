@@ -17,7 +17,7 @@ There are three steps required for retrieving the metadata:
  
 ### Subscribing to the METADATE_AVAILABLE Event  
 
-You will need to subscribe to the corresponding event called METADATA_AVAILABLE. We recommend reading this article on [event subscriptions](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_EventsAndStates.html) for more information.
+You will need to subscribe to the corresponding event called METADATA_AVAILABLE. We recommend reading this article on [event subscriptions](/api-docs/Mobile-Video-Player-SDKs/v3_Android_EventsAndStates.html) for more information.
 
 
 ```

@@ -22,7 +22,7 @@ The player's embed API is the first method you will interact with when using the
 
 The kWidget API is available after you include the Kaltura Web Video Player library in your page. kWidget provides embedding and basic utility functions. 
 
-> The Kaltura Web Video Player library can also be used inside Native Android and Native iOS applications using the respective player SDK. See the [Kaltura Player Mobile SDK](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/Introduction.html) documents for more information about using the Kaltura Video Player in native mobile applications.
+> The Kaltura Web Video Player library can also be used inside Native Android and Native iOS applications using the respective player SDK. See the [Kaltura Player Mobile SDK](/api-docs/05_Mobile-Video-Player-SDKs/Introduction.html) documents for more information about using the Kaltura Video Player in native mobile applications.
 
 ### Kaltura Web Video Player Embed API Methods  
 

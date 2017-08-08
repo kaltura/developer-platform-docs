@@ -93,7 +93,7 @@ You will need to set the application to link to the library when it is built - j
 
 ### Application Transport Security (ATL)  
 
-iOS 9 and above include a security feature, called the Application Transport Security (ATL), which blocks all non-TLS connections. Detailed information about ATL can be found in the [Troubleshooting](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/Troubleshooting.html) article.
+iOS 9 and above include a security feature, called the Application Transport Security (ATL), which blocks all non-TLS connections. Detailed information about ATL can be found in the [Troubleshooting](/api-docs/05_Mobile-Video-Player-SDKs/Troubleshooting.html) article.
 
 
 ## iOS Player SDK Basic Embedding  
@@ -143,4 +143,4 @@ This section describes how to use the iOS Player SDK basic embedding option.
 
 ### Initialize PlayerViewController for Inline  
 
-To initialize the PlayerViewController for inline, see the steps in the [Inline Player](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/Fullscreen-inline-iOS.html) article.
+To initialize the PlayerViewController for inline, see the steps in the [Inline Player](/api-docs/05_Mobile-Video-Player-SDKs/Fullscreen-inline-iOS.html) article.

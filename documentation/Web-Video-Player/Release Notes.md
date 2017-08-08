@@ -30,7 +30,7 @@ Version 2.56 was released as a maintenance version. We are working on Player 3.0
 
 ### What's New  
 
-Audio tracks management – Added the option to define the default audio track. For more information, see [Defining a Default Audio Track](https://vpaas.kaltura.com/documentation/Web-Video-Player/Define-Default-Audio-Track.html).
+Audio tracks management – Added the option to define the default audio track. For more information, see [Defining a Default Audio Track](/api-docs/Web-Video-Player/Define-Default-Audio-Track.html).
 
 ## Release 2.54  
 

@@ -27,7 +27,7 @@ The examples above use the [Kaltura PHP5 Client Library](https://developer.kaltu
 ## Code Example for Configuring a Kaltura Session  
 
 {% highlight php %}
-
+<?php
 // include the KalturaClient PHP client library to be able to use its funtions/objects
 require_once(dirname(__FILE__).'/lib/KalturaClient.php');
 
@@ -53,29 +53,30 @@ define('KALTURA_SERVICE_URL', 'http://www.kaltura.com/');
 * @param int $sessionExpiry
 * @param string $sessionPrivileges
 */
-function getClient($sessionType, $userId = '', $sessionExpiry = 86400, $sessionPrivileges = '')
+function getClient($sessionType, $userId = null, $sessionExpiry = 86400, $sessionPrivileges = null)
 {
-// Create KalturaClient object using the accound configuration
-$config = new KalturaConfiguration(KALTURA_PARTNER_ID);
-$config->serviceUrl = KALTURA_SERVICE_URL;
-$client = new KalturaClient($config);
+  // Create KalturaClient object using the accound configuration
+  $config = new KalturaConfiguration(KALTURA_PARTNER_ID);
+  $config->serviceUrl = KALTURA_SERVICE_URL;
+  $client = new KalturaClient($config);
 
-// Generate KS string locally, without calling the API
-$ks = $client->generateSession(
-  KALTURA_ADMIN_SECRET,
-  $userId,
-  $sessionType,
-  $config->partnerId,
-  $sessionExpiry,
-  $sessionPrivileges
-);
+  // Generate KS string locally, without calling the API
+  $ks = $client->generateSession(
+    KALTURA_ADMIN_SECRET,
+    $userId,
+    $sessionType,
+    $config->partnerId,
+    $sessionExpiry,
+    $sessionPrivileges
+  );
 
-// Set the generated KS to be used for future API calls from this KalturaClient object
-$client->setKs($ks);
+  // Set the generated KS to be used for future API calls from this KalturaClient object
+  $client->setKs($ks);
 
-// return the KalturaClient object
-return $client;
+  // return the KalturaClient object
+  return $client;
+}
 
 {% endhighlight %}
 
- > Note: To use the Kaltura API, you will need a Publisher Account with API access. Start a [free Kaltura.com trial](http://corp.kaltura.com/free-trial) or [download Kaltura CE](http://www.kaltura.org/project/community_edition_video_platform).
+ > Note: To use the Kaltura API, you will need a Publisher Account with API access. Start a [free Kaltura.com trial](http://corp.kaltura.com/free-trial) or [download Kaltura CE](https://github.com/kaltura/platform-install-packages).

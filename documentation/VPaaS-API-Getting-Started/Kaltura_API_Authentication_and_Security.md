@@ -107,7 +107,7 @@ To see an implementation of the KS generation algorithm, refer to the **Generate
 *   **Call user.loginByLoginId - **This method is using Kaltura Users and their Password instead of partner id and secret key. 
 
 >Note: This method is should be preferred in most cases because a) It is easier to remember a user name and password, b) users can be limited to specific roles and permissions (e.g. enabling only upload), and c) users can be deleted, passwords changed or demoted in permissions, while the secret keys can't be modified easily.
-*   **Using an Application Token - **This method is described in full in [this article](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html). 
+*   **Using an Application Token - **This method is described in full in [this article](/api-docs/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html). 
 
 ###  KS Types  
 

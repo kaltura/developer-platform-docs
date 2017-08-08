@@ -4,7 +4,7 @@ title: Introduction to Kaltura's Mobile Video SDK
 weight: 100
 ---
 
->*If you're a Kaltura customer, please contact your Kaltura Customer Success Manager to help facilitate the use of this component. To learn more about the previous SDK (version 2.0), please refer to this [introduction](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/IntroductionV2.html) article.
+>*If you're a Kaltura customer, please contact your Kaltura Customer Success Manager to help facilitate the use of this component. To learn more about the previous SDK (version 2.0), please refer to this [introduction](/api-docs/Mobile-Video-Player-SDKs/IntroductionV2.html) article.
 
 ## Kaltura’s Mobile Video SDKs for iOS and Android
 
@@ -44,8 +44,8 @@ Kaltura’s Mobile Video SDK for iOS and Android supports the following features
 
 
 **Next:**
-* [Introduction to the Kaltura Video Player SDK for iOS](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_Introduction.html)
-* [Introduction to the Kaltura Video Player SDK for Android](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_Introduction.html)
+* [Introduction to the Kaltura Video Player SDK for iOS](/api-docs/Mobile-Video-Player-SDKs/v3_iOS_Introduction.html)
+* [Introduction to the Kaltura Video Player SDK for Android](/api-docs/Mobile-Video-Player-SDKs/v3_Android_Introduction.html)
 
 
 

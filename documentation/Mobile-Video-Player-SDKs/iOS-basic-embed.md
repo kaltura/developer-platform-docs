@@ -57,5 +57,5 @@ To initialize the a PlayerViewController for fullscreen, use the following comma
 
 ## Initializing the PlayerViewController for Inline  
 
-To initialize the PlayerViewController for inline, see the steps in the [Inline Player](https://vpaas.kaltura.com/documentation/05_Mobile-Video-Player-SDKs/Fullscreen-inline-iOS.html) article.
+To initialize the PlayerViewController for inline, see the steps in the [Inline Player](/api-docs/05_Mobile-Video-Player-SDKs/Fullscreen-inline-iOS.html) article.
 

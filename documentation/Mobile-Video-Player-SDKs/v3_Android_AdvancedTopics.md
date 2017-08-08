@@ -18,31 +18,31 @@ Kaltura's Mobile Video SDK supports various advanced features to enable multiple
 | **Live**           |[Live Stream][Live Stream Docs]            | [x]()  | X                                           |
 | **Offline**        |[Offline Playback][Offline Playback Docs]  | [x]()  | X                                           |
 
-[playerConfigDocs]:https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_PlayerConfig.html
+[playerConfigDocs]:/api-docs/Mobile-Video-Player-SDKs/v3_Android_PlayerConfig.html
 [playerConfigSwiftDocs]:https://kaltura.github.io/playkit/api/ios/Classes/PlayerConfig.html 
-[eventsObservationDocs]:https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_EventsAndStates.html
+[eventsObservationDocs]:/api-docs/Mobile-Video-Player-SDKs/v3_Android_EventsAndStates.html
 [eventsObservationSwiftDocs]:https://kaltura.github.io/playkit/api/ios/Classes/PlayerEvents.html
-[Audio&TextTracksDocs]:https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_TracksSelection.html
+[Audio&TextTracksDocs]:/api-docs/Mobile-Video-Player-SDKs/v3_Android_TracksSelection.html
 [Audio&TextTracksSwiftDocs]: https://kaltura.github.io/playkit/api/ios/Classes/PlayerEvents/tracksAvailable.html#/s:FCC7PlayKit12PlayerEvents15tracksAvailablecFT6tracksCS_8PKTracks_S1_
-[Live Stream Docs]:https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_Live.html
+[Live Stream Docs]:/api-docs/Mobile-Video-Player-SDKs/v3_Android_Live.html
 [Live Stream SwiftDocs]: http://
-[Offline Playback Docs]:https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_Offline.html
+[Offline Playback Docs]:/api-docs/Mobile-Video-Player-SDKs/v3_Android_Offline.html
 [Offline Playback SwiftDocs]: http://
 
 
-## [DRM](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_DRM.html)
+## [DRM](/api-docs/Mobile-Video-Player-SDKs/v3_Android_DRM.html)
 
 |                      |         Documentation                    | Sample | Java Doc                            |
 |----------------------|:----------------------------------------:|:------:|:------------------------------------:|
 | **Widevine Modular**         | [About Widevine Modular][FairPlayDocs] | [x]()  | [Empty][FairPlaySwiftDocs] |
 | **Widevine Classic** | [About Widevine Classic][wideVineDocs]   | [x]()  | X                                    |
 
-[FairPlayDocs]: https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_DRM.html
+[FairPlayDocs]: /api-docs/Mobile-Video-Player-SDKs/v3_Android_DRM.html
 [FairPlaySwiftDocs]: https://kaltura.github.io/playkit/api/ios/Other%20Classes.html#/s:C7PlayKit15FairPlayDRMData
-[widevineDocs]: https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_DRM.html
+[widevineDocs]: /api-docs/Mobile-Video-Player-SDKs/v3_Android_DRM.html
 
 
-## [App Lifecycle](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html)
+## [App Lifecycle](/api-docs/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html)
  
 
 |                 |         Documentation        | Sample |
@@ -50,8 +50,8 @@ Kaltura's Mobile Video SDK supports various advanced features to enable multiple
 | **Application State Changes** | [Background, Foreground, Termination][application-state-changes] | [x]()  |
 | **Connectivity**    | [Connectivity Loss][connectivityLoss]   | [x]()  |
 
-[application-state-changes]: https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html#application-state-changes
-[connectivityLoss]: https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html#connectivity
+[application-state-changes]: /api-docs/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html#application-state-changes
+[connectivityLoss]: /api-docs/Mobile-Video-Player-SDKs/v3_Android_AppLifecycle.html#connectivity
 
 
 ## Have Questions or Need Help?

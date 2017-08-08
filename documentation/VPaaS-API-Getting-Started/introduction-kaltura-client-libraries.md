@@ -595,9 +595,7 @@ See [Tips and Tricks][18] for resources related to using a client library.
 
 For sample code in available client library languages, see [Sample Code for Multiple Client Library Languages][7].
 
-<h2 class="mce-heading-2">
-  <a name="IncludingaClientLibraryinanApplication"></a>Including a Client Library in an Application
-</h2>
+## Including a Client Library in an Application
 
 Before you can use a client library, you include the client library in your application.
 
@@ -618,35 +616,29 @@ The *KalturaClient* file is the main class that includes:
     *   Service classes
     *   Service class methods
 
-<p class="mce-procedure">
-  To explicitly include a client library in your application:
-</p>
+To explicitly include a client library in your application:
 
-Implement the following code in your application: {% highlight php %}require_once ‘KalturaClient.php’;{% endhighlight %}
+Implement the following code in your application: 
+{% highlight php %}
+<?php 
+require_once 'KalturaClient.php';
+{% endhighlight %}
 
-<h3 class="mce-heading-3">
-  <a name="ExcludingaServerPluginfromanApplication"></a>Excluding a Server Plugin from an Application
-</h3>
+## Excluding a Server Plugin from an Application
 
 All APIs that belong to a Kaltura server plugin are generated in separate files.
 
 The server can disable a server plugin. Similarly, a client library can exclude a server plugin by excluding the server plugin API files.
 
-<p class="mce-procedure">
-  To exclude a server plugin from an application:
-</p>
+To exclude a server plugin from an application:
 
 Do not include the server plugin API files in the client library.
 
-<h2 class="mce-heading-2">
-  <a name="InstantiatingaClientObject"></a>Instantiating a Client Object
-</h2>
+## Instantiating a Client Object
 
 Before you can use a client library, you need a client object to perform actions with the Kaltura API.
 
-<p class="mce-note-graphic">
-  Depending on your use case, you may need to instantiate client objects multiple times.
-</p>
+Depending on your use case, you may need to instantiate client objects multiple times.
 
 Instantiating a client object requires:
 
@@ -658,43 +650,44 @@ Instantiating a client object requires:
  [20]: #StartingaKalturaSession
  [21]: #SettingtheKalturaSessionfortheConfigurat
 
-<h3 class="mce-heading-3">
-  <a name="CreatingaConfigurationObject"></a>Creating a Configuration Object
-</h3>
+## Creating a Configuration Object
 
-<p class="mce-procedure">
-  To create a configuration object for a client library:
-</p>
+To create a configuration object for a client library:
 
-Implement the following code: ```$kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID $kalturaConfig->serviceUrl = ‘http://KalturaServerDomain’; // if you want to communicate with a Kaltura server which is // other than the default http://www.kaltura.com $kalturaClient = new KalturaClient($kalturaConfig);```
+Include the following code:
 
-<span class="mce-heading-3"><a name="StartingaKalturaSession"></a>Starting a Kaltura Session</span>
+```php
+<?php
+$kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID 
+$kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to communicate with a Kaltura server which is  other than the default http://www.kaltura.com
+$kalturaClient = new KalturaClient($kalturaConfig);
+```
+
+## Starting a Kaltura Session
 
 You need to start a Kaltura session (KS) before using a client object for most API calls.
 
 For more information about a KS, refer to [Kaltura API Usage Guidelines][11].
 
-<p class="mce-procedure">
-  To create a KS:
-</p>
+To create a KS:
 
 Implement the following code:
 
-<pre>$ks = $kalturaClient-&gt;generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges);</pre>
+```
+<?php
+$ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges);
+```
 
-<h3 class="mce-heading-3">
-  <a name="SettingtheKalturaSessionfortheConfigurat"></a>Setting the Kaltura Session for the Configuration Object
-</h3>
+Setting the Kaltura Session for the Configuration Object
 
-<p class="mce-procedure">
-  To set the KS for the configuration object:
-</p>
+To set the KS for the configuration object:
 
-Implement the following code: {% highlight php %}$kalturaClient->setKs($ks);{% endhighlight %} 
+Implement the following code: 
+{% highlight php %}
+$kalturaClient->setKs($ks);
+{% endhighlight %} 
 
-<h2 class="mce-heading-2">
-  <a name="UsingaClientObjecttoPerformanAPICall"></a>Using a Client Object to Perform an API Call
-</h2>
+Using a Client Object to Perform an API Call
 
 The Kaltura API structure consists of a list of services, represented by service objects. Each service object consists of different actions, represented by a method in the service object.
 
@@ -706,25 +699,26 @@ For example:
 
  [22]: https://developer.kaltura.com/api-docs/#/KalturaMediaEntry
 
-<p class="mce-note-graphic">
-  For more information about the Kaltura API structure, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
-</p>
+For more information about the Kaltura API structure, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
 
-<p class="mce-procedure">
-  <a name="Toperformamediagetcall"></a>To perform a media.get call:
-</p>
+To perform a media.get call:
 
-Implement the following code: {% highlight php %}$entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have $mediaEntry = $client->media->get($entryId);{% endhighlight %} 
+Implement the following code: 
+{% highlight php %}
+$entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have 
+$mediaEntry = $client->media->get($entryId);
+{% endhighlight %} 
 
-<a name="Toprintthenameofthemediaentry"></a><span class="mce-procedure">To print the name of the media entry:</span>
+To print the name of the media entry:
 
-Implement the following code: {% highlight php %}echo $mediaEntry->name;{% endhighlight %} 
+Implement the following code: 
+{% highlight php %}
+echo $mediaEntry->name;
+{% endhighlight %} 
 
-<p class="mce-heading-3">
-  Example Workflow
-</p>
+Example Workflow
 
-An example workflow for printing a known media item’s name from a client library involves:
+An example workflow for printing a known media item's name from a client library involves:
 
 1.  [Including a Client Library in an Application][13]
 2.  [Instantiating a Client Object][14]
@@ -750,8 +744,8 @@ An example workflow for printing a known media item’s name from a client libra
     </ol>
 
 <p class="mce-heading-3">
-  Sample Code for Printing a Known Media Item’s Name:
-</p> {% highlight php %}require_once ‘KalturaClient.php’; $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID $kalturaConfig->serviceUrl = ‘http://KalturaServerDomain’; // if you want to communicate with a Kaltura server which is // other than the default http://www.kaltura.com $kalturaClient = new KalturaClient($kalturaConfig); $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); $kalturaClient->setKs($ks); $entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have $mediaEntry = $client->media->get($entryId); echo $mediaEntry->name;{% endhighlight %} 
+  Sample Code for Printing a Known Media Item's Name:
+</p> {% highlight php %}require_once 'KalturaClient.php'; $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID $kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to communicate with a Kaltura server which is // other than the default http://www.kaltura.com $kalturaClient = new KalturaClient($kalturaConfig); $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); $kalturaClient->setKs($ks); $entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have $mediaEntry = $client->media->get($entryId); echo $mediaEntry->name;{% endhighlight %} 
 
 <h3 class="mce-heading-3">
   Performing an API Call with a Server-Side Plugin Service
@@ -763,13 +757,27 @@ Plugin APIs (services and objects) are generated in separate files. You can remo
 
 Since plugin APIs are not included in an application as a generic part of the client library, you use plugin APIs differently than client library objects.
 
-<p class="mce-procedure">
-  To perform a call using a plugin's metadata API:
-</p>
+To perform a call using a plugin's metadata API:
 
-Implement the following code: {% highlight php %}require\_once ‘KalturaClient.php’; $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID $kalturaConfig->serviceUrl = ‘http://KalturaServerDomain’; // if you want to communicate with a Kaltura server which is // other than the default http://www.kaltura.com $kalturaClient = new KalturaClient($kalturaConfig); $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); $kalturaClient->setKs($ks); $entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have // instantiating a filter object required for the API call. $metadataFilter = new KalturaMetadataFilter(); // 1111 is a known ID of metadata profile $metadataFilter->metadataProfileIdEqual = '1111'; $metadataFilter->metadataObjectTypeEqual = KalturaMetadataObjectType::ENTRY; // filtering metadata objects for specific entry: $metadataFilter->objectIdEqual = $entryId; // instantiating a plugin object which holds its own services. // note that we pass the client to the plugin object $metadataPlugin = KalturaMetadataClientPlugin::get($kalturaClient); // calling the specific service ‘metadata’ and a specific action ‘list’ $metadataForEntry = $metadataPlugin->metadata->listAction($metadataFilter); var\_dump($metadataForEntry);{% endhighlight %} 
+Implement the following code: 
+{% highlight php %}
+require_once 'KalturaClient.php'; 
+$kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID 
+$kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to communicate with a Kaltura server which is other than the default http://www.kaltura.com 
+$kalturaClient = new KalturaClient($kalturaConfig); 
+$ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); 
+$kalturaClient->setKs($ks); 
+$entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have instantiating a filter object required for the API call. 
+$metadataFilter = new KalturaMetadataFilter(); // 1111 is a known ID of metadata profile 
+$metadataFilter->metadataProfileIdEqual = '1111'; 
+$metadataFilter->metadataObjectTypeEqual = KalturaMetadataObjectType::ENTRY; // filtering metadata objects for specific entry: 
+$metadataFilter->objectIdEqual = $entryId; // instantiating a plugin object which holds its own services. note that we pass the client to the plugin object 
+$metadataPlugin = KalturaMetadataClientPlugin::get($kalturaClient); // calling the specific service 'metadata' and a specific action 'list'
+$metadataForEntry = $metadataPlugin->metadata->listAction($metadataFilter); 
+var_dump($metadataForEntry);
+{% endhighlight %} 
 
-<a name="PerformingaMultiRequest"></a><span class="mce-heading-2">Performing Multi-Requests</span>
+Performing Multi-Requests
 
 The Kaltura API supports the multi-request feature.
 
@@ -779,19 +787,35 @@ You instruct the client to start a multi-request stack of calls. When all of the
 
 The multi-request feature supports the ability to have one request depend on the result of another request.
 
-<p class="mce-note-graphic">
-  For more information about the multi-request feature, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
-</p>
+For more information about the multi-request feature, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
 
-<p class="mce-procedure">
-  To perform a multi-request:
-</p>
+To perform a multi-request:
 
-Implement code based on the following example: {% highlight php %}require_once ‘KalturaClient.php’; $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID $kalturaConfig->serviceUrl = ‘http://KalturaServerDomain’; // if you want to communicate with a Kaltura server which is // other than the default http://www.kaltura.com $kalturaClient = new KalturaClient($kalturaConfig); $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); $kalturaClient->setKs($ks); $entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have try { // tell the client to start stacking actions for multi-request $kalturaClient->startMultiRequest(); // add first call to multi-request stack $kalturaClient->media->get($entryId); // create empty object for updating $emptyEntryForUpdate = new KalturaMediaEntry(); // set dependency between second call and first call – // the description to be set on the entry is the tags from the previous ‘media.get’ call $emptyEntryForUpdate->description = '{1:result:tags}'; // add second call to multi-request stack $kalturaClient->media->update($entryId, $emptyEntryForUpdate); // tell the client to perform the actual HTTP request for the stacked actions $results = $kalturaClient->doMultiRequest(); // extract result objects from array of results $mediaEntry = $results[0]; $updatedMediaEntry = $results[1]; echo "entry tags: " . $mediaEntry->tags; echo "new entry desription: " . $updatedMediaEntry->description; } catch(Exception $ex) { echo “could not get entry from Kaltura. Reason: “ . $ex->getMessage(); }{% endhighlight %} 
+Implement code based on the following example: 
+{% highlight php %}
+require_once 'KalturaClient.php'; 
+$kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID 
+$kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to communicate with a Kaltura server which is other than the default http://www.kaltura.com 
+$kalturaClient = new KalturaClient($kalturaConfig); 
+$ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); 
+$kalturaClient->setKs($ks); $entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have 
+try { // tell the client to start stacking actions for multi-request 
+  $kalturaClient->startMultiRequest(); // add first call to multi-request stack 
+  $kalturaClient->media->get($entryId); // create empty object for updating 
+  $emptyEntryForUpdate = new KalturaMediaEntry(); // set dependency between second call and first call, the description to be set on the entry is the tags from the previous 'media.get' call 
+  $emptyEntryForUpdate->description = '{1:result:tags}'; // add second call to multi-request stack 
+  $kalturaClient->media->update($entryId, $emptyEntryForUpdate); // tell the client to perform the actual HTTP request for the stacked actions 
+  $results = $kalturaClient->doMultiRequest(); // extract result objects from array of results 
+  $mediaEntry = $results[0]; 
+  $updatedMediaEntry = $results[1]; 
+  echo "entry tags: " . $mediaEntry->tags; 
+  echo "new entry desription: " . $updatedMediaEntry->description; 
+} catch(Exception $ex) { 
+  echo "could not get entry from Kaltura. Reason: " . $ex->getMessage(); 
+}
+{% endhighlight %} 
 
-<h2 class="mce-heading-2">
-  <a name="ErrorHandling"></a>Error Handling
-</h2>
+Error Handling
 
 The Kaltura API can return errors.
 
@@ -801,15 +825,11 @@ A client library parses an API output. If the API returned an error, the client 
 
 Kaltura recommends that you wrap API calls in your code in a *try-catch* block to enable user-friendly error handling. This approach prevents your application from crashing.
 
-<p class="mce-note-graphic">
-  For more information about Kaltura API error handling, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
-</p>
+For more information about Kaltura API error handling, refer to <a href="http://knowledge.kaltura.com/kaltura-api-usage-guidelines">Kaltura API Usage Guidelines</a>.
 
-<p class="mce-heading-3">
-  API Error Handling – Sample Code
-</p>
+API Error Handling – Sample Code
 
-The following is an example of error handling for printing a known media item’s name: 
+The following is an example of error handling for printing a known media item's name: 
 {% highlight perl %}
 require_once 'KalturaClient.php'; 
 $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID 
@@ -817,7 +837,7 @@ $kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to com
 $kalturaClient = new KalturaClient($kalturaConfig); 
 $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); 
 $kalturaClient->setKs($ks); 
-$entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have 
+$entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have 
 try { 
     $mediaEntry = $client->media->get($entryId); 
     echo $mediaEntry->name; 
@@ -885,21 +905,21 @@ Sample code appears for the following languages:
 * JavaScript
 * Objective-C/Cocoa
 
-### PHP5  
+### PHP5
 
 {% highlight perl %}
 require_once 'KalturaClient.php'; 
 $kalturaConfig = new KalturaConfiguration(123); // where 123 is your partner ID 
-$kalturaConfig->serviceUrl = ‘http://KalturaServerDomain’; // if you want to communicate with a Kaltura server which is other than the default http://www.kaltura.com 
+$kalturaConfig->serviceUrl = 'http://KalturaServerDomain'; // if you want to communicate with a Kaltura server which is other than the default http://www.kaltura.com 
 $kalturaClient = new KalturaClient($kalturaConfig); 
 $ks = $kalturaClient->generateSession($adminSecret, $userId, KalturaSessionType::ADMIN, $partnerId, $expiry,$privileges); 
 $kalturaClient->setKs($ks); 
-$entryId = ‘XXXYYYZZZA’; // a known ID of media entry that you have 
+$entryId = 'XXXYYYZZZA'; // a known ID of media entry that you have 
 try { 
     $mediaEntry = $client->media->get($entryId); 
     echo $mediaEntry->name; 
 } catch(Exception $ex) { 
-    echo “could not get entry from Kaltura. Reason: “ . $ex->getMessage(); 
+    echo "could not get entry from Kaltura. Reason: " . $ex->getMessage(); 
 }
 {% endhighlight %} 
 
@@ -928,13 +948,13 @@ class CodeExample
 	    KalturaMediaEntry mediaEntry = client.getMediaService().get(entryId); 
 	    System.out.print(mediaEntry.getName()); 
 	}catch(KalturaApiException e){ 
-	    System.out.print(“could not get entry from Kaltura. Reason: “); e.printStackTrace(); 
+	    System.out.print("could not get entry from Kaltura. Reason: "); e.printStackTrace(); 
 	} 
     } 
 }
 {% endhighlight %} 
 
-### C#  
+### C\#
 
 {% highlight csharp %}
 using System.Collections.Generic; 
@@ -958,8 +978,8 @@ namespace Kaltura
 		    KalturaMediaEntry mediaEntry = client.MediaService.Get(entryId); 
 		    System.Console.WriteLine(mediaEntry.name); 
 		} catch(KalturaException ex) { 
-		    System.Console.WriteLine(“could not get entry from Kaltura. “); 
-		    System.Console.WriteLine(“Reason: “); System.Console.WriteLine(ex.toString()); 
+		    System.Console.WriteLine("could not get entry from Kaltura. "); 
+		    System.Console.WriteLine("Reason: "); System.Console.WriteLine(ex.toString()); 
 		} 
 	    } 
     } 
@@ -1053,7 +1073,7 @@ To avoid exposing the KS secret, Kaltura recommends calling an AJAX (or similar 
 var ks = ajaxGetKs(partnerId, userId, expiry, privileges);
 {% endhighlight %} 
 
-For more information about security issues related to accessing the Kaltura API using client-side technology, refer to [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html).
+For more information about security issues related to accessing the Kaltura API using client-side technology, refer to [Kaltura API Authentication and Security](/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html).
 
 ### Objective-C/Cocoa  
 

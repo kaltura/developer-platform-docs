@@ -18,7 +18,7 @@ Find the sutiable ingestion methologies for your workflow below:
 * [File Upload and Import REST APIs](https://developer.kaltura.com/workflows/Ingest_and_Upload_Media)
 	* [Web Upload in JavaScript/jQuery (with chunked parallel pause-resume support)](https://github.com/kaltura/chunked-file-upload-jquery)
 	* [Upload in Java](https://github.com/kaltura/Sample-Kaltura-Chunked-Upload-Java)
-* [Bulk Upload XML and CSV formats](https://vpaas.kaltura.com/documentation/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion)
+* [Bulk Upload XML and CSV formats](/api-docs/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion)
 * [Live Streaming and Webcam Recording](https://developer.kaltura.com/workflows/Live_Stream_and_Broadcast)
 * [Drop Folders and Aspera](https://knowledge.kaltura.com/node/737)
 

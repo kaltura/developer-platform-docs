@@ -21,7 +21,7 @@ This API documentation provides specific information on:
 > Note: A prerequisite for using Kaltura APIs is obtaining Kaltura account ID, aka the Partner ID (or pid).
 [Register for a Kaltura VPaaS account](https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website).
 
-If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
+If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](/api-docs/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
 
 Being a REST API, the Kaltura API can be used by constructing and making calls to direct URLs as such http://www.kaltura.com/api_v3/index.php/service/The_Service_To_Use/action/The_Action_To_Execute.
 
@@ -40,9 +40,9 @@ For example, to retrieve a list of media entries, you’ll need to call the list
 2. Pass the result of `session.start` to the media.list API. E.g.: https://www.kaltura.com/api_v3/service/media/action/list/ks/Your_KS_String.
 
 To learn more, follow these guides: 
-* [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
-* [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
-* [Introduction to Kaltura's Client Libraries](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
+* [How to Create a Kaltura Session](/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
+* [Kaltura API Authentication and Security](/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
+* [Introduction to Kaltura's Client Libraries](/api-docs/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
 
 For reference, at each action page of the [API docs](https://developer.kaltura.com) you’ll see respected request GET URL at the top of the page. 
 
@@ -56,7 +56,7 @@ The resource is an object of type [`KalturaOperationResource`](https://developer
 
 ## Resources  
 We recommend you explore these tools as well:
-* The Kaltura VPaaS [Developer Guides](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
+* The Kaltura VPaaS [Developer Guides](/api-docs/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
 * The Kaltura VPaaS [Interactive Workflows](https://developer.kaltura.com/workflows), providing a quick way to learn about video workflows with Kaltura and see from real examples how to write application with Kaltura.
 * The [API Test Console](https://developer.kaltura.com/console), providing a quick exploration and discovery for each service and action, allowing you to try each action easily, and serving as code-example generator.
 

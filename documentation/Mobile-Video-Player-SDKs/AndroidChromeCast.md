@@ -11,7 +11,7 @@ The Cast functionality allows your videos to be cast from a Android mobile devic
 
 ### Before You Begin  
 
-Before you begin setting up the Cast feature, make sure you've read the article [Android Player SDK and Environment Setup - Getting Started](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/Android-Getting-Started.html).
+Before you begin setting up the Cast feature, make sure you've read the article [Android Player SDK and Environment Setup - Getting Started](/api-docs/Mobile-Video-Player-SDKs/Android-Getting-Started.html).
 
 ## Basic Definitions
 
