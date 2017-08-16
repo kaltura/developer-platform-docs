@@ -1,5 +1,3 @@
-####
-
 ---
 layout: page
 title: Video Search Engine Optimization (SEO)
