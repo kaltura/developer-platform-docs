@@ -83,9 +83,9 @@ To decode a KS v2, IT admins and developers who operate self hosted Kaltura serv
 ###  Generating a KS  
 
 1. Gather all the different KS fields and their values
-  *_e – expiry (unix timestamp)
-  *_u – user
-  *_[t – type](http://www.kaltura.com/api_v3/testmeDoc/index.php?object=KalturaSessionType)
+  * _e – expiry (unix timestamp)
+  * _u – user
+  * _[t – type](/api-docs/General_Objects/Enums/KalturaSessionType)
   * Privileges (edit, download, sview, etc.)
 2. Compile all fields and URL encode the parameters as a query string, e.g., ```_u=userId&_e=12345678&_t=2&Privileges=sview:1_0xada32as;edit:```
 3. Prepend 16 random binary bytes to the fields.
