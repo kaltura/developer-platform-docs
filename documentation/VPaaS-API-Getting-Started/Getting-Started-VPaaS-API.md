@@ -14,7 +14,7 @@ To get started, let's review the foundational building blocks of a video experie
 
 To access the Kaltura API, you will need the following:
 
-* A Kaltura publisher account - To obtain a Kaltura account, start a [free trail](http://corp.kaltura.com/free-trial), [contact us](http://corp.kaltura.com/company/contact-us), or [download Kaltura CE](https://github.com/kaltura/platform-install-packages).
+* A Kaltura publisher account - To obtain a Kaltura account, start a [free trial](http://corp.kaltura.com/free-trial), [contact us](http://corp.kaltura.com/company/contact-us), or [download Kaltura CE](https://github.com/kaltura/platform-install-packages).
 * Your Kaltura API publisher credentials, which are available through the [KMC Integration Settings](http://www.kaltura.com/index.php/kmc/kmc4#account/integration).
 
 ## Your Kaltura Account ID (PartnerId)  
@@ -35,7 +35,7 @@ To learn more about creating a Kaltura Session, see [How to Create a Kaltura Ses
 
 Media files are uploaded to Kaltura through [CORS-enabled](https://www.w3.org/wiki/CORS_Enabled) REST API.  
 You can implement an upload flow by using a Kaltura tested JavaScript widget for web pages, or by implementing direct calls to the API.  
-Alternatively, Kaltura also provides methods for bulk-ingest and import of content. To learn more, read the [Kaltura Bulk Content Ingestion API article](/api-docs/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion.html).
+Alternatively, Kaltura also provides methods for bulk-ingest and import of content. To learn more, read the [Kaltura Bulk Content Ingestion API article](/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html).
 
 > Note: Kaltura manages all forms of media files, including video, image, and audio files. It even provides APIs to host, deliver and process document files, such as PDF and PPT files, to create rich experiences such as synchronized side-by-side video and presentation slides.
 
@@ -463,4 +463,4 @@ For each Kaltura release, the Kaltura API Twitter account notifies followers abo
 
 Kaltura API based applications do not require frequent updates to the client library used. Kaltura is committed to provide full backward computability to the API layer, keeping deprecated APIs functional, and ensuring that additions or changes introduced in new versions will not break existing applications. 
 
-When new functionalities for your applications are introduced, or when maintainance upgrades are made to your applications, we encourage you to keep your client libraries updated even though an upgrade based on the availability of new Kaltura releases is not required.
+When new functionalities for your applications are introduced, or when maintenance upgrades are made to your applications, we encourage you to keep your client libraries updated even though an upgrade based on the availability of new Kaltura releases is not required.
