@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Video Search Engine Optimization (SEO)
-type: header
 ---
 
 When considering video SEO, where the URL of the video file and Player is actually hosted is not very important nor does it influence the search results ranking in any way.
