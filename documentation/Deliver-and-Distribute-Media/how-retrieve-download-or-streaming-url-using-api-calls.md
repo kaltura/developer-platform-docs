@@ -76,7 +76,7 @@ To retrieve a specific video flavor:
 >Note: The playManifest API is not a standard part of the Kaltura API v3, it is a direct URL request that retrieves the specific binary video file from Kaltura. The response to the playManifest URL is the actual video file of the requested entry flavor.
 
 
->Note: The playManifest API does not require a KS unless the media entries were specifically setup with Access Control profiles to limit anonymous access to the media. If the media entry does have Access Control profiles assigned, a KS (Kaltura Session) must be specfied when calling the playManifest URL.
+>Note: The playManifest API does not require a KS unless the media entries were specifically setup with Access Control profiles to limit anonymous access to the media. If the media entry does have Access Control profiles assigned, a KS (Kaltura Session) must be specified when calling the playManifest URL.
 
 
 ### What is the Distinction between flavorParamId and flavorId?  
@@ -105,7 +105,7 @@ Below is a PHP code sample for retrieving the download URL of a web-playable fla
 
 //Client library configuration and instantiation...
  
-//when creating the Kaltura Session it is important to specify that this KS should bypass entitlemets restrictions:
+//when creating the Kaltura Session it is important to specify that this KS should bypass entitlements restrictions:
 $ks = $client->session->start($secret, $userId, KalturaSessionType::ADMIN, $partnerId, 86400, 'disableentitlement');
 $client->setKs($ks);
  
@@ -142,7 +142,7 @@ The correct flavor IDs (per account and Kaltura edition) can be retrieved using 
 
 ### >Retrieving Streaming URL for Mobile Applications  
 
-To retrive streaming URL for mobile applications, use the following guidelines:
+To retrieve streaming URL for mobile applications, use the following guidelines:
 
 * For Apple iPad devices – <a href="#considerations-of-access-control-and-entitlements">get all the flavors</a> (marked ready) that have the tag 'ipadnew' and build the following URL:
 

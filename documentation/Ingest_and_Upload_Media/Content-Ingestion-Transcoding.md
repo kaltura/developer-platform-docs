@@ -4,7 +4,7 @@ title: Introduction to Content Preparation & Transcoding
 weight: 202
 ---
 
-* Kaltura's cloud transcoding microservices and tools are designed to manage encoding workflows at any scale and quality requirements - for the web, broadcast, studio, or secure internal applications with sensitive content. 
+* Kaltura's cloud transcoding micro-services and tools are designed to manage encoding workflows at any scale and quality requirements - for the web, broadcast, studio, or secure internal applications with sensitive content. 
 * Architected to handle any file size over large volumes - converting any input format of uploaded video, audio, image and even documents into a variety of flavors (transcoded output renditions).
 * Built to be deployed on any infrastructure - on premises or public cloud. 
 * Kaltura's transcoding decision layer engine supports more than 60 video and image formats as well as 140 video and audio codecs.
@@ -13,12 +13,12 @@ weight: 202
 ### Media Ingestion APIs and Tools  
 
 The Kaltura VPaaS offers many ways for ingesting content; a file upload API, bulk files import using CSV or XML, MRSS ingest services, and various widgets you can integrate into your workflows or sites, to allow user contributions and build custom upload interfaces.
-Find the sutiable ingestion methologies for your workflow below:
+Find the suitable ingestion methodologies for your workflow below:
 
 * [File Upload and Import REST APIs](https://developer.kaltura.com/workflows/Ingest_and_Upload_Media)
 	* [Web Upload in JavaScript/jQuery (with chunked parallel pause-resume support)](https://github.com/kaltura/chunked-file-upload-jquery)
 	* [Upload in Java](https://github.com/kaltura/Sample-Kaltura-Chunked-Upload-Java)
-* [Bulk Upload XML and CSV formats](/api-docs/02_Media-Ingest-and-Preperation/Bulk-Content-Ingestion)
+* [Bulk Upload XML and CSV formats](/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html)
 * [Live Streaming and Webcam Recording](https://developer.kaltura.com/workflows/Live_Stream_and_Broadcast)
 * [Drop Folders and Aspera](https://knowledge.kaltura.com/node/737)
 

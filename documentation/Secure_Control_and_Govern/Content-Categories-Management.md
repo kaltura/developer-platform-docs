@@ -12,7 +12,7 @@ Categories may also be used to set content entitlements for end-users in various
 ### Quick Summary - Categories     
 
 * A category is a metadata that groups content. 
-* Media entries can be added into categories. Each entry can be associated with up to 32 categories (If you need more, please [contact us](mailto:vpaas.kaltura.com)).
+* Media entries can be added into categories. Each entry can be associated with up to 32 categories (If you need more, please [contact us](mailto:vpaas@kaltura.com)).
 * Categories are built in a tree-like hierarchy where each category can include multiple sub-categories.
 * Each category may only have a single parent category, or be a root level category (no parent).
 * Categories provide a logical taxonomy structure for your site or application and assist with content management. 
@@ -51,7 +51,7 @@ The [`contributionPolicy`](https://developer.kaltura.com/api-docs/General_Object
 
 Use the [`userJoinPolicy`](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory) and [`KalturaUserJoinPolicyType`](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaUserJoinPolicyType) to set whether users:
 * can add themselves to the category (`AUTO_JOIN`)
-* can request to be added and wait for themoderator's approval (`REQUEST_TO_JOIN`) 
+* can request to be added and wait for the moderator's approval (`REQUEST_TO_JOIN`) 
 * or if it's a by-invitation only list and users are not allowed to ask to be added (`NOT_ALLOWED`).  
 If the category is set to moderated membership approval (`REQUEST_TO_JOIN`), use the `activate` action to approve the moderated request to join. If a user should not be allowed join, use `deactivate` action to reject a user's request to join the category.
 
@@ -113,7 +113,7 @@ Categories expose properties to control whether to, and who can find the categor
 
 ### Configure and Use Content Entitlements
 
-To configure entitlements on a category, you will need to set a "Privacy Context" ([`category.privacyContext`](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory) propetry) for the desired category.  
+To configure entitlements on a category, you will need to set a "Privacy Context" ([`category.privacyContext`](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory) property) for the desired category.  
 Privacy Context is a free text label (English character string; commas and spaces are not allowed) that indicates to which application the entitlement settings apply, for example, “MySuperAwesomeVideoApp”.
 
 To allow access to an entitled category, follow these steps: 
@@ -121,7 +121,7 @@ To allow access to an entitled category, follow these steps:
 1. The end user must be added as a member of the category by using the [`CategoryUser`](https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser) service. 
 2. The privacy context should be passed in the application session (KS) whenever making API requests in the [`privacycontext` KS privileges](https://knowledge.kaltura.com/node/229#privacycontext).  
 
-> `privacyContexts` provides a means to set multiple entitlement application contexts per category with comma-seperated list of unique keys.
+> `privacyContexts` provides a means to set multiple entitlement application contexts per category with comma-separated list of unique keys.
 The Privacy Context configuration for an application guarantees the following:
 User’s entitlements to content in the application are determined based on the specific categories the application is integrated with. 
 Categories that are not directly integrated with the application can be used for any content organization and applicative classification purposes. A content item can be shared with such categories with no impact on their visibility to end-users through the application.

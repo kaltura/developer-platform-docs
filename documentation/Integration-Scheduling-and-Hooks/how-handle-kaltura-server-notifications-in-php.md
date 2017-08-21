@@ -55,7 +55,7 @@ To use the API notifications client in your application, follow these steps:
 5 . Setting up notifications on Kaltura:
 Access the KMC and set up notifications under Settings>Integration Settings>Notifications. Refer to the article [What types of notifications are there in the KMC?](http://knowledge.kaltura.com/node/167) for more details.
 
-6 . Select the type of notification you want to be triggered and add the path the public server that host the nofication script
+6 . Select the type of notification you want to be triggered and add the path the public server that host the notification script
 
 7 . To test your notification handler, open an entry in the KMC and update it (if you set up notification as "Update Entry" for instance). Kaltura should trigger a notification and execute your script on the public server where it has been installed
 

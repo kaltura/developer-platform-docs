@@ -4,7 +4,7 @@ title: How to use the API to Add New Flavor Params
 weight: 102
 ---
 
-> Note: Kaltura.com SaaS users - Please contact your Kaltura Account Manager to add new flavor params to your account. Configuration of the transcoding layer requires specialized ecnoding expertise.
+> Note: Kaltura.com SaaS users - Please contact your Kaltura Account Manager to add new flavor params to your account. Configuration of the transcoding layer requires specialized encoding expertise.
  
 
 To add flavor params, call the [flavorParams.add](https://developer.kaltura.com/api-docs/#/flavorParams.add) API action:

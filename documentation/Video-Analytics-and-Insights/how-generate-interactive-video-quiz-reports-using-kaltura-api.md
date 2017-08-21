@@ -69,4 +69,4 @@ How many users submitted the quiz?
 
 ### QUIZ_USER_AGGREGATE_BY_QUESTION
 
-How many users answered the question on the quiz(quizes).
+How many users answered the question on the quiz(quizzes).

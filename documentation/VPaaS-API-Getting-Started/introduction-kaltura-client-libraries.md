@@ -25,7 +25,7 @@ Kaltura recommends that you use a Kaltura Client Library when you develop applic
 * Because they are auto-generated, there is lower chance for mistakes.
 * The low level is already implemented for you, including:
 	* HTTP communication
-	* Serialization and deserialization
+	* Serialization and de-serialization
 	* Error handling
 *  Authentication is built-in.
 * Multi-request is built-in.

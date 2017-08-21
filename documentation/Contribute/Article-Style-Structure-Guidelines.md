@@ -61,7 +61,7 @@ See [List of supported languages and lexers](https://github.com/jneen/rouge/wiki
 
 ## Adding Tables
 
-Markdown tables can become messy. Please write clean tables so it will be simple for contributors after you to edit and enahance your work.  
+Markdown tables can become messy. Please write clean tables so it will be simple for contributors after you to edit and enhance your work.  
 The clean way to add Markdown tables is as follows:
 
 ```
@@ -89,7 +89,7 @@ You can also use: [TablesGenerator.com](http://www.tablesgenerator.com/markdown_
 ## Adding Images
 
 Use the standard Markdown notation for images (`![Alt Text](url)`).  
-Please always ensure that a descriptive Alt text is specified on your image to ensure compatability with screen readers and better search indexing.  
+Please always ensure that a descriptive Alt text is specified on your image to ensure compatibility with screen readers and better search indexing.  
 
 ### Adding an Image Folder
 

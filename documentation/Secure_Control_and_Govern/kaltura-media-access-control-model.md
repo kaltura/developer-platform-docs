@@ -217,7 +217,7 @@ $rule->conditions = array($condition1, $condition2, $condition3);
 $rule->stopProcessing = true;
 {% endhighlight %}
     
-**The next rule should be defined with no conditions and one block action in order to block all requests that didn’t stop processing on the first rule.**
+**The next rule should be defined with no conditions and one block action in order to block all requests that didn't stop processing on the first rule.**
     
 ### Block long-form content on mobile devices
     

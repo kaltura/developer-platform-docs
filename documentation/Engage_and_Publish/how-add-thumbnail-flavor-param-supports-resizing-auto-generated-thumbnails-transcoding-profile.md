@@ -24,5 +24,5 @@ For example, the result of conversionProfile.get action will look like the foll
 
 From herein, whenever a new entry is ingested, a new thumbnail will be generated with the desired dimensions and added automatically to the entry.
  
->Note: The new thumbnail flavor doesn’t appear in the KMC account transcoding in Kaltura versions prior to Falcon.
+>Note: The new thumbnail flavor doesn't appear in the KMC account transcoding in Kaltura versions prior to Falcon.
 

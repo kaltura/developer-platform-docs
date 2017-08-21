@@ -26,7 +26,7 @@ The role determines the allowed API actions that this Application Token will be 
 
  * Full Permission (checked) – Grants read-write access to the specified functionality. Includes the add/update/delete/list/get API actions for the relevant API service(s).
  * View-Only Permission (partially checked) – Read-only (get/list) functions will be allowed. Write actions will be blocked.
- * No Permission (cleared) – No access to the API service(s) assocaited with the listed functions.
+ * No Permission (cleared) – No access to the API service(s) associated with the listed functions.
 
  ![Setting Role Permissions](assets/images/roles2.PNG)
 
@@ -36,7 +36,7 @@ When done, save your changes.
 
 ### Creating a User with the Desired Content Permissions   
 
-If you're using entitlements or MediaSpace, you may use a "service user" to restrict the content access permissions of the Appliation Token. You may create a new user, or use an existing user entity (such as a MediaSpace user). This user entity must be correctly permissioned with entitlements to the Channels or categories that you want to provide your development partners.
+If you're using entitlements or MediaSpace, you may use a "service user" to restrict the content access permissions of the Application Token. You may create a new user, or use an existing user entity (such as a MediaSpace user). This user entity must be correctly permissioned with entitlements to the Channels or categories that you want to provide your development partners.
 
 **Note:** Do not use a KMC user for this purpose, because a KMC user has unrestricted content access.
 

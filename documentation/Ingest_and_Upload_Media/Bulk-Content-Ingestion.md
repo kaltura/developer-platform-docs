@@ -4,7 +4,7 @@ title: Bulk Content Ingestion API
 weight: 302
 ---
 
-Kaltura offers bulk content ingenstion to support scenarios where you need to ingest a significant number of Internet accessible files - from more than a few to many files. Bulk upload presents a great advantage for consolidating large amounts of video content in different locations from remote sites. 
+Kaltura offers bulk content ingestion to support scenarios where you need to ingest a significant number of Internet accessible files - from more than a few to many files. Bulk upload presents a great advantage for consolidating large amounts of video content in different locations from remote sites. 
 
 You can import multiple files per session using a simple comma separated CSV file, along with their basic metadata fields, or via an XML file, providing complete metadata and setting special configurations per entry.
 
@@ -14,7 +14,7 @@ With these options, you can also ingest files from your own FTP server, or any p
 
 ## Introduction Video  
 
-The following video provides a quick walkthrough of the bulk-upload features in KMC:
+The following video provides a quick walk through of the bulk-upload features in KMC:
 
 {% onebox http://videos.kaltura.com/media/1_kxiv585x %}
 
@@ -29,7 +29,7 @@ The benefits of using bulk upload to ingest your files include:
 There are two methods for bulk-uploading of content:
 
 * The simple method - using a [CSV formatted file](http://en.wikipedia.org/wiki/Comma-separated_values), which provides a quick and easy way to submit a list of files that you can create in a spreadsheet application like Microsoft Excel or Google Docs. Please note that the CSV format may only be used to upload/ingest new files into Kaltura.
-* The robust method - using an [XML formatted file](http://en.wikipedia.org/wiki/XML), which provides a flexible structure for imputting complex metadata fields and other objects, such as caption files, and allows for more flexible ingestion workflows. The XML format supports full CRUD (Create, Read, Update, and Delete) operations with Kaltura Entries.
+* The robust method - using an [XML formatted file](http://en.wikipedia.org/wiki/XML), which provides a flexible structure for inputting complex metadata fields and other objects, such as caption files, and allows for more flexible ingestion workflows. The XML format supports full CRUD (Create, Read, Update, and Delete) operations with Kaltura Entries.
 
 ## How to Submit Bulk Upload Jobs  
 

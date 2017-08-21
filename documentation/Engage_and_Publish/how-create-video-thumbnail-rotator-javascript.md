@@ -40,4 +40,4 @@ KalturaThumbRotator provide two actions:
 You can adjust the following settings in the Kaltura Thumb Rotator js file:
 
 * slices - The number of thumbnails to pull for the video (default is 16).
-* frameRate - The frame rate in milliseconds for changing thumbnails (time to wait between thumbnail replacemnet, default is 1000ms).
+* frameRate - The frame rate in milliseconds for changing thumbnails (time to wait between thumbnail replacement, default is 1000ms).

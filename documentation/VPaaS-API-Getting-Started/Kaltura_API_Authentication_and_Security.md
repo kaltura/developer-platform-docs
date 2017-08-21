@@ -68,7 +68,7 @@ The KS is a string composed of the following details:
 * ksdata - Arbitrary data that will be overlooked by Kaltura and can be used to pass additional information on the KS for custom application use.
 * Signature – The KS is cryptographically signed (one-way MD5 hashing algorithm), by hashing all of the above with a secret key shared between Kaltura and the publisher.
 
-The information above is then combined with either an Admin or User Secret (depending on the KS type desired), and then compiled using SHA1 algorithm. To generate the KS that is sent through the API: combine the SHA1 hash (in lowercase) and the above parameters in plain-text seperated by semi-colons (i.e. ';'), in Base64.
+The information above is then combined with either an Admin or User Secret (depending on the KS type desired), and then compiled using SHA1 algorithm. To generate the KS that is sent through the API: combine the SHA1 hash (in lowercase) and the above parameters in plain-text separated by semi-colons (i.e. ';'), in Base64.
 
 ###  Field Encryption to Protect User Privacy  
 
@@ -306,7 +306,7 @@ Kaltura Users can be assigned a fine-grained level of permissions. This allows a
 
 Use user.loginByLoginId providing user credentials and your account ID. 
 
-### Use Widget KS for Anonynous Public Content Playback  
+### Use Widget KS for Anonymous Public Content Playback  
 
 The `session.startWidgetSession` provides an anonymous simple and light KS generation mechanism that does not require a secret. This type of session can be used to perform READ operations only and only on content that is defined as publicly available with no Access Control or special permissions.
 

@@ -15,7 +15,7 @@ Follow the Interactive Code Workflow below to get started:.
 
 {% onebox https://developer.kaltura.com/workflows/Integration_Scheduling_and_Hooks/Analytics_Reports/embed %}
 
-To learm more about the type data reported by Media Analytics, we recommend you read the following article:
+To learn more about the type data reported by Media Analytics, we recommend you read the following article:
 >**Knowledge Article:** [Creating and Tracking Analytics in the KMC](http://knowledge.kaltura.com/creating-and-tracking-analytics-kmc-0#analytics)
 
 ## Integrated Analytics Partners
