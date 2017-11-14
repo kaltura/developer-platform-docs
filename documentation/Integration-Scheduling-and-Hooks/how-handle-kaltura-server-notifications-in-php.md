@@ -13,7 +13,7 @@ Utilizing Kaltura Server Notifications allows applications to achieve the follow
 *   Easily respond on a "push form" whenever media events occur on the Kaltura server.
 *   Implement a synchronized local management instance of media related metadata and thumbnails for improving website performance. This may include local media searching and caching capabilities.
 
-The full list of notifications sent by the Kaltura server are available in the [Kaltura Notifications API docs](https://developer.kaltura.com/recipes/backend_notifications#/start).
+The full list of notifications sent by the Kaltura server are available in the [Kaltura Notifications API docs](https://developer.kaltura.com/workflows/Integration_Scheduling_and_Hooks/Backend_and_Email_Notifications).
 
 ## Configuring The Kaltura API Notifications PHP Client  
 
