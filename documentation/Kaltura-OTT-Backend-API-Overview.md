@@ -213,7 +213,7 @@ Errors are returned in the serialized response (JSON or XML) and automatically i
     {
       "objectType": "KalturaLoginSession",
       "refreshToken": "vsdvssdp046ab84d27b1abb6djowdsd34",
-      "ks": "jsdfo9MI9KKzY0uE7J_lsdjofdsp09mLILmn0LIJML_sokdfsf0lsfLOJKLOJKp9ikmkl-dflgkdfgp0idfkmsdlflokkplOKPplLpKLJHJHBMJUH_KJBH0k090_lsdfsdfKLJKLJ909-0klj ="
+      "ks": "VALID_KS_STRING"
     },
     {
       "error": {
