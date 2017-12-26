@@ -63,7 +63,7 @@ Although both form data and a Kaltura proprietary requests are supported, JSON i
   "format": 1,
   "id": "566254",
   "kalsig": "ef6ddd187091e42003f2c59dbbcdaf4f",
-  "ks": "MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7"
+  "ks": "KS_STRING_HERE"
 }
 {% endhighlight %}
 
@@ -78,7 +78,7 @@ JSON (format = 1, Accept: application/json)
   "executionTime": 0.900651,
   "result": {
     "objectType": "KalturaLoginSession",
-    "ks": " MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7"
+    "ks": " KS_STRING_HERE"
   }
 }
 {% endhighlight %}
@@ -90,7 +90,7 @@ XML (format = 2 , Accept: text/xml)
     <executionTime>0.6486599</executionTime>
     <result>
         <objectType>KalturaLoginSession</objectType>
-        <ks> MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7</ks>
+        <ks> KS_STRING_HERE</ks>
     </result>
 </xml>
 {% endhighlight %}
@@ -116,7 +116,7 @@ Multi-requests enable sending multiple applicative requests in a single HTTP req
 {% highlight c %}
 {
   "apiVersion": "3.6.1579.29065",
-  "ks": "MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7",
+  "ks": "KS_STRING_HERE",
   "0": {
     "service": "asset",
     "action": "list"
@@ -133,7 +133,7 @@ This enables using responses from one applicative request in another applicative
 {% highlight c %}
  {
   "apiVersion": "3.6.1579.29065",
-  "ks": "MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7",
+  "ks": "KS_STRING_HERE",
   "0": {
     "service": "ottUser",
     "action": "anonymousLogin",
@@ -241,7 +241,7 @@ https://ott.developer.kaltura.com/api-docs/Services/asset/asset_get:
   "format": 1,
   "id": "566254",
   "kalsig": "ef6ddd187091e42003f2c59dbbcdaf4f",
-  "ks": "MGVjNGY4YzBkM2ZhYmIxYTA4Y2VhYjYwZGM4NWQ5NzczNzcxY2JmYXwxODY7MTg2OzE0ODQxNDAwNzE7MDs2MzYxOTc0MzQ3MTA0NDI3NzU7MDAwMDA3MTcyMkBnbWFpbC5jb20udGVzdDs7"
+  "ks": "KS_STRING_HERE"
 }
 {% endhighlight %}
 
