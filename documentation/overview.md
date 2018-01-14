@@ -21,7 +21,7 @@ This API documentation provides specific information on:
 > Note: A prerequisite for using Kaltura APIs is obtaining Kaltura account ID, aka the Partner ID (or pid).
 [Register for a Kaltura VPaaS account](https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website).
 
-If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](/api-docs/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
+If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](/api-docs/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
 
 Being a REST API, the Kaltura API can be used by constructing and making calls to direct URLs as such http://www.kaltura.com/api_v3/index.php/service/The_Service_To_Use/action/The_Action_To_Execute.
 
