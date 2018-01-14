@@ -99,7 +99,7 @@ To configure how Kaltura enforces entitlement and handles entitlement conflicts,
 * When `defaultEntitlementEnforcement` is set to true (default): Access to content under categories where privacy and privacyContext are configured is only allowed for API calls that provide a KS (Kaltura Session) that specify the correct privacyContext and a userId that is a member of the category.
 * When `defaultEntitlementEnforcement` is set to false: Access to content under categories with entitlement is possible using any valid Kaltura Session, including anonymous player embed codes (using a Widget Session). With this option, the application itself is responsible to implement an entitlement enforcement and it is expected that entitlement rules are kept within the application. 
 
-> To learn more about how entitlements are enforced, please read: [Content Entitlements and Privacy Enforcement](/documentation/Content-Entitlements-Privacy-Enforcement.html).  
+> To learn more about how entitlements are enforced, please read: [Content Entitlements and Privacy Enforcement](/api-docs/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html).  
 
 ## Category Discoverability in Search
 
