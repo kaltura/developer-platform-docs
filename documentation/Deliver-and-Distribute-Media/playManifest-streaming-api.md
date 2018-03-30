@@ -45,7 +45,7 @@ To use the `playManifest` API action, consider the following steps:
 |    Parameter           |    Description    |
 |------------------------|-------------------|
 |    `[serviceUrl]`          |    The base URL to the Kaltura Server    |
-|    `[yourPartnerId]`       |     Your Kaltura account publisher ID (this can be retrieved from   the Account Integration Settings page in the KMC).          |
+|    `[yourPartnerId]`       |     Your Kaltura account publisher ID (this can be retrieved from the Account Integration Settings page in the KMC).          |
 |    `[entryId]`         |     The Id of the video or playlist entry you'd like to retrieve (playlist id is only applicable when format is HLS or DASH manifest, when playlist is requested the response is a stitched playlist as a continuous video stream).                                                                                                                                        |
 |    `format`     |     See the list of available formats in the table below. This parameter is optional and defaults to `url`.                                                                      |
 |    `Protocol`            |     Whether video is to be delivered over HTTP or HTTPS. See the list of available protocols below for additional options. This parameter is optional and defaults to `http`.    |
@@ -56,12 +56,12 @@ To use the `playManifest` API action, consider the following steps:
 
 |    Parameter           |    Description    |
 |------------------------|-------------------|
-|    `seekFrom`          |    If a manifest format is used (not available in progressive download), will return a video chopped from a specific time. Specify time in MilliSeconds.    |
-|    `clipTo`          |    Will chop the video to a specific duration (available in all streaming formats). Specify time in MilliSeconds.    |
+|    `seekFrom`          |    If a manifest format is used (not available in progressive download), will return a video chopped from a specific time. Specify time in Milliseconds.    |
+|    `clipTo`          |    Will chop the video to a specific duration (available in all streaming formats). Specify time in Milliseconds.    |
 |    `playbackRate`          |   Will modify the playback speed of the stream (only available in Manifest formats). Value is a float number be between 0.5 to 2 (increments of 0.01 minimum)   |
 |    `flavorParamIds` / `flavorParamId`          |    The transcoding profile parameters to serve. If the requested entry was transcoded to this profile, the transcoded flavor will be returned. If manifest format is requested (e.g. HLS or DASH), multiple flavors may be included, comma separated.      |
 |    `flavorIds` / `flavorId`          |    The Id of specific transcoded video flavor you wish to serve. If manifest format is requested (e.g. HLS or DASH), multiple flavors may be included, comma separated. See section below for more info about flavorId vs. flavorParamId     |
-|    `tags`          |  Comma seperated list of tags. If requested, will only return flavors that are tagged with any of the specified tags.  |
+|    `tags`          |  Comma separated list of tags. If requested, will only return flavors that are tagged with any of the specified tags.  |
 |    `minBitrate`          |  Specify the minimum video flavor kbps to return in the result. Will only return flavors with higher bitrate than this value. Value is integer.  |
 |    `maxBitrate`          |   Specify the maximum video flavor kbps to return in the result. Will only return flavors with lower bitrate than this value. Value is integer.   |
 |    `preferredBitrate`   |  If specified, will place the video flavor that has the closest kbps value to this value at the top of the manifest. Value is integer.  |
@@ -91,8 +91,8 @@ To use the `playManifest` API action, consider the following steps:
 
 | Protocol                 | Description                                                                                                         |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------|
-| `http`                    | http Redirect and streaming URLs make use of the HTTP protocol. (Default)                                           |
-| `https`                   | https  Redirect and streaming URLs make use of the HTTPS protocol.                                                  |
+| `http`                    | Redirect and streaming URLs make use of the HTTP protocol. (Default)                                           |
+| `https`                   | Redirect and streaming URLs make use of the HTTPS protocol.                                                  |
 | `rtmp` | (RTMP based streaming only) Streaming Server Base URL make use of the specified protocol (RTMP, RTMPE, RTMPT, or RTMPTE). |
 
 
