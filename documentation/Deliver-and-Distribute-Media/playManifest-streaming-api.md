@@ -128,6 +128,7 @@ For best practice, to retrieve a **download** URL (instead of streaming manifest
 Below is a PHP code sample for retrieving the download URL of a web-playable flavor for a desired entry ID:
 
 ```php
+<?php
 //Client library configuration and instantiation...
  
 //when creating the Kaltura Session it is important to specify that this KS should bypass entitlements restrictions:
