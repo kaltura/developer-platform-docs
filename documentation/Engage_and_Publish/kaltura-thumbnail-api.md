@@ -35,7 +35,7 @@ https://cdnsecakmi.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/para
 1. Replace `{entry_id}` with the id of the desired entry thumbnail. 
 1. Then append any of the parameters below according to the following format: `/paramX_name/paramX_value/...`.
 
-> Please always ensure that a descriptive Alt text is specified when using thumbnails as image in web apps to ensure compatability with screen readers and better search indexing.
+> Please always ensure that a descriptive Alt text is specified when using thumbnails as image in web apps to ensure compatibility with screen readers and better search indexing.
 
 ## Thumbnail API Parameters  
 
@@ -47,13 +47,13 @@ https://cdnsecakmi.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/para
 | width          | integer | No        | Requested width in pixels                                                                                                                                                                                                                         |
 | height         | integer | No        | Requested height in pixels                                                                                                                                                                                                                        |
 | type           | integer | No        | Type of crop to be used – see remarks below                                                                                                                                                                                                       |
-| bgcolor        | string  | No        | 6 hex digits web colorcode                                                                                                                                                                                                                        |
+| bgcolor        | string  | No        | 6 hex digits web color code                                                                                                                                                                                                                        |
 | crop_provider  | string  | No        | ADVANCED. Indicates a custom thumbnail generatorThis parameter is used by the Kaltura WordPress plugin to generate custom player thumbnails.To add custom thumbnail generators see existing plugins under: /alpha/apps/kaltura/lib/crop_providers |
 | quality        | string  | No        | Jpeg quality for output (0-100). The default is 75                                                                                                                                                                                                |
 | src_x          | integer | No        | 1st part of a rectangle to take from original picture                                                                                                                                                                                             |
-| src_y          | integer | No        | 2nd part of a rectangleto take from original picture                                                                                                                                                                                              |
-| src_w          | integer | No        | 3rd part of a rectangleto take from original picture                                                                                                                                                                                              |
-| src_h          | integer | No        | 4th part of a rectangleto take from original picture                                                                                                                                                                                              |
+| src_y          | integer | No        | 2nd part of a rectangle to take from original picture                                                                                                                                                                                              |
+| src_w          | integer | No        | 3rd part of a rectangle to take from original picture                                                                                                                                                                                              |
+| src_h          | integer | No        | 4th part of a rectangle to take from original picture                                                                                                                                                                                              |
 | rel_width      | integer | No        | Actual width of the image from which the src_* parameters were taken                                                                                                                                                                              |
 | rel_height     | integer | No        | Actual height of the image from which the src_* parameters were taken                                                                                                                                                                             |
 | vid_sec        | integer | No        | second to snap from video                                                                                                                                                                                                                         |
@@ -128,7 +128,7 @@ Using the `src_x`, `src_y`, `src_w` and `src_y` parameters, it is possible to de
 
 ### Slicing
 
-A more advanced use case of the Thumbnail API is to create "animated-thumbnails" where series of thumbnails from the video are shown in rotation one after another, creating the impression of a slient movie.
+A more advanced use case of the Thumbnail API is to create "animated-thumbnails" where series of thumbnails from the video are shown in rotation one after another, creating the impression of a silent movie.
 
 Slicing can also be used in advanced CSS techniques using sprites.
 
