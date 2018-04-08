@@ -47,7 +47,7 @@ https://cdnsecakmi.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/para
 | type           | integer | No        | Type of crop to be used – see remarks below |
 | nearest_aspect_ratio           | boolean (1/0) | No        | If 1, the image will be resized to nearest aspect ratio (based on the original image/video), and only then cropped to the desired dimensions. This will override the type parameter |
 | bgcolor        | string  | No        | 6 hex digits web color code                                                                                                                                                                                                                        |
-| quality        | string  | No        | Jpeg quality for output (0-100). The default is 75                                                                                                                                                                                                |
+| quality        | string  | No        | JPEG quality for output (0-100). The default is 75                                                                                                                                                                                                |
 | src_x          | integer | No        | 1st part of a rectangle to take from original picture                                                                                                                                                                                             |
 | src_y          | integer | No        | 2nd part of a rectangle to take from original picture                                                                                                                                                                                              |
 | src_w          | integer | No        | 3rd part of a rectangle to take from original picture                                                                                                                                                                                              |
@@ -59,7 +59,7 @@ https://cdnsecakmi.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/para
 | vid_slices     | integer | No        | Number of slices    |
 | upload_token_id  | string  | No        | An ID of an uploadToken object representing a file that was recently uploaded (upload tokens are invalid after 2 weeks) to generate the image from |
 | flavor_id     | integer | No        | An ID of a specific video flavor to generate the image from   |
-| format  | string  | No        | Specify an output file format for the generated image. Supported values are: jpg, jpeg, jxr, png, png8/24/32/48/64, bmp, gif, tif, psd, and pdf. |
+| format  | string  | No        | Specify an output file format for the generated image. Supported values are: JPG, JPEG, JXR, PNG, PNG8/24/32/48/64, BMP, GIF, TIF, PSD, and PDF. |
 | ks  | string  | No        | Kaltura Session string. Only mandatory if the account is configured to require session on thumbnails request |
 | referrer  | string  | No        | base64 of a URL, use if entry's thumbnail access control is set to force domain  |
 | file_name  | string  | No        | Used to specify a file name for the generated image. Must be the last parameter on the list to generate a URL that ends with a filename.extension |
