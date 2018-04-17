@@ -65,24 +65,11 @@ https://cdnsecakmi.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/para
 | file_name  | string  | No        | Used to specify a file name for the generated image. Must be the last parameter on the list to generate a URL that ends with a filename.extension |
 
 
-## Thumbnail Editing Parameters Explained
+## Image editing parameters explained
 
 To use the parameters, append each parameter name followed by the desired value in the following format: `/paramX_name/paramX_value/...`
 
-* If both width and height were given a zero value the original image will be returned.
-* If neither width nor height were specified, the resulting size will be 120x90 (default thumbnail size).
-* If only width or height were specified, the given dimension combined with the type parameter will control the resulting size of the image.
-* If vid_slices is provided without vid_slice the result will be a horizontal strip with the different slices.
-
-### The 'type' parameter controls the resize/cropping options:
-
-* `type/1` - Resize maintaining the aspect ratio of the original video/image asset (overrides either width or height).
-* `type/2` - Center the image within the given dimensions and fill the remaining space using the given background color.
-* `type/3` - Crop the image to the given dimensions using the **center** of the image as gravity point, and fill the remaining space using the given background color.
-* `type/4` - Crop the image to the given dimensions using the **top** of the image as gravity point, and fill the remaining space using the given background color.
-* `type/5` - Stretch the image to desired dimensions.
-
-Let's consider this as the original thumbnail we'll play with:
+For the examples below we will consider this as the original thumbnail we'll play with:
 
 ```
 https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh
@@ -91,6 +78,35 @@ https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh
 ![Thumbnail without params](https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh)
 
 > Note: If neither width nor height were specified, the resulting size will be 120x90 (default thumbnail size).
+
+### Image Dimensions (Width, Height and Aspect Ratio)
+
+* If both width and height were given a zero value the original image will be returned.
+* If neither width nor height were specified, the resulting size will be 120x90 (default thumbnail size).
+* If only width or height were specified, the given dimension combined with the type parameter will control the resulting size of the image.
+* If vid_slices is provided without vid_slice the result will be a horizontal strip with the different slices.
+
+#### The 'type' parameter controls the resize/cropping options:
+
+* `type/1` - Resize maintaining the aspect ratio of the original video/image asset (overrides either width or height).
+* `type/2` - Center the image within the given dimensions and fill the remaining space using the given background color.
+* `type/3` - Crop the image to the given dimensions using the **center** of the image as gravity point, and fill the remaining space using the given background color.
+* `type/4` - Crop the image to the given dimensions using the **top** of the image as gravity point, and fill the remaining space using the given background color.
+* `type/5` - Stretch the image to desired dimensions.
+
+#### Nearest Aspect Ratio
+
+Pass `nearest_aspect_ratio/1` to indicate that the resizing engine should attempt resizing the image to the nearest aspect ratio of the original image (or video) before cropping the image to the specified dimensions. This will always result in an image that was scaled (resized) to maintain the aspect ratio of the original image dimensions (regardless of what was specified in the `type` parameter), and only then cropped to the desired dimensions.
+
+For example:
+
+```
+// Consider this video thumbnail:
+https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh/width/200/height/50/
+// vs. this video thumbnail:
+https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh/width/200/height/50/nearest_aspect_ratio/1
+```
+
 
 ### Resizing  
 
