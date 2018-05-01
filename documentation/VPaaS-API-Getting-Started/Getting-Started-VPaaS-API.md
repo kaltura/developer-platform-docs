@@ -4,7 +4,7 @@ title: Get Started with Kaltura VPaaS
 weight: 101
 ---
 
-Building video experiences consists of ingesting media files, playing back videos, and reviewing usage and engagement analytics. In between, there is a world of nuances required for your unique use-case and application. Kaltura VPaaS is built on the principles of atomic services, SDKs, and tools that allow you full control and flexibility over every element and process in your media's lifecycle.
+Building video experiences consists of ingesting media files, playing back videos, and reviewing usage and engagement analytics. In between, there is a world of nuances required for your unique use-case and application. Kaltura VPaaS is built on the principles of atomic services, SDKs, and tools that allow you full control and flexibility over every element and process in your media's life cycle.
 
 The guides on this site, together with the [Kaltura Developer Tools](https://developer.kaltura.com), enable you to get started building your own video experiences and workflows, and provide you with everything you need to further explore the platform's capabilities and to become an expert.  
 
@@ -109,9 +109,9 @@ http://www.kaltura.com/p/{partner_id}/thumbnail/entry_id/{entry_id}/param1/value
 The result of the thumbnail API is a JPEG image with one or more of the following features:  
 
 * Re-sized, cropped and/or rotated version of the original
-* Taking a specific frame from a the video, in real-time
+* Taking a specific frame from a video, in real-time
 * Controlling the compression quality of the created thumbnail image
-* Preparation of Imahe Stripes for animating thumbnails via CSS
+* Preparation of Image Stripes for animating thumbnails via CSS
 * And more.
 
 > Read more about the [Dynamic Thumbnail API](/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html) and explore the [Thumbnail Animation with CSS Stripes Code Recipe](https://developer.kaltura.com/workflows/Engage_and_Publish/Animated_Thumbnails_with_CSS_Stripes).

@@ -9,9 +9,9 @@ This article describes how to set/ switch subtitles on when casting to Chromecas
 
 ## Get Subtitles
 
-### Make sure you impliment **KCastProviderDelegate** 
+### Make sure you implement **KCastProviderDelegate** 
 
-To get subtitles dictionary you should impliment the following delegate method:
+To get subtitles dictionary you should implement the following delegate method:
 
 ```objective_c    
 - (void)castProvider:(KCastProvider *)provider availableTextTracks:(NSDictionary *)subtitles {

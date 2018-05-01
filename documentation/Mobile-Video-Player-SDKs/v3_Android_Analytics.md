@@ -209,7 +209,7 @@ private void configureTVPAPIPlugin(PlayerConfig pluginConfig) {
 JsonObject TVPAPIConfigEntry = new JsonObject();
 TVPAPIConfigEntry.addProperty("fileId", "fileId");
 TVPAPIConfigEntry.addProperty("baseUrl", "base url"); //Sample url - http://tvpapi-     preprod.ott.kaltura.com/v3_9/gateways/jsonpostgw.aspx?
-TVPAPIConfigEntry.addProperty("timerInterval", timer value for HIT events - in millisecondes);//Default value - 30000
+TVPAPIConfigEntry.addProperty("timerInterval", timer value for HIT events - in milliseconds);//Default value - 30000
 TVPAPIConfigEntry.add("initObj", initObj); // must be a valid initObj of TVPAPI
 ```
 
@@ -272,7 +272,7 @@ private void configurePhoenixPlugin(PlayerConfig pluginConfig) {
         phoenixConfigEntry.addProperty("partnerId", "partner id");
         phoenixConfigEntry.addProperty("baseUrl", "base url");
         phoenixConfigEntry.addProperty("ks", ks); 
-        phoenixConfigEntry.addProperty("timerInterval", timer value for HIT events - in millisecondes);//Default value - 30000
+        phoenixConfigEntry.addProperty("timerInterval", timer value for HIT events - in milliseconds);//Default value - 30000
 ```
 
 ### Set the Plugin Configuration to the Phoenix Stats Plugin  

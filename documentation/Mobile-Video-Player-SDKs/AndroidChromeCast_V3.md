@@ -120,14 +120,14 @@ public interface KCastProvider {
 
 ### Change Media
 
-In oreder to switch between videos during cast playback you should use 
+In order to switch between videos during cast playback you should use 
 
-#####OVP
+##### OVP
 ```
 mPlayer.changeMedia("Entry ID");
 ```
 
-#####OTT
+##### OTT
 
 ```
 String URL = "Your thumbnail url";
@@ -140,7 +140,7 @@ mPlayer.getConfig().addConfig("chromecast.defaultThumbnail", URL);
 mPlayer.changeMedia(proxyData JSON Object);
 ```
 
-### it is rewuired to set castProvider again in case that player activity or fragment was destroyed.
+### it is required to set castProvider again in case that player activity or fragment was destroyed.
 ### Demo Application  
 
 A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this 

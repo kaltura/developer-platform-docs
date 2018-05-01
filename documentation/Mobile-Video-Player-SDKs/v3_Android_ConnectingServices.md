@@ -350,7 +350,7 @@ SessionProvider sessionProvider = new SessionProvider() {
 
 ### Provided Implementation
 
-You can create a SessionProvider using the existing OttSessionProvider or OvpSessionProvider providerrs.
+You can create a SessionProvider using the existing OttSessionProvider or OvpSessionProvider providers.
 
 #### OttSessionProvider  
 

@@ -2,9 +2,9 @@
 layout: page
 ---
 
-## Application Lifecycle  
+## Application Life cycle  
 
-The following section details the iOS application lifecycle.
+The following section details the iOS application life cycle.
 
 ### Application State Changes  
 

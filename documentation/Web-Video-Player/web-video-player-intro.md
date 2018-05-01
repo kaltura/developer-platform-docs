@@ -65,7 +65,7 @@ Our HTML5 video library provides you with the most advanced mobile delivery tech
 
 ### Easy to Integrate  
 
-Kaltura's multi-platform support ensures easy integration for iOS and Android player components on both mobile devices and tablets, providing maximum flexibility, while the player architecture enables you to reuse plugins and configurations across platforms, and seamlessly integrate bothadvanced live broadcasts streaming and DRM.
+Kaltura's multi-platform support ensures easy integration for iOS and Android player components on both mobile devices and tablets, providing maximum flexibility, while the player architecture enables you to reuse plugins and configurations across platforms, and seamlessly integrate both advanced live broadcasts streaming and DRM.
 
 ### Customizable  Design
 

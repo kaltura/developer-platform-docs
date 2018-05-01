@@ -7,7 +7,7 @@ weight: 410
 The Kaltura Web Video Player supports localization for most languages by specifying the language-corresponding locale key.   
 See this article for a *complete listing of supported locale keys*. 
 
-Setting a locale key translates all UI labels, messages and tooltips to the required language.  
+Setting a locale key translates all UI labels, messages and tool tips to the required language.  
 
 > Note: Not all locales are supported in all of the Player UI components. While the basic UI is fully supported, some plugins may not have all local translations available.
 
@@ -53,7 +53,7 @@ localizationCode=auto
 
 ## Custom Localized Strings  
 
-You can add missing strings or change existing strings for any locale using the `strings` plugin. The strings plugin defines keys and values for all Player labels and tooltips. 
+You can add missing strings or change existing strings for any locale using the `strings` plugin. The strings plugin defines keys and values for all Player labels and tool-tips. 
 
 > Read this article for [a complete list of available strings keys and default English values](http://player.kaltura.com/modules/KalturaSupport/tests/StringsLocale.html).  
 

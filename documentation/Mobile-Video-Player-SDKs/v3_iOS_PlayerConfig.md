@@ -32,7 +32,7 @@ PlayerConfig *config = [PlayerConfig new];
 
 The MediaEntry can be created using one of the following methods:
 
-* Manually, by instatiating a new `PKMediaEntry` instance and filling the fields.
+* Manually, by instantiating a new `PKMediaEntry` instance and filling the fields.
 * Using a `MockMediaProvider` to create a `PKMediaEntry` from a JSON input file or JsonObject.
 * Using a remote media provider, provided the `MediaEntryProvider` implementations: 
   * For OVP environments, use `KalturaOvpMediaProvider`
