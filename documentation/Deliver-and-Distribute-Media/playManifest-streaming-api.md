@@ -37,8 +37,8 @@ To use the `playManifest` API action, consider the following steps:
 
 | Protocol + Domain             | Description                         |
 |-------------------------------|-------------------------------------|
-| https://cdnapisec.kaltura.com | Secure HTTPS Request. **Recommended**. |
-| https://cdnapisec.kaltura.com        | Standard HTTP Request.              |
+| https://cdnapisec.kaltura.com | HTTPs endpoint **Recommended**. |
+| http://cdnapi.kaltura.com        | HTTP endpoint.              |
 
 3.  Next, replace the following **required parameters**:
 
