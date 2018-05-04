@@ -65,7 +65,7 @@ For auto / iFrame embeds, pass the key / value pairs on the iFrame URL query str
 * Instead of `flashvars: { share: { plug: true } }`, use the following notation: `flashvars[share.plugin]=true`
 
 ```html
-<iframe src="http://cdnapi.kaltura.com/p/1645161/sp/164516100/embedIframeJs/uiconf_id/33752651/partner_id/1645161?iframeembed=true&playerId=kaltura_player&entry_id=1_1josgev8&flashvars[autoPlay]=true&flashvars[share.plugin]=true" width="560" height="395" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
+<iframe src="https://cdnapisec.kaltura.com/p/1645161/sp/164516100/embedIframeJs/uiconf_id/33752651/partner_id/1645161?iframeembed=true&playerId=kaltura_player&entry_id=1_1josgev8&flashvars[autoPlay]=true&flashvars[share.plugin]=true" width="560" height="395" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
 ```
 
 ## Common Player Configuration Scenarios

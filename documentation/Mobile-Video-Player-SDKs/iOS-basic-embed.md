@@ -32,7 +32,7 @@ To initialize the a PlayerViewController for fullscreen, use the following comma
 - (KPViewController *)player {
     if (!_player) {
         // Account Params
-        KPPlayerConfig *config = [[KPPlayerConfig alloc] initWithServer:@"http://cdnapi.kaltura.com"
+        KPPlayerConfig *config = [[KPPlayerConfig alloc] initWithServer:@"https://cdnapisec.kaltura.com"
                                                          uiConfID:@"26698911"
                                                          partnerId:@"1831271"];
         

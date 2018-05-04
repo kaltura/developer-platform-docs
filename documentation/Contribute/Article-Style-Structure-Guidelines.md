@@ -102,7 +102,7 @@ Please always ensure that a descriptive Alt text is specified on your image to e
 ## Adding Diagrams
 &#123;% plantuml %&#125;
 
-Participant App
+participant App
 participant "Kaltura Player" as KP
 
 App->KP: setCustomURLProvider(localURLProvider)
