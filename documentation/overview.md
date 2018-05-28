@@ -18,7 +18,7 @@ This API documentation provides specific information on:
 * Kaltura Objects and their related properties
 * Kaltura Enumerated Types and their values
 
-> Note: A prerequisite for using Kaltura APIs is obtaining your Kaltura account ID (aka the Partner ID or pid).
+> Note: A prerequisite for using Kaltura APIs is obtaining your Kaltura account ID (aka the Partner ID or PID).
 If you already have a Kaltura account you will find your account ID and API secret in the KMC under the Settings > Integration Settings tab. To create a new Kaltura account, [register here for a free-trial Kaltura VPaaS account](https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=overviewpage&utm_medium=website).
 
 If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](/api-docs/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
