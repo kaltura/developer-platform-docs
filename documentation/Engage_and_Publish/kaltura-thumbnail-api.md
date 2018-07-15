@@ -140,7 +140,7 @@ https://cdnapisec.kaltura.com/p/811441/thumbnail/entry_id/0_wf3km7rh/width/200/h
 
 ### Cropping
 
-Using the `src_x`, `src_y`, `src_w` and `src_y` parameters, it is possible to define a cropping rectangle, indicating the X and Y to position the rectangle at and W and H to indicate the size of the rectangle. The returned thumbnail will then be the pixels of the image that are within the defined rectangle.
+Using the `src_x`, `src_y`, `src_w` and `src_h` parameters, it is possible to define a cropping rectangle, indicating the X and Y to position the rectangle at and W and H to indicate the size of the rectangle. The returned thumbnail will then be the pixels of the image that are within the defined rectangle.
 
 | Source Thumbnail | Cropped (300, 100, 500, 400) |
 |-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
