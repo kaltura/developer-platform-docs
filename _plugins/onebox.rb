@@ -13,7 +13,7 @@ module Jekyll
       # pipe param through liquid to make additional replacements possible
       url = Liquid::Template.parse(@text).render context
       preview = Onebox.preview(url.strip) 
-	#print "ahhh" + "#{preview}"
+	print "ahhh" + "#{preview}"
       "#{preview}"
 
     end

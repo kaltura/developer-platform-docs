@@ -26,5 +26,4 @@ To learn how to setup player plugins read: [Configuring Analytics Plugins](https
 * [comScore](http://player.kaltura.com/docs/ComscoreAnalytics)
 * [Nielsen](http://player.kaltura.com/docs/NielsenVideoCensus)
 * [Google Analytics](https://knowledge.kaltura.com/node/1148#googleanalytics)
-* [Adobe Heartbeat](http://player.kaltura.com/modules/Heartbeat/tests/HeartBeatDemo.html)
 * [Chartbeat](http://support.chartbeat.com/docs/video.html#kaltura)
