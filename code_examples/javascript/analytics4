@@ -1,14 +1,17 @@
-let reportType = kaltura.enums.ReportType.TOP_CONTRIBUTORS;
-let reportInputFilter = new kaltura.objects.KalturaReportInputFilter();
+var reportType = "5"
+var reportInputFilter = {objectType: "KalturaReportInputFilter"};
 reportInputFilter.fromDay = "20181001";
 reportInputFilter.toDay = "20181031";
-let pager = new kaltura.objects.FilterPager();
-pager.pageIndex = 1;
+var pager = {objectType: "KalturaFilterPager"};
 pager.pageSize = 20;
-let order = "count_total";
+pager.pageIndex = 1;
+var order = "count_total";
 
-kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
-.execute(client)
-.then(result => {
-    console.log(result);
+KalturaReportService.getTable(reportType, reportInputFilter, pager, order)
+.execute(client, function(success, results) {
+  if (!success || (results && results.code && results.message)) {
+    console.log('Kaltura Error', success, results);
+  } else {
+    console.log('Kaltura Result', results);
+  }
 });
