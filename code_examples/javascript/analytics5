@@ -1,15 +1,18 @@
-let reportType = kaltura.enums.ReportType.MAP_OVERLAY;
-let reportInputFilter = new kaltura.objects.KalturaReportInputFilter();
+var reportType = "4"
+var reportInputFilter = {objectType: "KalturaReportInputFilter"};
 reportInputFilter.fromDay = "20181001";
 reportInputFilter.toDay = "20181031";
-let pager = new kaltura.objects.FilterPager();
-pager.pageIndex = 1;
+var pager = {objectType: "KalturaFilterPager"};
 pager.pageSize = 20;
-let order = "count_plays"
-let objectIds = "Germany";
+pager.pageIndex = 1;
+var order = "count_plays";
+var objectIds = "Germany";
 
-kaltura.services.report.getTable(reportType, reportInputFilter, pager, order, objectIds)
-.execute(client)
-.then(result => {
-    console.log(result);
+KalturaReportService.getTable(reportType, reportInputFilter, pager, order, objectIds)
+.execute(client, function(success, results) {
+  if (!success || (results && results.code && results.message)) {
+    console.log('Kaltura Error', success, results);
+  } else {
+    console.log('Kaltura Result', results);
+  }
 });
