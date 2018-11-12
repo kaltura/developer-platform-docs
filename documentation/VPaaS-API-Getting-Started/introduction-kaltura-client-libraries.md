@@ -118,9 +118,7 @@ If you use a standard Kaltura On‑Prem, you need local client libraries. See [G
 
 If you use a standard Kaltura CE, you need local client libraries. See [Generating a Client Library for Kaltura On Prem and Kaltura CE][5].
 
-<p class="mce-heading-3">
-  <a name="GeneratingaClientLibraryforaLanguagethat"></a>Generating a Client Library for a Language that Kaltura Does Not Provide
-</p>
+## Generating a Client Library for a Language that Kaltura Does Not Provide
 
 If you want a client library for a language that Kaltura does not provide, you need to [generate a specialized Kaltura client library][6].
 
@@ -188,9 +186,7 @@ If you use a standard Kaltura Hosted Edition, see [Getting a Client Library for 
 
 If you have specialized needs, see [Generating a Specialized Kaltura Client Library][6].
 
-<p class="mce-heading-4">
-  Understanding Client Libraries and Self-Hosted Kaltura Servers
-</p>
+## Understanding Client Libraries and Self-Hosted Kaltura Servers
 
 Kaltura On-Prem and Kaltura CE use self-hosted Kaltura servers.
 
@@ -809,7 +805,7 @@ try { // tell the client to start stacking actions for multi-request
   $mediaEntry = $results[0]; 
   $updatedMediaEntry = $results[1]; 
   echo "entry tags: " . $mediaEntry->tags; 
-  echo "new entry desription: " . $updatedMediaEntry->description; 
+  echo "new entry description: " . $updatedMediaEntry->description; 
 } catch(Exception $ex) { 
   echo "could not get entry from Kaltura. Reason: " . $ex->getMessage(); 
 }

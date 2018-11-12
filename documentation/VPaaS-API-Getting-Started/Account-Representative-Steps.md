@@ -36,7 +36,7 @@ When done, save your changes.
 
 ### Creating a User with the Desired Content Permissions   
 
-If you're using entitlements or MediaSpace, you may use a "service user" to restrict the content access permissions of the Application Token. You may create a new user, or use an existing user entity (such as a MediaSpace user). This user entity must be correctly permissioned with entitlements to the Channels or categories that you want to provide your development partners.
+If you're using entitlements or MediaSpace, you may use a "service user" to restrict the content access permissions of the Application Token. You may create a new user, or use an existing user entity (such as a MediaSpace user). This user entity must be correctly configured with entitlements to the Channels or categories that you want to provide your development partners.
 
 **Note:** Do not use a KMC user for this purpose, because a KMC user has unrestricted content access.
 

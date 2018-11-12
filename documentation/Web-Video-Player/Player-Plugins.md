@@ -162,8 +162,8 @@ this.getPlayer().getPlayerElement();
 ```
 
 
-## The Player Plugin Lifecycle
-The following section details the methods used in the Player plugin lifecyle.
+## The Player Plugin Life cycle
+The following section details the methods used in the Player plugin life cyle.
 
 ### isSafeEnviornment Method
 

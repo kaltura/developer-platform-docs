@@ -15,7 +15,7 @@ The Kaltura Player will handle all of the cast logic and playback; you will need
 In this article, we'll show you how to use the Chromecast plugin in Android devices. This can be implemented in one of two ways:
 
 1. **Kaltura's Chromecast icon:**
-	Managed by the Kaltura SDK, the icon will be visible only when the first Chromecast device is detected when using the html5 controls.
+	Managed by the Kaltura SDK, the icon will be visible only when the first Chromecast device is detected when using the HTML5 controls.
 2. **Your own custom button:**
 	Use this option if you want the button to be part of the application and not part of the Player.
 	* `mPlayer.getKCastRouterManager().enableKalturaCastButton(false);`
@@ -31,7 +31,7 @@ In this article, we'll show you how to use the Chromecast plugin in Android devi
     }
 	```
 	When devices are in range, you'll get a notification to add the device to your list.
-	when the end user clicks the button, you should show the device list and send the selected device using the `connectDevice(mRouterInfos.get(item).getRouterId())` function.
+	When the end user clicks the button, you should show the device list and send the selected device using the `connectDevice(mRouterInfos.get(item).getRouterId())` function.
 	Code example:
 	
 ```java

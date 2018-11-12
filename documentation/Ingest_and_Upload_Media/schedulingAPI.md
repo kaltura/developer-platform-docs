@@ -117,7 +117,7 @@ For example, the request  http://www.kaltura.com/service/schedule_scheduleevent/
 
 ### FTP  
 
-FTP can be used to retrieve [a list of events](ftp://api.kaltura.com/format/ical/schedule_scheduleevent/filter:objectType/KalturaScheduleEventFilter/). The maxiumum number of returned results is 10,000 (500 max per page, 20 pages max). Partners can use the FTP list to identify which files have changed or are new, and then sync only the delta. 
+FTP can be used to retrieve [a list of events](ftp://api.kaltura.com/format/ical/schedule_scheduleevent/filter:objectType/KalturaScheduleEventFilter/). The maximum number of returned results is 10,000 (500 max per page, 20 pages max). Partners can use the FTP list to identify which files have changed or are new, and then sync only the delta. 
 
 The results can be filtered on any of the parameters. For example: 
 ftp://api.kaltura.com/format/ical/schedule_scheduleevent/filter:objectType/KalturaScheduleEventFilter/filter:resourceIdsLike/RESOURCE-ID. 

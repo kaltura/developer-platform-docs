@@ -83,7 +83,7 @@ private void configureGenericAnalyticsPlugin(PlayerConfig pluginConfig)
 
 ## Set the Plugin Configuration to the Analytics Plugin  
 
-For the Analytics Plugin to start loading, you'll need to set the plugin configugration you created as follows:
+For the Analytics Plugin to start loading, you'll need to set the plugin configuration you created as follows:
 
 
 {% highlight java %}

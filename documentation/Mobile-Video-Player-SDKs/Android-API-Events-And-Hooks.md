@@ -15,7 +15,7 @@ The Android API supports the following events and hooks.
 
 #### KMediaControl  
 
-The SDK offeres the ability to perform Player operations using the KMediaControl API.
+The SDK offers the ability to perform Player operations using the KMediaControl API.
 This API enables you to send the following operations:
   
 
@@ -23,8 +23,8 @@ This API enables you to send the following operations:
 |:-------------  |:----------  |:---------- |
 |start      |   | Start playing the media  |  
 | pause     |  | Pause the current playback         | 
-| seek     | (long milliSeconds) | Seek a specific time position          | 
-| seek     | (long milliSeconds, SeekCallback callback) | Seek a specific time position and call callback to be called when seek is done         |
+| seek     | (long milliseconds) | Seek a specific time position          | 
+| seek     | (long milliseconds, SeekCallback callback) | Seek a specific time position and call callback to be called when seek is done         |
 | canSeekForward     |  | Check if seek backwards is possible         |
 | canSeekBackward     |  | Check if seek forward is possible          | 
 | replay     |  | Start over the playback         |
@@ -183,7 +183,7 @@ In some cases, the end user will want to wait until the ready event is received 
        
 ```       
 
-### Enable/Diable Configuration on Runtime  
+### Enable/Disable Configuration on Runtime  
 
 In some cases, the application will want to add or remove configuration attributes according to states or events that are received.
 The Player provides an API for enabling and disabling these settings, the setKDPAttribute, which receives three parameters:

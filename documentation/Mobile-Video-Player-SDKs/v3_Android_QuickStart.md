@@ -15,7 +15,7 @@ In this section, you'll learn how to build a simple video application.
 ```java
 include ':playkit', ':playkitdemo'
 ```
-3 . In your build.gradle file, add the dependancy for the SDK:
+3 . In your build.gradle file, add the dependency for the SDK:
 	
 ```java
 compile project(path: ':playkit')

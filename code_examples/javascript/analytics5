@@ -1,0 +1,18 @@
+var reportType = "4"
+var reportInputFilter = {objectType: "KalturaReportInputFilter"};
+reportInputFilter.fromDay = "20181001";
+reportInputFilter.toDay = "20181031";
+var pager = {objectType: "KalturaFilterPager"};
+pager.pageSize = 20;
+pager.pageIndex = 1;
+var order = "count_plays";
+var objectIds = "Germany";
+
+KalturaReportService.getTable(reportType, reportInputFilter, pager, order, objectIds)
+.execute(client, function(success, results) {
+  if (!success || (results && results.code && results.message)) {
+    console.log('Kaltura Error', success, results);
+  } else {
+    console.log('Kaltura Result', results);
+  }
+});

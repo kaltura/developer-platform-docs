@@ -8,7 +8,7 @@ Kaltura's Web Video Player is an easy-to-use, powerful, flexible video platform,
 
 Kaltura's Web Video Player leads the industry in flexibility, ease of customization, plug-in offerings and loading speed. All of the Kaltura Web Video Player features are supported on both HTML5 and Flash using the same configuration, which makes feature integration across platforms simple and easy. 
 
-{% onebox http://cdnapi.kaltura.com/p/243342/sp/24334200/embedIframeJs/uiconf_id/20540612/partner_id/243342?iframeembed=true&playerId=kaltura_player&entry_id=1_sf5ovm7u&flashvars[streamerType]=auto %}
+{% onebox https://cdnapisec.kaltura.com/p/243342/sp/24334200/embedIframeJs/uiconf_id/20540612/partner_id/243342?iframeembed=true&playerId=kaltura_player&entry_id=1_sf5ovm7u&flashvars[streamerType]=auto %}
 
 Note that the easiest way to use Kaltura's Web Video Player is to build a player using [Kaltura's Universal Studio](https://knowledge.kaltura.com/node/1148), which provides a user-friendly UI for building and customizing the player. 
 
@@ -65,7 +65,7 @@ Our HTML5 video library provides you with the most advanced mobile delivery tech
 
 ### Easy to Integrate  
 
-Kaltura's multi-platform support ensures easy integration for iOS and Android player components on both mobile devices and tablets, providing maximum flexibility, while the player architecture enables you to reuse plugins and configurations across platforms, and seamlessly integrate bothadvanced live broadcasts streaming and DRM.
+Kaltura's multi-platform support ensures easy integration for iOS and Android player components on both mobile devices and tablets, providing maximum flexibility, while the player architecture enables you to reuse plugins and configurations across platforms, and seamlessly integrate both advanced live broadcasts streaming and DRM.
 
 ### Customizable  Design
 

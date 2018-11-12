@@ -11,7 +11,7 @@ This article describes how to save the Player state when the application moves t
 * The end user pressed the power button.
 * Viewing was interrupted by a telephone call or similar interruption.
 
-## Background State: Home Button and Phone Call Interuption  
+## Background State: Home Button and Phone Call Interruption  
 
 1. In the onPause() method, call: `mPlayer.releaseAndSavePosition(boolean shouldRestoreState)`. 
 Use `true` if you want to save the state and  `false` if you want to go back to the pause state.

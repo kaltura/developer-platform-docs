@@ -5,7 +5,7 @@ subcat: SDK 2.0 - iOS
 weight: 240
 ---
 
-This article describes how to use the iOS Player Lifecycle API when creating a KPViewController instance to manage the lifecycle of this instance.
+This article describes how to use the iOS Player Life cycle API when creating a KPViewController instance to manage the life cycle of this instance.
 
 ## Creating a KPViewController Instance
 After creating the Player, implement the following objective:

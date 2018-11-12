@@ -19,15 +19,15 @@ and more...
 
 ## Mobile Video Player SDK Architecture Overview  
 
-The Kaltura Video Player's architecture is designed to allow for a seamless integration experience, enabling you to connect mutltiple playback engines and platforms. The Kaltura Video Player wraps the playback engine with the same interface and events, thereby allowing the same plugin code to work across multiple platforms, including iOS, Android, and web.  
+The Kaltura Video Player's architecture is designed to allow for a seamless integration experience, enabling you to connect multiple playback engines and platforms. The Kaltura Video Player wraps the playback engine with the same interface and events, thereby allowing the same plugin code to work across multiple platforms, including iOS, Android, and web.  
 
-Each platform supports different types of streaming capabilites and DRMs. The Kaltura Video Player's technology determines the best streaming delivery method and DRM as needed. Plugins can be used with or without the UI, and can work cross-platform. Some plugins require native support, such as Chromecast, DRM and ads. The Kaltura Video Player-SDK provides the DRM, Chromecast, and ads features out-of-the-box.  
+Each platform supports different types of streaming capabilities and DRMs. The Kaltura Video Player's technology determines the best streaming delivery method and DRM as needed. Plugins can be used with or without the UI, and can work cross-platform. Some plugins require native support, such as Chromecast, DRM and ads. The Kaltura Video Player-SDK provides the DRM, Chromecast, and ads features out-of-the-box.  
 
 The Kaltura Video Player exposes APIs - both basic APIs and common - for all platforms. If you are an iOS developer and you have already worked with AVFoundation, you should expect the same API as if you used the native player API.  
 
-The Player API supports sending notifications to the Kaltura Video Player, listening to events, and evaulating properties. 
+The Player API supports sending notifications to the Kaltura Video Player, listening to events, and evaluating properties. 
 
-Each Kaltura Video Video Player configuration includes the UICONF object, which includes the player configuration and indicates which plugins should be loaded. Every componenet of the layer is designed as a plugin.  
+Each Kaltura Video Video Player configuration includes the UICONF object, which includes the player configuration and indicates which plugins should be loaded. Every component of the layer is designed as a plugin.  
 
 ## The Kaltura Video Player Architecture
 
@@ -114,7 +114,7 @@ These settings will prevent loading the thumbnails assets.
 Set this on your own discretion, as it is dependent of application usage (weather it uses web component scrubber or not, or if it needs poster on start or not).
 
 
-## Player Version Managment  
+## Player Version Management  
 
 The Mobile Video Player SDKs are native iOS and Android wrapper libraries for the [Kaltura Web Video Player Library](/api-docs/04_Web-Video-Player/Player-Configuration.html).  
 We recommend using the latest version of both the Kaltura Web Video Player and the native Mobile Player SDKs.  
@@ -145,7 +145,7 @@ The following are the Kaltura-provided plugins that you can implement in your sy
 | watermark |        |               V |         V |
 | theme | Custom style for the player - supported only for the web theme, Mobile is TBD       |               V |         V |
 | infoScreen |        |               V |         V |
-| share |  The share uses native capabilites for social networks     |               V |         V |
+| share |  The share uses native capabilities for social networks     |               V |         V |
 | youbora |  analytics plugin - add link      |               V |         V |
 | DoubleClick | Ads - Full native support      |               V |         V |
 | multiDrm | To enable DRM you'll need to enable this plugin       |               V |         V |

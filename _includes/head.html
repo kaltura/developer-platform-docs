@@ -36,13 +36,6 @@ window.jQuery = window.jquery;
   </script>
   <script type="text/javascript">var switchTo5x=true;</script>
 
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-        window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":#,"theme":"light-bottom"};
-    </script>
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-    <!-- End Cookie Consent plugin -->
   
 <!--script src="assets/js/country.js"></script-->
 
@@ -142,10 +135,10 @@ function verify_recapcha()
 </script>
 <!--script type="text/javascript" src="assets/js/webflow.js"></script>
 <script type="text/javascript" src="assets/js/opentip-jquery.js"></script-->
-    <script type="text/javascript">
-      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+    <!--script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
         heap.load("176893769");
-  </script>
+  </script-->
 
 <!--link rel="stylesheet" type="text/css" href="assets/css/lity.min.css"-->
 <!--script type="text/javascript" src="assets/js/lity.min.js"></script-->
@@ -155,7 +148,7 @@ function verify_recapcha()
 (function(c,h,a,f,i,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 c[a].a=i;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
 g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
-})(window,document,"rtp","//sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js","kaltura");
+})(window,document,"rtp","https://sjrtp3-cdn.marketo.com/rtp-api/v1/rtp.js","kaltura");
 rtp('send','view');
 rtp('get', 'campaign',true);
 </script>

@@ -69,7 +69,7 @@ The following configurations are optional for casting:
 
 ## Live vs. VOD    
 
-The following section shows the differences betwen the Live and VOD casting:
+The following section shows the differences between the Live and VOD casting:
 
 **Ads**
 - CastAdParser

@@ -10,7 +10,7 @@ Errors from the observation comes as `NSError` object that includes: domain, err
 
 ## Error Domains and Codes
 
-All error domains are centerlized at `PKErrorDomain` for easy access, for example: `PKErrorDomain.Player` get the player error domain. 
+All error domains are centralized at `PKErrorDomain` for easy access, for example: `PKErrorDomain.Player` get the player error domain. 
 
 ### Player - (`PlayerError`)
 

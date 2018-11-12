@@ -112,7 +112,7 @@ _entries.json_
     "sources": [
       {
         "id": "0_pl5lbfo0_dash",
-        "url": "http://cdnapi.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd",
+        "url": "https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd",
         "drmData": {
           "licenseUri": "https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"
         }
@@ -127,7 +127,7 @@ _entries.json_
       {
         "id": "1_1h1vsv3z_dash",
         "mimeType": "application/dash+xml",
-        "url": "http://cdnapi.kaltura.com/p/2209591/sp/0/playManifest/entryId/1_1h1vsv3z/format/mpegdash/protocol/http/a.mpd"
+        "url": "https://cdnapisec.kaltura.com/p/2209591/sp/0/playManifest/entryId/1_1h1vsv3z/format/mpegdash/protocol/http/a.mpd"
       }
     ]
   }
@@ -142,7 +142,7 @@ _singleEntry.json_
     "sources": [
       {
         "id": "0_pl5lbfo0_dash",
-        "url": "http://cdnapi.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd",
+        "url": "https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd",
         "drmData": {
             "licenseUri": "https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"
         }
@@ -350,7 +350,7 @@ SessionProvider sessionProvider = new SessionProvider() {
 
 ### Provided Implementation
 
-You can create a SessionProvider using the existing OttSessionProvider or OvpSessionProvider providerrs.
+You can create a SessionProvider using the existing OttSessionProvider or OvpSessionProvider providers.
 
 #### OttSessionProvider  
 

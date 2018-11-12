@@ -16,7 +16,7 @@ The player’s architecture is designed to allow a seamless integration experien
 
 The Kaltura Video Player wraps the playback engine with the same interface and events, thereby allowing the same plugin code to work across multiple platforms, including iOS, Android, and web.
 
-Each platform supports different types of streaming capabilites and DRMs. The Kaltura Video Player’s technology determines the best streaming delivery method and DRM as needed. The Player API supports sending notifications to the Kaltura Video Player, listening to events, and evaluating properties.
+Each platform supports different types of streaming capabilities and DRMs. The Kaltura Video Player’s technology determines the best streaming delivery method and DRM as needed. The Player API supports sending notifications to the Kaltura Video Player, listening to events, and evaluating properties.
 
 ## Supported Features  
 
