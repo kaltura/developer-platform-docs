@@ -1,3 +1,0 @@
-const kaltura = require('kaltura-client');
-const config = new kaltura.Configuration();
-const client = new kaltura.Client(config);
