@@ -1,5 +1,0 @@
-kaltura.services.eSearch.searchEntry(searchParams)
-.execute(client)
-.then(result => {
-    console.log(result);
-});
