@@ -1,7 +1,0 @@
-let uploadToken = new kaltura.objects.UploadToken();
-
-kaltura.services.uploadToken.add(uploadToken)
-.execute(client)
-.then(token => {
-    console.log(token);
-});
