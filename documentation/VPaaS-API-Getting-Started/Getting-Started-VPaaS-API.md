@@ -22,7 +22,7 @@ Setup looks like this:
 {% code_example setup %}
 &nbsp;
 
-The steps below will walk you through a few basic Kaltura API's, but if you're looking for languages that are not available here, you can click on any of the actions mentioned to see them in our [interactive console](https://developer.kaltura.com/console). 
+The steps below will walk you through a few basic Kaltura APIs. If you're looking for languages that are not available here, you can click on any of the actions mentioned to see them in our [interactive console](https://developer.kaltura.com/console). 
  
 ## Kaltura Session
  
