@@ -20,19 +20,22 @@ Once you’ve downloaded the client library, you'll need to import the library a
 Setup looks like this:
 
 {% code_example setup %}
+&nbsp;
+
+The steps below will walk you through a few basic Kaltura APIs. If you're looking for languages that are not available here, you can click on any of the actions mentioned to see them in our [interactive console](https://developer.kaltura.com/console). 
  
 ## Kaltura Session
  
 Because the Kaltura API is stateless, every request made to the API requires an authentication session to be passed along with the request. With the client library, it’s easy to set it once using the [`session.start`](https://developer.kaltura.com/console/service/session/action/start) API action, like this:
 
 {% code_example session %}
-
+&nbsp;
 *Specifying an `app id` which contains the name and domain of the app allows you to get specific analytics per application, for cases where you’re running your application on various domains.*
 
 Try it interactively [with this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/Authentication). 
 
-Generating a KS with `session.start` is simple, and great for applications which you alone have access to. 
-Other methods include the `user.loginByLoginId` action, which allows users to log in using their own KMC credentials, and the `appToken` service, which is recommended when providing access to applications in production that are managed by others. 
+Generating a KS with [`session.start`](https://developer.kaltura.com/console/service/session/action/start) is simple, and great for applications which you alone have access to. 
+Other methods include the [`user.loginByLoginId`](https://developer.kaltura.com/api-docs/service/user/action/loginByLoginId) action, which allows users to log in using their own KMC credentials, and the `appToken` service, which is recommended when providing access to applications in production that are managed by others. 
 Learn more [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html/) about various ways to create a Kaltura Session.
 
  
@@ -44,6 +47,7 @@ Kaltura is built to handle files of all types and size. To best handle the uploa
 You’ll use [`uploadToken.add`](https://developer.kaltura.com/console/service/uploadToken/action/add) to create an uploadToken for your new video.
 
 {% code_example media1 %}
+&nbsp;
 
 An UploadToken is essentially a container that holds any file that will be uploaded to Kaltura. The token has an ID that is attached to the location of the file.  This process allows the upload to happen independently of the entry creation. In the case of large files, for example, the same uploadToken ID is used for each chunk of the same file.
 
@@ -66,6 +70,7 @@ To upload manually, continue following the steps:
 We’ll call [`uploadToken.upload`](https://developer.kaltura.com/console/service/uploadToken/action/upload) to upload a new video file using the newly created token. If you don't have a video file handy, you can right-click [this link](http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv) to save a sample video of Kaltura's logo. In the case of large files, `resume` should be set to `true` and `finalChunk` is set to `false` until the final chunk. `resumeAt` determines at which byte to chunk the next fragment. 
 
 {% code_example media2 %}
+&nbsp;
 
 **Step 3: Creating the Kaltura Media Entry**
 
@@ -81,6 +86,7 @@ The Kaltura Entry is a logical object that package all of the related assets to 
 Now that you have your entry, you need to associate it with the uploaded video token using [`media.addContent`](https://developer.kaltura.com/console/service/media/action/addContent). 
 
 {% code_example media4 %}
+&nbsp;
 
 At this point, Kaltura will start analyzing the uploaded file, prepare for the transcoding and distribution flows and any other predefined workflows or notifications.
 
@@ -91,34 +97,40 @@ To retrieve that newly uploaded entry, we'll use the [Kaltura Search API](https:
 If you have multiple search conditions, you would set an `AND` or `OR` to your operator, but in this case we’ll only be searching for one item. However, you still need to add a searchItems array to the operator. 
 
 {% code_example search1 %}
+&nbsp;
 
 **Step 2: Search Type**
 
 We'll be using the Unified search, which searches through all entry data, such as metadata and captions. Other options are `KalturaESearchEntryMetadataItem` or `KalturaESearchEntryCuePointItem`. We'll add that search item to the first index of the search operator.
 
 {% code_example search2 %}
+&nbsp;
 
 **Step 3: Search Term**
 
 We'll search for the kaltura logo sample video, which we named accordingly.
 
 {% code_example search3 %}
+&nbsp;
 
 **Step 4: Search Item Type**
 
 In this case, we want an exact match of the text in our search term. Other options are `partial` or `startsWith`. 
 
 {% code_example search4 %}
+&nbsp;
 
 **Step 5: Add Highlight**
 
 We set `addHighlight` to True so that we can see exactly where our search term appeared in the search results. 
 
 {% code_example search5 %}
+&nbsp;
 
 **Step 6: Search**
 
 {% code_example search6 %}
+&nbsp;
 
 Success! The result will return as a list of  `KalturaMediaEntry` objects. 
 
