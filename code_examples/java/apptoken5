@@ -1,0 +1,15 @@
+AppToken appToken = new AppToken();
+appToken.setDescription("App Token with User and Privileges");
+appToken.setHashType(AppTokenHashType.SHA256.getValue());
+appToken.setSessionDuration(86400);
+appToken.setSessionPrivileges("setrole:1234567");
+appToken.setSessionType(SessionType.ADMIN.getValue());
+appToken.setSessionUserId("dummyuser@kaltura.com");
+
+AddAppTokenBuilder requestBuilder = AppTokenService.add(appToken)
+.setCompletion(new OnCompletion<Response<AppToken>>() {
+    @Override
+    public void onComplete(Response<AppToken> result) {
+        System.out.println(result);
+    }
+});

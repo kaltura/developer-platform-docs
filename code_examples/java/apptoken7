@@ -1,0 +1,5 @@
+client.setSessionId(result.ks);
+MessageDigest md = MessageDigest.getInstance("SHA-256");
+md.update(client.Ks + "123456512341234");
+byte[] res = md.digest();
+String hashString = toHexString(res);

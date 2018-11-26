@@ -1,0 +1,13 @@
+let appToken = new kaltura.objects.AppToken();
+appToken.description = "App Token with User and Privileges";
+appToken.hashType = kaltura.enums.AppTokenHashType.SHA256;
+appToken.sessionDuration = 86400;
+appToken.sessionPrivileges = "setrole:1234567";
+appToken.sessionType = kaltura.enums.SessionType.ADMIN;
+appToken.sessionUserId = "dummyuser@kaltura.com";
+
+kaltura.services.appToken.add(appToken)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

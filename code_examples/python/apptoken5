@@ -1,0 +1,10 @@
+appToken = KalturaAppToken()
+appToken.description = "App Token with User and Privileges"
+appToken.hashType = KalturaAppTokenHashType.SHA256
+appToken.sessionDuration = 86400
+appToken.sessionPrivileges = "setrole:1234567"
+appToken.sessionType = KalturaSessionType.ADMIN
+appToken.sessionUserId = "dummyuser@kaltura.com"
+
+result = client.appToken.add(appToken)
+print(result)

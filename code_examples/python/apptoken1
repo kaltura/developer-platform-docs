@@ -1,0 +1,7 @@
+appToken = KalturaAppToken()
+appToken.description = "Basic App Token"
+appToken.hashType = KalturaAppTokenHashType.SHA256
+appToken.sessionType = KalturaSessionType.ADMIN
+
+result = client.appToken.add(appToken)
+print(result)

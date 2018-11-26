@@ -1,0 +1,7 @@
+$categoryUser = new KalturaCategoryUser();
+$categoryUser->categoryId = 123456789;
+$categoryUser->permissionLevel = KalturaCategoryUserPermissionLevel::MEMBER;
+$categoryUser->userId = "JaneDoe";
+
+$result = $client->categoryUser->add($categoryUser);
+var_dump($result);

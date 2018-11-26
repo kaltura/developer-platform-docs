@@ -1,0 +1,14 @@
+String id = "<tokenID>";
+String tokenHash = "<tokenHash>";
+String userId = "enduser";
+SessionType type = SessionType.ADMIN.getValue();
+int expiry = 0;
+String sessionPrivileges = "";
+
+StartSessionAppTokenBuilder requestBuilder = AppTokenService.startSession(id, tokenHash, userId, type, expiry, sessionPrivileges)
+    .setCompletion(new OnCompletion<Response<SessionInfo>>() {
+        @Override
+        public void onComplete(Response<SessionInfo> result) {
+            System.out.println(result);
+    }
+});

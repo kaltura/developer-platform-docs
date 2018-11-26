@@ -1,0 +1,8 @@
+let widgetId = "_1234567";
+let expiry = 86400;
+
+kaltura.services.session.startWidgetSession(widgetId, expiry)
+.execute(client)
+.then(result => {
+    console.log(result);
+});
