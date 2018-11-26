@@ -103,7 +103,7 @@ We'll create a hash of the App Token `token` value together with the unprivilege
 &nbsp;
 
 
-The resulting string is the tokenHash which you'll use in the next step. 
+The resulting string is the `tokenHash` which you'll use in the next step. 
 
 ### Step 3: Generate the Session 
 
