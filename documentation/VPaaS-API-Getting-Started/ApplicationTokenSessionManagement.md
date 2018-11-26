@@ -1,3 +1,9 @@
+---
+layout: page
+title: Kaltura's Media Analytics
+weight: 110
+---
+
 # Application Token Session Management 
 
 An Application Token is useful in cases where different applications with varying permissions need access to your Kaltura account, without using your Admin Secret. 
