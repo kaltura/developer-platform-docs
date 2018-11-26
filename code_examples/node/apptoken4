@@ -1,0 +1,10 @@
+let categoryUser = new kaltura.objects.CategoryUser();
+categoryUser.categoryId = 123456789;
+categoryUser.permissionLevel = kaltura.enums.CategoryUserPermissionLevel.MEMBER;
+categoryUser.userId = "JaneDoe";
+
+kaltura.services.categoryUser.add(categoryUser)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

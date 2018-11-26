@@ -1,0 +1,5 @@
+$widgetId = "_1234567";
+$expiry = 86400;
+
+$result = $client->session->startWidgetSession($widgetId, $expiry);
+var_dump($result);

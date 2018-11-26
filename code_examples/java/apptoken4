@@ -1,0 +1,12 @@
+CategoryUser categoryUser = new CategoryUser();
+categoryUser.setCategoryId(123456789);
+categoryUser.setPermissionLevel(CategoryUserPermissionLevel.MEMBER.getValue());
+categoryUser.setUserId("JaneDoe");
+
+AddCategoryUserBuilder requestBuilder = CategoryUserService.add(categoryUser)
+    .setCompletion(new OnCompletion<Response<CategoryUser>>() {
+        @Override
+        public void onComplete(Response<CategoryUser> result) {
+            System.out.println(result);
+    }
+});

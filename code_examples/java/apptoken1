@@ -1,0 +1,12 @@
+AppToken appToken = new AppToken();
+appToken.setDescription("Basic App Token");
+appToken.setHashType(AppTokenHashType.SHA256.getValue());
+appToken.setSessionType(SessionType.ADMIN.getValue());
+
+AddAppTokenBuilder requestBuilder = AppTokenService.add(appToken)
+    .setCompletion(new OnCompletion<Response<AppToken>>() {
+        @Override
+        public void onComplete(Response<AppToken> result) {
+            System.out.println(result);
+    }
+});

@@ -1,0 +1,6 @@
+var crypto = require('crypto');
+var shasum = crypto.createHash('sha256');
+
+client.ks = result.ks;
+shasum.update(client.ks + "123456512341234");
+var hash = shasum.digest('hex');

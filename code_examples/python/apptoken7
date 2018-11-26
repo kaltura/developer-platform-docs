@@ -1,0 +1,1 @@
+hashString = hashlib.sha256((result.ks + appToken).encode('ascii')).hexdigest()

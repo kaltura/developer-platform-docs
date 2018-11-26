@@ -1,0 +1,12 @@
+let id = "<tokenID>";
+let tokenHash = "<tokenHash>";
+let userId = "enduser";
+let type = kaltura.enums.SessionType.ADMIN;
+let expiry = 0;
+let sessionPrivileges = "";
+
+kaltura.services.appToken.startSession(id, tokenHash, userId, type, expiry, sessionPrivileges)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

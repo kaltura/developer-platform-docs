@@ -1,0 +1,10 @@
+String widgetId = "_1234567";
+int expiry = 86400;
+
+StartWidgetSessionSessionBuilder requestBuilder = SessionService.startWidgetSession(widgetId, expiry)
+    .setCompletion(new OnCompletion<Response<StartWidgetSessionResponse>>() {
+        @Override
+        public void onComplete(Response<StartWidgetSessionResponse> result) {
+            System.out.println(result);
+        }
+});

@@ -1,0 +1,9 @@
+id = "<tokenID>"
+tokenHash = "<tokenHash>"
+userId = "enduser"
+type = KalturaSessionType.ADMIN
+expiry = 0
+sessionPrivileges = ""
+
+result = client.appToken.startSession(id, tokenHash, userId, type, expiry, sessionPrivileges)
+print(result)

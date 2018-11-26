@@ -1,0 +1,2 @@
+$client->setKS($result->ks);
+$hashString = hash('sha256', $client->ks . "123456512341234");

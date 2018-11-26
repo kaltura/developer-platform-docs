@@ -1,0 +1,10 @@
+let appToken = new kaltura.objects.AppToken();
+appToken.description = "Basic App Token";
+appToken.hashType = kaltura.enums.AppTokenHashType.SHA256;
+appToken.sessionType = kaltura.enums.SessionType.ADMIN;
+
+kaltura.services.appToken.add(appToken)
+.execute(client)
+.then(result => {
+    console.log(result);
+});
