@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kaltura's Media Analytics
+title: Kaltura App Token Session Management
 weight: 110
 ---
 
