@@ -8,7 +8,7 @@ weight: 101
  
 This guide will enable you to quickly and easily get started with building your own video experiences and exploring the platform’s basic capabilities.
  
-## Before You begin
+## Before You Begin
  
 You will need your Kaltura account credentials. If you don’t have them yet, start a [free trial](https://vpaas.kaltura.com/register).
 If you’ve signed in, you can click on your account info at the top right of this page to view your credentials.
