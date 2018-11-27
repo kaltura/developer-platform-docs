@@ -149,7 +149,7 @@ We will focus on the TV player:
 Now you can use it for embedding your player:
 
 **Dynamic Player Embed**
-{% highlight json %}
+{% highlight javascript %}
 <script type="text/javascript">
 		var kalturaPlayer = KalturaPlayer.setup({
 			targetId: "kalturaplayer",
