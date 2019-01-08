@@ -4,40 +4,32 @@ title: How To Create a Video Thumbnail Rotator in JavaScript
 weight: 502
 ---
 
-This article describes the steps to create a Video Thumbnail Rotator in JavaScript. The Video Thumbnail Rotator is a JS widget that provides a thumbnail slideshow preview for videos hosted on the Kaltura Server.
+# Using the Kaltura Video Thumbnails Animator
 
-## How to use the Thumb Rotator  
+Get the JS script and documentation from the [**Kaltura Video Thumbnails Animator github repo**](https://github.com/kaltura/VideoThumbnailAnimator).
 
-To use the KalturaThumbRotator, include its javascript code and attach two events to each img element you want to turn into a slideshow preview:
+This script provides a simple way to dynamically create video thumbnails using Kaltura's Image Transformation API with a tiny, single JS file. The script also including a low-rest blurred loading while the animation stripe loads in the backgroud.
 
-1 .  Download the [Kaltura Video Thumbnail Rotator script](http://knowledge.kaltura.com/sites/default/files/dl_resources/kalturaThumbRotator.zip).
+To achieve responsive behavior and adpat to any dimensions, the script uses percentages based CSS logic to create the animated video thumbnails while using CSS stripes of the video animation frames created by the [Kaltura Thumbnail API](https://developer.kaltura.com/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html/).  
 
-2 .  Next, include the JavaScript, add the following line at the **head** of the document:
+### The percentages based backgroud image size/position logic
 
-{% highlight javascript %}
+* Thumbnail Stripe Width in Percentage: total slices multiplied by 100. 
+* Thumbnail Stripe X Position in Percentage: the total slices minus 1 (0-index) described as percent (100 divided by total slices minus 1), multiplied by the current slice nunmber (0-index). 
 
-<script type="text/javascript" src="kaltura_thumb_rotator.js"></script>
-
-{% endhighlight %}
-
-3 .  Add the **<img>** tag where you want the thumbnail to be as follows:
-
-{% highlight xml %}
-<img src="http://cdn.kaltura.com/p/309/sp/0/thumbnail/entry\_id/1\_gdmcbimk/width/120/height/90" width="120" height="90" onmouseover="KalturaThumbRotator.start(this)" onmouseout="KalturaThumbRotator.end(this)">
-{% endhighlight %}
-
-4 .  Change the width and height parameters in the thumbnail URL as well as the img tag attributes to suit the dimensions you want the thumbnail to be.
-
- 
-## The JavaScript API  
-
-KalturaThumbRotator provide two actions:
-
-* `KalturaThumbRotator.start(this)` - Cancels the current running preview and starts a new one. 
-* `KalturaThumbRotator.end(this)` - Cancels the current running preview and restores the original thumbnail.
-
-
-You can adjust the following settings in the Kaltura Thumb Rotator js file:
-
-* slices - The number of thumbnails to pull for the video (default is 16).
-* frameRate - The frame rate in milliseconds for changing thumbnails (time to wait between thumbnail replacement, default is 1000ms).
+# Setting up
+View-source on [`index.html`](https://kaltura.github.io/VideoThumbnailAnimator/) for a quick referecne example.
+Include the ThumbAnimator script:
+```html
+<head>
+  <script src="./KalturaThumbAnimator.js"></script>
+</head>
+<body>
+   <div class="videothumbnail" kfps="4.5" kslices="30" kwidth="600" kpid="2421271" kentryid="1_fjqtp7ki" kquality="75" kcrop="2"></div>
+  <script>
+    var thumbAnimator = new KalturaThumbAnimator();
+    thumbAnimator.setup("videothumbnail", "https://cfvod.kaltura.com", 1, true); //use blurred deffered loading
+    thumbAnimator.setup("videothumbnail"); //regular load
+  </script>
+</body>
+```
