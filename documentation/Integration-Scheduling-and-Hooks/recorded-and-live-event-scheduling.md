@@ -62,7 +62,8 @@ Kaltura Event Scheduling is implemented as 3 API services:
 
 The below example shows scheduling  a live event, creating a live stream resource for the event, and associating the resource with the event: 
 
-```php
+{% highlight php %}
+<?php
 // If you're creating a Scheduled Live Event, first create the Live Entry:
 $liveEntry = new KalturaLiveStreamEntry();
 $liveEntry->name = 'Test Live Entry With Cloud Transcoding';
@@ -127,7 +128,8 @@ if ($testForSchedulingConflicts->totalCount == 0) {
     // Conflicts detected, this resource is already scheduled at this time. 
     //Please resolve conflicts before assigning it to another event at the same time.
 }
-```
+{% endhighlight %}
+
 
 ## The Kaltura iCal Format  
 
@@ -197,17 +199,18 @@ The results can be filtered on any of the filter parameters. For the list of ava
 For example: 
 
 * To retrieve events for a specific resource use the  `filter[resourceIdsLike]` filter parameter (replace RESOURCE-ID with the ID of the resource to get events for):
-```
+{% highlight http %}
 http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/filter[resourceIdsLike]/RESOURCE-ID
-```
+{% endhighlight %}
+
 * To get the next 30 events from now, set `startDateGreaterThanOrEqual` to 0 (now):
-```
+{% highlight http %}
 http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventBaseFilter/filter[startDateGreaterThanOrEqual]/0
-```
+{% endhighlight %}
 * To page through the results, and increase the page size to 500 results per page, set the `pager` object's `pageSize` and `pageIndex` parameters:
-```
+{% highlight http %}
 http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/pager[pageSize]/500/pager[pageIndex]/2
-```
+{% endhighlight %}
 
 #### Relative Time Filters
 Time attributes support both absolute and relative times. 
