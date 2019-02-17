@@ -48,7 +48,7 @@ Configure the device to sync its internal calendar with the Kaltura scheduled Ev
 The schedule can be updated using different methods: 
 
 1. Making REST API calls to the `scheduleEvent`, `scheduleResource` and `scheduleEventResource` services. 
-2. As an iCal file synced over a Kaltura hosted Drop-Dolders (FTP, SFTP or Aspera). 
+2. As an iCal file synced over a Kaltura hosted Drop-folders (FTP, SFTP or Aspera). 
 3. As an iCal file synced form a third-party hosted Drop-Folders over FTP, SFTP or S3. 
 4. The iCal file format may also be ingested using the [`scheduleEvent.addFromBulkUpload`](https://developer.kaltura.com/api-docs/service/scheduleEvent/action/addFromBulkUpload) API action.
 
@@ -160,7 +160,7 @@ To upload the recording file, you can either submit a bulk upload or upload the 
 * To submit an import job (where Kaltura will download the file from your HTTP/s/FTP accessible URL), follow the [Bulk Content Ingestion Guide](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html).
 * To upload the recording files using the REST API, follow [the upload workflow](https://developer.kaltura.com/workflows/Ingest_and_Upload_Media).
 
-> Remember to submit the templateEntryId accordingly and to set any other important metadata on the newly created Entry.
+> Remember to submit the `templateEntryId` accordingly and to set any other important metadata on the newly created Entry.
 
 ### Publishing Permissions  
 
@@ -188,7 +188,7 @@ To retrieving an iCal file format, add `format/ical` to the `scheduleEvent.list`
 
 All Kaltura list actions, including [scheduleEvent.list](https://developer.kaltura.com/api-docs/Integration_Scheduling_and_Hooks/Scheduling_Triggers_using_iCal/scheduleEvent/scheduleEvent_list), accept the [KalturaFilterPager](https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaFilterPager). 
 
-> By default, the Kaltura pager returns 30 results. Use the pageIndex to loop through result pages, or pageSize to increase the amount of results returned per call. Note that the maximum is 500 results per call ("page").
+> By default, the Kaltura pager returns 30 results. Use the `pageIndex` to loop through result pages, or `pageSize` to increase the amount of results returned per call. Note that the maximum is 500 results per call ("page").
 
 The maximum number of returned results is 10,000 total (across all pages in the given filter). To retrieve more than 10,000 results, you will need to use a filter instead of pager. For example using the date filter in a loop: [createdAtGreaterThanOrEqual](https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaAccessControlBaseFilter). 
 
@@ -222,7 +222,7 @@ For example, passing `filter[startDateGreaterThanOrEqual]=0` will return all the
 ## Configuring Resources in Kaltura  
 
 Capture devices as well as rooms and Live Stream entries can be mapped to resource objects in Kaltura. This is similar to booking a conference room using a calendar application. 
-Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using .csv format (see [scheduleResource.addFromBulkUpload](https://developer.kaltura.com/api-docs/service/scheduleResource/action/addFromBulkUpload)). 
+Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using the CSV format (see [scheduleResource.addFromBulkUpload](https://developer.kaltura.com/api-docs/service/scheduleResource/action/addFromBulkUpload)). 
 
 Kaltura's Bulk Upload CSV format supports mixed orders, and not all fields are required; the fields are defined by the user using an asterisk at the beginning of the line.
 
@@ -245,9 +245,9 @@ Kaltura's Bulk Upload CSV format supports mixed orders, and not all fields are r
 The possible values for the action column (the first column in the example above) are listed in [KalturaBulkUploadAction](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaBulkUploadAction). The common actions are: 
 
 * `1` (Default) - adds a new resource
-* `2` - updates an existing resource by the provided resourceId or unique systemName
-* `3` - deletes an existing resource by the provided resourceId or unique systemName
-* `6` - updates an existing resource by the provided resourceId or unique systemName, if no such resource exists, add as a new resource
+* `2` - updates an existing resource by the provided `resourceId` or unique `systemName`
+* `3` - deletes an existing resource by the provided `resourceId` or unique `systemName`
+* `6` - updates an existing resource by the provided `resourceId` or unique `systemName`, if no such resource exists, add as a new resource
 
 For example:
 ```
