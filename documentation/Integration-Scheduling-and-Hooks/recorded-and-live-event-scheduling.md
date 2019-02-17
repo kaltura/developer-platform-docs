@@ -20,7 +20,7 @@ The Kaltura Scheduled Events API support 3 types of Events (see [`KalturaSchedul
 
 ## Using the Kaltura Video Scheduling API
 
-### On the Kaltura Platform:
+### On the Kaltura Platform
 
 1. Create an event for a future date (`scheduleEvent.add` API action or via BulkUpload/DropFolder sync).
 2. Set recording / encoding device as a resource for the scheduled event (`scheduleResource.add` and `scheduleEventResource.add`).
