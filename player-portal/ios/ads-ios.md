@@ -45,8 +45,6 @@ pod "PlayKit_IMA"
 
 To control ad play during runtime, implement the following Video Player delegate method:
 
->swift
-
 ```swift
 func playerShouldPlayAd(_ player: Player) -> Bool {
     return true
@@ -56,8 +54,6 @@ func playerShouldPlayAd(_ player: Player) -> Bool {
 ## Register the IMA Plugin  
 
 Next, register the IMA Plugin inside your application as follows:
-
->swift
 
 ```swift
 PlayKitManager.shared.registerPlugin(IMAPlugin.self)
