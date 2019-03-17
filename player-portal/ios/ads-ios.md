@@ -16,8 +16,6 @@ Error Domain=com.kaltura.playkit.error.ima Code=1005 "Ads cannot be requested be
 
 Please make sure that the order of removing player on your side is:
 
-> Swift
-
 ```swift
 player.destroy()
 player.removeFromSuperview()
@@ -69,8 +67,6 @@ PlayKitManager.shared.registerPlugin(IMAPlugin.self)
 
 To configure the player to use IMA Plugin, add the following configuration to your `PlayerConfig` file as follows:
 
->swift
-
 ```swift
 let adsConfig = IMAConfig()
 adsConfig.set(adTagUrl: 'your ad tag url')
@@ -86,8 +82,6 @@ The IMA Plugin offers two options for opening ad landing pages:
 
 By default, the plugin will open pages using Safari. To update the plugin to use an in-app browser, you’ll need to set the `webOpenerPresentingController` value in the AdsConfig object as follows:
 
->swift
-
 ```swift
 adsConfig.set(webOpenerPresentingController: webOpenerPresentingController)
 ```
@@ -98,8 +92,6 @@ To see companion ads in the device, you'll need to implement the following steps
 
 1. Configure an ad tag to return a companion ad (prepare this in advance).
 2. Supply a companion ad container to the plugin using the following format (make sure the size of the companion being returned is the same size as the UIView in which you’re trying to display it):
-
->swift
 
 ```swift
 adsConfig.set(companionView: companionView)
