@@ -8,7 +8,7 @@ The following section details the iOS application lifecycle.
 The framework observes application state changes internally to provide better handling.
 
 Handled events:
-* *On* will terminate the event:
+* `on` will terminate the event:
 	* Post analytics "stop" event.
 
 #### Playing Media While in Background  
@@ -62,7 +62,6 @@ If more than one player is used, the network reachability notifications will sto
 
 
 To observe errors (not just reachability), add an observer for error type and use the error accessor on the event.
->swift
 
 ```swift
 player.addObserver(self, events: [PlayerEvent.error]) { event in
