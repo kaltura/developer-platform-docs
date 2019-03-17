@@ -1,7 +1,7 @@
 
-## Application Lifecycle for Background Playing 
+## Playing Video in the Background
 
-The following section details the iOS application lifecycle.
+The following section describes the way to play a video while the application is minimized, for example in the case of listening to a podcast in the background. 
 
 ### Application State Changes  
 
