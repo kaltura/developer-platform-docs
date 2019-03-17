@@ -1,8 +1,8 @@
 # Player Plugins  
 
-The Kaltura playkit offers various modules for iOS that can be added to the player. Adding plugins is easy and requires little configuration. You can find a full list of available plugins [here](https://kaltura.github.io/playkit/). This guide will walk you through installing the KAVA plugin. 
+The Kaltura playkit offers various modules for iOS that can be added to the player. Adding plugins is easy and requires little configuration. You can find a full list of available plugins [here](https://kaltura.github.io/playkit/). This guide will cover a thorough implementation of the Kava Plugin, as well as a sample config for the Youbora plugin.
 
-### Kava Plugin 
+## Kava Plugin 
 
 Probably the most important plugin is the KAVA plugin - Kaltura Video Analytics. It provides real time analytics for live and on-demand video. With historical, raw, or summarized data, it is easy to determine how, when, and where content was seen and shared by viewers. 
 
@@ -41,3 +41,42 @@ self.player = try! PlayKitManager.shared.loadPlayer(pluginConfig: createPluginCo
 ```
 
 The KAVA plugin is now included in the player, and all data about plays and shares can be viewed in the KMC or retrieved using the Kaltura Reporting API. 
+
+
+## Youbora Plugin  
+
+Youbora is an intelligence analytics and optimization platform used in Kaltura's solution to track media analytics events. 
+
+You'll need to set up an account in http://www.youbora.com and then set the account details in the plugin configuration to use this plugin. After these steps, you'll be able to use the Youbora dashboard and watch statistical events and analytics sent by the Kaltura Video Payer.
+
+For additional information on the YouboraPlugin options dictionary refer to their [developer portal](http://developer.nicepeopleatwork.com/plugins/general/setting-youbora-options/).
+
+### Getting Started with the Youbora Plugin  
+
+Import and enable: 
+
+```
+pod 'PlayKit/YouboraPlugin'
+```
+
+```swift
+PlayKitManager.shared.registerPlugin(YouboraPlugin.self)
+```
+
+A sample Youbora config looks something like this: 
+
+```swift
+// config options
+let youboraOptions: [String: Any] = [
+    "accountCode": "nicetest" // mandatory
+    // YouboraPlugin.enableSmartAdsKey: true - use this if you want to enable smart ads
+]
+// create analytics config with the created params
+let youboraConfig = AnalyticsConfig(params: youboraOptions)
+// create config dictionary
+let config = [YouboraPlugin.pluginName: youboraConfig]
+// create plugin config object
+let pluginConfig = PluginConfig(config: config)
+// load the player with the created plugin config
+let player = PlayKitManager.shared.loadPlayer(pluginConfig: pluginConfig)
+```
