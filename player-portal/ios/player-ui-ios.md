@@ -1,4 +1,10 @@
-# iOS Player Ui Guide 
+---
+layout: page
+title: Player UI iOS
+weight: 110
+---
+
+# Player UI Sample Guide 
 
 The Kaltura Player does not inherently include a UI, but this guide will walk you through an example of how to add play/pause buttons and a scrubber to your player. 
 At this point you should have a Kaltura Player embedded in your application and showing your entry, as seen in [this guide](https://github.com/tzubeli/developer-portal/edit/master/sdk-portal/getting-started-ios.md).
