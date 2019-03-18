@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Track Selection iOS
+title: Track selection iOS
 weight: 110
 ---
 
