@@ -1,3 +1,8 @@
+---
+layout: page
+title: Audio Mode iOS
+weight: 110
+---
 
 ## Audio Mode for iOS
 
