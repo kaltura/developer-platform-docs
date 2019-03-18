@@ -1,3 +1,9 @@
+---
+layout: page
+title: Player events iOS
+weight: 110
+---
+
 # Player Events (iOS)
 
 The player and some of the plugins fire events that tell the application (and other plugins) about events that occur before/during/after playback. 
