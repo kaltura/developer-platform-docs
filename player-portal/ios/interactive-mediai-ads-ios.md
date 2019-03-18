@@ -1,3 +1,10 @@
+---
+layout: page
+title: Interactive Media Ads for iOS
+weight: 110
+---
+
+
 # Interactive Media Ads for iOS
 
 This document describes the steps required for adding support for the IMA Plugin functionality on iOS devices. IMA (or Interactive Media Ads) was developed by Google to enable you to display ads in your application's video, audio, and game content. To learn more about Google's IMA, see [Google's IMA developer's site](https://developers.google.com/interactive-media-ads/).
