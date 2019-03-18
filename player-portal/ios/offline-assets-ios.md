@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Offline Assets iOS
+title: Offline assets iOS
 weight: 110
 ---
 
