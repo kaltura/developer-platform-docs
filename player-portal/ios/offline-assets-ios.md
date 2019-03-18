@@ -1,3 +1,9 @@
+---
+layout: page
+title: Offline Assets iOS
+weight: 110
+---
+
 # Offline Assets
 
 PlayKit supports download and playback of assets.
