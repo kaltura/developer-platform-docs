@@ -1,6 +1,12 @@
+---
+layout: page
+title: Supported Devices iOS
+weight: 110
+---
+
 ## Supported Devices 
 
->*If you're a Kaltura customer, please contact your Kaltura Customer Success Manager to help facilitate the use of this component.*
+If you are a Kaltura customer, please contact your Kaltura Customer Success Manager to help facilitate the use of this component
 
 ## Overview  
 
