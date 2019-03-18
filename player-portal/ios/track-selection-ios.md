@@ -1,4 +1,10 @@
-## Track Selection
+---
+layout: page
+title: Track Selection iOS
+weight: 110
+---
+
+# Track Selection
 
 This document describes the steps required for adding support for the multi-audio and captions functionality in your application on iOS devices.
 >Note: Track selection modes are available for audio and text tracks only
