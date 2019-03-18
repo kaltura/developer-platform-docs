@@ -1,3 +1,9 @@
+---
+layout: page
+title: Download to go iOS
+weight: 110
+---
+
 # Download-to-Go for iOS
 
 Download to Go (DTG) is an iOS library that facilitates the download of HLS video assets.
@@ -268,7 +274,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     ...
-
 }
 ```
 
