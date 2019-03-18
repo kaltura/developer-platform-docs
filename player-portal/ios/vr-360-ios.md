@@ -1,9 +1,17 @@
-The 'video360' plugin and VR are included in the Kaltura Mobile Video Player for iOS, which supports 360 video and VR on iOS mobile browsers for any kind of motion - touch and device motion.
+---
+layout: page
+title: VR and 360 Video 
+weight: 110
+---
+
+# VR and 360 Video
+
+The Kaltura iOS Mobile Video player supports 360 video and VR on iOS mobile browsers for any kind of motion - touch and device. The **video360** plugin and VR are included in the player by default. 
 
 Immersive videos, also known as 360 videos, 360 degree videos, or spherical videos, are video recordings of a real-world panorama, where the view in every direction is recorded at the same time, shot using an omnidirectional camera or a collection of cameras.
 Use cases for 360 / VR are varied, and include university lectures, conferences, sports events and more.
 
-Note that 360° / VR videos can only be viewed when the video360 / VR plugin is enabled.
+> Note that 360° / VR videos can only be viewed when the video360 / VR plugin is enabled.
 
 Kaltura provides the following infrastructure to upload and play 360 / VR videos on mobile devices:
 
