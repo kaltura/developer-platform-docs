@@ -4,13 +4,14 @@ title: Player events iOS
 weight: 110
 ---
 
-# Player Events (iOS)
+# Player Events
 
 The player and some of the plugins fire events that tell the application (and other plugins) about events that occur before/during/after playback. 
 
 ### Listening to events from application code
 
 The code below will add an observer to a list of various events. 
+
 >Reminder to use `weak self` when needed in order to prevent retain cycles
 
 ```swift
