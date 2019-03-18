@@ -1,3 +1,8 @@
+---
+layout: page
+title: Playing video in the background iOS
+weight: 110
+---
 
 ## Playing Video in the Background
 
