@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Supported Devices iOS
+title: Supported Devices for iOS
 weight: 110
 ---
-
-# Supported Devices 
 
 **Kaltura's Mobile Video SDK for iOS** is a fully native application, which means that the SDK was developed specifically for iOS devices. This ensures that native application can interact with and take advantage of iOS operating system features and related software. 
 
