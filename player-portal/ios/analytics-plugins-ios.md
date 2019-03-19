@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Analytics Plugins iOS
+title: Analytics Plugins for iOS
 weight: 110
 ---
-
-# Analytics Plugins 
 
 The Kaltura playkit offers various analytics modules for iOS that can be added to the player. Adding these plugins is easy and requires little configuration. You can find a full list of available plugins [here](https://kaltura.github.io/playkit/). This guide will cover a thorough implementation of the Kava Plugin, as well as a sample config for the Youbora plugin.
 
