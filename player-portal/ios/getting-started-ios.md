@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with the Player SDK for iOS
+title: Getting Started With the Player SDK for iOS
 weight: 110
 ---
 
@@ -68,7 +68,7 @@ The Kaltura Sesssion is an authorization string that identifies the user watchin
 var ks: String?
 ```
 
-However, if your application does not already create a Kaltura Session, follow [this guide](https://github.com/tzubeli/developer-portal/blob/master/sdk-portal/ios-kaltura-session.md) to learn how to generate a KS with the Application Token API. 
+However, if your application does not already create a Kaltura Session, follow [this guide](http://developer.kaltura.com/player/ios/kaltura-session-authentication-ios.html) to learn how to generate a KS with the Application Token API. 
 
 
 ### Create the Player
@@ -209,9 +209,9 @@ class ViewController: UIViewController {
 
 ```
 
-You've probably noticed that there are no buttons for playing or pausing the video. To learn about adding elements to the Player's UI, [click here](https://github.com/tzubeli/developer-portal/blob/master/sdk-portal/ios-ui.md) 
+You've probably noticed that there are no buttons for playing or pausing the video. To learn about adding elements to the Player's UI, [click here](http://developer.kaltura.com/player/ios/player-ui-ios.html) 
 
-The Kaltura Player SDK also offers various plugins for iOS that can be added to the player. Learn more [here](https://github.com/tzubeli/developer-portal/blob/master/sdk-portal/ios-plugins.md). 
+The Kaltura Player SDK also offers various plugins for iOS that can be added to the player. Learn more [here](http://developer.kaltura.com/player/ios/analytics-plugins-ios.html). 
 
 
 
