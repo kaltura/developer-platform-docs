@@ -1,10 +1,8 @@
 ---
 layout: page
-title: VR and 360 Video 
+title: VR and 360 Video for iOS
 weight: 110
 ---
-
-# VR and 360 Video
 
 The Kaltura iOS Mobile Video player supports 360 video and VR on iOS mobile browsers for any kind of motion - touch and device. The **video360** plugin and VR are included in the player by default, but videos can only be viewed when the plugin is enabled.
 
