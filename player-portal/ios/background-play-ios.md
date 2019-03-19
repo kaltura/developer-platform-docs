@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Playing video in the background iOS
+title: Playing Video in the Background for iOS
 weight: 110
 ---
-
-## Playing Video in the Background
 
 The following section describes the way to play a video while the application is minimized, for example in the case of listening to a podcast in the background. 
 
