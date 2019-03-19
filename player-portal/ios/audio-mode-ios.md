@@ -4,8 +4,6 @@ title: Audio Mode for iOS
 weight: 110
 ---
 
-## Audio Mode for iOS
-
 AVAudioSession enables you to control the audio on iOS devices even when the silent switch is off. This article describes the steps required to enable you to control the audio output in iOS devices using AVAudioSession.
 
 ## Set AVAudioSession to Play Audio  
