@@ -146,7 +146,7 @@ Lastly, in the Storyboard, set a new referencing action on the Playhead Slider f
     player.currentTime = TimeInterval(playheadSlider.value)
 }
 ```
-You should be able to run the code, and use the basic player functions. Thec complete code should look like this: 
+You should be able to run the code, and use the basic player functions. The complete code should look like this: 
 
 ```
 import UIKit
