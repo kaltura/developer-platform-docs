@@ -203,7 +203,7 @@ Making this call, for example, would move MP4 format to the top of the priority 
 
 ### Configure Player Load Control
 
-Using builder api you can create LoadControl Buffers with the default ExoPlayer values
+Using builder API you can create LoadControl Buffers with the default ExoPlayer values
 then it is possible configure any parameter from the LoadControlBuffers Object.
 
 Defaults can be found here:
@@ -262,7 +262,7 @@ Defaults can be found here:
 
 ### Enable - Ad will auto play on resume 
 
-In some cases where app does not expose play pause api on ads this api will do the auto play after resume from bg
+In some cases where app does not expose play pause API on ads this API will do the auto play after resume from bg
 
 ##### Example:
 
@@ -319,7 +319,7 @@ Language options are:
  PKTrackConfig trackConfig = new  PKTrackConfig().setPreferredMode(PKTrackConfig.Mode.SELECTION).setTrackLanguage("ru")
 ```
 
-Once we have the `PKTrackConfig` object we can use it as parameter for the api.
+Once we have the `PKTrackConfig` object we can use it as parameter for the API.
 
 ```
 player.getSettings().setPreferredAudioTrack(preferredAudioTrackConfig)
