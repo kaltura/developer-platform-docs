@@ -1,6 +1,9 @@
-#  Player Settings
+---
+layout: page
+title: Player Settings for Android
+weight: 110
+---
 
-The Player has settings object that can be configured for player instance
 
 ```
     interface Settings {
@@ -299,16 +302,16 @@ If case 360 media should be played on VR player or default player - default is t
 
 ## Set Preferred Audio/Text Track
 
-In order to configure this behaviour you have to instantiate PKTrackConfig
-This object can be created via builder methods inorder to add a audio/text tracks preffered Config Mode/Language.
-using:
+The player allows you to set the preferred language audio/text by instantiating the `PKTrackConfig`, which is created via the builder method. 
 
 ```
  public PKTrackConfig setTrackLanguage(String trackLanguage)
  public PKTrackConfig setPreferredMode(@NonNull Mode preferredMode)
 ```
-
-#### Example
+Language options are: 
+- Explicitly setting the language code 
+- Auto, which sets the language based on location, if available. 
+- Default, which contains no text and uses the first available audio track. 
 
 ```
  PKTrackConfig trackConfig = new PKTrackConfig().setPreferredMode(PKTrackConfig.Mode.OFF);
