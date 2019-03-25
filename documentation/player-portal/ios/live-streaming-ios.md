@@ -21,8 +21,8 @@ self.player.currentTime = self.player.duration
 
 ### Guidelines 
 
-- The current time may sometimes exceed the player's duration because the duration in live is based on seekable times ranges of the asset which are constantly changing in live, therefore in some situation for example the duration can be 100s and the current time 104s, this difference usually doesn't exceeds 10s when we are on the live edge of the stream.
-- Current time in live streams is relative to the seekble time ranges. </br>
+- The current time may sometimes exceed the player's duration because the duration in live is based on seek-able times ranges of the asset which are constantly changing in live, therefore in some situation for example the duration can be 100s and the current time 104s, this difference usually doesn't exceeds 10s when we are on the live edge of the stream.
+- Current time in live streams is relative to the seek-able time ranges. </br>
 For example, after playing 30 minutes with a window size of 10 minutes we will have this seekable time range:</br>
 [20 minutes - 30 minutes].</br>
 The live edge in this scenario is 10 minutes (or 10 * 60 in seconds) and the duration is also 10 minutes (the duration is always the size of our seekable range window) because our current time is relative to our start range. 
