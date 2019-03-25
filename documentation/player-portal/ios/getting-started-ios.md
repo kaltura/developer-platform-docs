@@ -62,7 +62,7 @@ let ENTRY_ID = "1_abc6st"
 
 ### Create a Kaltura Session 
 
-The Kaltura Sesssion is an authorization string that identifies the user watching the video. Including a Kaltura Session (KS) in the player allows for monitoring and analytics of the video, as well as the ability to restrict content access. The KS would generally be created on the server side of the application, and passed to the controller. 
+The Kaltura Session is an authorization string that identifies the user watching the video. Including a Kaltura Session (KS) in the player allows for monitoring and analytics of the video, as well as the ability to restrict content access. The KS would generally be created on the server side of the application, and passed to the controller. 
 
 ```
 var ks: String?
