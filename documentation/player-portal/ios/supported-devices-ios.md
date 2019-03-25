@@ -8,10 +8,6 @@ weight: 110
 
 Kaltura's Mobile Video SDK for iOS introduces significant performance improvements and is intended to be integrated into any iOS application.
 
-## Intended Audience
-
-This guide assumes that you have the necessary Objective C or Swift and iOS development skills to build and compile advanced iOS applications using XCode.
-
 ## Supported Devices  
 
 **Definitions**
@@ -30,15 +26,6 @@ This guide assumes that you have the necessary Objective C or Swift and iOS deve
 | B            | iPhone 5/5S/6/6+/7        |
 | B            | iPad mini 1/2             |
 | B            | iPad2                     |
-
-## Quick Navigation
-
-
-|                                                      Getting Started                                                     |           Technical Documentation           |
-|:------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------:|
-|                                           ![help](./v3-images/getStarted.png)                                           |         ![help](./v3-images/TD.png)        |
-| [Getting Started](https://vpaas.kaltura.com/documentation/Mobile-Video-Player-SDKs/v3_iOS_GetStarted.html) | [Mobile Video Player API Documentation](https://kaltura.github.io/playkit/api/ios/core/) |
-|                                                     **Quick Start** Create a Simple Video Application                                                   |       Detailed technical iOS API documentation      |
 
 
 ## Have Questions or Need Help?  
