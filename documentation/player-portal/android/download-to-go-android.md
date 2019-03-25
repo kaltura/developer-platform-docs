@@ -1,3 +1,9 @@
+---
+layout: page
+title: Download-to-go for Android 
+weight: 110
+---
+
 # Download-to-Go for Android
 
 Download to Go (DTG) is an Android library that facilitates the download of video assets, with an emphasis on DASH and HLS.
