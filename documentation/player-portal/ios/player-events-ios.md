@@ -48,7 +48,7 @@ The Player events are defined in the PlayerEvent class.
 - **pause:** Sent when playback is paused.
 - **seeked:** Sent when a seek operation completes.
 - **seeking:** Sent when a seek operation begins.
-- **stopped:** sent when stop player api is called
+- **stopped:** sent when stop player API is called
 
 ### Track change
 - **videoTrackChanged:** A video track was selected
