@@ -1,4 +1,8 @@
-# Supported DRM Schemes
+---
+layout: page
+title: Supported DRM Schemes for Android 
+weight: 110
+---
 
 The following DRM schemes are supported in Android devices:
 
