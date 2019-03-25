@@ -6,7 +6,7 @@ weight: 110
 
 # Kaltura Session Authentication 
 
-The Kaltura Sesssion is an authorization string that identifies the user watching the video. This guide will demonstrate how to create a Kaltura Session on the client side using the Application Token API. An Application Token is used in cases where different applications with varying permissions need access to your Kaltura account, without using your Admin Secret. The appToken is created and customized by the account administrator, and then used by the developers to generate Kaltura Sessions for their respective applications. 
+The Kaltura Session is an authorization string that identifies the user watching the video. This guide will demonstrate how to create a Kaltura Session on the client side using the Application Token API. An Application Token is used in cases where different applications with varying permissions need access to your Kaltura account, without using your Admin Secret. The appToken is created and customized by the account administrator, and then used by the developers to generate Kaltura Sessions for their respective applications. 
 
 
 ### Create the Application Token 
