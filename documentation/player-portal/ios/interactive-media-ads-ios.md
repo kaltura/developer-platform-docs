@@ -25,10 +25,10 @@ player.destroy()
 player.removeFromSuperview()
 ```
 
-2. When not including ads, the PlayerEvent observed events start occuring after calling prepare().
+2. When not including ads, the PlayerEvent observed events start occurring after calling prepare().
 When including ads, none of the PlayerAd events occur after calling prepare().  
 
-To resolve this issue and get `autoPlay` with ads please make sure to call play() before those events start occuring.
+To resolve this issue and get `autoPlay` with ads please make sure to call play() before those events start occurring.
 
 ```swift
 // Firstly call prepare
