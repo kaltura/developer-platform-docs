@@ -10,7 +10,7 @@ This document describes the steps required for adding support for the IMA Plugin
 
 ## Common Issues
 
-1. There is currently an open issue with IMA SDK where removing the player view before destorying the ads manager will cause an error on the next ad playback. To fix the issue all you have to do is call the `player.destroy()` before `player.removeFromSuperview()`
+1. There is currently an open issue with IMA SDK where removing the player view before destroying the ads manager will cause an error on the next ad playback. To fix the issue all you have to do is call the `player.destroy()` before `player.removeFromSuperview()`
 
 If you get below error:
 
