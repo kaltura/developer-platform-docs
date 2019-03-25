@@ -56,7 +56,7 @@ The Player events are defined in the PlayerEvent class.
 - SEEKED: Sent when a seek operation completes.
 - SEEKING: Sent when a seek operation begins.
 - REPLAY:Sent when replay happened.
-- STOPPED: sent when stop player api is called
+- STOPPED: sent when stop player API is called
 
 ### Track change
 - VIDEO_TRACK_CHANGED: A video track was selected
