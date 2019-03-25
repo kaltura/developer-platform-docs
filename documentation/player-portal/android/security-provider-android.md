@@ -15,4 +15,4 @@ The full usage is detailed in [Google's guide](https://developer.android.com/tra
 
 When using the async version, the app has to pass a [ProviderInstallListener](https://developers.google.com/android/reference/com/google/android/gms/security/ProviderInstaller.ProviderInstallListener).
 
-The provider is part of the "base" Google Play Services component; if the app already uses *any* Play Services component, it already has access to `ProviderInstaller`. If not, it should install it as expalined in [the setup guide](https://developers.google.com/android/guides/setup).
+The provider is part of the "base" Google Play Services component; if the app already uses *any* Play Services component, it already has access to `ProviderInstaller`. If not, it should install it as explained in [the setup guide](https://developers.google.com/android/guides/setup).
