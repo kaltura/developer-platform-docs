@@ -1,4 +1,8 @@
-# Google Play Services Security Provider
+---
+layout: page
+title: Google Play Services Security Provider
+weight: 110
+---
 
 Google Play Services includes an always up-to-date version of the SSL library. To use it instead of the device's default (which may be out of date and contain security issues, especially on older devices), the application has to "install" it on startup.
 
