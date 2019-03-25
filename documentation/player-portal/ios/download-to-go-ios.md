@@ -176,7 +176,7 @@ import DownloadToGo
 
 The following classes/interfaces are the public API of the library:
 * `ContentManager` - Use this class to interact with the library.
-* `DTGContentManager` - This is the main api you will use to interact with the library.
+* `DTGContentManager` - This is the main API you will use to interact with the library.
 * `ContentManagerDelegate` - Delegate calls available to observe.
 * `DTGItem` - Represent a single download item.
 * `DTGItemState` - The state of a download item.
