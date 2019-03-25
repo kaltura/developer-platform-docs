@@ -1,4 +1,8 @@
-# Player Configuration  
+---
+layout: page
+title: Player Configuration for Android 
+weight: 110
+---
 
 The player configuration is the main data object of the SDK; this object is used for configuring all plugins and for creating and obtaining the media provider media entries that will play on the device.
 
@@ -91,8 +95,6 @@ PKDrmParams represents a single DRM license info object. PKDrmParams contains th
 To learn more, see [PKDrmParams](https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PKDrmParams.java).
 
 To learn more, read the [Media Providers](https://github.com/kaltura/DeveloperPortalDocs/tree/playkit/documentation/PlayKit/MediaProviders.md) article.
-
-</br>
 
 ## Have Questions or Need Help?
 
