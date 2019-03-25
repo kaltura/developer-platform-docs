@@ -183,18 +183,20 @@ In case App wants to block ability to take screen capture
 
 ### Configure Player's PreferredMediaFormat.
 
-  By default if MediaEntry contains multiple sources from different formats player
-  will choose DASH (mpd) and if this format isavailable it will try to select hls and so on. 
-  in orer to force some other thay over the default formats priority use the following API
-  with  one of :
+In the case where the Media Entry contains multiple sources, the player will attempt to use formats in this priority order: 
+  - DASH (mpd) 
+  - HLS 
+  - WVM
+  - MP4 
+  - MP3 
   
+In order to force a Media Format that is different than the priority list, use `setPreferredMediaFormat` with the desired type: 
+
 ```
-  player.getSettings().setPreferredMediaFormat(PKMediaFormat.dash);
-  player.getSettings().setPreferredMediaFormat(PKMediaFormat.hls);
-  player.getSettings().setPreferredMediaFormat(PKMediaFormat.wvm);
-  player.getSettings().setPreferredMediaFormat(PKMediaFormat.mp4);
-  player.getSettings().setPreferredMediaFormat(PKMediaFormat.mp3);
+player.getSettings().setPreferredMediaFormat(PKMediaFormat.mp4);
 ```
+Making this call, for example, would move MP4 format to the top of the priority list. 
+
 
 ### Configure Player Load Control
 
