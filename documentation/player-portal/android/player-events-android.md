@@ -1,4 +1,8 @@
-# Player Events for Android
+---
+layout: page
+title: Player Events for Android 
+weight: 110
+---
 
 The player and some of the plugins fire events that tell the application (and other plugins) about events that occur before/during/after playback. 
 
