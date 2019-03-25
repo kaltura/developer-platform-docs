@@ -1,4 +1,8 @@
-# Available Player Components
+---
+layout: page
+title: Player Components
+weight: 110
+---
 
 ## Android
 
