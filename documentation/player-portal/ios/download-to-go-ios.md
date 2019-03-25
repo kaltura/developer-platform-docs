@@ -33,7 +33,7 @@ pod 'DownloadToGo'
 
 <div hidden>
 {% plantuml %}
-	@startuml simple-flow
+	@startuml 
 	
 	title Simple DTG Flow
 	
@@ -68,7 +68,7 @@ pod 'DownloadToGo'
 
 <div hidden>
 {% plantuml %}
-	@startuml download-sequence
+	@startuml
 	
 	title Download Sequence
 	
@@ -132,7 +132,7 @@ pod 'DownloadToGo'
 
 <div hidden>
 {% plantuml %}
-	@startuml playing-sequence
+	@startuml 
 	
 	title Playing Sequence
 	
