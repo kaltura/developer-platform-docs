@@ -29,7 +29,7 @@ Kaltura's DTG library can download HLS assets, with and without FairPlay protect
 
 <div hidden>
  {% plantuml %}
-    @startuml offline-dtg
+    @startuml
 
     participant App
     participant LocalAssetsManager as LAM
@@ -70,7 +70,7 @@ AVAssetDownloadTask is a facility added to iOS in version 10.0. It can download 
 
 <div hidden>
 {% plantuml %}
-    @startuml offline-AVAssetDownloadTask
+    @startuml 
 
     participant App
     participant LocalAssetsManager as LAM
