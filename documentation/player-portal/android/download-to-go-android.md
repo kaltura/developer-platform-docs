@@ -39,7 +39,7 @@ Replace `2.4.0` with the [latest release](https://bintray.com/kaltura/android/dt
 ![](states.svg)
 
 <div hidden>
-	@startuml states
+	@startuml 
 	
 	[*] --> NEW
 	NEW --> INFO_LOADED: loadInfo()
@@ -74,7 +74,7 @@ Following are some basic sequence diagrams.
 ![](start-stop.svg)
 
 <div hidden>
-  @startuml start-stop
+  @startuml 
   
   participant "ContentManager class" as ContentManager
   participant "app: Application" as app
@@ -97,7 +97,7 @@ Following are some basic sequence diagrams.
 ![](new-download.svg)
 
 <div hidden>
-    @startuml new-download
+    @startuml 
     
     participant "app: Application" as app
     participant "cm: ContentManager" as cm
@@ -156,7 +156,7 @@ trackSelector.apply();
 ![](track-selection.svg)
 
 <div hidden>
-    @startuml track-selection
+    @startuml 
     
     participant "app: App" as app
     participant "item: DownloadItem" as item
