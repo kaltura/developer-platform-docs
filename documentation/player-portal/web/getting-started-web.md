@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with Web Player
+title: Getting Started with the Kaltura Web Player
 weight: 110
 ---
 
