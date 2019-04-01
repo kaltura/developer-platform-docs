@@ -7,9 +7,9 @@ weight: 110
 This guide will walk you through the steps for adding a Kaltura video player to your iOS mobile application. You'll learn how to import the SDK, find the necessary credentials, and load the player with your Entry ID of choice. **Because the player is focused on performance and giving you the simplest integration possible, it does not contain a UI.** That being said, this guide will show you how to listen to events in order to manage the player state, as well as examples for adding play/pause buttons and a slider to the player. 
 Lastly, this guide will cover how to add plugins to the application, specifically the Kaltura Video Analytics plugin.
 
-If you're looking for the Android guide, click here. 
+If you're looking for the Android guide, click [here](https://developer.kaltura.com/player/android/getting-started-android). 
 
-## Before Your Begin
+## Before You Begin
 
 You'll need two things: 
 1. Your Kaltura Partner ID, which can be found in the KMC under Settings>Integration Settings 
@@ -34,7 +34,7 @@ end
 - The [Playkit Pod](https://cocoapods.org/pods/PlayKit) is made up of the core Player infrastructure 
 - The [PlatKitProviders Pod](https://cocoapods.org/pods/PlayKitProviders) adds the Media Entry Providers, which are responsible from bringing in media data from Kaltura 
 
-If you don't have a Podfile already, create a file in your Project directory called Podfile (no extension). Paste the code from above and then run `pod install` from the command line (in that directory). You might need to close and reopen xcode. 
+If you don't already have a Podfile, go to your project directory and run `pod init`. This will create a new Podfile do you, where you should add the desired pods (see example above) and then run `pod install` from the command line. You might need to close and reopen Xcode. 
 
 ## Add a Basic Kaltura Player 
 
@@ -68,7 +68,7 @@ The Kaltura Session is an authorization string that identifies the user watching
 var ks: String?
 ```
 
-However, if your application does not already create a Kaltura Session, follow [this guide](http://developer.kaltura.com/player/ios/kaltura-session-authentication-ios.html) to learn how to generate a KS with the Application Token API. 
+However, if your application does not already create a Kaltura Session, follow [this guide](https://developer.kaltura.com/player/ios/kaltura-session-authentication-ios) to learn how to generate a KS with the Application Token API. 
 
 
 ### Create the Player
@@ -90,7 +90,7 @@ func setupPlayer() {
 Now in the `viewDidLoad` function, load the player. We'll start without a pluginConfig, but we will cover adding plugins later in this guide. 
 
  ```
-self.player = try! PlayKitManager.shared.loadPlayer(pluginConfig: nil)
+self.player = PlayKitManager.shared.loadPlayer(pluginConfig: nil)
  ```
 Next, call the newly created setupPlayer function. 
 ```
@@ -173,7 +173,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.player = try! PlayKitManager.shared.loadPlayer(pluginConfig: createPluginConfig())
+        self.player = PlayKitManager.shared.loadPlayer(pluginConfig: createPluginConfig())
         
         self.setupPlayer()
         self.loadMedia()
@@ -209,9 +209,9 @@ class ViewController: UIViewController {
 
 ```
 
-You've probably noticed that there are no buttons for playing or pausing the video. To learn about adding elements to the Player's UI, [click here](http://developer.kaltura.com/player/ios/player-ui-ios.html) 
+You've probably noticed that there are no buttons for playing or pausing the video. To learn about adding elements to the Player's UI, [click here](https://developer.kaltura.com/player/ios/player-ui-ios) 
 
-The Kaltura Player SDK also offers various plugins for iOS that can be added to the player. Learn more [here](http://developer.kaltura.com/player/ios/analytics-plugins-ios.html). 
+The Kaltura Player SDK also offers various plugins for iOS that can be added to the player. Learn more [here](https://developer.kaltura.com/player/ios/analytics-plugins-ios). 
 
 
 
