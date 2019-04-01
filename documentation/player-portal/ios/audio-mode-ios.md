@@ -18,8 +18,6 @@ The AVAudioSession enables you to play audio (essentially any sound) even when t
 ```swift
 var audioSessionInitialCategory: String?
 
-//-----
-
 audioSessionInitialCategory = AVAudioSession.sharedInstance().category
 do {
     try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
