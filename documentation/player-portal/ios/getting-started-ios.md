@@ -34,7 +34,7 @@ end
 - The [Playkit Pod](https://cocoapods.org/pods/PlayKit) is made up of the core Player infrastructure 
 - The [PlatKitProviders Pod](https://cocoapods.org/pods/PlayKitProviders) adds the Media Entry Providers, which are responsible from bringing in media data from Kaltura 
 
-If you don't already have a Podfile, go to your project directory and run `pod init`. This will create a new Podfile do you, where you should add the desired pods (see example above) and then run `pod install` from the command line. You might need to close and reopen Xcode. 
+If you don't already have a Podfile, go to your project directory and run `pod init`. This will create a new Podfile for you, where you should add the desired pods (see example above) and then run `pod install` from the command line. You might need to close and reopen Xcode. 
 
 ## Add a Basic Kaltura Player 
 
