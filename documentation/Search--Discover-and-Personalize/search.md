@@ -9,7 +9,7 @@ If you’ve had experience building search capabilities into your video applicat
 
 We’re excited to introduce a new Kaltura search API that will revolutionize how video search is done. Leveraging the Elastic Search engine, eSearch exposes a set of API actions that unlock a variety of search capabilities and simplify how video search is done.
 
-You can try it out yourself in the [console](https://developer.kaltura.com/console/service/eSearch), and we’ll demonstrate a few of the cool features below:
+You can try it out yourself in the [console](https://developer.kaltura.com/console/service/eSearch/action/searchEntry), and we’ll demonstrate a few of the cool features below:
 
 ## Search Term Highlighting 
 
@@ -91,7 +91,17 @@ $searchResults = $elasticsearchPlugin->eSearch->searchEntry($searchParams, null)
 At this point you’re just hungry and you don’t care whether the recipe is for pasta or salmon. You’d like to eat something “delicious”, but you’re open to “yummy” as well. This is another case for the partial feature, which uses the WordNet English synonym dictionary by default and gets you that recipe with fewer searches!
 
 {% highlight php %} 
-$entryNameItem = new KalturaESearchEntryItem(); $entryNameItem->searchTerm = 'delicious'; $entryNameItem->itemType = KalturaESearchItemType::PARTIAL; $entryNameItem->fieldName = KalturaESearchEntryFieldName::NAME; $entryNameItem->addHighlight = true; $searchOperator = new KalturaESearchEntryOperator(); $searchOperator->searchItems = array($entryNameItem); $searchParams = new KalturaESearchEntryParams(); $searchParams->searchOperator = $searchOperator; $elasticsearchPlugin = KalturaElasticSearchClientPlugin::get($client); $searchResults = $elasticsearchPlugin->eSearch->searchEntry($searchParams, null);
+$entryNameItem = new KalturaESearchEntryItem(); $entryNameItem->searchTerm = 'delicious'; 
+$entryNameItem->itemType = KalturaESearchItemType::PARTIAL; 
+$entryNameItem->fieldName = KalturaESearchEntryFieldName::NAME; $entryNameItem->addHighlight = true; 
+$searchOperator = new KalturaESearchEntryOperator(); 
+
+$searchOperator->searchItems = array($entryNameItem);
+$searchParams = new KalturaESearchEntryParams();
+
+$searchParams->searchOperator = $searchOperator; 
+$elasticsearchPlugin = KalturaElasticSearchClientPlugin::get($client); 
+$searchResults = $elasticsearchPlugin->eSearch->searchEntry($searchParams, null);
 {% endhighlight %}
 
 ### Results
