@@ -218,7 +218,7 @@ $cuePointItem->searchTerm = 'adding sugar';
 $notOperator = new KalturaESearchEntryOperator();
 $notOperator->operator = KalturaESearchOperatorType::NOT_OP;
 $notOperator->searchItems = array($cuePointItem);
-We defined a cue point item with ‘adding sugar’ as its search term. Then we added it to the NOT operator.
+// We defined a cue point item with 'adding sugar' as its search term. Then we added it to the NOT operator.
 
 $entryNameItem = new KalturaESearchEntryItem();
 $entryNameItem->searchTerm = 'strawberry';
@@ -344,9 +344,9 @@ Now we’ve defined an OR condition between the caption item and the metadata it
 $searchOperator = new KalturaESearchEntryOperator();
 $searchOperator->operator = KalturaESearchOperatorType::AND_OP;
 $searchOperator->searchItems = array($entryNameItem, $captionsOrMetadataOperator);
-And then we defined an AND condition between our group and that first entry item.
 {% endhighlight %}
 
+And then we defined an AND condition between our group and that first entry item.
 Lastly, we search. 
 
 {% highlight php %} 
@@ -386,7 +386,6 @@ $searchResults = $elasticsearchPlugin->eSearch->searchEntry($searchParams, null)
                                 "value":"<em>\u98df\u8c31<\/em>",
                                 "objectType":"KalturaString"
                             }
-            ...
     },
 {
     "object":{
@@ -421,7 +420,6 @@ $searchResults = $elasticsearchPlugin->eSearch->searchEntry($searchParams, null)
                             "value":"<em>recipe<\/em>",
                             "objectType":"KalturaString"
                         }
-            ...                  
 }
 {% endhighlight %} 
 
