@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with the Kaltura Web Player
+title: Getting Started with the Web Player
 weight: 110
 ---
 
@@ -117,7 +117,7 @@ Let's walk through the steps for writing that embed code.
 
 Congrats! Running this page should show you a Kaltura Player loaded with the entry that you chose. 
 
-Notice that this method is the **Dynamic Embed**, which is different than the aforementioned auto embed code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types) to read more about embed types. 
+Notice that this method is the **Dynamic Embed**, which is different than the aforementioned auto embed code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types-web) to read more about embed types. 
 
 ## Configuring the Player
 
