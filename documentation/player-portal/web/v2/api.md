@@ -5,7 +5,7 @@
 
 This documentation covers version **_2.74.1__1e322ce7_** of the html5 library. 
 
-The kWidget API is available after you include the Kaltura player library. kWidget provides embedding and basic utility functions. The Kaltura player library can be embeded into both 
+The kWidget API is available after you include the Kaltura player library. kWidget provides embedding and basic utility functions. The Kaltura player library can be embedded into both 
 
 . 
 
@@ -180,7 +180,7 @@ The kWidget API object, used to create new instances of Kaltura API request.
 * **serviceUrl** String Can be overwritten to target a different Kaltura server.
 * **serviceBase** String Can be overwritten to alternate Kaltura service path.
 * **statsServiceUrl** String Default supplied via Kaltura library include, can be overwritten to alternate URL for core analytics events.
-* **disableCache** String Sends no-cache param to API, for a fresh result. Can hurt performance and CDN cachability should be used sparingly.
+* **disableCache** String Sends no-cache param to API, for a fresh result. Should be used sparingly.
 
 ## Player Configuration key value pairs ( UiVars )
 
@@ -229,7 +229,7 @@ All player properties can also be retrieved at runtime or used in plugins macro 
     })
     
 
-Finally many properties can be upated at runtime using [setKDPAttribute][17]. 
+Finally many properties can be updated at runtime using [setKDPAttribute][17]. 
 
 Kaltura service variables define define respective Kaltura API configuration.
 
@@ -319,7 +319,7 @@ A array of assets used for black video streams. Used to capture user gestures ag
 Type:   
     String
 * Kaltura.UseManifestUrls  
-Used to designate usage of playMainfest URL type instead of legacy flvclipper Kaltura media URLs  
+Used to designate usage of playManifest URL type instead of legacy flvclipper Kaltura media URLs  
 Type:   
     String  
 Default:   
@@ -671,7 +671,7 @@ Type:
 
 ## Playback
 
-UiVars for contoling basic playback.
+UiVars for controlling basic playback.
 
 * autoPlay  
 Auto play single media (doesn't apply to playlists)  
@@ -722,7 +722,7 @@ Default:
     false  
 Legacy Only
 * stretchVideo  
-When true, stretchs the video to fill its container even if video aspect ratio breaks  
+When true, stretches the video to fill its container even if video aspect ratio breaks  
 Type:   
     Boolean  
 Default:   
@@ -1146,7 +1146,6 @@ Sample:
     
         kdp.sendNotification("doSeek", 30);
 
-  
 [Usage Example][50]
 * changeMedia  
 Change the current media entry within the player.  
@@ -1216,7 +1215,6 @@ Hide closed captions
 Notification Data: None  
 [Usage Example][27]
 
-  
 
 #### Registering to a player event ( kBind )
 
@@ -1270,7 +1268,7 @@ Code sample:
 ### Player Life Cycle:
 
 * startUp  
-The first command that registers the main proxys and main view mediator.  
+The first command that registers the main proxies and main view mediator.  
 Callback Args:   
     Root of the application  
 Legacy Only

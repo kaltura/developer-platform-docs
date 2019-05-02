@@ -35,93 +35,93 @@ The configuration uses the following structure:
 
 ##
 
-> ### config.targetId
->
-> ##### Type: `string`
->
-> ##### Default: `-`
->
-> ##### Description: Defines the ID of the DOM element to which the player will be added.
+### config.targetId
+
+##### Type: `string`
+
+##### Default: `-`
+
+##### Description: Defines the ID of the DOM element to which the player will be added.
 
 ##
 
-> ### config.logLevel
->
-> ##### Type: `string`
->
-> ##### Default: `"ERROR"`
->
-> ##### Description: Defines the player log level.
->
-> Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
+### config.logLevel
+
+##### Type: `string`
+
+##### Default: `"ERROR"`
+
+##### Description: Defines the player log level.
+
+Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##
 
-> ### config.disableUserCache
->
-> ##### Type: `boolean`
->
-> ##### Default: `false`
->
-> ##### Description: Indicates whether to stop using the saved user preferences.
->
-> <br>You can learn more about user preferences in the player [here](./user-preferences.md).
+### config.disableUserCache
+
+##### Type: `boolean`
+
+##### Default: `false`
+
+##### Description: Indicates whether to stop using the saved user preferences.
+
+<brYou can learn more about user preferences in the player [here](./user-preferences.md).
 
 ##
 
-> ### config.playback
->
-> ##### Type: [PKPlaybackConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configplayback)
->
-> ##### Description: Defines the playback configuration.
->
-> ### config.sources
->
-> ##### Type: [PKSourcesConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configsources)
->
-> ##### Description: Defines the sources configuration.
->
-> ### config.playlist
->
-> ##### Type: [KPPlaylistObject](./api.md#kpplaylistobject)
->
-> ##### Description: Defines the playlist configuration.
->
-> ### config.plugins
->
-> ##### Type: [PKPluginsConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configplugins)
->
-> ##### Description: Defines the plugins configuration.
->
-> ### config.session
->
-> ##### Type: [PKSessionConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configsession)
->
-> ##### Description: Defines the session configuration.
+### config.playback
+
+##### Type: [PKPlaybackConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configplayback)
+
+##### Description: Defines the playback configuration.
+
+### config.sources
+
+##### Type: [PKSourcesConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configsources)
+
+##### Description: Defines the sources configuration.
+
+### config.playlist
+
+##### Type: [KPPlaylistObject](./api.md#kpplaylistobject)
+
+##### Description: Defines the playlist configuration.
+
+### config.plugins
+
+##### Type: [PKPluginsConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configplugins)
+
+##### Description: Defines the plugins configuration.
+
+### config.session
+
+##### Type: [PKSessionConfigObject](https://github.com/kaltura/playkit-js/blob/master/docs/configuration.md#configsession)
+
+##### Description: Defines the session configuration.
 
 ##
 
-> ### config.provider
->
-> ##### Type: [ProviderOptionsObject](https://github.com/kaltura/playkit-js-providers/blob/master/docs/configuration.md)
->
-> ##### Description: Defines the provider configuration.
+### config.provider
+
+##### Type: [ProviderOptionsObject](https://github.com/kaltura/playkit-js-providers/blob/master/docs/configuration.md)
+
+##### Description: Defines the provider configuration.
 
 ##
 
-> ### config.ui
->
-> ##### Type: [UIOptionsObject](https://github.com/kaltura/playkit-js-ui/blob/master/docs/configuration.md)
->
-> ##### Description: Defines the user interface (UI) configuration.
+### config.ui
+
+##### Type: [UIOptionsObject](https://github.com/kaltura/playkit-js-ui/blob/master/docs/configuration.md)
+
+##### Description: Defines the user interface (UI) configuration.
 
 ##
 
-> ### config.cast
->
-> ##### Type: [CastConfigObject](https://github.com/kaltura/playkit-js-cast-sender/blob/master/docs/configuration-api.md#castconfigobject)
->
-> ##### Description: Defines the cast configuration.
+### config.cast
+
+##### Type: [CastConfigObject](https://github.com/kaltura/playkit-js-cast-sender/blob/master/docs/configuration-api.md#castconfigobject)
+
+##### Description: Defines the cast configuration.
 
 ## Configuration Priority
 
