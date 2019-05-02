@@ -8,10 +8,11 @@ When using embed codes, you can select from one of three options: Auto Embed, Dy
 
 ## Auto Embed
 
-Auto embed is the recommended embed code for the Kaltura Player. It uses precise code and is good for getting a player or widget onto the page quickly and easily without any runtime customizations.<br>
+Auto embed is the recommended embed code for the Kaltura Player. It uses precise code and is good for getting a player or widget onto the page quickly and easily without any runtime customizations.
 
 Auto embed is optimized for packing a lots of resources into the initial request, allowing the player to be rendered quickly.
-<br>Here's how to use the auto embed code:
+
+Here's how to use the auto embed code:
 
 ```html
 <div id="{TARGET_ID}" style="width: 640px;height: 360px"></div>
@@ -20,7 +21,7 @@ Auto embed is optimized for packing a lots of resources into the initial request
 
 ## Dynamic Embed
 
-Dynamic embed is recommended for cases where you want to control runtime configuration dynamically and/or have more control over the embed call.<br>
+Dynamic embed is recommended for cases where you want to control runtime configuration dynamically and/or have more control over the embed call.
 
 Basic dynamic embed codes look like this:
 

@@ -16,11 +16,12 @@ const kalturaPlayer = KalturaPlayer.setup(config);
 ```
 
 To learn how to set up a Kaltura Player, see [Player Setup](https://developer.kaltura.com/player/web/player-setup).
-<br>Once you have a Kaltura Player instance, you can load a playlist using one of the following methods:
+
+Once you have a Kaltura Player instance, you can load a playlist using one of the following methods:
 
 #### By Playlist ID (OVP Only)
 
-To load a playlist by ID, use [`loadPlaylist`](./api.md#loadplaylist) method.
+To load a playlist by ID, use [`loadPlaylist`](https://developer.kaltura.com/player/web/api-web#loadplaylist) method.
 
 ```javascript
 kalturaPlayer.loadPlaylist({playlistId: '123456'});
@@ -28,8 +29,9 @@ kalturaPlayer.loadPlaylist({playlistId: '123456'});
 
 #### By Entry List
 
-To load a playlist by entry list, use the [`loadPlaylistByEntryList`](./api.md#loadplaylistbyentrylist) method.
-<br>This method creates a playlist according to the given entries.
+To load a playlist by entry list, use the [`loadPlaylistByEntryList`](https://developer.kaltura.com/player/web/api-web#loadplaylistbyentrylist) method.
+
+This method creates a playlist according to the given entries.
 
 ```javascript
 kalturaPlayer.loadPlaylistByEntryList({entries: [{entryId: '01234'}, {entryId: '56789'}]});
@@ -37,7 +39,7 @@ kalturaPlayer.loadPlaylistByEntryList({entries: [{entryId: '01234'}, {entryId: '
 
 #### By Configuration
 
-You can load a playlist by configuring the playlist data and items explicitly using the [`configure`](./api.md#configure-3) method.
+You can load a playlist by configuring the playlist data and items explicitly using the [`configure`](https://developer.kaltura.com/player/web/api-web#configure-3) method.
 
 ```javascript
 kalturaPlayer.configure({
@@ -76,15 +78,17 @@ kalturaPlayer.configure({
 });
 ```
 
-For all playlist options, see [`KPPlaylistObject`](./api.md#kpplaylistobject).
+For all playlist options, see [`KPPlaylistObject`](https://developer.kaltura.com/player/web/api-web#kpplaylistobject).
 
 ## Configure the Playlist
 
 ### Auto Continue
 
 By default, once the current item is ended, the playlist continues to the next item automatically.
-<br>To change this behavior, configure the [`options`](./api.md#kpplaylistoptions) under [`KPPlaylistConfigObject`](./api.md#kpplaylistconfigobject) using one of the following methods:
-<br>Via the API:
+
+To change this behavior, configure the [`options`](https://developer.kaltura.com/player/web/api-web#kpplaylistoptions) under [`KPPlaylistConfigObject`](https://developer.kaltura.com/player/web/api-web#kpplaylistconfigobject) using one of the following methods:
+
+Via the API:
 
 ```javascript
 kalturaPlayer.loadPlaylist({playlistId: '123456'}, {options: {autoContinue: false}});
@@ -105,9 +109,10 @@ kalturaPlayer.configure({
 ```
 
 > Note: The `autoContinue` property is relevant only for the second item onwards.
-> <br>To play the first entry automatically, use the [`autoplay`](https://developer.kaltura.com/player/web/autoplay) configuration.
+> 
+To play the first entry automatically, use the [`autoplay`](https://developer.kaltura.com/player/web/autoplay) configuration.
 
-For full playlist options see [`KPPlaylistOptions`](./api.md#kpplaylistoptions).
+For full playlist options see [`KPPlaylistOptions`](https://developer.kaltura.com/player/web/api-web#kpplaylistoptions).
 
 ### Countdown
 
@@ -115,9 +120,12 @@ When the current item is about to end and the playlist is set to continue automa
 ![playlist-countdown](images/playlist-countdown.png)
 
 By default, the countdown is displayed for 10 seconds until the end.
-<br>To change this behavior, configure the [`countdown`](./api.md#kpplaylistcountdownoptions) under [`KPPlaylistConfigObject`](./api.md#kpplaylistconfigobject):
-<br> For example, to show the countdown for 20 seconds until the end, configure:
-<br>Via the API:
+
+To change this behavior, configure the [`countdown`](https://developer.kaltura.com/player/web/api-web#kpplaylistcountdownoptions) under [`KPPlaylistConfigObject`](https://developer.kaltura.com/player/web/api-web#kpplaylistconfigobject):
+
+ For example, to show the countdown for 20 seconds until the end, configure:
+
+Via the API:
 
 ```javascript
 kalturaPlayer.loadPlaylist({playlistId: '123456'}, {countdown: {duration: 20}});
@@ -147,11 +155,11 @@ kalturaPlayer.loadPlaylist({playlistId: '123456'}, {countdown: {timeToShow: 600}
 
 In this case the countdown will display at the 600th second for 10 seconds, and then will skip to the next item.
 
-For full countdown options see [`KPPlaylistCountdownOptions`](./api.md#kpplaylistcountdownoptions).
+For full countdown options see [`KPPlaylistCountdownOptions`](https://developer.kaltura.com/player/web/api-web#kpplaylistcountdownoptions).
 
 ## Switching Items
 
-Using the [`playlist`](./api.md#playlist) API, you can get the playlist data and then switch between the items.
+Using the [`playlist`](https://developer.kaltura.com/player/web/api-web#playlist) API, you can get the playlist data and then switch between the items.
 
 ```javascript
 // switch to the next item
@@ -165,12 +173,13 @@ const lastItemIndex = kalturaPlayer.playlist.items.length - 1;
 kalturaPlayer.playlist.playItem(lastItemIndex);
 ```
 
-For the complete `playlist` API, see [PlaylistManager](./api.md#playlistmanager).
+For the complete `playlist` API, see [PlaylistManager](https://developer.kaltura.com/player/web/api-web#playlistmanager).
 
 ## Change Playlist
 
-To clean the playlist data, you'll need to call the [`playlist.reset`](./api.md#reset-2) method.
-<br>Here is an example how to change the playlist using the [`playlist events`](./api.md#playlisteventtype) and [`playlist.reset`](./api.md#reset-2) method.
+To clean the playlist data, you'll need to call the [`playlist.reset`](https://developer.kaltura.com/player/web/api-web#reset-2) method.
+
+Here is an example how to change the playlist using the [`playlist events`](https://developer.kaltura.com/player/web/api-web#playlisteventtype) and [`playlist.reset`](https://developer.kaltura.com/player/web/api-web#reset-2) method.
 
 ```javascript
 kalturaPlayer.loadPlaylist({playlistId: '01234'});
@@ -180,7 +189,7 @@ kalturaPlayer.addEventListener(KalturaPlayer.playlist.PlaylistEventType.PLAYLIST
 });
 ```
 
-> Note: The playlist [config](./api.md#KPPlaylistConfigObject) is not removed on reset.
+> Note: The playlist [config](https://developer.kaltura.com/player/web/api-web#KPPlaylistConfigObject) is not removed on reset.
 
 ```javascript
 kalturaPlayer.loadPlaylist({playlistId: '01234'}, {options: {autoContinue: false}});

@@ -20,7 +20,8 @@ To learn more about what you can do with these states, refer to the detailed `St
 ## Available State Types
 
 The player supports a number of player state types. You'll find a detailed list of player types [here](https://github.com/kaltura/playkit-js/blob/master/src/state/state-type.js).
-<br>Here's an example how you can access a player state type:
+
+Here's an example how you can access a player state type:
 
 ```js
 console.log(player.State.PLAYING); // 'playing'

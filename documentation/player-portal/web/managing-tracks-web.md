@@ -41,7 +41,7 @@ console.log('This source has ' + tracks.length + ' tracks');
 #### Getting Specific Track Types
 
 It's also possible to get a specific kind of track.
-<br>The code below shows how to get a specific track by passing a parameter to the `getTracks` method:
+The code below shows how to get a specific track by passing a parameter to the `getTracks` method:
 
 ```javascript
 var videoTracks = player.getTracks(player.Track.VIDEO);
@@ -70,8 +70,10 @@ This section demonstrates how to manage video tracks
 #### Adaptive Bitrate and Manual Selection
 
 There are two ways to use video tracks (or bitrate): _Adaptive Bitrate_ and _Manual Selection_.
-<br>When _Adaptive Bitrate_ is enabled, the player controls the video track selection according to the network conditions. This is the default mode.
-<br>When selecting a specific video track manually, the player switches from _Adaptive Bitrate_ mode to _Manual Selection_.
+
+When _Adaptive Bitrate_ is enabled, the player controls the video track selection according to the network conditions. This is the default mode.
+
+When selecting a specific video track manually, the player switches from _Adaptive Bitrate_ mode to _Manual Selection_.
 
 > **Important:** On Safari browsers, only the _Adaptive Bitrate_ mode is available.
 
@@ -103,7 +105,8 @@ player.addEventListener(player.Event.ABR_MODE_CHANGED, function(event) {
 #### Video Track Selection
 
 To select a specific video track (bitrate), use the `selectTrack` method.
-<br>The code below shows how to force the player to play the top bitrate track:
+
+The code below shows how to force the player to play the top bitrate track:
 
 ```javascript
 var videoTracks = player.getTracks(player.Track.VIDEO);
@@ -119,7 +122,8 @@ player.selectTrack(topBandwidthTrack);
 ```
 
 By selecting a specific video track, the player switches to _Manual Selection_ mode.
-<br>To go back to the _Adaptive Bitrate_ mode, use the `enableAdaptiveBitrate` method:
+
+To go back to the _Adaptive Bitrate_ mode, use the `enableAdaptiveBitrate` method:
 
 ```javascript
 player.addEventListener(player.Event.ABR_MODE_CHANGED, function(event) {
@@ -143,7 +147,8 @@ This section shows you how to manage audio tracks.
 #### Audio Track Selection
 
 To select a specific audio track, use the `selectTrack` method.
-<br>The code below shows how to select the _Spanish_ audio track:
+
+The code below shows how to select the _Spanish_ audio track:
 
 ```javascript
 var audioTracks = player.getTracks(player.Track.AUDIO);
@@ -169,7 +174,8 @@ This section shows you how to manage text tracks.
 #### Text Track Selection
 
 To select a specific text track, use the `selectTrack` method.
-<br>The code below shows how to select the _Spanish_ text track:
+
+The code below shows how to select the _Spanish_ text track:
 
 ```javascript
 var textTracks = player.getTracks(player.Track.TEXT);
@@ -191,7 +197,8 @@ player.addEventListener(player.Event.TEXT_TRACK_CHANGED, function(event) {
 #### Disabling the Text Track
 
 To disable the text track, use the `hideTextTrack` method.
-<br>In this case the player triggers a `TEXT_TRACK_CHANGED` event with 'off' track:
+
+In this case the player triggers a `TEXT_TRACK_CHANGED` event with 'off' track:
 
 ```javascript
 player.addEventListener(player.Event.TEXT_TRACK_CHANGED, function(event) {
