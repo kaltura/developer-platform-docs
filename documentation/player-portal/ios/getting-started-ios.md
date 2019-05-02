@@ -34,6 +34,7 @@ end
 
 If you don't already have a Podfile, go to your project directory and run `pod init`. This will create a new Podfile for you, where you should add the desired pods (see example above) and then run `pod install` from the command line. You might need to close and reopen Xcode. 
 
+
 ## Add a Basic Kaltura Player 
 
 The code below will cover a few functions needed in order to get the bare bones of a kaltura player, as well as a few additional steps regarding implementing your player UI and adding plugins. 

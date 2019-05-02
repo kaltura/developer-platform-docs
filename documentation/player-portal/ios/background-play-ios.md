@@ -4,15 +4,7 @@ title: Playing Video in the Background for iOS
 weight: 110
 ---
 
-The following section describes the way to play a video while the application is minimized, for example in the case of listening to a podcast in the background. 
-
-### Application State Changes  
-
-The framework observes application state changes internally to provide better handling.
-
-Handled events:
-* `on` will terminate the event:
-	* Post analytics "stop" event.
+The following section describes the way to play a video while the application is minimized, for example in the case of listening to a podcast in the background. The framework observes application state changes internally to provide handling for this scenario. 
 
 #### Playing Media While in Background  
 
