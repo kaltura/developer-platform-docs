@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started with the Kaltura Web Player
+title: Getting Started with the Web Player
 weight: 110
 ---
 
@@ -12,7 +12,11 @@ To create a new Kaltura Player, you'll need to have an active Kaltura Management
 
 ## Creating a TV Studio Player
 
-Kaltura Video Players are created and managed in the KMC [Studio](https://kmc.kaltura.com/index.php/kmcng/studio/v3), which is the second tab in the header. You'll find options for the Universal Studio, for legacy support, and the TV Platform Studio - which is colloquially referred to as Player V3. There you will also find all your available players in both categories. This guide will walk you through creating and embedding a TV Studio Player, which is focused on speed and performance.
+Kaltura Video Players are created and managed in the KMC [Studio](https://kmc.kaltura.com/index.php/kmcng/studio/v3), which is the second tab in the header.  You'll find options for the Universal Studio, for legacy support, and the TV Platform Studio - which is colloquially referred to as Player V7.  
+
+> The TV Studio Player is not enabled by default, so if you don't see it, contact support to have it enabled.
+
+Once in the studio, you will find all your available players from both categories. The steps below will walk you through creating and embedding a TV Studio Player, which is focused on speed and performance.
 
 1. Click the **Add New Player** button, and give it a name. At this point, you can save the player, as default settings are enough.
 
@@ -73,7 +77,7 @@ Let's walk through the steps for writing that embed code.
         autoplay: true
         }
     });
-    kalturaPlayer.loadMedia({entryId: '1_p2bzler6'});
+    kalturaPlayer.loadMedia({entryId: '1_p2bzzzz6'});
   } catch (e) {
   console.error(e.message)
   }
@@ -91,21 +95,21 @@ Let's walk through the steps for writing that embed code.
 <body>
   <div id="new-player" style="width: 640px;height: 360px"></div>
 
-  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/2196781/embedPlaykitJs/uiconf_id/41483031"></script>
+  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/0000000/embedPlaykitJs/uiconf_id/22222222"></script>
 
   <script type="text/javascript">
   try {
     let kalturaPlayer = KalturaPlayer.setup({
       targetId: "kalturaPlayer",
       provider: {
-        partnerId: 2365491,
+        partnerId: 0000000,
         uiConfId: 42929341
       },
       playback: {
         autoplay: true
         }
     });
-    kalturaPlayer.loadMedia({entryId: '1_p2bzler6'});
+    kalturaPlayer.loadMedia({entryId: '1_p2bzzzz6'});
   } catch (e) {
     console.error(e.message)
   }
@@ -117,7 +121,7 @@ Let's walk through the steps for writing that embed code.
 
 Congrats! Running this page should show you a Kaltura Player loaded with the entry that you chose. 
 
-Notice that this method is the **Dynamic Embed**, which is different than the aforementioned auto embed code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types) to read more about embed types. 
+Notice that this method is the **Dynamic Embed**, which is different than the aforementioned auto embed code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types-web) to read more about embed types. 
 
 ## Configuring the Player
 
