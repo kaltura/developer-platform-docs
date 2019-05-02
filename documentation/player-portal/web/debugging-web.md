@@ -14,7 +14,7 @@ To debug the player and view explicit messages in the console, you'll need to ru
 
 In your application, define at the top of your page the following window debug variable:
 
-```js
+```
 window.DEBUG_KALTURA_PLAYER = true;
 ```
 
@@ -22,13 +22,13 @@ window.DEBUG_KALTURA_PLAYER = true;
 
 In your page URL, add the `debugKalturaPlayer` query string parameter:
 
-```js
+```
 http://my/page/url?debugKalturaPlayer
 ```
 
 **Options 3: Using Player Config**
 
-```js
+```
 var config = {
     ...
     logLevel: "DEBUG"
@@ -47,7 +47,7 @@ After implementing one of the options above, open your browser developer tools a
 
 As you can see from the figure above, the player log conventions are built with the following template:
 
-```bash
+```
 [Component] Message
 ```
 

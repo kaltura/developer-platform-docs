@@ -64,12 +64,22 @@ The function return types must be specified in the JSDoc directly above the func
 
 Braces are requires for all control structures (e.g., `if`, `else`, `for`, `do`, `while` as well as any others), even if the body contains only a single statement. The first statement of a non-empty block must begin in its own line.
 
-> Important! Do **not** use the following structure:
+Short if statements that look like this are ill-advised:
 
 ```javascript
-if (someVeryLongCondition()) doSomething();
+if (someCondition) doSomething();
 
 for (let i = 0; i < foo.length; i++) bar(foo[i]);
+```
+
+Instead use brackets like this: 
+
+```javascript 
+if (someCondition) {
+
+   doSomething();
+
+}
 ```
 
 ## Block Indentation

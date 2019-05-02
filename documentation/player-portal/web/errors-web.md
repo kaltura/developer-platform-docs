@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Controlling Player Errors for Web
+title: Handling Player Errors 
 weight: 110
 ---
 
