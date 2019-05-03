@@ -107,8 +107,6 @@ var config = {
 
 Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
-##
-
 ### config.sources
 
 ##### Type: `PKSourcesConfig`
@@ -197,8 +195,6 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##### Description: Defines related sources configurations.
 
-##
-
 ### config.sources.hls
 
 ##### Type: `Array<PKMediaSourceObject`
@@ -221,8 +217,6 @@ var config = {
   }
 };
 ```
-
-##
 
 ### config.sources.dash
 
@@ -247,8 +241,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.sources.progressive
 
 ##### Type: `Array<PKMediaSourceObject`
@@ -272,8 +264,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.sources.options
 
 ##### Type: `PKMediaSourceOptionsObject`
@@ -288,8 +278,6 @@ var config = {
 
 ##### Description: Defines the sources options.
 
-##
-
 ### config.sources.options.forceRedirectExternalStreams
 
 ##### Type: `boolean`
@@ -297,8 +285,6 @@ var config = {
 ##### Default: `false`
 
 ##### Description: Enable workaround for some user-agents that don't allow redirects after a successful CORS-preflight request.
-
-##
 
 ### config.sources.options.redirectExternalStreamsHandler
 
@@ -308,8 +294,6 @@ var config = {
 
 ##### Description: The handler function which redirects the stream.
 
-##
-
 ### config.sources.options.redirectExternalStreamsTimeout
 
 ##### Type: `number`
@@ -317,8 +301,6 @@ var config = {
 ##### Default: `-`
 
 ##### Description: The timeout for the redirect operation.
-
-##
 
 ### config.sources.type
 
@@ -330,8 +312,6 @@ var config = {
 
 Possible values: `"Vod", "Live", "Image", "Audio", "Unknown"`.
 
-##
-
 ### config.sources.dvr
 
 ##### Type: `boolean`
@@ -342,8 +322,6 @@ Possible values: `"Vod", "Live", "Image", "Audio", "Unknown"`.
 
 Relevant only if the media type=`"Live"`.
 
-##
-
 ### config.sources.metadata
 
 ##### Type: `PKMetadataConfigObject`
@@ -351,8 +329,6 @@ Relevant only if the media type=`"Live"`.
 ##### Default: `{}`
 
 ##### Description: Defines the metadata of the media.
-
-##
 
 ### config.sources.metadata.name
 
@@ -362,8 +338,6 @@ Relevant only if the media type=`"Live"`.
 
 ##### Description: The name of the media.
 
-##
-
 ### config.sources.metadata.description
 
 ##### Type: `string`
@@ -371,8 +345,6 @@ Relevant only if the media type=`"Live"`.
 ##### Default: `-`
 
 ##### Description: The description of the media.
-
-##
 
 ### config.sources.id
 
@@ -382,8 +354,6 @@ Relevant only if the media type=`"Live"`.
 
 ##### Description: The id of the media.
 
-##
-
 ### config.sources.poster
 
 ##### Type: `string`
@@ -392,8 +362,6 @@ Relevant only if the media type=`"Live"`.
 
 ##### Description: The poster url of the media.
 
-##
-
 ### config.sources.duration
 
 ##### Type: `number`
@@ -401,8 +369,6 @@ Relevant only if the media type=`"Live"`.
 ##### Default: `-`
 
 ##### Description: The duration of the media.
-
-##
 
 ### config.sources.captions
 
@@ -432,8 +398,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.plugins
 
 ##### Type: `PKPluginsObject`
@@ -457,8 +421,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.plugins.PLUGIN_NAME.disable
 
 ##### Type: `boolean`
@@ -478,8 +440,6 @@ var config = {
   }
 };
 ```
-
-##
 
 ### config.playback
 
@@ -582,8 +542,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.playback.textLanguage
 
 ##### Type: `string || "auto"`
@@ -633,8 +591,6 @@ The player will choose the default captions language using the following logic:
 
 If set to True, the native browser captions will be displayed.
 
-##
-
 ### config.playback.enableCEA708Captions
 
 ##### Type: `boolean`
@@ -642,8 +598,6 @@ If set to True, the native browser captions will be displayed.
 ##### Default: `false`
 
 ##### Description: Whether or not to enable CEA-708 captions.
-
-##
 
 ### config.playback.captionsTextTrack1Label
 
@@ -653,8 +607,6 @@ If set to True, the native browser captions will be displayed.
 
 ##### Description: Label for the CEA-708 captions track 1.
 
-##
-
 ### config.playback.captionsTextTrack1LanguageCode
 
 ##### Type: `string`
@@ -662,8 +614,6 @@ If set to True, the native browser captions will be displayed.
 ##### Default: `en`
 
 ##### Description: RFC 3066 language code for the CEA-708 captions track 1.
-
-##
 
 ### config.playback.captionsTextTrack2Label
 
@@ -673,8 +623,6 @@ If set to True, the native browser captions will be displayed.
 
 ##### Description: Label for the CEA-708 captions track 2.
 
-##
-
 ### config.playback.captionsTextTrack2LanguageCode
 
 ##### Type: `string`
@@ -682,8 +630,6 @@ If set to True, the native browser captions will be displayed.
 ##### Default: `es`
 
 ##### Description: RFC 3066 language code for the CEA-708 captions track 2.
-
-##
 
 ### config.playback.volume
 
@@ -705,8 +651,6 @@ var config = {
 };
 ```
 
-##
-
 ### config.playback.startTime
 
 ##### Type: `number`
@@ -718,10 +662,8 @@ var config = {
 Default -1 refer to automatic start time - 0 to VOD and live edge to live.
 
 Note. `startTime` affects the ad playback, e.g. `startTime: 10` will skip ads scheduled until 10.
-<brTo force playing ads scheduled before `startTime`, need to configure the ads plugin.
-<brFor example with [IMA](https://github.com/kaltura/playkit-js-ima/blob/master/docs/api.md) plugin, set `adsRenderingSettings: {playAdsAfterTime: -1}`.
-
-##
+To force playing ads scheduled before `startTime`, need to configure the ads plugin.
+For example with [IMA](https://github.com/kaltura/playkit-js-ima/blob/master/docs/api.md) plugin, set `adsRenderingSettings: {playAdsAfterTime: -1}`.
 
 ### config.playback.playsinline
 
@@ -732,8 +674,6 @@ Note. `startTime` affects the ad playback, e.g. `startTime: 10` will skip ads sc
 ##### Description: A Boolean attribute that indicates whether the video should be played "inline", that is, within the element's playback area.
 
 This is especially relevant when playing videos on iPhone devices, where - if the value is set to false - the video will be played using the AV Player (iOS native video player).
-
-##
 
 ### config.playback.crossOrigin
 
@@ -750,8 +690,6 @@ Possible values:
 
 When not present, the resource is fetched without a CORS request (i.e. without sending the Origin: HTTP header), preventing its non-tainted used in <canvaselements. If invalid, it is handled as if the enumerated keyword anonymous was used. See [CORS settings attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) for additional information.
 
-##
-
 ### config.playback.preload
 
 ##### Type: `string`
@@ -765,13 +703,9 @@ Possible values:
 - `"none"`: indicates that the video should not be preloaded.
 - `"auto"`: indicates that the whole video file could be downloaded, even if the user is not expected to use it.
 
-##
-
 ### config.playback.autoplay/allowMutedAutoPlay
 
-for `autoplay` & `allowMutedAutoPlay` options read [here](autoplay.md).
-
-##
+for `autoplay` & `allowMutedAutoPlay` options read [here](https://developer.kaltura.com/player/web/autoplay-web).
 
 ### config.playback.loop
 
@@ -783,8 +717,6 @@ for `autoplay` & `allowMutedAutoPlay` options read [here](autoplay.md).
 
 This is a Boolean attribute that indicates the default setting of the loop playback option. If set, the player will restart playback upon completion. The attribute's default value is false, which means that the video will pause when the video is finished playing.
 
-##
-
 ### config.playback.muted
 
 ##### Type: `boolean`
@@ -795,8 +727,6 @@ This is a Boolean attribute that indicates the default setting of the loop playb
 
 This is a Boolean attribute that indicates the default setting of the audio contained in the video. If set, the audio will be initially silenced. The attribute's default value is false, which means that the audio will be played automatically when the video is played.
 
-##
-
 ### config.playback.pictureInPicture
 
 ##### Type: `boolean`
@@ -806,8 +736,6 @@ This is a Boolean attribute that indicates the default setting of the audio cont
 ##### Description: Indicates if the picture in picture feature is enabled.
 
 This is a boolean attribute that allows to disable (enabled by default) the picture in picture feature (it will be enabled only in browsers supporting this ability)
-
-##
 
 ### config.playback.options
 
@@ -837,8 +765,6 @@ This is a boolean attribute that allows to disable (enabled by default) the pict
 
 - For `hls` configuration, see the [hls.js](https://github.com/video-dev/hls.js/blob/master/doc/API.md#fine-tuning) documentation.
 - For `dash` configuration, see the [shaka-player](https://shaka-player-demo.appspot.com/docs/api/tutorial-config.html) documentation.
-
-##
 
 ### config.playback.preferNative
 
@@ -880,8 +806,6 @@ var config = {
 
 If the player is running on a _Safari_ browser, the player will use the native hls playback managed by the _Safari_ browser. However, if running on a browser in which hls playback is not supported natively, for example, _Chrome_, the player will play hls using the `hls.js` library.
 
-##
-
 ### config.playback.inBrowserFullscreen
 
 ##### Type: `boolean`
@@ -893,8 +817,6 @@ inBrowserFullscreen: boolean;
 ```
 
 ##### Description: Gives the ability to choose an in-browser fullscreen experience. Useful on iOS devices which will replace the native fullscreen of the AV player.
-
-##
 
 ### config.playback.streamPriority
 
@@ -937,8 +859,6 @@ inBrowserFullscreen: boolean;
 As soon as the player receives the sources, it will review the configuration array and try to play the source with the matched stream format according to the matched engine.
 For example, in the priority configuration above, the player will try to play the hls stream using an html5 engine first. If an hls stream isn't received, the player will continue to play the dash stream using an html5 engine. If a dash stream isn't received, the player will then will continue to play the progressive stream using an html5 engine.
 
-##
-
 ### config.session
 
 ##### Type: `PKSessionConfigObject`
@@ -956,8 +876,6 @@ For example, in the priority configuration above, the player will try to play th
 
 ##### Description: Defines the session data (optional).
 
-##
-
 ### config.session.id
 
 ##### Type: `string`
@@ -965,8 +883,6 @@ For example, in the priority configuration above, the player will try to play th
 ##### Default: `-`
 
 ##### Description: The session id.
-
-##
 
 ### config.session.ks
 
@@ -976,8 +892,6 @@ For example, in the priority configuration above, the player will try to play th
 
 ##### Description: The session secret.
 
-##
-
 ### config.session.partnerId
 
 ##### Type: `number`
@@ -986,8 +900,6 @@ For example, in the priority configuration above, the player will try to play th
 
 ##### Description: The partner id.
 
-##
-
 ### config.session.uiConfId
 
 ##### Type: `number`
@@ -995,8 +907,6 @@ For example, in the priority configuration above, the player will try to play th
 ##### Default: `-`
 
 ##### Description: The ui configuration id.
-
-##
 
 ### config.customLabels
 
@@ -1041,8 +951,6 @@ var config = {
 A Text track has language and label properties. The label is set by the label property in the manifest.
 However, in case the manifest does not have a label property - the language property will be set as the tracks label.
 
-##
-
 ### config.abr
 
 ##### Type: `PKAbrConfigObject`
@@ -1075,8 +983,6 @@ However, in case the manifest does not have a label property - the language prop
 
 ##### Description: Interval time in milliseconds to check if too many frames are dropped
 
-##
-
 ### config.abr.fpsDroppedMonitoringThreshold
 
 ##### Type: `number`
@@ -1085,8 +991,6 @@ However, in case the manifest does not have a label property - the language prop
 
 ##### Description: The allowed frames dropped threshold.
 
-##
-
 ### config.abr.capLevelOnFPSDrop
 
 ##### Type: `boolean`
@@ -1094,10 +998,6 @@ However, in case the manifest does not have a label property - the language prop
 ##### Default: true
 
 ##### Description: If the player should cap the level when the fps exceeds the threshold.
-
-##
-
-##
 
 ### config.drm
 
@@ -1119,8 +1019,4 @@ However, in case the manifest does not have a label property - the language prop
 
 ##### Description: A specific DRM key system to use.
 
-##
-
-##
-
-Now that we've learned about the different options available in the player configuration, let's see [how does the source selection logic works](./source-selection-logic.md).
+Now that we've learned about the different options available in the player configuration, let's see [how does the source selection logic works](https://developer.kaltura.com/player/web/source-selection-logic).

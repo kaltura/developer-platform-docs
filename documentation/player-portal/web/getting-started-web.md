@@ -125,4 +125,4 @@ Notice that this method is the **Dynamic Embed**, which is different than the af
 
 ## Configuring the Player
 
-After creating a player and embedding it in your site, you may want to configure it using the wide range of configuration options. Click [here](https://developer.kaltura.com/player/web/configration) to learn more about the various ways of configuring your player. 
+After creating a player and embedding it in your site, you may want to configure it using the wide range of configuration options. Click [here](https://developer.kaltura.com/player/web/configuration-web) to learn more about the various ways of configuring your player. 
