@@ -7,7 +7,7 @@ weight: 110
 
 ## KalturaPlayers
 
-a map of player instances by player ids
+A map of player instances by player ids
 
 Type: [Object][262]&lt;[string][263], KalturaPlayer>
 
