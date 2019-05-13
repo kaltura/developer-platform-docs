@@ -27,7 +27,7 @@ To learn about Markdown basics and how to use the format, please read: [GitHub m
 ## Adding YouTube videos 
 &#123;% onebox https://www.youtube.com/watch?v=Owh8nBt4QSs %&#125;
 
-## Adding Syntax Highligted Code
+## Adding Syntax Highlighted Code
 
 &#123;% highlight c %&#125;
 int hello_world(char *world)  
