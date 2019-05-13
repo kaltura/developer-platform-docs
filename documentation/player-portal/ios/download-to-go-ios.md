@@ -21,9 +21,9 @@ Download to Go (DTG) is an iOS library that facilitates the download of HLS vide
 
 Add this to your podfile:
 
-```ruby
-pod 'DownloadToGo'
-```
+{% highlight swift %}
+pod "DownloadToGo"
+{% endhighlight %}
 
 ## Overview
 
@@ -170,9 +170,9 @@ pod 'DownloadToGo'
 ## Usage
 
 To use the DTG make sure to import in each source file:
-```swift
+{% highlight swift %}
 import DownloadToGo
-```
+{% endhighlight %}
 
 The following classes/interfaces are the public API of the library:
 * `ContentManager` - Use this class to interact with the library.
@@ -182,7 +182,7 @@ The following classes/interfaces are the public API of the library:
 * `DTGItemState` - The state of a download item.
 
 Basic Implementation:
-```swift
+{% highlight swift %}
 class DownloadManager: ContentManagerDelegate {
 
     let cm: DTGContentManager
@@ -222,10 +222,10 @@ class DownloadManager: ContentManagerDelegate {
         // handle state changes (metadataLoaded, inProgress, completed etc...)
     }
 }
-```
+{% endhighlight %}
 
 Basic Implementation with PlayKit:
-```swift
+{% highlight swift %}
 class VideoViewController: UIViewController {
 
     let downloadManager = DownloadManager()
@@ -251,13 +251,13 @@ class VideoViewController: UIViewController {
         }
     }
 }
-```
+{% endhighlight %}
 
 On `AppDelegate`:
 * Make sure to call `ContentManager.shared.setup()`
 * (Optional) This is a good place to call `ContentManager.shared.startItems(inStates: _)` to resume interrupted or in progress downloads.
 
-```swift
+{% highlight swift %}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -273,7 +273,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     ...
 }
-```
+{% endhighlight %}
 
 >Note: Make sure to call `ContentManager.shared.stop()` when finished with playback.
 
