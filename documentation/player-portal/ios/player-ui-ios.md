@@ -10,24 +10,25 @@ At this point you should have a Kaltura Player embedded in your application and 
 We will start by adding button images of your choice to the Assets catalogue of your project. Then, in the storyboard, create a play/pause button, a slider (scrubber), a current position label, and a (remaining) duration label. For the play/pause button, in the Attributes Inspector, click the dropdown for Title and select Attributed. Under Image, type in the name of the play button file (it should have autocomplete for existing files). 
 Lastly, create the outlets for all your new objects in the Controller: 
 
-```
+{% highlight swift %}
 @IBOutlet weak var playPauseButton: UIButton!
 @IBOutlet weak var playheadSlider: UISlider!
 @IBOutlet weak var positionLabel: UILabel!
 @IBOutlet weak var durationLabel: UILabel!
-```
+{% endhighlight %}
 
 ### Player State 
 
 Currently our play button is only set to show a play icon, and we'll want it to change for different scenarios. What we'll need is to handle the state of what's happening in the player - whether it is idle, playing, paused, or ended. Let's add an enum called state at the top of the class:
-```
+{% highlight swift %}
 enum State {
     case idle, playing, paused, ended
 }
-```
+{% endhighlight %}
+
 And a Property Observer on that enum which switches on each state.
 
-```
+{% highlight swift %}
 var state: State = .idle {
       didSet {
           switch state {
@@ -42,7 +43,7 @@ var state: State = .idle {
           }
         }
     }
-```
+{% endhighlight %}
 
 What this does is listen for a change to the state, and based on whether the player is currently idle, paused, or playing, the picture of the play/pause button is changed accordingly. 
 
@@ -52,7 +53,7 @@ At the beginning of the `viewDidLoad` function, set the state to idle.
 
 On the playPauseButton, add a new IBAction for a "Touch Up Inside" event and link it to a new `playerTouched` function that calls play/pause on the player when the button is touched. Available Basic Player actions can be found [here](https://kaltura.github.io/playkit/api/ios/core/Protocols/BasicPlayer.html) 
 
-```
+{% highlight swift %}
 @IBAction func playTouched(_ sender: Any) {
     guard let player = self.player else {
         print("player is not set")
@@ -71,13 +72,13 @@ On the playPauseButton, add a new IBAction for a "Touch Up Inside" event and lin
         player.play()
     }
 }
-```
+{% endhighlight %}
 
 ### Player Slider 
 
 The slider is made up of a few components: the playhead, the current time stamp, and the duration of the entry. All of this configuration happens in the `setupPlayer` function. Firstly, a formatter for displaying the number of seconds as `HH:MM:SS` 
 
-```
+{% highlight swift %}
 let formatter = DateComponentsFormatter()
 formatter.allowedUnits = [.hour, .minute, .second]
 formatter.unitsStyle = .positional
@@ -90,30 +91,30 @@ func format(_ time: TimeInterval) -> String {
         return "00:00:00"
     }
 }
-```
+{% endhighlight %}
 
 Then, we'll add three observers. The first one checks on the media's progress in the task queue every fifth of a second and then updates the player slider accordingly, as well as the text of the current position label (using the time formatter)
 
-```
+{% highlight swift %}
 self.player?.addPeriodicObserver(interval: 0.2, observeOn: DispatchQueue.main, using: { (pos) in
     self.playheadSlider.value = Float(pos)
     self.positionLabel.text = format(pos)
 })
-```
+{% endhighlight %}
 The second observer waits for Player event `durationChanged` which happens when the media loads and the duration of the video is known. This happens once per playback. It then sets the maximum value of the slider playhead, and the text of the duration label. 
 
-```
+{% highlight swift %}
 self.player?.addObserver(self, events: [PlayerEvent.durationChanged], block: { (event) in
     if let e = event as? PlayerEvent.DurationChanged, let d = e.duration as? TimeInterval {
         self.playheadSlider.maximumValue = Float(d)
         self.durationLabel.text = format(d)
     }
 })
-```        
+{% endhighlight %}        
 
 The third observer listens for player events, and updates the State when the player begins playing, is paused, or has ended, which is what the switch case above is dependent on. Player events can be found [here](https://kaltura.github.io/playkit/api/ios/core/Classes/PlayerEvent.html#/s:7PlayKit11PlayerEventC12StateChangedC)
 
-```
+{% highlight swift %}
 self.player?.addObserver(self, events: [PlayerEvent.play, PlayerEvent.ended, PlayerEvent.pause], block: { (event) in
     switch event {
     case is PlayerEvent.Play, is PlayerEvent.Playing:
@@ -129,11 +130,11 @@ self.player?.addObserver(self, events: [PlayerEvent.play, PlayerEvent.ended, Pla
         break
     }
 })
-```
+{% endhighlight %}
 
 Lastly, in the Storyboard, set a new referencing action on the Playhead Slider for the "Value Changed" event. Call it `playheadValueChanged`. Add it after the `playTouched` function. It should set the current time position according to the value of the palyhead, and change the State to paused in the case of moving the slider back after the video has ended. 
 
-```
+{% highlight swift %}
 @IBAction func playheadValueChanged(_ sender: Any) {
     guard let player = self.player else {
         print("player is not set")
@@ -145,10 +146,11 @@ Lastly, in the Storyboard, set a new referencing action on the Playhead Slider f
     }
     player.currentTime = TimeInterval(playheadSlider.value)
 }
-```
+{% endhighlight %}
+
 You should be able to run the code, and use the basic player functions. The complete code should look like this: 
 
-```
+{% highlight swift %}
 import UIKit
 import PlayKit
 import PlayKitUtils
@@ -310,4 +312,4 @@ class ViewController: UIViewController {
     }
 }
 
-```
+{% endhighlight %}

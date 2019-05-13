@@ -25,16 +25,15 @@ Let's get started. If you're already creating a Kaltura Session on the server si
 To get a basic KS, we need to construct a URL request to the [session.startWidgetSession](https://developer.kaltura.com/api-docs/service/session/action/startWidgetSession) service. It needs your widget ID, which is basically just your partnerID with an underscore prefix. 
 So let's create a function called `generateWidgetSession()` and form that URL. 
 
-```
+{% highlight swift %}
 func generateWidgetSession() -> String {
     let widgetPartnerId = "_\(PARTNER_ID)"
     let widgetKsURL = NSString(format:"https://www.kaltura.com/api_v3/service/session/action/startWidgetSession?widgetId=%@&format=1",widgetPartnerId)
-```
+{% endhighlight %}
 
 Call the endpoint and extract the `ks` string from the response. Your code should obviously include more error handling than this example. The complete function looks something like this: 
 
-```
-
+{% highlight swift %}
 func generateWidgetSession() -> String {
     let widgetPartnerId = "_\(PARTNER_ID)"
 
@@ -46,42 +45,46 @@ func generateWidgetSession() -> String {
 
     return (widgetKsDict["ks"] as! String)
     }
-```
+{% endhighlight %}
 
 We will call this function from another new function called `generateSession()` where you should call the create new variables for the widgetSession, appToken, the appToken ID, and the userId - which can be any string that identifies the user creating the session. 
 
-```
+{% highlight swift %}
 func generateSession() {
     let widgetKs: String = generateWidgetSession()
     let appToken = "<TOKEN_OF_APP_TOKEN>"
     let appTokenId = "<ID_OF_APP_TOKEN>"
     let userId = "user"
-```
+{% endhighlight %}
 
 **Step 2: Create the token hash**
 
 You'll need to install and import a library of your choice for creating the hash string. We chose a library called [Arcane](https://cocoapods.org/pods/Arcane) which is like the Obj-C CommonCrypto library. Concatenate the widget session with the appToken token, and create the hash string. *Note that you must use the same Hash Type that you used to create the appToken.*
 
-```
+{% highlight swift %}
 let tokenHash: String = Hash.SHA256("\(widgetKs)\(appToken)")!
-```
+{% endhighlight %}
 
 **Step 3: Get the Kaltura Session** 
 
 Once you have that hash string, you can now form the URL, make the call to [appToken.startSession](https://developer.kaltura.com/console/service/appToken/action/startSession), and extract the KS from the response. Again, a proper application should include error handling when making calls to the API. 
-```
+
+{% highlight swift %}
 let URLString = NSString(format:"https://www.kaltura.com/api_v3/service/apptoken/action/startsession?ks=%@&userId=%@&id=%@&tokenHash=%@&format=1",widgetKs,userId,appTokenId,tokenHash)
 
 let ksData = try! Data(contentsOf: URL(string: URLString as String)!)
 
 let ksDict = try! JSONSerialization.jsonObject(with: ksData, options: []) as! [String:Any]
-```
+{% endhighlight %}
+
 Lastly, set the application's `ks` to the newly generated KS:
-```
+
+{% highlight swift %}
 self.ks = (ksDict["ks"] as! String)
-```
+{% endhighlight %}
+
 The complete `generateSession()` function looks like this: 
-```
+{% highlight swift %}
 func generateSession() {
     let appToken = "c9883312395bf5ed4fd5c9a5d86c985c"
     let userId = "avital.tzubeli@kaltura.com"
@@ -98,5 +101,5 @@ func generateSession() {
 
     self.ks = (ksDict["ks"] as! String)
 }
-```
+{% endhighlight %}
 > Note that if an appToken is deleted, it can no longer be used for session creation. 

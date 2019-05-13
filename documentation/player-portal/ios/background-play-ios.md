@@ -35,13 +35,13 @@ do {
 {% highlight swift %}
 // Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.
 func applicationDidEnterBackground(_ application: UIApplication) {
-    let playerView = <#Get your player view#>
+    let playerView = "<Get your player view>"
     playerView.playerLayer.player = nil
 }
 
 // Restore the AVPlayer when the app is active again.
 func applicationDidBecomeActive(_ application: UIApplication) {
-    let playerView = <#Get your player view#>
+    let playerView = "<Get your player view>"
     playerView.playerLayer.player = player
 }
 {% endhighlight %}
