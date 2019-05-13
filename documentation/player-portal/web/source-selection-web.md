@@ -6,7 +6,7 @@ weight: 110
 
 Let us assume that the following player configuration is given and we would like to apply source selection logic.
 
-```js
+{% highlight javascript %}
 var config = {
   sources: {
     hls: [
@@ -33,7 +33,7 @@ var config = {
     ]
   }
 };
-```
+{% endhighlight %}
 
 1.  The player looks at the `streamPriority` array and see that the `dash` stream has the highest priority.
 2.  The player will check whether it received any `dash` sources within the `sources` object.

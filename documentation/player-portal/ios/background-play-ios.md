@@ -11,7 +11,7 @@ The following section describes the way to play a video while the application is
 * **Enabling your application to play audible content while in the background**. To enable your application to play audible content while in the background, enable this option in the application background modes section or info.plist.
 * **Setting the audio session category**. To continue playing media while in the background, you must set an audio session category with background playback (for example: AVAudioSessionCategoryPlayback).
 
-```swift
+{% highlight swift %}
 import AVFoundation
 import AudioToolbox
 
@@ -28,11 +28,11 @@ do {
 } catch let error as NSError {
     // handle the error condition
 }
-```
+{% endhighlight %}
 
 **Special considerations for video media**. If the current item is displaying video, playback of the player is automatically paused when the application is sent to the background. To prevent this pause from occurring, you'll need to set the player of an AVPlayerLayer to *nil*.
 
-```swift
+{% highlight swift %}
 // Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.
 func applicationDidEnterBackground(_ application: UIApplication) {
     let playerView = <#Get your player view#>
@@ -44,7 +44,7 @@ func applicationDidBecomeActive(_ application: UIApplication) {
     let playerView = <#Get your player view#>
     playerView.playerLayer.player = player
 }
-```
+{% endhighlight %}
 
 > Note: For more information about playing media while the application runs in the background see the [Apple Developer Site](https://developer.apple.com/library/content/qa/qa1668/_index.html).
  
@@ -58,11 +58,11 @@ If more than one player is used, the network reachability notifications will sto
 
 To observe errors (not just reachability), add an observer for error type and use the error accessor on the event.
 
-```swift
+{% highlight swift %}
 player.addObserver(self, events: [PlayerEvent.error]) { event in
     let error: NSError = event.error // on unreachable event receive NSError with relevant data
 }
-```
+{% endhighlight %}
 
 ## Have Questions or Need Help?
 

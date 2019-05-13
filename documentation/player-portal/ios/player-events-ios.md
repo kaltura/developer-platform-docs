@@ -12,7 +12,7 @@ The code below will add an observer to a list of various events.
 
 >Reminder to use `weak self` when needed in order to prevent retain cycles
 
-```swift
+{% highlight swift %}
 player.addObserver(self, events: [PlayerEvent.playing, PlayerEvent.durationChanged, PlayerEvent.stateChanged]) { [weak self] event in
      if type(of: event) == PlayerEvent.playing {
         // handle playing event
@@ -23,7 +23,7 @@ player.addObserver(self, events: [PlayerEvent.playing, PlayerEvent.durationChang
         let oldState = event.oldState
      }
 }
-```
+{% endhighlight %}
 
 ### Listening to events from plugin code
 

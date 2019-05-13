@@ -14,10 +14,10 @@ Auto embed is optimized for packing a lots of resources into the initial request
 
 Here's how to use the auto embed code:
 
-```html
+{% highlight html %}
 <div id="{TARGET_ID}" style="width: 640px;height: 360px"></div>
 <script type="text/javascript" src='https://cdnapisec.kaltura.com/p/{PARTNER_ID}/embedPlaykitJs/uiconf_id/{UICONF_ID}?autoembed=true&targetId={TARGET_ID}&entry_id={ENTRY_ID}&config[playback]={"autoplay":true}'></script>
-```
+{% endhighlight %}
 
 ## Dynamic Embed
 
@@ -25,7 +25,7 @@ Dynamic embed is recommended for cases where you want to control runtime configu
 
 Basic dynamic embed codes look like this:
 
-```html
+{% highlight html %}
 <div id="{TARGET_ID}" style="width: 640px;height: 360px"></div>
 <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/{PARTNER_ID}/embedPlaykitJs/uiconf_id/{UICONF_ID}"></script>
   <script type="text/javascript">
@@ -45,7 +45,7 @@ Basic dynamic embed codes look like this:
       console.error(e.message)
     }
   </script>
-```
+{% endhighlight %}
 
 ## IFrame Embed
 
@@ -53,8 +53,8 @@ The iframe embed is good for sites that don't allow third-party JavaScript to be
 
 Note that if you use the iFrame-only embed mode, the page won't be able to access the player API:
 
-```html
+{% highlight html %}
 <iframe type="text/javascript" src='https://cdnapisec.kaltura.com/p/{PARTNER_ID}/embedPlaykitJs/uiconf_id/{UICONF_ID}?iframeembed=true&entry_id={ENTRY_ID}&config[playback]={"autoplay":true}'
    style="width: 640px;height: 360px" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0">
 </iframe>
-```
+{% endhighlight %}
