@@ -15,7 +15,7 @@ The AVAudioSession enables you to play audio (essentially any sound) even when t
 
 > Note: Should be done on `AppDelegate`
 
-```swift
+{% highlight swift %}
 var audioSessionInitialCategory: String?
 
 audioSessionInitialCategory = AVAudioSession.sharedInstance().category
@@ -24,18 +24,18 @@ do {
 } catch {
     audioSessionInitialCategory = nil
 }
-```
+{% endhighlight %}
 
 **Note:** When the video is finished, you may return the initial category value as follows:
 
-```swift
+{% highlight swift %}
 if let _ = audioSessionInitialCategory {
    do {
         try AVAudioSession.sharedInstance().setCategory(audioSessionInitialCategory!)
    } catch {
    }
 }
-```
+{% endhighlight %}
 
 For more information about `AVAudioSession` see [Apple's Doc](https://developer.apple.com/library/content/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/AudioSessionBasics/AudioSessionBasics.html)
 

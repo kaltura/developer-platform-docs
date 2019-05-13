@@ -18,7 +18,7 @@ If set to `true`, playback will start automatically when the player receives the
 
 #### Example - Basic usage:
 
-```js
+{% highlight javascript %}
 var config = {
   playback: {
     autoplay: true
@@ -27,19 +27,19 @@ var config = {
 };
 // No additional code required - playback will begin automatically
 var player = playkit.core.loadPlayer(config);
-```
+{% endhighlight %}
 
 **_Note_**:
 Some developers simulate the autoplay behavior by calling the play() method right after creating the player without manipulating the player configuration. However, we strongly recommend not doing this!
 
-```js
+{% highlight javascript %}
 var config = {
  sources: {...}
 };
 var player = playkit.core.loadPlayer(config);
 // Bad practice!
 player.play();
-```
+{% endhighlight %}
 
 #### Why it's bad?
 
@@ -75,7 +75,7 @@ The following matrix summarizes the results for configuring `playback.allowMuted
 
 #### Example - Basic usage:
 
-```js
+{% highlight javascript %}
 var config = {
   playback: {
     autoplay: true,
@@ -85,11 +85,11 @@ var config = {
 };
 // If browser blocks autoplay, playback will start muted
 var player = playkit.core.loadPlayer(config);
-```
+{% endhighlight %}
 
 #### Example - Basic usage 2:
 
-```js
+{% highlight javascript %}
 var config = {
   playback: {
     autoplay: true,
@@ -99,4 +99,4 @@ var config = {
 };
 // If browser blocks autoplay, playback will not start automatically
 var player = playkit.core.loadPlayer(config);
-```
+{% endhighlight %}

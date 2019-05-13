@@ -16,7 +16,7 @@ You'll need two things:
 ### Getting Started with the Kaltura Cocoa Pods
 
 You'll need to install a few Kaltura pods. Consider this sample Podfile 
-```
+{% highlight swift %}
 source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
@@ -27,7 +27,7 @@ target 'OVPStarter' do
   pod 'PlayKit'
   pod 'PlayKitProviders'
 end
-```
+{% endhighlight %}
 
 - The [Playkit Pod](https://cocoapods.org/pods/PlayKit) is made up of the core Player infrastructure 
 - The [PlatKitProviders Pod](https://cocoapods.org/pods/PlayKitProviders) adds the Media Entry Providers, which are responsible from bringing in media data from Kaltura 
@@ -43,29 +43,29 @@ The code below will cover a few functions needed in order to get the bare bones 
 
 In the Controller, import the relevant Kaltura Libraries 
 
-```
+{% highlight swift %}
 import UIKit
 import PlayKit
 import PlayKitUtils
 import PlayKitKava
 import PlayKitProviders
-```
+{% endhighlight %}
 
 Set your partner ID and entry ID 
 
-```
+{% highlight swift %}
 let SERVER_BASE_URL = "https://cdnapisec.kaltura.com"
 let PARTNER_ID = 0000000
 let ENTRY_ID = "1_abc6st"
-```
+{% endhighlight %}
 
 ### Create a Kaltura Session 
 
 The Kaltura Session is an authorization string that identifies the user watching the video. Including a Kaltura Session (KS) in the player allows for monitoring and analytics of the video, as well as the ability to restrict content access. The KS would generally be created on the server side of the application, and passed to the controller. 
 
-```
+{% highlight swift %}
 var ks: String?
-```
+{% endhighlight %}
 
 However, if your application does not already create a Kaltura Session, follow [this guide](https://developer.kaltura.com/player/ios/kaltura-session-authentication-ios) to learn how to generate a KS with the Application Token API. 
 
@@ -74,50 +74,50 @@ However, if your application does not already create a Kaltura Session, follow [
 
 Inside the class, below the `ks` declaration, add a declaration for the Player. 
 
-```
+{% highlight swift %}
 var player: Player?
-```
+{% endhighlight %}
 
 Now lets create our video player. Head over to the Storyboard and create a new PlayerView of the desired size. Add a referencing outlet to your ViewController named playerContainer. Create a new function called `playerSetup` and set the player variable to equal the new playerContainer 
 
-```
+{% highlight swift %}
 func setupPlayer() {
     self.player?.view = self.playerContainer
 }
-```
+{% endhighlight %}
 
 Now in the `viewDidLoad` function, load the player. We'll start without a pluginConfig, but we will cover adding plugins later in this guide. 
 
- ```
+ {% highlight swift %}
 self.player = PlayKitManager.shared.loadPlayer(pluginConfig: nil)
- ```
+ {% endhighlight %}
 Next, call the newly created setupPlayer function. 
-```
+{% highlight swift %}
 self.setupPlayer()
-```
+{% endhighlight %}
 
 Now create and call a new function called `loadMedia`. 
 
-```
+{% highlight swift %}
 self.loadMedia()
-```
+{% endhighlight %}
 
 In the loadMedia function, you'll use the `SimpleSessionProvider` and `OVPMediaProvider` objects. 
 
-```
+{% highlight swift %}
 let sessionProvider = SimpleSessionProvider(serverURL: SERVER_BASE_URL, partnerId: Int64(PARTNER_ID), ks: ks)
 let mediaProvider: OVPMediaProvider = OVPMediaProvider(sessionProvider)
-```
+{% endhighlight %}
 
 Now set your entry ID on that `mediaProvider`
 
-```
+{% highlight swift %}
 mediaProvider.entryId = ENTRY_ID
-```
+{% endhighlight %}
 
 Load the media by creating a `MediaConfig` with a video start time of zero seconds, and then passing that config to `player.prepare()`
 
-```
+{% highlight swift %}
 mediaProvider.loadMedia { (mediaEntry, error) in
     if let me = mediaEntry, error == nil {
     
@@ -126,11 +126,11 @@ mediaProvider.loadMedia { (mediaEntry, error) in
         self.player.prepare(mediaConfig)
     }
 }
-```
+{% endhighlight %}
 
 The `loadMedia` function should now look like this: 
 
-```
+{% highlight swift %}
 func loadMedia() {
 
     let sessionProvider = SimpleSessionProvider(serverURL: SERVER_BASE_URL, partnerId: Int64(PARTNER_ID), ks: ks)
@@ -149,10 +149,10 @@ func loadMedia() {
         }
     }
 }
-```
+{% endhighlight %}
 At this point, you should be able to successfully run the code and see your video player in the app. Your code would look like this: 
 
-```
+{% highlight swift %}
 import UIKit
 import PlayKit
 import PlayKitUtils
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
     }
 }
 
-```
+{% endhighlight %}
 
 You've probably noticed that there are no buttons for playing or pausing the video. To learn about adding elements to the Player's UI, [click here](https://developer.kaltura.com/player/ios/player-ui-ios) 
 

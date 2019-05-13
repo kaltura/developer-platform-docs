@@ -24,7 +24,7 @@ When a player instantiates, a partial configuration is created internally by the
 
 The structure of this initial configuration is as follows:
 
-```js
+{% highlight javascript %}
 {
 muted: string,
 volume: number,
@@ -32,7 +32,7 @@ audioLanguage: string,
 textLanguage: string,
 textStyle: TextStyle
 }
-```
+{% endhighlight %}
 
 The following flow-chart diagram shows a high-level workflow of this scenario:
 ![setup-flow-local-storage](./setup-flow-local-storage.jpg)
@@ -64,13 +64,13 @@ You'll be able to see your saved player values in the local storage:
 
 The user preference configuration is enabled by default. To disable it, you'll need to configure the [`disableUserCache`](https://developer.kaltura.com/player/web/configuration-web#configdisableusercache) value as **True** when creating the player instance.
 
-```js
+{% highlight javascript %}
 {
   ...
   disableUserCache: true // Disable user preferences
   ...
 }
-```
+{% endhighlight %}
 
 ## Browser Compatibility
 
