@@ -11,7 +11,7 @@ This document describes the steps required for adding support for the multi-audi
 
 To get the available captions and audio tracks, register to the 'PlayerEvents.tracksAvailable' event on the player as follows:
 
-```swift
+{% highlight swift %}
 func handleTracks() {
     self.addObserver(self, events: [PlayerEvent.tracksAvailable]) { [weak self] event in
         if type(of: event) == PlayerEvent.tracksAvailable {
@@ -30,30 +30,30 @@ func handleTracks() {
         }
     }
 }
-```
+{% endhighlight %}
 
 ### Select Track
 
 To switch between tracks, use the following code:
 
-```swift
+{% highlight swift %}
 // Select Track
 func selectTrack(track: Track) {
     self.player.selectTrack(trackId: track.id)
 }
-```
+{% endhighlight %}
 
 ### Get Current Tracks
 
-```swift
+{% highlight swift %}
 // Get Current Audio/Text Track
 let currentAudioTrack = self.player.currentAudioTrack
 let currentTextTrack = self.player.currentTextTrack
-```
+{% endhighlight %}
 
 ### Get Current Bitrate
 
-```swift
+{% highlight swift %}
 // Get Current Bitrate
 func currentBitrateHandler() {
     self.addObserver(self, events: [PlayerEvent.playbackParamsUpdated]) { [weak self] event in
@@ -65,7 +65,7 @@ func currentBitrateHandler() {
         }
     }
 }
-```
+{% endhighlight %}
 
 ### Available Modes and Behavior
 
@@ -77,20 +77,20 @@ There are three available track selection modes:
 
 #### Text Track Selection  
 
-```swift
+{% highlight swift %}
 player.settings.trackSelection.textSelectionMode = // .off/.auto/.selection
 // use text selection language when using '.selection' mode.
 player.settings.trackSelection.textSelectionLanguage = // en/fr...
-```
+{% endhighlight %}
 
 #### Audio Track Selection
 
 
-```swift
+{% highlight swift %}
 player.settings.trackSelection.audioSelectionMode = // .off/.auto/.selection
 // use text selection language when using '.selection' mode.
 player.settings.trackSelection.audioSelectionLanguage = // en/fr...
-```
+{% endhighlight %}
 
 ## Code Samples
 

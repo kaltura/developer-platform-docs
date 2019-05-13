@@ -12,37 +12,37 @@ Probably the most important plugin is the KAVA plugin - Kaltura Video Analytics.
 
 The [KAVA plugin](https://github.com/kaltura/playkit-ios-kava) is available through CocoaPods as "PlayKitKava". It was included in the Podfile at the beginning of the guide. To use the plugin, we'll need to import it, then register and configure it. 
 
-```
+{% highlight swift %}
 import PlayKitKava
-```
+{% endhighlight %}
 
 Begin with a function that creates the KAVA plugin. It requires the Partner ID, the entry ID, and the KS, which is what identifies the user. The rest of the arguments are optional. Full documentation can be found here. 
 
-```
+{% highlight swift %}
 func createKavaConfig() -> KavaPluginConfig {
     return KavaPluginConfig(partnerId: PARTNER_ID, entryId: entryId, ks: ks, playbackContext: nil, referrer: nil, applicationVersion: nil, playlistId: nil, customVar1: nil, customVar2: nil, customVar3: nil)
 }
-```
+{% endhighlight %}
 
 Add that plugin to the player in the `loadMedia` function by calling `player.updatePluginConfig`. This should be included before the `player.prepare`.
 
-```
+{% highlight swift %}
 player.updatePluginConfig(pluginName: KavaPlugin.pluginName, config: self.createKavaConfig())
-```
+{% endhighlight %}
 
 Next, you need a function that manages all the plugins you might want to add to the player. In our case, it will return the function we just created. 
 
-```
+{% highlight swift %}
 func createPluginConfig() -> PluginConfig? {
     return PluginConfig(config: [KavaPlugin.pluginName: createKavaConfig()])
 }
-```
+{% endhighlight %}
 
 Lastly, we'll pass that function instead of `nil` to the loadPlayer call in `viewDidLoad`:
 
-```
+{% highlight swift %}
 self.player = try! PlayKitManager.shared.loadPlayer(pluginConfig: createPluginConfig())
-```
+{% endhighlight %}
 
 The KAVA plugin is now included in the player, and all data about plays and shares can be viewed in the KMC or retrieved using the Kaltura Reporting API. 
 
@@ -59,17 +59,17 @@ For additional information on the YouboraPlugin options dictionary refer to thei
 
 Import and enable: 
 
-```
-pod 'PlayKit/YouboraPlugin'
-```
+{% highlight swift %}
+pod "PlayKit/YouboraPlugin"
+{% endhighlight %}
 
-```swift
+{% highlight swift %}
 PlayKitManager.shared.registerPlugin(YouboraPlugin.self)
-```
+{% endhighlight %}
 
 A sample Youbora config looks something like this: 
 
-```swift
+{% highlight swift %}
 // config options
 let youboraOptions: [String: Any] = [
     "accountCode": "nicetest" // mandatory
@@ -83,4 +83,4 @@ let config = [YouboraPlugin.pluginName: youboraConfig]
 let pluginConfig = PluginConfig(config: config)
 // load the player with the created plugin config
 let player = PlayKitManager.shared.loadPlayer(pluginConfig: pluginConfig)
-```
+{% endhighlight %}
