@@ -17,15 +17,15 @@ You'll need two things:
 
 You'll need to install a few Kaltura pods. Consider this sample Podfile 
 {% highlight swift %}
-source 'https://github.com/CocoaPods/Specs.git'
+source "https://github.com/CocoaPods/Specs.git"
 
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, "9.0"
 
-target 'OVPStarter' do
-  pod 'PlayKit'
-  pod 'PlayKitProviders'
+target "OVPStarter" do
+  pod "PlayKit"
+  pod "PlayKitProviders"
 end
 {% endhighlight %}
 
