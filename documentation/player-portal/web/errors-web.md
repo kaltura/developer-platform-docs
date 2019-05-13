@@ -27,7 +27,7 @@ You'll find the full lists of errors here:
 
 You can listen to errors the player emits by listening to an '`error`' event as follows:
 
-```javascript
+{% highlight javascript %}
 player.addEventListener(player.Event.ERROR, event => {
   const error = e.payload;
   console.log('The error severity is: ' + error.severity);
@@ -35,21 +35,21 @@ player.addEventListener(player.Event.ERROR, event => {
   console.log('The error code is: ' + error.code);
   console.log('The error data is', error.data);
 });
-```
+{% endhighlight %}
 
 ## Creating an Error
 
 If you wish to change / emit an error event, you'll need to create an error object in the following manner:
 
-```javascript
+{% highlight javascript %}
 const myError = new Error(Error.Severity.CRITICAL, Error.Category.NETWORK, Error.Code.HTTP_ERROR, {url: 'www.some-bad-url.com'});
-```
+{% endhighlight %}
 
 Next, you'll need to dispatch an `Error` event:
 
-```js
+{% highlight javascript %}
 player.dispatchEvent(new FakeEvent(player.Event.Error, myError));
-```
+{% endhighlight %}
 
 > You can find additional information about dispatching events [here](https://developer.kaltura.com/player/web/player-events-web).
 

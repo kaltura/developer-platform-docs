@@ -12,9 +12,7 @@ To create a new Kaltura Player, you'll need to have an active Kaltura Management
 
 ## Creating a TV Studio Player
 
-Kaltura Video Players are created and managed in the KMC [Studio](https://kmc.kaltura.com/index.php/kmcng/studio/v3), which is the second tab in the header.  You'll find options for the Universal Studio, for legacy support, and the TV Platform Studio - which is colloquially referred to as Player V7.  
-
-> The TV Studio Player is not enabled by default, so if you don't see it, contact support to have it enabled.
+Kaltura Video Players are created and managed in the KMC [Studio](https://kmc.kaltura.com/index.php/kmcng/studio/v3), which is the second tab in the header.  You'll find options for the Universal Studio, for legacy support, and the TV Platform Studio - which is colloquially referred to as Player V7.  *If you don't see the TV Studio tab, contact your account manager.*
 
 Once in the studio, you will find all your available players from both categories. The steps below will walk you through creating and embedding a TV Studio Player, which is focused on speed and performance.
 
@@ -45,7 +43,7 @@ Let's walk through the steps for writing that embed code.
 
 1. Create an HTML page and add a div with the ID of your choice. You can set the dimensions of the player here as well:
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,16 +53,16 @@ Let's walk through the steps for writing that embed code.
   <div id="new-player" style="width: 640px;height: 360px"></div>
 </body>
 </html>
-```
+{% endhighlight %}
 2. Load the player library with this script: 
 
-```html 
+{% highlight html %}
   <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/2196781/embedPlaykitJs/uiconf_id/41483031"></script>
-```
+{% endhighlight %}
 
 3. The embed script contains the targetId, which is your div ID, as well as your partnerID, the uiConfId (player ID), and the entry ID.  
 
-```html
+{% highlight html %}
 <script type="text/javascript">
   try {
     let kalturaPlayer = KalturaPlayer.setup({
@@ -82,11 +80,11 @@ Let's walk through the steps for writing that embed code.
   console.error(e.message)
   }
 </script>
-```
+{% endhighlight %}
 
 4. Bring it all together: 
 
-```html
+{% highlight html %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,7 +115,7 @@ Let's walk through the steps for writing that embed code.
 
 </body>
 </html>
-```
+{% endhighlight %}
 
 Congrats! Running this page should show you a Kaltura Player loaded with the entry that you chose. 
 

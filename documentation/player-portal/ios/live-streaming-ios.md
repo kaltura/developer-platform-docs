@@ -15,9 +15,9 @@ The value of the video player's current time will show the relative position to 
 
 You can seek to the live edge as follows:
 
-```swift
+{% highlight swift %}
 self.player.currentTime = self.player.duration
-```
+{% endhighlight %}
 
 ### Guidelines 
 
