@@ -6,18 +6,18 @@ weight: 110
 
 Player configuration parameters are provided whenever a player instance is created.
 
-```
+{% highlight javascript %}
 var config = {
   // Configuration here
 };
 var player = KalturaPlayer.setup(config);
-```
+{% endhighlight %}
 
 #### Configuration Structure
 
 The configuration uses the following structure:
 
-```
+{% highlight javascript %}
 {
   targetId: string,
   logLevel: string,
@@ -31,9 +31,7 @@ The configuration uses the following structure:
   ui: UIOptionsObject,
   cast: CastConfigObject
 }
-```
-
-##
+{% endhighlight %}
 
 ### config.targetId
 
@@ -42,8 +40,6 @@ The configuration uses the following structure:
 ##### Default: `-`
 
 ##### Description: Defines the ID of the DOM element to which the player will be added.
-
-##
 
 ### config.logLevel
 
@@ -55,8 +51,6 @@ The configuration uses the following structure:
 
 Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
-##
-
 ### config.disableUserCache
 
 ##### Type: `boolean`
@@ -66,8 +60,6 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 ##### Description: Indicates whether to stop using the saved user preferences.
 
 You can learn more about user preferences in the player [here](https://developer.kaltura.com/player/web/user-preferences-web).
-
-##
 
 ### config.playback
 
@@ -99,23 +91,17 @@ You can learn more about user preferences in the player [here](https://developer
 
 ##### Description: Defines the session configuration.
 
-##
-
 ### config.provider
 
 ##### Type: [ProviderOptionsObject](https://github.com/kaltura/playkit-js-providers/blob/master/docs/configuration.md)
 
 ##### Description: Defines the provider configuration.
 
-##
-
 ### config.ui
 
 ##### Type: [UIOptionsObject](https://github.com/kaltura/playkit-js-ui/blob/master/docs/configuration.md)
 
 ##### Description: Defines the user interface (UI) configuration.
-
-##
 
 ### config.cast
 
