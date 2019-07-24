@@ -13,7 +13,7 @@ The updated version of the API description can be retrieved at the following URL
 By parsing the schema.xml file,  it is possible to construct the complete structure of the objects in the system. A generic template to parse the schema file was created to ease the process of creating new parsers. The TemplateClientGenerator is a basic template for creating a custom client library generator, by providing the following:
 
 A high-level parsing of class types: Enums, Objects and Services (implemented in the generate() function).
-A template of parsing functions to be overriden or replaced by the actual parser implementation to create the client library of the target programming language.
+A template of parsing functions to be overridden or replaced by the actual parser implementation to create the client library of the target programming language.
 The schema structure
 
 **The schema is divided to three main sections:**
@@ -33,9 +33,9 @@ Creating a custom client library generator
 
 ## Creating Your Own
 
-To create your own customized Automatic Kaltura API Client Library, download the [TemplateClientGenerator project](http://knowledge.kaltura.com/sites/default/files/dl_resources/client-library-generator-template.zip). 
+To create your own customized Automatic Kaltura API Client Library, download the [TemplateClientGenerator project](http://knowledge.kaltura.com/sites/default/files/dl_resources/client-library-generator-template.zip).
 
-### The Template Files 
+### The Template Files
 
 The TemplateClientGenerator project includes the following files:
 
@@ -57,7 +57,7 @@ Change the following functions to create classes and files in your programming l
 - `writeMainClass` - Create the main class of the client library, may parse Services and actions.
 - `writeProjectFile` - Create the project file (if needed).
 
-At the end of every function un-comment the following line: 
+At the end of every function un-comment the following line:
 
 ```$this->addFile('path to new file', 'file contents');```
 

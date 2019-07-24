@@ -1,39 +1,39 @@
 ---
 layout: page
-title: Kaltura API Usage ang Guidelines 
+title: Kaltura API Usage and Guidelines
 weight: 106
 ---
 
-### Document Conventions  
+### Document Conventions
 
-A string in brackets [] represents a value. Replace the string – including the brackets – with an actual value.  For example: replace *[SERVICENAME]* with *syndicationFeed*.
+A string in brackets [] represents a value. Replace the string – including the brackets – with an actual value. For example: replace *[SERVICENAME]* with *syndicationFeed*.
 
-### Finding the Latest API Version Number  
+### Finding the Latest API Version Number
 
 To find the version number of the API that contains the latest updates, go to the full XML description of the API schema: [http://www.kaltura.com/api\_v3/api\_schema.php](http://www.kaltura.com/api_v3/api_schema.php).
 
 The version and date of the API schema appear near the beginning of the file.
 
-### Getting a Client Library for the Kaltura API  
+### Getting a Client Library for the Kaltura API
 
 To work with the Kaltura API, you need code that can:
 
-*   Construct a Kaltura request.
-*   Perform an HTTP request.
-*   Parse the result of a Kaltura request.
+* Construct a Kaltura request.
+* Perform an HTTP request.
+* Parse the result of a Kaltura request.
 
 To save you time, Kaltura provides client libraries. A client library is a set of classes that includes:
 
-*   The functional infrastructure for communication with the Kaltura API: constructing a request, performing an HTTP request, and parsing a response
-*   A full object representation of all the entities that are available through the Kaltura API, including enumeration objects
-*   Infrastructure for developers, such as built-in log capabilities
+* The functional infrastructure for communication with the Kaltura API: constructing a request, performing an HTTP request, and parsing a response
+* A full object representation of all the entities that are available through the Kaltura API, including enumeration objects
+* Infrastructure for developers, such as built-in log capabilities
 
 The Kaltura API SDK includes client library packages in different languages, including PHP, Java, C#, and JavaScript. For the latest version of all client libraries, refer to [Kaltura API SDK - Native Client Libraries](https://developer.kaltura.com/api-docs/Client_Libraries).
 
 To get the entire API in your IDE, just download the client library for the language that you use to develop your applications and include the client library in your application or project.
 
 
-### Getting a Client Library for a Language that Kaltura Does Not Provide  
+### Getting a Client Library for a Language that Kaltura Does Not Provide
 
 The Kaltura client libraries are generated automatically based on API schema. Kaltura also strives to include contributions from the community and customers, and we welcome contributions of client libraries for languages that Kaltura does not yet provide.
 
@@ -43,17 +43,15 @@ If you provide the generator class to Kaltura, Kaltura will include your generat
 
 For more information on creating a client library generator, refer to [Adding New Kaltura API Client Library Generator](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html).
 
-
-### API Authentication and Kaltura Sessions  
+### API Authentication and Kaltura Sessions
 
 Most Kaltura API calls require you to authenticate before executing a call. Calls that require authentication usually have a response that cannot be shared between different accounts. For the Kaltura server to know that you are allowed to “ask that question,” you must authenticate before executing the call.
 
 To learn more about the Kaltura Session and API Authentication, read: [Kaltura's API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html).
 
-
 | Error Code                         | Error Message                                                                                                       |   |
 |------------------------------------|---------------------------------------------------------------------------------------------------------------------|---|
-| INTERNAL_SERVERL_ERROR             | Internal server error occurred                                                                                      |   |
+| INTERNAL_SERVER_ERROR             | Internal server error occurred                                                                                      |   |
 | MISSING_KS                         | Missing KS, session not established                                                                                 |   |
 | INVALID_KS                         | Invalid KS "%KS%", Error "%KS_ERROR_CODE%,%KS_ERROR_DESCRIPTION%"                                                   |   |
 | SERVICE_NOT_SPECIFIED              | Service name was not specified, please specify one                                                                  |   |
@@ -62,34 +60,33 @@ To learn more about the Kaltura Session and API Authentication, read: [Kaltura'
 | ACTION_DOES_NOT_EXISTS             | Action "%ACTION_NAME%" does not exist for service "%SERVICE_NAME%"                                                  |   |
 | MISSING_MANDATORY_PARAMETER        | Missing parameter "%PARAMETER_NAME%"                                                                                |   |
 
-### Kaltura API Response/Request Format  
+### Kaltura API Response/Request Format
 
-#### Request Structure  
+#### Request Structure
 
 The Kaltura API implements a standard HTTP POST/GET URL encoded request structure. URL-encoded requests are targeted to a specific API method.
 
 Each API method location is concatenated from:
 
-*   Base URI
-*   Service identifier string
-*   Action identifier string
+* Base URI
+* Service identifier string
+* Action identifier string
 
 The format of the API method location is: /api_v3/service/[SERVICENAME]/action/[ACTIONNAME], where
 
-*   [SERVICENAME] represents a specific service
-*   [ACTIONNAME] represent an action to be applied in the specific service
+* [SERVICENAME] represents a specific service
+* [ACTIONNAME] represent an action to be applied in the specific service
 
-
-#### Request Input Parameters  
+#### Request Input Parameters
 
 Each API method receives a different set of input parameters.
 
 For all request types:
 
-*   Send input parameters as a standard URL-encoded key-value string.
-*   When an input parameter is an object, flatten it to pairs of ObjectName:Param keys.
+* Send input parameters as a standard URL-encoded key-value string.
+* When an input parameter is an object, flatten it to pairs of ObjectName:Param keys.
 
-#### Request Input Parameters Example  
+#### Request Input Parameters Example
 
 {% highlight plaintext %}
 id=abc12&name=name%20with%20spaces&entry:tag=mytag&entry:description=mydesc
@@ -106,38 +103,37 @@ entry {
 }
 {% endhighlight %}
 
-### API Errors and Error Handling  
+### API Errors and Error Handling
 
 The Kaltura API can return errors, which are represented by an error identifier followed by a description:
 
-*   An error ID is a unique string. The parts of the string are separated by underscores.
-*   An error description is textual. The description may include a dynamic value.
+* An error ID is a unique string. The parts of the string are separated by underscores.
+* An error description is textual. The description may include a dynamic value.
 
 A comma separates the error ID from the description.
 
-#### API Error Example  
+#### API Error Example
 
 {% highlight plaintext %}
-ENTRY_ID_NOT_FOUND,Entry id "%s" not found 
+ENTRY_ID_NOT_FOUND,Entry id "%s" not found
 {% endhighlight %}
 
 where *%s* is replaced with the value that is sent to the API call.
 
 In the response XML:
 
-*   The *<code>* node contains the error code (such as *ENTRY\_ID\_NOT_FOUND*).
-*   The *<message>* node contains the description (such as *Entry id “%s” not found*).
+* The *<code>* node contains the error code (such as *ENTRY\_ID\_NOT_FOUND*).
+* The *<message>* node contains the description (such as *Entry id “%s” not found*).
 
-
-#### ErrorResponse  
+#### ErrorResponse
 
 **Error Handling**
 
 In most client libraries, the client library code throws an exception when an error is returned from the API. Depending on the programming language, catching the exception to read the code and/or the message enables user-friendly error handling. Errors that you encounter during development usually are caused by incorrect implementation.
 
-### The Multi-request API  
+### The Multi-request API
 
-#### Understanding the Multi-request Feature  
+#### Understanding the Multi-request Feature
 
 The Kaltura API can execute several API calls in a single HTTP request to Kaltura. The multi-request feature improves performance in Kaltura integrations. The feature enables a developer to stack multiple API calls and issue them in a single request. This reduces the number of round-trips from server-side or client-side developer code to Kaltura.
 
@@ -145,15 +141,15 @@ The Kaltura API processes each of the API calls that are included in the single 
 
 While the Kaltura API is processing each of the API calls in a multi-request, it detects when there is a dependency in one of the call parameters. The Kaltura API parses the dependency and replaces it with the result of the relevant call.
 
-#### Using the Multi-request Feature  
+#### Using the Multi-request Feature
 
 ##### Multi-request with Dependency - Sample Use Case
 
 To create a new entry out of a file in your server, execute several different API calls:
 
-1.  uploadToken.add
-2.  uploadToken.upload
-3.  baseEntry.addFromUploadedFile
+1. uploadToken.add
+2. uploadToken.upload
+3. baseEntry.addFromUploadedFile
 
 The result of *uploadToken.add* is an *uploadToken* object that consists of a token string.
 
@@ -161,17 +157,17 @@ You'll need the token string when executing the next action – uploading the fi
 
 Using the multi-request feature, in the second request you specify obtaining the value of the token parameter from the token property that is the result of the first request.
 
-### Multi-request Structure  
+### Multi-request Structure
 
 To perform a multi-request call:
 
-1.  Define the *GET* parameter of *service* as *multirequest* and define the *action* as *null* using (http://www.kaltura.com/api_v3/?service=multirequest&action=null).
+1. Define the *GET* parameter of *service* as *multirequest* and define the *action* as *null* using (http://www.kaltura.com/api_v3/?service=multirequest&action=null).
 
-2.  Prefix each API call with a number that represents its order in the multi-request call, followed by a colon. Prefix the first call with *1:*, the second with *2:*, and so on.
+2. Prefix each API call with a number that represents its order in the multi-request call, followed by a colon. Prefix the first call with *1:*, the second with *2:*, and so on.
 
-3.  Use the prefix for each of an API call's parameters (service, action, and action parameters).
+3. Use the prefix for each of an API call's parameters (service, action, and action parameters).
 
-### Multi-Request Structure Example  
+### Multi-Request Structure Example
 
 {% highlight plaintext %}
 Request URL: api_v3/index.php?service=multirequest&action=null
@@ -187,8 +183,7 @@ Request URL: api_v3/index.php?service=multirequest&action=null
 		ks={ks}
 {% endhighlight %}
 
-
-### Multi-request with Dependency - Structure  
+### Multi-request with Dependency - Structure
 
 To create a multi-request with a dependent request, use the following structure as input in the variable whose value you want to replace with a result of a preceding request:
 
@@ -198,11 +193,11 @@ To create a multi-request with a dependent request, use the following structure 
 
 where:
 
-*   *num* is the number of the request from which to collect data.
-*   *result* instructs the Kaltura API to replace this value with a result from another request.
-*   *propertyName* is the property to obtain from the object of the required result.
+* *num* is the number of the request from which to collect data.
+* *result* instructs the Kaltura API to replace this value with a result from another request.
+* *propertyName* is the property to obtain from the object of the required result.
 
-### Multi-Request With Dependency - Example  
+### Multi-Request With Dependency - Example
 
 {% highlight plaintext %}
 
@@ -229,16 +224,16 @@ Since in the `KalturaMediaEntryArray` you want to obtain the first element (inde
 Since from the first element you want only the ID that is the input for the second request, add *:id* to the request value.
 
 
-### Maintaining Backward Compatibility and Tracking Version Changes  
+### Maintaining Backward Compatibility and Tracking Version Changes
 
 Maintaining backward compatibility during API upgrades is a common concern for developers utilizing APIs to build applications. 
 
 Kaltura's client libraries are automatically generated from the server code, that include an automatic client libraries' generator mechanism. See [Adding the New Kaltura API Client Library Generator](https://knowledge.kaltura.com/node/43) for more information. As a result, the Kaltura API client libraries are not available as a static code repository that you can track for changes.
 
-To keep up to date with the changes between releases, follow the [Kaltura API Twitter account](https://twitter.com/Kaltura_API). 
+To keep up to date with the changes between releases, follow the [Kaltura API Twitter account](https://twitter.com/Kaltura_API).
 
 For each Kaltura release, the Kaltura API Twitter account notifies followers about additions and changes made to the REST APIs, Players APIs, and changes to the Client Libraries, and release notes are provided about the new release.
 
-Kaltura API based applications do not require frequent updates to the client library used. Kaltura is committed to provide full backward computability to the API layer, keeping deprecated APIs functional, and ensuring that additions or changes introduced in new versions will not break existing applications. 
+Kaltura API based applications do not require frequent updates to the client library used. Kaltura is committed to provide full backward computability to the API layer, keeping deprecated APIs functional, and ensuring that additions or changes introduced in new versions will not break existing applications.
 
-When new functionalities for your applications are introduced, or when maintainance upgrades are made to your applications, we encourage you to keep your client libraries updated even though an upgrade based on the availability of new Kaltura releases is not required.
+When new functionalities for your applications are introduced, or when maintenance upgrades are made to your applications, we encourage you to keep your client libraries updated even though an upgrade based on the availability of new Kaltura releases is not required.
