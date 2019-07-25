@@ -212,21 +212,19 @@ Request URL: api_v3/index.php?service=multirequest&action=null
 		ks={ks}
 {% endhighlight %}
 
+In the example, the first request lists entries whose names resemble *myentry*. The [media.list](https://developer.kaltura.com/console/service/media/action/list) request returns an object of type *KalturaMediaListResponse*, which contains an object named *objects* of type *KalturaMediaEntryArray*.
 
-In the example, the first request lists entries whose names resemble *myentry*. The *media.list* request returns an object of type *KalturaMediaListResponse*, which contains an object named *objects* of type *KalturaMediaEntryArray*.
+The second request is [media.get](https://developer.kaltura.com/console/service/media/action/get), which uses `entryId` as input.
 
-The second request is *media.get*, which uses *entryId* as input.
-
-The *entryId* input is dynamic, and the value is obtained from the first request. Since the *media.list* response is constructed of array object within a response object, the first property to access is *KalturaMediaEntryArray*.
+The `entryId` input is dynamic, and the value is obtained from the first request. Since the [media.list](https://developer.kaltura.com/console/service/media/action/list) response is constructed of array object within a response object, the first property to access is `KalturaMediaEntryArray`.
 
 Since in the `KalturaMediaEntryArray` you want to obtain the first element (index **), add *:0* to the request value.
 
 Since from the first element you want only the ID that is the input for the second request, add *:id* to the request value.
 
-
 ### Maintaining Backward Compatibility and Tracking Version Changes
 
-Maintaining backward compatibility during API upgrades is a common concern for developers utilizing APIs to build applications. 
+Maintaining backward compatibility during API upgrades is a common concern for developers utilizing APIs to build applications.
 
 Kaltura's client libraries are automatically generated from the server code, that include an automatic client libraries' generator mechanism. See [Adding the New Kaltura API Client Library Generator](https://knowledge.kaltura.com/node/43) for more information. As a result, the Kaltura API client libraries are not available as a static code repository that you can track for changes.
 
