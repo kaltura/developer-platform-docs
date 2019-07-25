@@ -6,7 +6,7 @@ weight: 106
 
 >Note: This article applies to Kaltura API version 3 and later. It does not address how to implement specific flows using the Kaltura API.
 
-## What are Kaltura's Kaltura Client Libraries?
+## Kaltura's Client Libraries
 
 A Kaltura client library:
 
@@ -37,7 +37,7 @@ Kaltura recommends that you use a Kaltura Client Library when you develop applic
 There are different types of client libraries:
 
 * Client libraries for the Kaltura Hosted Edition
-* Local client libraries for Kaltura On-Prem™ and [Kaltura Community Edition (Kaltura CE)](https://github.com/kaltura/platform-install-packages/#kaltura-installation-packages-project)
+* Local client libraries for Kaltura On-Prem™ and [Kaltura Community Edition (CE)](https://github.com/kaltura/platform-install-packages/#kaltura-installation-packages-project)
 * Specialized Kaltura [client libraries](https://developer.kaltura.com/api-docs/Client_Libraries/)
 
 ## Client Libraries
@@ -138,13 +138,6 @@ If the version of your self-hosted edition is:
 
 > Do not generate a client library locally when you use an application developed by Kaltura or the community that is packaged with a client library. Changing the client library in the application may cause the application to fail.
 
-**To generate a client library on your local Kaltura server:**
-
-(For Dragonfly and earlier versions of Kaltura self-hosted editions only:) Run the following script with root permissions: {% highlight bash %}cd /[INSTALLATION_PATH]/app/generator/ ./generate.sh{% endhighlight %}
-
-> The generator may not have permission to create the Kaltura client library files if you run the script without root permissions.
-
-
 # Generating a Specialized Kaltura Client Library
 
 You need to [generate specialized client libraries][9] if you want:
@@ -153,9 +146,7 @@ You need to [generate specialized client libraries][9] if you want:
 * A client library to include customized APIs from a server plugin
 * To use only a specific sub-set of Kaltura APIs without accessing other APIs
 
-### Generating a Specialized Client Library
-
-Generating a [specialized client library][9] may require:
+Generating a client library may require:
 
 * Creating a language-specific *KalturaClientBase* class
 * Creating a language-specific generator class
@@ -353,26 +344,23 @@ To exclude a server plugin from an application:
 
 Do not include the server plugin API files in the client library.
 
-## Instantiating a Client Object
+# Accessing the Kaltura API
 
-Before you can use a client library, you need a client object to perform actions with the Kaltura API.
+To make a call to the Kaltura API, you'll need a Kaltura Client that includes a valid Kaltura Session. You can read in depth [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html) about the different ways of creating a session and accessing the API.
 
-Depending on your use case, you may need to instantiate client objects multiple times.
-
-Follow the steps below to instantiate a client object:
+Creating a Client requires a Configuration Object first.
 
 ## Creating a Configuration Object
 
-To create a configuration object for a client library:
-
-Include the following code:
+The Configuration Object should be created using your Partner ID.
+The service is set by default as "https://www.kaltura.com/"
+The Client Object is then created using the configuration. Once you generate a Kaltura Session, you set it on the Client.
 
 {% highlight php %}
 <?php
 $kalturaConfig = new KalturaConfiguration(123);
 // where 123 is your partner ID
-$kalturaConfig->serviceUrl = 'http://KalturaServerDomain';
-// if you want to communicate with a Kaltura server which is  other than the default http://www.kaltura.com
+$kalturaConfig->serviceUrl = 'kaltura server'
 $kalturaClient = new KalturaClient($kalturaConfig);
 {% endhighlight %}
 
@@ -400,19 +388,19 @@ Implement the following code:
 $kalturaClient->setKs($ks);
 {% endhighlight %}
 
-## Using a Client Object to Perform an API Call
+## The Kaltura API
 
 The Kaltura API structure consists of a list of services, represented by service objects. Each service object consists of different actions, represented by a method in the service object.
 
 **For example:**
 
-1. To call the *media* service to get a specific media entry instance from the Kaltura server entry, you use the *get* action.
-  The result of *media.get* is an object of type [KalturaMediaEntry][22].
-2. After performing the *media.get* call, you print the name of the entry.
+1. To call the **media** service in order to get a specific media entry instance from the Kaltura server entry, you use the *get* action.
+  The result of [`media.get`](https://developer.kaltura.com/console/service/media/action/get) is an object of type [`KalturaMediaEntry`][22].
+2. The `media.get` call, provides information about the entry, such as its name or date of creation.
 
 [22]: https://developer.kaltura.com/console/service/media/
 
-For more information about the Kaltura API structure, refer to [Kaltura API Usage Guidelines][11]
+For more information about the Kaltura API structure, refer to [Kaltura API Usage Guidelines][11] or try it out using the [console](https://developer.kaltura.com/console)
 
 To perform a `media.get` call:
 

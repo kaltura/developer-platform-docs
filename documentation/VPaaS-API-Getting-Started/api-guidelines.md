@@ -10,9 +10,7 @@ A string in brackets [] represents a value. Replace the string – including the
 
 ### Finding the Latest API Version Number
 
-To find the version number of the API that contains the latest updates, go to the full XML description of the [API schema](http://www.kaltura.com/api_v3/api_schema.php).
-
-The version and date of the API schema appear near the beginning of the file.
+To find the version number of the API that contains the latest updates, use the [system.getVersion](https://developer.kaltura.com/console/service/system/action/getVersion) API.
 
 ### Getting a Client Library for the Kaltura API
 

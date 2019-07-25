@@ -8,7 +8,7 @@ The Kaltura API Client Library Generator is an automatic method of packaging the
 
 ## The API Schema
 
-The updated version of the API description can be retrieved at the following URL: http://www.kaltura.com/api_v3/api_schema.php
+The updated version of the API description can be retrieved [here](http://www.kaltura.com/api_v3/api_schema.php)
 
 By parsing the schema.xml file,  it is possible to construct the complete structure of the objects in the system. A generic template to parse the schema file was created to ease the process of creating new parsers. The TemplateClientGenerator is a basic template for creating a custom client library generator, by providing the following:
 
