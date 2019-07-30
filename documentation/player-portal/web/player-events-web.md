@@ -22,7 +22,7 @@ Player core events consist of two event types:
 player.Event.Core.EVENT_NAME;
 ```
 
-The full core events list can be found [here](https://github.com/kaltura/playkit-js/blob/master/src/event/event-type.js). //TODO
+The full core events list can be found [here](https://github.com/kaltura/playkit-js/blob/master/src/event/event-type.js). 
 
 ### UI Events
 
@@ -36,7 +36,7 @@ A UI event enum can be access in the following way:
 player.Event.UI.EVENT_NAME;
 ```
 
-The full UI events list can be found [here](https://github.com/kaltura/playkit-js-ui/blob/master/docs/events.md). //TODO
+The full UI events list can be found [here](https://developer.kaltura.com/player/web/ui/ui-events)
 
 ## Registering to Player Events
 

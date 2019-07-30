@@ -120,7 +120,7 @@ class DumbComponent extends Component {
 export default DumbComponent;
 ```
 
-If you want to use JSX follow this [guide](./custom-ui-preset.md#using-jsx), and use the following JSX syntax:
+If you want to use JSX follow this [guide](https://developer.kaltura.com/player/web/ui/custom-ui-presets), and use the following JSX syntax:
 
 ```javascript
 const h = KalturaPlayer.ui.h;

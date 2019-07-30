@@ -20,12 +20,11 @@ The order that the UI presets are defined and their respective conditions define
 
 The last preset should always be the default one that has no condition.
 
-> :information_source:
-> This guide assumes you are using the [Kaltura Player].</br>
-> If you intend to build a new preset that will be compiled as part of the library then you can import the components and use JSX for building the preset.</br>
-> Each section will also contain a collapsable section to show snippet for testing the UI application in standalone mode - where it is imported directly and not used as part of the Kaltura Player.
+This guide assumes you are using the [Kaltura Player](https://developer.kaltura.com/player/web)
 
-[kaltura player]: https://github.com/kaltura/kaltura-player-js/
+If you intend to build a new preset that will be compiled as part of the library then you can import the components and use JSX for building the preset.
+
+Each section will also contain a collapsable section to show snippet for testing the UI application in standalone mode - where it is imported directly and not used as part of the Kaltura Player.
 
 ## Defining a preset
 
@@ -180,5 +179,4 @@ The UI Manager has three pre-defined conditions:
 ## Using custom components
 Presets can be created by using the player default library components, but you can also create and use your own components to define the layout.
 
-See example on how to create and use your own components [here](create-new-component.md)
-```
+See example on how to create and use your own components [here](https://developer.kaltura.com/player/web/ui/components)
