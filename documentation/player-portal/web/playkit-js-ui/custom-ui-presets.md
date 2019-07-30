@@ -29,7 +29,7 @@ The last preset should always be the default one that has no condition.
 
 ## Defining a preset
 
-A preset is a simple function that returns a tree that defines the compoentns structure to be used in a layout.
+A preset is a simple function that returns a tree that defines the components structure to be used in a layout.
 
 For example- Let's say that we want our fullscreen UI to have only the bottom bar with the fullscreen control. nothing else.
 
@@ -59,7 +59,7 @@ const fullscreenUI = function(props){
 If your app is using [Babel] for transpiling you can use [JSX] syntax which will be transpiled to the above code.
 In order to do this do the following:
 
-1.  Install [transform-react-jsx](https://www.npmjs.com/package/babel-plugin-transform-react-jsx) with your favoruite package manager
+1.  Install [transform-react-jsx](https://www.npmjs.com/package/babel-plugin-transform-react-jsx) with your favorite package manager
 
 ```bash
 yarn add -D babel-plugin-transform-react-jsx
@@ -180,5 +180,5 @@ The UI Manager has three pre-defined conditions:
 ## Using custom components
 Presets can be created by using the player default library components, but you can also create and use your own components to define the layout.
 
-See example on how to create and use your own compoentns [here](create-new-component.md)
+See example on how to create and use your own components [here](create-new-component.md)
 ```

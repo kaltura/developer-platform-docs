@@ -217,6 +217,3 @@ contentManager.getSettings().defaultHlsAudioBitrate = 128000;
 ```
 
 The default is 64000 bps.
-
-## Frequently asked Questions
-See the [FAQ](faq.md).
