@@ -91,12 +91,3 @@ If the media is DRM-restricted, such as Widevine, the DRM information will be ne
 ### PKDrmParams
 
 PKDrmParams represents a single DRM license info object. PKDrmParams contains the licenseUri that will be needed for the play. The PKMediaSource contains a list of "PKDrmParams" items. The player will select the source and the relevant DRM data according to device type, connectivity, supported formats, etc.
-
-To learn more, see [PKDrmParams](https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PKDrmParams.java).
-
-To learn more, read the [Media Providers](https://github.com/kaltura/DeveloperPortalDocs/tree/playkit/documentation/PlayKit/MediaProviders.md) article.
-
-## Have Questions or Need Help?
-
-Check out the [Kaltura Player SDK Forum](https://forum.kaltura.org/c/playkit) page for different ways of getting in touch.
-

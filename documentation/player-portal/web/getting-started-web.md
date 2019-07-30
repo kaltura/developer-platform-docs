@@ -2,9 +2,9 @@
 layout: page
 title: Getting Started with the Web Player
 weight: 110
----
+--- 
 
-The Kaltura HTML5 Player is really awesome and cool and fast and has nice features. 
+Looking for Native Mobile SDKs? Check out the docs for the [iOS Player SDK](https://developer.kaltura.com/player/ios/getting-started-ios/) or the [Android Player SDK](https://developer.kaltura.com/player/android/getting-started-android/).
 
 ## Before You Begin 
 
@@ -34,10 +34,10 @@ Click the options dropdown for the entry you want to embed (three dots) and sele
 
 To manually write an embed code, you'll need a few things:
 
-- Your partner ID, which can be found in the KMC under [Integration Settings](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings)
-- The Player ID of the player you wish to use, which can be found in the Studio tab in the ID column. It is also known as the UI Conf ID. 
-- The Entry ID for the entry you want to embed, which is found in the Content tab 
-- An HTML div in the page you want to embed your player 
+- **Your partner ID**, which can be found in the KMC under [Integration Settings](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings)
+- **The Player ID** of the player you wish to use, which can be found in the Studio tab in the ID column. It is also known as the UI Conf ID. 
+- **The Entry ID** for the entry you want to embed, which is found in the Content tab 
+- **An HTML div** in the page you want to embed your player 
 
 Let's walk through the steps for writing that embed code. 
 
@@ -57,7 +57,7 @@ Let's walk through the steps for writing that embed code.
 2. Load the player library with this script: 
 
 {% highlight html %}
-  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/2196781/embedPlaykitJs/uiconf_id/41483031"></script>
+  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/000000/embedPlaykitJs/uiconf_id/22222222"></script>
 {% endhighlight %}
 
 3. The embed script contains the targetId, which is your div ID, as well as your partnerID, the uiConfId (player ID), and the entry ID.  
@@ -101,7 +101,7 @@ Let's walk through the steps for writing that embed code.
       targetId: "kalturaPlayer",
       provider: {
         partnerId: 0000000,
-        uiConfId: 42929341
+        uiConfId: 22222222
       },
       playback: {
         autoplay: true
@@ -117,9 +117,10 @@ Let's walk through the steps for writing that embed code.
 </html>
 {% endhighlight %}
 
-Congrats! Running this page should show you a Kaltura Player loaded with the entry that you chose. 
 
-Notice that this method is the **Dynamic Embed**, which is different than the aforementioned auto embed code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types-web) to read more about embed types. 
+Congrats! Running that page should show you a Kaltura Player loaded with the entry that you chose. 
+
+Notice that this method is the **Dynamic Embed**, which is different than the aforementioned **auto embed** code, and is useful for cases when you want control runtime configuration dynamically. Click [here](https://developer.kaltura.com/player/web/embed-types-web) to read more about embed types. 
 
 ## Configuring the Player
 

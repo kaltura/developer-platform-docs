@@ -262,7 +262,7 @@ Defaults can be found here:
 
 ### Enable - Ad will auto play on resume 
 
-In some cases where app does not expose play pause API on ads this API will do the auto play after resume from bg
+In some cases where app does not expose play pause API on ads this API will do the auto play after resume from background
 
 ##### Example:
 
@@ -358,7 +358,7 @@ mList.add(pkExternalSubtitle);
 mediaEntry.setExternalSubtitleList(mList);
 ```
 Use `setDefault()` while creating `PKExternalSubtitle` to make it default subtitle.
-`TEXT_VTT` and `APPLICATION_SUBRIP` mimetypes are supported for subtitles.
+`TEXT_VTT` and `APPLICATION_SUBRIP` mime-types are supported for subtitles.
 
 ## Subtitle Styles for Player
 

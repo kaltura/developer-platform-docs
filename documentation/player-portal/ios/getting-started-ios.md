@@ -9,9 +9,9 @@ Lastly, this guide will cover how to add plugins to the application, specificall
 
 ## Before You Begin
 
-You'll need two things: 
+You'll need two things:
 1. Your Kaltura Partner ID, which can be found in the KMC under Settings>Integration Settings 
-2. Any video entry, which can be found in the KMC as well. 
+2. Any video entry, which can be found in the KMC as well.
 
 ### Getting Started with the Kaltura Cocoa Pods
 
