@@ -40,7 +40,7 @@ var config = {
 3.  Since there are no `dash` sources in it, the player will move to the next priority from the `streamPriority` list which is `hls`.
 4.  After checking the `sources` object again and found `hls` sources, the player will choose to play `hls`.
 
-However, will the player use the native hls or not? This depends on the `preferNative` value for `hls`. Because this value is set to `true`, the player knows that if the browser supports native `hls` playback, the source will be played natively.
+However, will the player use the native HLS or not? This depends on the `preferNative` value for `hls`. Because this value is set to `true`, the player knows that if the browser supports native `hls` playback, the source will be played natively.
 
 Given the configuration information above, which source will be played in each browser?
 
@@ -48,4 +48,4 @@ Following summarize the results for this scenario:
 
 | Chrome            | Safari     | Firefox           | Edge       |
 | ----------------- | ---------- | ----------------- | ---------- |
-| hls with `hls.js` | native hls | hls with `hls.js` | native hls |
+| HLS with `hls.js` | native HLS | HLS with `hls.js` | native HLS |

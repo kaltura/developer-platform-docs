@@ -4,13 +4,7 @@ title: Download-to-go for Android
 weight: 110
 ---
 
-# Download-to-Go for Android
-
 Download to Go (DTG) is an Android library that facilitates the download of video assets, with an emphasis on DASH and HLS.
-
-On this page:
-* TOC
-{:toc}
 
 ## Supported Video Formats  
 
@@ -36,33 +30,18 @@ Replace `2.4.0` with the [latest release](https://bintray.com/kaltura/android/dt
 
 ## Download States
 
-![](states.svg)
-
-<div hidden>
-	@startuml 
-	
-	[*] --> NEW
-	NEW --> INFO_LOADED: loadInfo()
-	INFO_LOADED --> IN_PROGRESS: start()
-	IN_PROGRESS --> PAUSED: pause()
-	PAUSED --> IN_PROGRESS: start()
-	IN_PROGRESS --> COMPLETE: finished
-	IN_PROGRESS --> FAILED: failed
-	FAILED --> IN_PROGRESS: start()
-	
-	@enduml
-</div>
+![Download States](./images/states.svg)
 
 ## Usage  
 
 The following classes/interfaces are the public API of the library:
 
 ```
-    com.kaltura.dtg.
-        - ContentManager
-        - DownloadItem
-        - DownloadState
-        - DownloadStateListener
+com.kaltura.dtg.
+    - ContentManager
+    - DownloadItem
+    - DownloadState
+    - DownloadStateListener
 ```
  
 Please see their Javadoc comments.
@@ -70,7 +49,7 @@ Please see their Javadoc comments.
 Following are some basic sequence diagrams.
 
 ### Start and Stop the Service  
-
+h
 ![](start-stop.svg)
 
 <div hidden>
