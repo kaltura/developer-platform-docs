@@ -32,7 +32,7 @@ var player = playkit.core.loadPlayer(config);
 ```
 
 **Important**:  
-The player selects the DRM system **after** the [source type selection](./source-selection-logic.md).  
+The player selects the DRM system **after** the [source type selection](https://developer.kaltura.com/player/web/player-events-web).  
 Therefore, the DRM settings may **not be applied** when the source type cannot be played with the configured DRM system. For example:
 
 | Browser | Source Type | Default DRM System | Configured DRM System | Selected (reason)                   |

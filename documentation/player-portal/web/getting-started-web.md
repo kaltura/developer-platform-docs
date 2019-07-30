@@ -57,7 +57,7 @@ Let's walk through the steps for writing that embed code.
 2. Load the player library with this script: 
 
 {% highlight html %}
-  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/2196781/embedPlaykitJs/uiconf_id/41483031"></script>
+  <script type="text/javascript" src="https://cdnapisec.kaltura.com/p/000000/embedPlaykitJs/uiconf_id/22222222"></script>
 {% endhighlight %}
 
 3. The embed script contains the targetId, which is your div ID, as well as your partnerID, the uiConfId (player ID), and the entry ID.  
@@ -101,7 +101,7 @@ Let's walk through the steps for writing that embed code.
       targetId: "kalturaPlayer",
       provider: {
         partnerId: 0000000,
-        uiConfId: 42929341
+        uiConfId: 22222222
       },
       playback: {
         autoplay: true

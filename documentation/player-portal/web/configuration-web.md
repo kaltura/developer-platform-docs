@@ -17,7 +17,7 @@ var player = KalturaPlayer.setup(config);
 
 The configuration uses the following structure:
 
-{% highlight javascript %}
+{% highlight json %}
 {
   targetId: string,
   logLevel: string,
@@ -116,7 +116,7 @@ In the player setup flow, the configuration described above (partially or in ful
 Available sources include:
 
 - **Application** - This is the application that embeds the player and can be used to configures the player in-line upon instantiation.
-- **Server** - This is a partner configuration that is saved on the server. The partner can use this configuration when configuring the player by suppling the `uiConfId` value.
+- **Server** - This is a partner configuration that is saved on the server. The partner can use this configuration when configuring the player by supplying the `uiConfId` value.
 - **Local Storage (Browser)** - This is the user preferences configuration, which is saved in the local storage of the browser.
 - **Default Player Configuration** - The default player configuration is defined internally by the player.
 
@@ -135,34 +135,34 @@ In this example, we'll use the following configuration from each source to see h
 
 Local Storage
 
-```
+{% highlight json %}
 {
 	muted: true,
 	audioLanguage: 'spa'
 }
-```
+{% endhighlight %}
 
 Application
 
-```
+{% highlight json %}
 {
 	muted: false,
 	volume: 0.7
 }
-```
+{% endhighlight %}
 
 Server
 
-```
+{% highlight json %}
 {
   audioLanguage: 'eng';
   autoplay: true;
 }
-```
+{% endhighlight %}
 
 Default Player Configuration
 
-```
+{% highlight json %}
 {
 	audioLanguage: '',
 	textLanguage: '',
@@ -170,11 +170,11 @@ Default Player Configuration
 	volume: 1,
 	autoplay: false
 }
-```
+{% endhighlight %}
 
 **The resulting runtime configuration will, therefore, be as follows:**
 
-```
+{% highlight json %}
 {
 	audioLanguage: 'spa',
 	textLanguage: '',
@@ -182,4 +182,4 @@ Default Player Configuration
 	volume: 0.7,
 	autoplay: true
 }
-```
+{% endhighlight %}
