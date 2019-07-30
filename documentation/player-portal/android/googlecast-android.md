@@ -10,7 +10,7 @@ The guide below walks you through casting with the [Cast Applications Framework 
 
 ## Setting up the Cast Builder: 
 
-```java 
+{% highlight java %}
 // note that not all parameters are required. 
 CAFCastBuilder ovpV3CastBuilder =  new KalturaCastBuilder()
 .setMediaEntryId(converterOvpV3Cast.getEntryId())
@@ -28,23 +28,23 @@ else if (!TextUtils.isEmpty(converterOvpV3Cast.getVmapAdTagUrl()))
         ovpV3CastBuilder.setAdsConfig(createAdsConfigVmap(converterOvpV3Cast.getVmapAdTagUrl()));
     }
 MediaInfo mediaInfo = ovpCastBuilder.build();
-```
+{% endhighlight %}
 
 ## Adding Ads to the Builder using setAdsConfig:
 
 ## VMAP
-```
+{% highlight java %}
 public AdsConfig createAdsConfigVmap(String adTagUrl) {
     return MediaInfoUtils.createAdsConfigVmap(adTagUrl);
 }
-```
+{% endhighlight %}
 
 ## VAST
-```
+{% highlight java %}
 public AdsConfig createAdsConfigVast(String adTagUrl) {
     return MediaInfoUtils.createAdsConfigVastInPosition(0, adTagUrl);
 }
-```
+{% endhighlight %}
 
 Both Builder APIs support setting your own customized metadata as exposed in the Cast SDK using:
 
@@ -56,7 +56,7 @@ By default, however, it is not required, since these settings are already config
 
 Once the app has a MediaInfo Object, it can call the Cast API to load this mediaInfo: 
 
-```
+{% highlight java %}
 PendingResult<RemoteMediaClient.MediaChannelResult> pendingResult = null;
 MediaLoadOptions loadOptions = new MediaLoadOptions.Builder().setAutoplay(true).setPlayPosition(mPlaybackStartPosition).build();
 pendingResult = remoteMediaClient.load(mediaInfo,loadOptions);
@@ -92,7 +92,7 @@ public void onResult(@NonNull RemoteMediaClient.MediaChannelResult mediaChannelR
 }
 });
 }   
-```
+{% endhighlight %}
 
 ### Start Position 
 
@@ -102,7 +102,7 @@ public void onResult(@NonNull RemoteMediaClient.MediaChannelResult mediaChannelR
 
 ## How to Register/Unregister to Custom Events
 
-```
+{% highlight java %}
 try {
     getCastSession().setMessageReceivedCallbacks(
             adsChannel.getNamespace(),
@@ -117,11 +117,11 @@ try {
 } catch (IOException e) {
     e.printStackTrace();
 }
-```
+{% endhighlight %}
 
 ## Receiving Ad Events 
 
-```
+{% highlight java %}
 class AdsChannel implements Cast.MessageReceivedCallback {
     public String getNamespace() {
         return "urn:x-cast:com.kaltura.cast.playkit";
@@ -190,11 +190,11 @@ class AdsChannel implements Cast.MessageReceivedCallback {
         }
     }
 }
-```
+{% endhighlight %}
 
 ## Sending Skip Ad Command 
 
-```
+{% highlight java %}
     private void sendSkipAdMessage() {
 
         String skipAdMessage = "{\n" +
@@ -219,4 +219,4 @@ class AdsChannel implements Cast.MessageReceivedCallback {
             }
         }
     }
-```
+{% endhighlight %}
