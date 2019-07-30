@@ -6,18 +6,18 @@ weight: 110
 
 Player configuration parameters are provided whenever a player instance is created.
 
-```js
+{% highlight javascript %}
 var config = {
   // Configuration here
 };
 var player = KalturaPlayer.setup(config);
-```
+{% endhighlight %}
 
 #### Configuration Structure
 
 The configuration uses the following structure:
 
-```js
+{% highlight json %}
 {
   targetId: string,
   logLevel: string,
@@ -31,9 +31,7 @@ The configuration uses the following structure:
   ui: UIOptionsObject,
   cast: CastConfigObject
 }
-```
-
-##
+{% endhighlight %}
 
 ### config.targetId
 
@@ -42,8 +40,6 @@ The configuration uses the following structure:
 ##### Default: `-`
 
 ##### Description: Defines the ID of the DOM element to which the player will be added.
-
-##
 
 ### config.logLevel
 
@@ -55,8 +51,6 @@ The configuration uses the following structure:
 
 Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
-##
-
 ### config.disableUserCache
 
 ##### Type: `boolean`
@@ -66,8 +60,6 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 ##### Description: Indicates whether to stop using the saved user preferences.
 
 You can learn more about user preferences in the player [here](https://developer.kaltura.com/player/web/user-preferences-web).
-
-##
 
 ### config.playback
 
@@ -99,23 +91,17 @@ You can learn more about user preferences in the player [here](https://developer
 
 ##### Description: Defines the session configuration.
 
-##
-
 ### config.provider
 
 ##### Type: [ProviderOptionsObject](https://github.com/kaltura/playkit-js-providers/blob/master/docs/configuration.md)
 
 ##### Description: Defines the provider configuration.
 
-##
-
 ### config.ui
 
 ##### Type: [UIOptionsObject](https://github.com/kaltura/playkit-js-ui/blob/master/docs/configuration.md)
 
 ##### Description: Defines the user interface (UI) configuration.
-
-##
 
 ### config.cast
 
@@ -130,7 +116,7 @@ In the player setup flow, the configuration described above (partially or in ful
 Available sources include:
 
 - **Application** - This is the application that embeds the player and can be used to configures the player in-line upon instantiation.
-- **Server** - This is a partner configuration that is saved on the server. The partner can use this configuration when configuring the player by suppling the `uiConfId` value.
+- **Server** - This is a partner configuration that is saved on the server. The partner can use this configuration when configuring the player by supplying the `uiConfId` value.
 - **Local Storage (Browser)** - This is the user preferences configuration, which is saved in the local storage of the browser.
 - **Default Player Configuration** - The default player configuration is defined internally by the player.
 
@@ -149,34 +135,34 @@ In this example, we'll use the following configuration from each source to see h
 
 Local Storage
 
-```js
+{% highlight json %}
 {
 	muted: true,
 	audioLanguage: 'spa'
 }
-```
+{% endhighlight %}
 
 Application
 
-```js
+{% highlight json %}
 {
 	muted: false,
 	volume: 0.7
 }
-```
+{% endhighlight %}
 
 Server
 
-```js
+{% highlight json %}
 {
   audioLanguage: 'eng';
   autoplay: true;
 }
-```
+{% endhighlight %}
 
 Default Player Configuration
 
-```js
+{% highlight json %}
 {
 	audioLanguage: '',
 	textLanguage: '',
@@ -184,11 +170,11 @@ Default Player Configuration
 	volume: 1,
 	autoplay: false
 }
-```
+{% endhighlight %}
 
 **The resulting runtime configuration will, therefore, be as follows:**
 
-```js
+{% highlight json %}
 {
 	audioLanguage: 'spa',
 	textLanguage: '',
@@ -196,4 +182,4 @@ Default Player Configuration
 	volume: 0.7,
 	autoplay: true
 }
-```
+{% endhighlight %}

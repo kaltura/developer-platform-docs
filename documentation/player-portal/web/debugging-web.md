@@ -64,5 +64,3 @@ var config = {
     ...
 };
 ```
-
-For a complete list of log levels, click ~~here~~.  //TODO

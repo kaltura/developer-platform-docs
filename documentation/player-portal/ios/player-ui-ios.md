@@ -5,7 +5,7 @@ weight: 110
 ---
 
 The Kaltura Player does not inherently include a UI, but this guide will walk you through an example of how to add play/pause buttons and a scrubber to your player. 
-At this point you should have a Kaltura Player embedded in your application and showing your entry, as seen in [this guide](https://github.com/tzubeli/developer-portal/edit/master/sdk-portal/getting-started-ios.md).
+At this point you should have a Kaltura Player embedded in your application and showing your entry, as seen in [this guide](https://developer.kaltura.com/player/web/getting-started-web).
 
 We will start by adding button images of your choice to the Assets catalogue of your project. Then, in the storyboard, create a play/pause button, a slider (scrubber), a current position label, and a (remaining) duration label. For the play/pause button, in the Attributes Inspector, click the dropdown for Title and select Attributed. Under Image, type in the name of the play button file (it should have autocomplete for existing files). 
 Lastly, create the outlets for all your new objects in the Controller: 
