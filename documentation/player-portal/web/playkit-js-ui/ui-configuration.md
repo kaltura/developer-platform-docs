@@ -15,7 +15,7 @@ var uiManager = new playkit.ui.UIManager(player, config);
 
 #### Configuration Structure
 
-```js
+```json
 {
   targetId: string,
   debugActions: boolean, // optional
@@ -63,7 +63,7 @@ Useful for applications that wants to force mobile view of player UI.
 
 ##### Default: `"ERROR"`
 
-##### Description: Defines the ui log level.
+##### Description: Defines the UI log level.
 
 Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
@@ -73,7 +73,7 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##### Default: `see en.json`
 
-##### Description: Defines the ui translation dictionary configuration.
+##### Description: Defines the UI translation dictionary configuration.
 
 Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
@@ -84,7 +84,7 @@ Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
 ##### Default: `en`
 
-##### Description: Defines the ui locale configuration.
+##### Description: Defines the UI locale configuration.
 
 Determine the translation dictionary to be used
 
@@ -95,7 +95,7 @@ Determine the translation dictionary to be used
 
 ##### Default: `-`
 
-##### Description: Defines the ui components configuration.
+##### Description: Defines the UI components configuration.
 
 Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
@@ -103,7 +103,7 @@ Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
 ##### Type: `Object`
 
-```js
+```json
 {
    img: string,
    url: string,
@@ -114,7 +114,7 @@ Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
 ##### Default:
 
-```js
+```json
 {
    img: '',
    url: '',
@@ -164,7 +164,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 
 ##### Type: `Object`
 
-```js
+```json
 {
    thumbsSprite: string,
    thumbsWidth: number,
@@ -213,7 +213,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 
 ##### Default:
 
-```js
+```json
 {
   inBrowserFullscreenForIOS: false;
 }
