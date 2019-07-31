@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="552px" style="width:647px;height:552px;" version="1.1" viewBox="0 0 647 552" width="647px" zoomAndPan="magnify">
+<defs>
+<filter height="300%" id="f2rjz24c6v0sv" width="300%" x="-1" y="-1">
+<feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+<feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+<feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+</filter>
+</defs>
+<g>
+<text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="176" x="239.5" y="17.4023">Asset State Diagram</text>
+<ellipse cx="72.8757" cy="39.1992" fill="#000000" filter="url(#f2rjz24c6v0sv)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="50" x="47.8757" y="126.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="47.8757" x2="97.8757" y1="152.6875" y2="152.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="58.3757" y="144.7344">New</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="133" x="6.3757" y="253.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="6.3757" x2="139.3757" y1="279.6875" y2="279.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="16.3757" y="271.7344">MetadataLoaded</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="242.3757" y="253.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="242.3757" x2="335.3757" y1="279.6875" y2="279.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="73" x="252.3757" y="271.7344">InProgress</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="61" x="37.3757" y="380.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="37.3757" x2="98.3757" y1="406.6875" y2="406.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="41" x="47.3757" y="398.7344">Failed</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="514.3757" y="253.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="514.3757" x2="609.3757" y1="279.6875" y2="279.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="524.3757" y="271.7344">Completed</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="69" x="244.3757" y="380.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="244.3757" x2="313.3757" y1="406.6875" y2="406.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="49" x="254.3757" y="398.7344">Paused</text>
+<rect fill="#FEFECE" filter="url(#f2rjz24c6v0sv)" height="50" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="467.8757" y="491.1992"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="467.8757" x2="565.8757" y1="517.6875" y2="517.6875"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="477.8757" y="509.7344">Interrupted</text>
+<path d="M72.8757,49.5351 C72.8757,65.5451 72.8757,96.9626 72.8757,120.6563 " fill="none" id="*start-New" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="72.8757,125.8896,76.8757,116.8896,72.8757,120.8896,68.8757,116.8896,72.8757,125.8896" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="73.8757" y="92.7676">Add Item</text>
+<path d="M72.8757,176.2903 C72.8757,196.9027 72.8757,226.1639 72.8757,248.0476 " fill="none" id="New-MetadataLoaded" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="72.8757,253.1602,76.8757,244.1602,72.8757,248.1602,68.8757,244.1602,72.8757,253.1602" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="123" x="73.8757" y="219.7676">Load Item Metadata</text>
+<path d="M139.4453,278.1992 C170.849,278.1992 207.7612,278.1992 237.0418,278.1992 " fill="none" id="MetadataLoaded-InProgress" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="242.0443,278.1992,233.0443,274.1992,237.0443,278.1992,233.0443,282.1992,242.0443,278.1992" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="160.3757" y="271.7676">Start Item</text>
+<path d="M32.98,303.3162 C23.2894,311.5537 14.1942,321.6161 8.8757,333.1992 C0.1103,352.2895 15.457,370.556 32.6898,383.9135 " fill="none" id="MetadataLoaded-Failed" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="37.0982,387.2012,32.2752,378.6141,33.0902,384.2119,27.4924,385.0269,37.0982,387.2012" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="9.8757" y="346.7676">Item Failed</text>
+<path d="M335.4959,278.1992 C383.641,278.1992 458.6407,278.1992 508.9754,278.1992 " fill="none" id="InProgress-Completed" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="514.072,278.1992,505.072,274.1992,509.072,278.1992,505.072,282.1992,514.072,278.1992" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="142" x="353.8757" y="271.7676">On Download Finished</text>
+<path d="M253.2586,303.3929 C244.2493,311.7478 235.753,321.8526 230.8757,333.1992 C224.37,348.334 232.2447,363.7135 243.3739,376.3511 " fill="none" id="InProgress-Paused" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="246.9199,380.1818,243.7413,370.86,243.5233,376.5126,237.8706,376.2946,246.9199,380.1818" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="68" x="231.8757" y="346.7676">Pause Item</text>
+<path d="M293.6342,380.0251 C298.1786,370.9383 302.5857,360.4015 304.8757,350.1992 C307.9456,336.5221 305.4644,321.3766 301.6182,308.5195 " fill="none" id="Paused-InProgress" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="300.0242,303.5291,298.9524,313.3195,301.5456,308.292,306.5731,310.8852,300.0242,303.5291" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="307.8757" y="346.7676">Start Item</text>
+<path d="M335.5055,302.6076 C349.8801,311.255 365.2369,321.7197 377.8757,333.1992 C405.0553,357.8858 465.0074,441.6757 496.5549,486.8172 " fill="none" id="InProgress-Interrupted" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="499.5172,491.0618,497.6465,481.3923,496.6556,486.9617,491.0862,485.9708,499.5172,491.0618" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="102" x="455.8757" y="410.2676">Item Interrupted</text>
+<path d="M538.7133,491.0151 C560.9002,462.2155 588.8465,414.6133 564.8757,380.1992 C538.608,342.4875 412.9187,307.3988 340.5427,289.8758 " fill="none" id="Interrupted-InProgress" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="335.4259,288.6447,343.2404,294.6392,340.2871,289.8145,345.1119,286.8613,335.4259,288.6447" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="574.8757" y="410.2676">Start Item</text>
+<path d="M242.2458,292.1582 C214.3288,301.588 178.7725,315.5354 149.8757,333.1992 C130.2057,345.2229 110.7078,362.0843 95.6627,376.4675 " fill="none" id="InProgress-Failed" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="91.9363,380.0663,101.1889,376.6914,95.5329,376.5929,95.6314,370.9369,91.9363,380.0663" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="150.8757" y="346.7676">Item Failed</text>
+</g>
+</svg>

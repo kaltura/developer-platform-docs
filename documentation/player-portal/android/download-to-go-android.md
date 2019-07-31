@@ -30,7 +30,7 @@ Replace `2.4.0` with the [latest release](https://bintray.com/kaltura/android/dt
 
 ## Download States
 
-![Download States](./images/states.svg)
+![Download States](../images/states.svg)
 
 ## Usage  
 
@@ -49,8 +49,8 @@ Please see their Javadoc comments.
 Following are some basic sequence diagrams.
 
 ### Start and Stop the Service  
-h
-![](start-stop.svg)
+
+![](../images/start-stop.svg)
 
 <div hidden>
   @startuml 
@@ -73,7 +73,7 @@ h
 
 ### New Download Sequence  
 
-![](new-download.svg)
+![](../images/new-download.svg)
 
 <div hidden>
     @startuml 
@@ -132,7 +132,7 @@ trackSelector.apply();
 
 ### Sequence Diagram  
 
-![](track-selection.svg)
+![](../images/track-selection.svg)
 
 <div hidden>
     @startuml 
