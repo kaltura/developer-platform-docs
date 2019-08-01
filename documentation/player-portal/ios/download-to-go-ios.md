@@ -29,7 +29,7 @@ pod "DownloadToGo"
 
 ### Simple Flow
 
-![](simple-flow.svg)
+![](../images/simple-flow.svg)
 
 <div hidden>
 {% plantuml %}
@@ -64,7 +64,7 @@ pod "DownloadToGo"
 
 ### Download Sequence
 
-![](download-sequence.svg)
+![](../images/download-sequence.svg)
 
 <div hidden>
 {% plantuml %}
@@ -128,7 +128,7 @@ pod "DownloadToGo"
 
 ### Simple Playing Sequence (Using PlayKit Player)
 
-![](playing-sequence.svg)
+![](../images/playing-sequence.svg)
 
 <div hidden>
 {% plantuml %}
@@ -276,5 +276,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 {% endhighlight %}
 
 >Note: Make sure to call `ContentManager.shared.stop()` when finished with playback.
-
-[cocoapods]: https://cocoapods.org/
