@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="677px" style="width:635px;height:677px;" version="1.1" viewBox="0 0 635 677" width="635px" zoomAndPan="magnify">
+<defs>
+<filter height="300%" id="f15ea1t7hby8y2" width="300%" x="-1" y="-1">
+<feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+<feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+<feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+</filter>
+</defs>
+<g>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="579.2344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="121" y="48.4883"/>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="579.2344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="349" y="48.4883"/>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="280.7949" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="531" y="346.9277"/>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="345.3711" style="stroke: #000000; stroke-width: 2.0;" width="602.5" x="21" y="205.7305"/>
+<rect fill="#FFFFFF" height="298.75" style="stroke: none; stroke-width: 1.0;" width="602.5" x="21" y="252.3516"/>
+<line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="126" x2="126" y1="38.4883" y2="636.7227"/>
+<line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="353.5" x2="353.5" y1="38.4883" y2="636.7227"/>
+<line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="535.5" x2="535.5" y1="38.4883" y2="636.7227"/>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="61" y="3"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="68" y="23.5352">app: Application</text>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="126" x="61" y="635.7227"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="68" y="656.2578">app: Application</text>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="273.5" y="3"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="280.5" y="23.5352">cm: ContentManager</text>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="157" x="273.5" y="635.7227"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="280.5" y="656.2578">cm: ContentManager</text>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="458.5" y="3"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="137" x="465.5" y="23.5352">item: DownloadItem</text>
+<rect fill="#FEFECE" filter="url(#f15ea1t7hby8y2)" height="30.4883" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="458.5" y="635.7227"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="137" x="465.5" y="656.2578">item: DownloadItem</text>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="579.2344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="121" y="48.4883"/>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="579.2344" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="349" y="48.4883"/>
+<rect fill="#FFFFFF" filter="url(#f15ea1t7hby8y2)" height="280.7949" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="531" y="346.9277"/>
+<path d="M25,53.4883 L25,78.4883 L222,78.4883 L222,63.4883 L212,53.4883 L25,53.4883 " fill="#FBFB77" filter="url(#f15ea1t7hby8y2)" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M212,53.4883 L212,63.4883 L222,63.4883 L212,53.4883 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="176" x="31" y="71.0566">User enters media info page</text>
+<path d="M50,92.7988 L50,117.7988 L197,117.7988 L197,102.7988 L187,92.7988 L50,92.7988 " fill="#FBFB77" filter="url(#f15ea1t7hby8y2)" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M187,92.7988 L187,102.7988 L197,102.7988 L187,92.7988 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="56" y="110.3672">Check if item exists</text>
+<polygon fill="#A80036" points="337,144.1094,347,148.1094,337,152.1094,341,148.1094" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="131" x2="343" y1="148.1094" y2="148.1094"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="101" x="138" y="143.6777">findItem(itemId)</text>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="359" x2="401" y1="177.7305" y2="177.7305"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="401" x2="401" y1="177.7305" y2="190.7305"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="360" x2="401" y1="190.7305" y2="190.7305"/>
+<polygon fill="#A80036" points="370,186.7305,360,190.7305,370,194.7305,366,190.7305" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="366" y="172.9883">lookup(itemId)</text>
+<path d="M21,205.7305 L83,205.7305 L83,212.7305 L73,222.7305 L21,222.7305 L21,205.7305 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/>
+<rect fill="none" height="345.3711" style="stroke: #000000; stroke-width: 2.0;" width="602.5" x="21" y="205.7305"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="36" y="219.2988">alt</text>
+<text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="70" x="98" y="218.3652">[item found]</text>
+<polygon fill="#A80036" points="142,240.041,132,244.041,142,248.041,138,244.041" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="136" x2="348" y1="244.041" y2="244.041"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="28" x="148" y="239.6094">item</text>
+<line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="21" x2="623.5" y1="253.3516" y2="253.3516"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="63" x="26" y="263.9863">[not found]</text>
+<polygon fill="#A80036" points="142,284.3066,132,288.3066,142,292.3066,138,288.3066" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="136" x2="348" y1="288.3066" y2="288.3066"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="24" x="148" y="283.875">null</text>
+<polygon fill="#A80036" points="337,313.6172,347,317.6172,337,321.6172,341,317.6172" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="131" x2="343" y1="317.6172" y2="317.6172"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="194" x="138" y="313.1855">createItem(itemId, contentURL)</text>
+<polygon fill="#A80036" points="519,342.9277,529,346.9277,519,350.9277,523,346.9277" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="359" x2="525" y1="346.9277" y2="346.9277"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="153" x="366" y="342.4961">new(itemId, contentURL)</text>
+<polygon fill="#A80036" points="142,372.2383,132,376.2383,142,380.2383,138,376.2383" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="136" x2="348" y1="376.2383" y2="376.2383"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="28" x="148" y="371.8066">item</text>
+<polygon fill="#A80036" points="337,401.5488,347,405.5488,337,409.5488,341,405.5488" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="131" x2="343" y1="405.5488" y2="405.5488"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="138" y="401.1172">loadMetadata()</text>
+<path d="M212,418.8594 L212,443.8594 L492,443.8594 L492,428.8594 L482,418.8594 L212,418.8594 " fill="#FBFB77" filter="url(#f15ea1t7hby8y2)" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M482,418.8594 L482,428.8594 L492,428.8594 L482,418.8594 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="259" x="218" y="436.4277">Download and parse manifest, save in db</text>
+<polygon fill="#A80036" points="142,470.1699,132,474.1699,142,478.1699,138,474.1699" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="136" x2="348" y1="474.1699" y2="474.1699"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="115" x="148" y="469.7383">onTracksAvailable</text>
+<polygon fill="#A80036" points="142,499.4805,132,503.4805,142,507.4805,138,503.4805" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="136" x2="348" y1="503.4805" y2="503.4805"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="136" x="148" y="499.0488">onDownloadMetadata</text>
+<path d="M31,516.791 L31,541.791 L216,541.791 L216,526.791 L206,516.791 L31,516.791 " fill="#FBFB77" filter="url(#f15ea1t7hby8y2)" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M206,516.791 L206,526.791 L216,526.791 L206,516.791 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<ellipse cx="42.5" cy="529.6016" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="48" y="534.3594">See</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="97" x="73" y="534.3594">track-selection</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="174" y="534.3594">flow</text>
+<path d="M8,563.1016 L8,588.1016 L240,588.1016 L240,573.1016 L230,563.1016 L8,563.1016 " fill="#FBFB77" filter="url(#f15ea1t7hby8y2)" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M230,563.1016 L230,573.1016 L240,573.1016 L230,563.1016 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="211" x="14" y="580.6699">app is ready to start downloading</text>
+<polygon fill="#A80036" points="519,614.4121,529,618.4121,519,622.4121,523,618.4121" style="stroke: #A80036; stroke-width: 1.0;"/>
+<line style="stroke: #A80036; stroke-width: 1.0;" x1="131" x2="525" y1="618.4121" y2="618.4121"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="100" x="138" y="613.9805">startDownload()</text>
+</g>
+</svg>
