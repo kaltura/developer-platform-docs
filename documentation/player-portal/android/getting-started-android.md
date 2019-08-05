@@ -127,6 +127,10 @@ private fun loadPlaykitPlayer() {
 
 The provider helps the player access the Kaltura backend. The entryId is checked against the API, and there is an option to pass a Kaltura Session, which is always recommended when creating a player. If your application doesn't already generate a Kaltura Session, read [this](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html) to learn more. 
 
+Create a function called `buildOvpMediaOptions`. The `apply` keyword in Kotlin will run the code block and pass the *receiver*, or in this case, `mediaOptions` as **`this`**. 
+
+//TODO 
+
 ```kotlin 
 private fun buildOvpMediaOptions(): OVPMediaOptions {
     val ovpMediaOptions = OVPMediaOptions()
@@ -135,6 +139,14 @@ private fun buildOvpMediaOptions(): OVPMediaOptions {
 
     return ovpMediaOptions
 }
+```
+
+```kotlin 
+private fun buildOvpMediaOptions(): OVPMediaOptions {
+    val mediaOptions = OVPMediaOptions().apply {
+        entryId = myEntryId
+        ks = null
+    }
 ```
 
 ### State Listener
