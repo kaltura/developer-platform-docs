@@ -184,7 +184,7 @@ If you run the app now, you should see the player, and your video should start a
 
 The Fullscreen project has already created two buttons for us. In this example we removed one of the buttons and called the other one playPauseButton. We also turned it into an imageButton (instead of text) so that we can use proper images from the Exo image library that we imported earlier. 
 
-{% endhighlight %}xml 
+{% highlight xml %}
  <ImageButton
     android:layout_width="0dp"
     android:layout_height="wrap_content" app:srcCompat="@drawable/exo_controls_play"
@@ -212,9 +212,9 @@ private fun addPlayPauseButton() {
 }
 {% endhighlight %}
 
-We made a few other changes to the activity xml, like turning the view into a `LinearLayout`. See full XML: 
+We made a few other changes to the activity XML, like turning the view into a `LinearLayout`. See full XML: 
 
-{% endhighlight %}xml
+{% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
