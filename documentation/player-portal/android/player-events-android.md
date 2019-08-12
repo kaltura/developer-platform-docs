@@ -27,7 +27,7 @@ There are two methods that allow removing event listeners:
 
 - Remove listener from all events:
 {% highlight java %}
-  player.removeListener(@NonNull PKEvent.Listener listener); // remove all rgeisterd events
+  player.removeListener(@NonNull PKEvent.Listener listener); // remove all registered events
 {% endhighlight %}
 
 ## Listening to events from plugins
@@ -52,7 +52,7 @@ The Player events are defined in the PlayerEvent class.
 - CAN_PLAY: Sent when enough data is available that the media can be played, at least for a couple of frames. This corresponds to the HAVE_ENOUGH_DATA readyState.
 - PLAY: Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior pause event.
 - PLAYING: Sent when the media begins to play (either for the first time, after having been paused, or after ending and then restarting).
-- PLAYHEAD_UPDATED: Send player position every 100 Milisec
+- PLAYHEAD_UPDATED: Send player position every 100 ms
 - ENDED: Sent when playback completes.
 
 ### Additional User actions
