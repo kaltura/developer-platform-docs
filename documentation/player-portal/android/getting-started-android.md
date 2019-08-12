@@ -31,7 +31,7 @@ The `FullScreenActivity.kt` comes pre-loaded with functions for showing and hidi
 
 Depending on your Compile Settings, you might get an error about Invoke-customs or supported release versions. In that case should add java 1.8 to your compile options in **build.gradle**
 
-```kotlin
+{% highlight kotlin %}
 android {
     compileSdkVersion 28
     android {
@@ -40,26 +40,26 @@ android {
             targetCompatibility 1.8
         }
     }
-```
+{% endhighlight %}
 
 ### Dependencies
 
 In your **build.gradle** add the Kaltura-Player dependency:
 
-```kotlin
+{% highlight kotlin %}
 implementation 'com.kaltura.player:tvplayer:4.0.0'
-```
+{% endhighlight %}
 
 ### Imports 
 
 In the `FullScreenActivity.kt`, import the following: 
 
-```kotlin
+{% highlight kotlin %}
 import com.kaltura.playkit.PlayerState
 import com.kaltura.tvplayer.KalturaPlayer
 import com.kaltura.tvplayer.OVPMediaOptions
 import com.kaltura.tvplayer.PlayerInitOptions
-```
+{% endhighlight %}
 
 ### Companion Objects 
 
@@ -67,13 +67,13 @@ Static variables in Kotlin are placed in the Companion Object, which acts as an 
 
 In our Companion Object, we'll declare the log-tag and Partner ID:
 
-```kotlin
+{% highlight kotlin %}
 companion object {
 
     private const val TAG = "FullscreenActivity"
     private const val PARTNER_ID = 2215841
 }
-```
+{% endhighlight %}
 
 ### Class Variables 
 
@@ -81,11 +81,11 @@ For starters you'll need the ID of the entry, or video, that you want to display
 
 You'll need an object for the Player, and you'll also need to hold onto the Player State (for playing and pausing):
 
-```kotlin
+{% highlight kotlin %}
 private val entryId = "1_w9zx2eti"
 private var player: KalturaPlayer? = null
 private var playerState: PlayerState? = null
-```
+{% endhighlight %}
 
 ## The Player 
 
@@ -98,7 +98,7 @@ Create a new function called `loadPlaykitPlayer`. This function will:
 6. Set the global Player to the new one if nothing fails 
 7. Call `addPlayerStateListener` function
    
-```kotlin
+{% highlight kotlin %}
 private fun loadPlaykitPlayer() {
 
     val playerInitOptions = PlayerInitOptions(PARTNER_ID) //player config/behavior
@@ -121,7 +121,7 @@ private fun loadPlaykitPlayer() {
     this.player = player
     addPlayerStateListener()
 }
-```
+{% endhighlight %}
 
 ### Provider Options 
 
@@ -129,51 +129,39 @@ The provider helps the player access the Kaltura backend. The entryId is checked
 
 Create a function called `buildOvpMediaOptions`. The `apply` keyword in Kotlin will run the code block and pass the *receiver*, or in this case, `mediaOptions` as **`this`**. 
 
-//TODO 
-
-```kotlin 
-private fun buildOvpMediaOptions(): OVPMediaOptions {
-    val ovpMediaOptions = OVPMediaOptions()
-    ovpMediaOptions.entryId = entryId
-    ovpMediaOptions.ks = null
-
-    return ovpMediaOptions
-}
-```
-
-```kotlin 
+{% highlight kotlin %} 
 private fun buildOvpMediaOptions(): OVPMediaOptions {
     val mediaOptions = OVPMediaOptions().apply {
         entryId = myEntryId
         ks = null
     }
-```
+{% endhighlight %}
 
 ### State Listener
 
 Create another function called `addPlayerStateListener`. It sets the state of the player any time it changes and logs the state change. 
 
-```kotlin 
+{% highlight kotlin %} 
 private fun addPlayerStateListener() {
     player!!.addListener<PlayerEvent.StateChanged>(this, PlayerEvent.stateChanged) { event ->
         Log.d(TAG, "State changed from " + event.oldState + " to " + event.newState)
         playerState = event.newState
     }
 }
-```
+{% endhighlight %}
 
 ### onCreate 
 
 Let's put all the pieces together. In the `onCreate` function, you'll need to call the functions we just created: 
 
-```kotlin
+{% highlight kotlin %}
     loadPlaykitPlayer()
     addPlayPauseButton()
-```
+{% endhighlight %}
 
 We removed the `setOnTouchListner` for the button, and ended up with something that looks like this:
 
-```kotlin
+{% highlight kotlin %}
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
@@ -187,7 +175,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     
     fullscreen_content.setOnClickListener { toggle() }
 }
-```
+{% endhighlight %}
 
 If you run the app now, you should see the player, and your video should start automatically. If you turn off the screen lock, you'll see that the video becomes fullscreen and that the buttons disappear. Notice however that you have no way of pausing the video. We'll need play and pause buttons. 
 
@@ -196,16 +184,16 @@ If you run the app now, you should see the player, and your video should start a
 
 The Fullscreen project has already created two buttons for us. In this example we removed one of the buttons and called the other one playPauseButton. We also turned it into an imageButton (instead of text) so that we can use proper images from the Exo image library that we imported earlier. 
 
-```xml 
+{% endhighlight %}xml 
  <ImageButton
     android:layout_width="0dp"
     android:layout_height="wrap_content" app:srcCompat="@drawable/exo_controls_play"
     android:id="@+id/playPauseButton" android:layout_weight="1" android:background="#00FFFFFF"/>
-```
+{% endhighlight %}
 
 The `addPlayPauseButton` sets the button to rely on Player state in order to know which image to show. Meaning if the video is playing, the button should show a *pause* icon, and when the button is clicked, the video pauses and the image turns to a *play* icon. 
 
-```kotlin
+{% highlight kotlin %}
 private fun addPlayPauseButton() {
     
     playPauseButton!!.setOnClickListener { v ->
@@ -222,11 +210,11 @@ private fun addPlayPauseButton() {
         }
     }
 }
-```
+{% endhighlight %}
 
 We made a few other changes to the activity xml, like turning the view into a `LinearLayout`. See full XML: 
 
-```xml
+{% endhighlight %}xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
@@ -262,5 +250,5 @@ We made a few other changes to the activity xml, like turning the view into a `L
 </FrameLayout>
 
 </FrameLayout>
-```
+{% endhighlight %}
 
