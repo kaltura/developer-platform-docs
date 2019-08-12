@@ -10,9 +10,9 @@ The player and some of the plugins fire events that tell the application (and ot
 
 Call the following Player method, one or more times. `eventTypes` is the list of events that should be sent to the given listener:
 
-```java
+{% highlight java %}
   player.addEventListener(PKEvent.Listener listener, Enum... eventTypes)
-```
+{% endhighlight %}
 
 ## Removing Event Listeners from application (v3.6.2 and up)
 
@@ -21,22 +21,22 @@ Starting with PlayKit v3.6.2, the addEventListener method returns the listener t
 There are two methods that allow removing event listeners:
 
 - Remove listener from specific events:
-```java
+{% highlight java %}
   player.removeEventListener(@NonNull PKEvent.Listener listener, Enum... events); // remove by event
-```
+{% endhighlight %}
 
 - Remove listener from all events:
-```java
+{% highlight java %}
   player.removeListener(@NonNull PKEvent.Listener listener); // remove all rgeisterd events
-```
+{% endhighlight %}
 
 ## Listening to events from plugins
 
 `player.addEventListener()` is only meant to be used by applications. It does not work for plugins. Instead, plugins are given an instance of PlayKit's MessageBus.
 
-```java
+{% highlight java %}
   messageBus.listen(PKEvent.Listener listener, Enum... eventTypes)
-```
+{% endhighlight %}
 
 
 ## Core Player Events
