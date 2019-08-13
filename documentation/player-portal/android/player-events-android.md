@@ -10,9 +10,9 @@ The player and some of the plugins fire events that tell the application (and ot
 
 Call the following Player method, one or more times. `eventTypes` is the list of events that should be sent to the given listener:
 
-```java
+{% highlight java %}
   player.addEventListener(PKEvent.Listener listener, Enum... eventTypes)
-```
+{% endhighlight %}
 
 ## Removing Event Listeners from application (v3.6.2 and up)
 
@@ -21,22 +21,22 @@ Starting with PlayKit v3.6.2, the addEventListener method returns the listener t
 There are two methods that allow removing event listeners:
 
 - Remove listener from specific events:
-```java
+{% highlight java %}
   player.removeEventListener(@NonNull PKEvent.Listener listener, Enum... events); // remove by event
-```
+{% endhighlight %}
 
 - Remove listener from all events:
-```java
-  player.removeListener(@NonNull PKEvent.Listener listener); // remove all rgeisterd events
-```
+{% highlight java %}
+  player.removeListener(@NonNull PKEvent.Listener listener); // remove all registered events
+{% endhighlight %}
 
 ## Listening to events from plugins
 
 `player.addEventListener()` is only meant to be used by applications. It does not work for plugins. Instead, plugins are given an instance of PlayKit's MessageBus.
 
-```java
+{% highlight java %}
   messageBus.listen(PKEvent.Listener listener, Enum... eventTypes)
-```
+{% endhighlight %}
 
 
 ## Core Player Events
@@ -52,7 +52,7 @@ The Player events are defined in the PlayerEvent class.
 - CAN_PLAY: Sent when enough data is available that the media can be played, at least for a couple of frames. This corresponds to the HAVE_ENOUGH_DATA readyState.
 - PLAY: Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior pause event.
 - PLAYING: Sent when the media begins to play (either for the first time, after having been paused, or after ending and then restarting).
-- PLAYHEAD_UPDATED: Send player position every 100 Milisec
+- PLAYHEAD_UPDATED: Send player position every 100 ms
 - ENDED: Sent when playback completes.
 
 ### Additional User actions
