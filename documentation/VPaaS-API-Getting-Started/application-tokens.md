@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Kaltura App Token Session Management
+title: Application Tokens
 weight: 110
 ---
 
-# Application Token Session Management 
+An Application Token is useful in cases where different applications with varying permissions need access to your Kaltura account, without using your Admin Secret. It enables clients to provide their development partners or internal technical teams with restricted access to the Kaltura API. 
 
-An Application Token is useful in cases where different applications with varying permissions need access to your Kaltura account, without using your Admin Secret. 
-The appToken is created and customized by the account administrator, and then used by the developers to generate Kaltura Sessions for their respective applications. This allows access to the API to be revoked at any time with the deletion of the appToken. 
+The appToken is **created and customized by the account administrator**, and then used by the developers to generate Kaltura Sessions for their respective applications. This allows access to the API to be revoked at any time with the deletion of the appToken. 
 
 ## Before You Start
 
@@ -25,9 +24,38 @@ The **privileges string** that could be included in the appToken is made up of `
 
 ## Creating the App Token 
 
-We will cover App Token creation with and without pre-configured privileges. Notice that the App Token has a sessionType. If set to type ADMIN (2), any session created with it will be a ADMIN session. If set to USER (0), however, various actions including `baseEntry.list`, will not be available. A USER App Token would be useful in cases where the application is only uploading media but not viewing it afterwards. Furthermore, we recommend using hash of type [`SHA256`](https://en.wikipedia.org/wiki/SHA-2), but whichever you use, make sure to be consistent in the session creation. 
+We'll create an AppToken using the [`appToken.add`](https://developer.kaltura.com/console/service/appToken/action/add) API. Possible parameters include: 
 
-### Basic App Token 
+| Name        | Type | Writable | Description|
+|:------------ |:------------------|:------------------|:------------------|
+| sessionType  | int | V         |	The type of Kaltura Session (KS) that was created using the current token.This value should be set to 0 (USER-level KS) for most use cases. Use 2 (ADMIN-level KS) only for testing or advanced use cases. |
+| description  | string | V         |	A description and purpose of the Application Token; important for keeping track of various tokens. |
+| sessionDuration  | int | V         |	Length of time for which the KS created from this Application Token will be valid. The default is 24-hours (86400 seconds). | 
+| sessionPrivileges  | string | V         |	The privileges that will be imparted to KS generated with this Application token. |
+| sessionUserId  | string | V         |	ID of the Service User that will provide entitlements for the KS created using this Application Token.  | 
+| expiry  | int | V         |	The date and time when this Application Token will expire. This must be provided in a UNIX timestamp format (Epoch time). This field is mandatory and should be set when creating the application token. | 
+| hashType  | string | V         |	One of the following:	MD5, SHA1 (default), SHA256, SHA512| 
+
+### Session Type 
+
+Notice that the App Token has a sessionType. If set to type **ADMIN** (2), any session created with it will be a **ADMIN** session, meaning that mostly all actions will be permitted. *Never* use a KalturaSessionType **ADMIN** in a session generated for end users. 
+If set to **USER** (0), however, various actions will not be available. A **USER** App Token would be useful, for example, in cases where the application is only uploading media but not viewing it afterwards. 
+
+### Session Expiry
+
+Every token will have a hardcoded expiration date. For short-lived projects, this date can be set only a few months or years into the future. It's also possible to create long-lived Application Tokens that will remain active decades into the future. Note that it's always possible to delete or deactivate an Application Token.
+
+**The expiration date is set using a UNIX timestamp format (Epoch time).**
+
+### HASH Type
+
+We recommend using hash of type [`SHA256`](https://en.wikipedia.org/wiki/SHA-2), but whichever you use, make sure to be consistent between the AppToken creation and the session creation. 
+
+### Session Privileges 
+
+The sessionPrivilege parameter is a string containing two pieces of information: `privacyContext`, which determines which content is available to this session, and `userRole`, which sets the permissions, or actions the user can perform on that content.
+
+## Basic App Token 
 
 We'll start with an App Token without privileges, without a user, and without an expiry date, using [`appToken.add`](https://developer.kaltura.com/console/service/appToken/action/add):
 
@@ -39,13 +67,19 @@ In the result you'll see an `id` as well as a `token`. Hold on to those as you'l
 
 ### Set a User Role
 
-The easy way to create a User Role is [in the KMC](https://kmc.kaltura.com/index.php/kmcng/administration/roles/list). You'll have options to name and describe the new role (make it specific) and then select permitted actions. You'll see that for each category, there is the option to allow all permissions, or to select specific permissions. For example, under Content Moderation, you may allow this User Role to perform all actions except for deleting. You can also switch off a specific category altogether. Hit save and you should now see your new User Role in the list. 
+The easy way to create a **User Role** is [in the KMC](https://kmc.kaltura.com/index.php/kmcng/administration/roles/list). You'll have options to name and describe the new role (make it specific) and then select permitted actions. You'll see that for each category, there is the option to allow all permissions, or to toggle specific permissions: 
 
-Alternatively, if you know exactly which actions you'd like to include in your User Role, you can use the [`userRole.add`](https://developer.kaltura.com/console/service/userRole/action/add) API action to create a new role. You can see all of the available permission names and descriptions by listing them with [`permission.list`](https://developer.kaltura.com/console/service/permission/action/list). Be sure to set the status of your role to Active (1).
+* Full Permission (checked) – Grants read-write access to the specified functionality. Includes the add/update/delete/list/get API actions for the relevant API service(s).
+* View-Only Permission (partially checked) – Read-only (get/list) functions will be allowed. Write actions will be blocked.
+* No Permission (cleared) – No access to the API service(s) associated with the listed functions.
 
-> Note: You will not be able to see in the KMC any roles that are created outside the KMC.
+For example, under Content Moderation, you may allow this **User Role** to perform all actions except for deleting. You can also switch off a specific category altogether. Hit save and you should now see your new **User Role** in the list. 
 
-You can get a list of all your existing roles, with the [`userRole.list`](https://developer.kaltura.com/console/service/userRole/action/list) action. Make note of the `id` of your new User Role as you'll be needing it for your App Token, where you can set the role like this: 
+Alternatively, if you know exactly which actions you'd like to include in your **User Role**, you can use the [`userRole.add`](https://developer.kaltura.com/console/service/userRole/action/add) API action to create a new role. You can see all of the available permission names and descriptions by listing them with [`permission.list`](https://developer.kaltura.com/console/service/permission/action/list). Be sure to set the status of your role to Active (1).
+
+> Note: You will not be able to see in the KMC any roles that are created outside the KMC (for example via the API).
+
+You can get a list of all your existing roles, with the [`userRole.list`](https://developer.kaltura.com/console/service/userRole/action/list) action. Make note of the `id` of your new **User Role** as you'll be needing it for your App Token, where you can set the role like this: 
 
 {% code_example apptoken2 %}
 &nbsp;
@@ -58,6 +92,8 @@ To enable entitlements on the category, select Add Entitlements in the Integrati
 
 {% code_example apptoken3 %}
 &nbsp;
+
+To learn more about KS privileges, see the [Kaltura API Authentication and Security](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) guide.
 
 
 ### Add a User to the Category
@@ -114,7 +150,11 @@ We'll use the [`App Token.startSession`](https://developer.kaltura.com/console/s
 {% code_example apptoken8 %}
 &nbsp;
 
+
 You'll notice that the response contains any existing configurations from the App Token creation, regardless of what was passed in during the startSession. The expiry is set to an hour (although you can change this), meaning that after that time has passed, a new session will need to be generated. So if you wish to change permissions on this App Token, you can make those changes to the Role, User, or Privacy Context associated with the App Token. 
 
-Congrats - now let's build an app! Get started [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html/). 
+To learn more about Kaltura Security, read the [Authentication and Security](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) guide.
+
+If you're only just getting started with the Kaltura API, check out the [Getting Starting Guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html/). 
+
 
