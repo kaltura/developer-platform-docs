@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Player Configuration for Web
+title: Player Configuration for Web Player
 weight: 110
 ---
 
@@ -17,21 +17,21 @@ var player = KalturaPlayer.setup(config);
 
 The configuration uses the following structure:
 
-{% highlight json %}
+```
 {
   targetId: string,
   logLevel: string,
   disableUserCache: boolean,
   playback: PKPlaybackConfigObject,
   sources: PKSourcesConfigObject,
-  playlist: KPPlaylisyObject,
+  playlist: KPPlaylistObject,
   plugins: PKPluginsConfigObject,
   session: PKSessionConfigObject,
   provider: ProviderOptionsObject,
   ui: UIOptionsObject,
   cast: CastConfigObject
 }
-{% endhighlight %}
+```
 
 ### config.targetId
 

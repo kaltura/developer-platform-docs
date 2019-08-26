@@ -23,7 +23,7 @@ You'll need two things:
 
 Begin by creating a new project in Android Studio. For this guide we chose the Fullscreen Activity Preset, to make it simpler to view the player in full-screen:
 
-![Fullscreen Activity Project](../images/Fullscreen.png)
+![Fullscreen Activity Project](../images/fullscreen-activity.png)
 
 The `FullScreenActivity.kt` comes pre-loaded with functions for showing and hiding the Action Bar and the Controls menu, to achieve the full-screen functionality.
 
