@@ -1,0 +1,9 @@
+
+$filter = new KalturaMediaEntryFilter();
+$filter->createdAtGreaterThanOrEqual = 1561982373;
+$filter->createdAtLessThanOrEqual = 1564660773;
+$pager = new KalturaFilterPager();
+
+$result = $client->media->listAction($filter, $pager);
+
+?>

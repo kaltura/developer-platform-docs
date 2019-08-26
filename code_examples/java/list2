@@ -1,0 +1,12 @@
+MediaEntryFilter filter = new MediaEntryFilter();
+filter.setCreatedAtGreaterThanOrEqual(1561982373);
+filter.setCreatedAtLessThanOrEqual(1564660773);
+FilterPager pager = new FilterPager();
+
+ListMediaBuilder requestBuilder = MediaService.list(filter, pager)
+    .setCompletion(new OnCompletion<Response<ListResponse<MediaEntry>>>() {
+        @Override
+        public void onComplete(Response<ListResponse<MediaEntry>> result) {
+            System.out.println(result);
+        }
+    });

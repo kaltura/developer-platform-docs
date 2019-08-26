@@ -36,7 +36,7 @@ Try it interactively [with this workflow](https://developer.kaltura.com/workflow
 
 Generating a KS with [`session.start`](https://developer.kaltura.com/console/service/session/action/start) is simple, and great for applications which you alone have access to. 
 Other methods include the [`user.loginByLoginId`](https://developer.kaltura.com/api-docs/service/user/action/loginByLoginId) action, which allows users to log in using their own KMC credentials, and the `appToken` service, which is recommended when providing access to applications in production that are managed by others. 
-Learn more [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html/) about various ways to create a Kaltura Session.
+Learn more [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) about various ways to create a Kaltura Session.
 
  
 ## Uploading Media Files
@@ -77,6 +77,7 @@ We’ll call [`uploadToken.upload`](https://developer.kaltura.com/console/servic
 Here’s where you’ll set your video’s name and description use [`media.add`](https://developer.kaltura.com/console/service/media/action/add) to create the entry.
 
 {% code_example media3 %}
+&nbsp;
 
 The Kaltura Entry is a logical object that package all of the related assets to the uploaded file. The Media Entry represents Media assets (such as Image, Audio, or Video assets) and references all of the metadata, caption assets, transcoded renditions (flavors), thumbnails, access control rules, entitled users or any other related asset that is a part of that particular media item.
 
@@ -90,49 +91,29 @@ Now that you have your entry, you need to associate it with the uploaded video t
 
 At this point, Kaltura will start analyzing the uploaded file, prepare for the transcoding and distribution flows and any other predefined workflows or notifications.
 
-## Searching Entries 
-To retrieve that newly uploaded entry, we'll use the [Kaltura Search API](https://developer.kaltura.com/console/service/eSearch/action/searchEntry). 
+## Finding Entries 
 
-**Step 1: Params and Operator**
-If you have multiple search conditions, you would set an `AND` or `OR` to your operator, but in this case we’ll only be searching for one item. However, you still need to add a searchItems array to the operator. 
+To retrieve that newly uploaded entry, we'll use [media.list](https://developer.kaltura.com/console/service/media/action/list). If you inspect that API in the console, and expand the filter object, you'll see a whole bunch of options for filtering down to the entries you want. 
 
-{% code_example search1 %}
+### Finding Entries By Name 
+
+In the case of this example, a quick way to find the new entry is by searching for part of its name - in this case, "Logo". We need a filter object called `KalturaMediaEntryFilter` on which to set the values, which we then pass to the endpoint. 
+
+{% code_example list1 %}
 &nbsp;
 
-**Step 2: Search Type**
+The result will return as a list of  `KalturaMediaEntry` objects. Notice the Pager object. It is useful for large result sets if you want to get a specific amount of results for page. 
 
-We'll be using the Unified search, which searches through all entry data, such as metadata and captions. Other options are `KalturaESearchEntryMetadataItem` or `KalturaESearchEntryCuePointItem`. We'll add that search item to the first index of the search operator.
+### Finding Entries By Date 
 
-{% code_example search2 %}
+Another way to find the entry is by date. Using epoch timestamp, this code lists all entries created in July of 2019:
+
+{% code_example list2 %}
 &nbsp;
 
-**Step 3: Search Term**
+>Note that Kaltura Sessions with limited privileges might get limited results when making a `media.list` API call. 
 
-We'll search for the kaltura logo sample video, which we named accordingly.
-
-{% code_example search3 %}
-&nbsp;
-
-**Step 4: Search Item Type**
-
-In this case, we want an exact match of the text in our search term. Other options are `partial` or `startsWith`. 
-
-{% code_example search4 %}
-&nbsp;
-
-**Step 5: Add Highlight**
-
-We set `addHighlight` to True so that we can see exactly where our search term appeared in the search results. 
-
-{% code_example search5 %}
-&nbsp;
-
-**Step 6: Search**
-
-{% code_example search6 %}
-&nbsp;
-
-Success! The result will return as a list of  `KalturaMediaEntry` objects. 
+To conduct a more thorough search, for example, **if you want to search within captions or metadata**, use the [Kaltura Search API](https://developer.kaltura.com/console/service/eSearch/action/searchEntry). Read about it [here](https://developer.kaltura.com/api-docs/Search--Discover-and-Personalize/esearch.html). 
 
 ## Embedding Your Video Player 
 You have your entry ID, so you’re just about ready to embed the kaltura player, but first you’ll need a `UI Conf ID`, which is basically the ID of the player in which the video is shown. 
@@ -142,38 +123,43 @@ Notice that there are two studio options: TV and Universal.
 The Universal player (or mwEmbed as we call it) offers legacy support - such as for enterprise customers using the old internet explorer - and also features interactivity options, like the dual player or In-Video Quizzes. 
 The TV player (or playkit) is built on modern javascript and focuses more on performance. Both players are totally responsive. 
 
-We will focus on the TV player: 
+We will focus on the TV player, for which you can find resources and information [here](https://developer.kaltura.com/player). 
 
 1. Create a new TV player, give it a name, and check out the various player options.
 2. Save the player and go back to players list; you should now see it the top of the player list. Notice that player ID - that is your `UI Conf ID`. 
 Now you can use it for embedding your player:
 
-**Dynamic Player Embed**
+### Dynamic Player Embed 
+
+The first script in the code below *loads* the player, and the second script handles the embed. This method of embedding makes it easy to dynamically control the configuration of the player during runtime.  
+
 {% highlight javascript %}
-<script type="text/javascript">
-		var kalturaPlayer = KalturaPlayer.setup({
-			targetId: "kalturaplayer",
-			provider: {
-				partnerId: PARTER_ID,
-				uiConfId: UI_CONF_ID
-			},
-			playback: {
-				autoplay: true
-			}
-		});
-		var mediaInfo = {
-			entryId: ENTRY_ID,
-			ks: KS
-		};
-		kalturaPlayer.loadMedia(mediaInfo);
-	</script>
+<div id="{TARGET_ID}" style="width: 640px;height: 360px"></div>
+<script type="text/javascript" src="https://cdnapisec.kaltura.com/p/{PARTNER_ID}/embedPlaykitJs/uiconf_id/{UICONF_ID}"></script>
+  <script type="text/javascript">
+    try {
+      var kalturaPlayer = KalturaPlayer.setup({
+        targetId: "{TARGET_ID}",
+        provider: {
+          partnerId: {PARTNER_ID},
+          uiConfId: {UICONF_ID}
+        },
+        playback: {
+          autoplay: true
+          }
+      });
+      kalturaPlayer.loadMedia({entryId: '{ENTRY_ID}'});
+    } catch (e) {
+      console.error(e.message)
+    }
+  </script>
 {% endhighlight %}
 
-Learn about other embed types [here.](https://github.com/kaltura/kaltura-player-js/blob/master/docs/embed-types.md)
+Learn about other embed types [here.](https://developer.kaltura.com/player/web/embed-types-web/)
 
 ## Wrapping Up 
 
-Including a kaltura session allows you to keep track of user analytics for each entry and set permissions and privileges. Notice that in this case, the KS is created on the server side of the app. 
+Including a Kaltura Session allows you to keep track of user analytics for each entry and set permissions and privileges. Notice that in this case, the KS is created on the server side of the app. 
 
 **Congrats! You’ve learned how to:**
 - Create a kaltura session 
@@ -186,7 +172,7 @@ Including a kaltura session allows you to keep track of user analytics for each 
 - Learn how to create and handle [thumbnails](https://developer.kaltura.com/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html/)
 - Analyze Engagement [Analytics](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html)
 
-You can learn more about these steps in our [docs](https://developer.kaltura.com/api-docs/), play around in the [console](https://developer.kaltura.com/console), or enjoy full interactive experiences with our [workflows](https://developer.kaltura.com/workflows). 
+You can find more API resources in our [docs](https://developer.kaltura.com/api-docs/), play around in the [console](https://developer.kaltura.com/console), or enjoy full interactive experiences with our [workflows](https://developer.kaltura.com/workflows). 
 
 And of course, feel free to reach out at vpaas@kaltura.com if you have any questions.
 
