@@ -28,7 +28,7 @@ var provider = new playkit.providers.ott.Provider(config);
 
 ### Configuration Structure
 
-{% highlight javascript %}
+```
 {
   partnerId: number,
   log: ProviderLogConfigObject, // optional
@@ -38,7 +38,7 @@ var provider = new playkit.providers.ott.Provider(config);
   networkRetryParameters: ProviderNetworkRetryParameters, // optional
   filterOptions: ProviderFilterOptionsObject // optional
 }
-{% endhighlight %}
+```
 
 ##
 
@@ -98,34 +98,34 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##### Type: `ProviderEnvConfigObject`
 
-{% highlight javascript %}
+```
 {
  serviceUrl: string,
  cdnUrl: string,
  useApiCaptions: boolean
 }
-{% endhighlight %}
+```
 
 ##### Default:
 
 **OVP**
 
-{% highlight javascript %}
+```
 {
  serviceUrl: "//www.kaltura.com/api_v3",
  cdnUrl: "//cdnapisec.kaltura.com",
  useApiCaptions: true
 }
-{% endhighlight %}
+```
 
 **Cloud TV**
 
-{% highlight javascript %}
+```
 {
  serviceUrl: "//api-preprod.ott.kaltura.com/v4_6/api_v3",
  cdnUrl: "//api-preprod.ott.kaltura.com/v4_7"
 }
-{% endhighlight %}
+```
 
 ##### Description: Defines the server environment to run against.
 
@@ -143,13 +143,13 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##### Type: `ProviderNetworkRetryParameters`
 
-{% highlight javascript %}
+```
 {
  async?: boolean,
  timeout?: number,
  maxAttempts?: number
 }
-{% endhighlight %}
+```
 
 ### config.networkRetryParameters.async
 
@@ -183,18 +183,18 @@ Possible values: `"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"`
 
 ##### Type: `ProviderFilterOptionsObject`
 
-{% highlight javascript %}
+```
 {
   redirectFromEntryId: boolean;
 }
-{% endhighlight %}
+```
 
 ##### Default:
 
-{% highlight javascript %}
+```
 {
   redirectFromEntryId: true;
 }
-{% endhighlight %}
+```
 
 ##### Description: Defines whether after a livestream ends there should be a redirect to the VOD entry or not.

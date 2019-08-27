@@ -28,11 +28,9 @@ Each section will also contain a collapsable section to show snippet for testing
 
 ## Defining a preset
 
-A preset is a simple function that returns a tree that defines the components structure to be used in a layout.
+A preset is a simple function that returns a tree that defines the components structure to be used in a layout, for example, in the case where the fullscreen UI should only include the bottom bar with fullscreen control. 
 
-For example- Let's say that we want our fullscreen UI to have only the bottom bar with the fullscreen control. nothing else.
-
-this is a UI preset that will define the look of fullscreen state, which uses the built-in components `BottomBar` and `FullscreenControl`
+This is a UI preset that will define the look of fullscreen state, which uses the built-in components `BottomBar` and `FullscreenControl`:
 
 ```javascript
 //fullscreen-preset.js

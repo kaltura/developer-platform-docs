@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Player UI Configuration 
+title: Configuration for Player UI
 weight: 110
 ---
 
@@ -103,7 +103,7 @@ Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
 ##### Type: `Object`
 
-```json
+```
 {
    img: string,
    url: string,
@@ -114,7 +114,7 @@ Optional components to configure: `watermark`,`seekbar`, `fullscreen`
 
 ##### Default:
 
-```json
+```
 {
    img: '',
    url: '',
@@ -164,7 +164,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 
 ##### Type: `Object`
 
-```json
+```
 {
    thumbsSprite: string,
    thumbsWidth: number,
@@ -205,7 +205,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 
 ##### Type: `Object`
 
-```js
+```
 {
   inBrowserFullscreenForIOS: boolean;
 }
@@ -213,7 +213,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 
 ##### Default:
 
-```json
+```
 {
   inBrowserFullscreenForIOS: false;
 }

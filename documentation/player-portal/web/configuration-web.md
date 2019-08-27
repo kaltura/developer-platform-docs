@@ -135,34 +135,34 @@ In this example, we'll use the following configuration from each source to see h
 
 Local Storage
 
-{% highlight json %}
+```
 {
 	muted: true,
 	audioLanguage: 'spa'
 }
-{% endhighlight %}
+```
 
 Application
 
-{% highlight json %}
+```
 {
 	muted: false,
 	volume: 0.7
 }
-{% endhighlight %}
+```
 
 Server
 
-{% highlight json %}
+```
 {
-  audioLanguage: 'eng';
-  autoplay: true;
+  audioLanguage: 'eng',
+  autoplay: true
 }
-{% endhighlight %}
+```
 
 Default Player Configuration
 
-{% highlight json %}
+```
 {
 	audioLanguage: '',
 	textLanguage: '',
@@ -170,11 +170,11 @@ Default Player Configuration
 	volume: 1,
 	autoplay: false
 }
-{% endhighlight %}
+```
 
 **The resulting runtime configuration will, therefore, be as follows:**
 
-{% highlight json %}
+```
 {
 	audioLanguage: 'spa',
 	textLanguage: '',
@@ -182,4 +182,4 @@ Default Player Configuration
 	volume: 0.7,
 	autoplay: true
 }
-{% endhighlight %}
+```

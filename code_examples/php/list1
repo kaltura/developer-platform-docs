@@ -3,4 +3,3 @@ $filter->nameLike = "Logo";
 $pager = new KalturaFilterPager();
 
 $result = $client->media->listAction($filter, $pager);
-
