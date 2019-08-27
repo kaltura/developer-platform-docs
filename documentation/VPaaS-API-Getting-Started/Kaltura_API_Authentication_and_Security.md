@@ -23,7 +23,7 @@ Securing application content is done by leveraging one or more of the following 
   * The Kaltura Session
   * The channel communication (e.g., HTTPS)
 * Video Delivery:
-  * Delivery methods and obfuscation (segmentation, url obfuscation, expired urls)
+  * Delivery methods and obfuscation (segmentation, URL obfuscation, expired URLs)
   * DRM
  
 ## Media Access Control  
@@ -216,7 +216,7 @@ Some privileges support a wildcard (*) value (for example, *edit:**). A wildcar
 | sessionid                  | Can be used to group a set of KS's together for invalidation purposes - when session.end is called.With a ks that has sessionid=X, all other KS's that have sessionId=X become invalid as well.                                                                                                  | Applications that create multiple KS's for different uses can use this privilege to terminate all KS's upon user logoff, without the need to keep track of them.                                                                                               | An arbitrary string identifying the session                                                                                      |
 | apptoken                   | For a KS that was created with appToken.startSession, this privilege will contain the app token through which the KS was created.                                                                                                                                                                | Used mainly for investigation/tracking purposes.                                                                                                                                                                                                               | The apptoken id                                                                                                                  |
      
-#### PHP Examples Using the PHPS Kaltura Client Library  
+#### PHP Examples Using the PHP Kaltura Client Library  
 
 > Important! Never use a KalturaSessionType ADMIN in a KS generated for end users.
 
@@ -258,7 +258,7 @@ The table below shows the stream security techniques as these apply differently
 |---------------------------|--------------------------------------|--------------------------|-----------------------|---------------------|
 |    Akamai HD              |    Flash - PC, Android               |    SWF verification      |    IP based token     |    HTTPS            |
 |    RTMP                   |    Flash - PC, Android               |    SWF verification      |    IP based token     |    RTMPE            |
-|    Progressive            |    All – iOS, Bberry, Flash, etc.    |                          |    IP based token     |    HTTPS            |
+|    Progressive            |    All – iOS, Blackberry, Flash, etc.    |                          |    IP based token     |    HTTPS            |
 |    IOS Streaming (HLS)    |    iPhone, iPad                      |                          |    IP based token     |    HTTPS            |
 
 Kaltura’s integrated DRM solutions seamlessly plug in to its existing infrastructure and workflows, protecting customers from vendor lock-in.
