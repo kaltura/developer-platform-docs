@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Player Configuration for Playkit    
+title: Playkit Configuration   
 weight: 110
 ---
 
@@ -15,7 +15,7 @@ var player = playkit.core.loadPlayer(config);
 
 #### Configuration Structure
 
-```js
+```
 {
   logLevel: string,
   playback: PKPlaybackConfigObject,

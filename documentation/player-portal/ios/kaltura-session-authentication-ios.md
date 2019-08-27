@@ -17,7 +17,7 @@ There are a few steps to creating a KS with an appToken.
 1. **Generate a basic kaltura session:** because all calls to the API *must* include a Kaltura Session, we first use the session API to create what is called a **widget session**, which has limited functionality and is used in the following steps 
 2. **Create a Token Hash** of the appToken token and the widget session, combined. 
 3. **Call the appToken.startSession API** with the widget session, the appToken ID, and the hash string. 
-You can see all these steps interactively with [this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication) but examples below are written for client-side swift code. 
+You can see all these steps interactively with [this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication), or read the guide [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html), but examples below are written for client-side swift code. 
 
 Let's get started. If you're already creating a Kaltura Session on the server side, you can skip these steps. 
 
