@@ -14,7 +14,7 @@ The preset list may contain one default preset and additional conditional preset
 
 A conditional preset will only be shown if it's defined condition is met.
 
-The UI manager has a list of pre-defined conditions, and custom conditions can be defined as well, see [below](#defining-ui-conditions).
+The UI manager has a list of pre-defined conditions, and custom conditions can be defined as well, **Defining UI Conditions** below. 
 
 The order that the UI presets are defined and their respective conditions define the priority which they'll be rendered, where the order is ascending, so first UI preset condition will be evaluated first and last will be evaluated last.
 
@@ -66,7 +66,7 @@ yarn add -D babel-plugin-transform-react-jsx
 npm install --save-dev babel-plugin-transform-react-jsx
 ```
 
-2.  in your babel config (most likely in your `.babelrc` file) add:
+2.  In your babel config (most likely in your `.babelrc` file) add:
 
 ```javascript
 "plugins": [
@@ -79,7 +79,7 @@ npm install --save-dev babel-plugin-transform-react-jsx
 ]
 ```
 
-3.  change the UI markup to use JSX syntax:
+3.  Change the UI markup to use JSX syntax:
 
 ```javascript
 //fullscreen-preset.js
@@ -116,10 +116,11 @@ return (
 )
 }
 
-````
+```
 </details>
 
 ## Attaching the preset to the fullscreen state
+
 In order to use a preset we pass our custom preset function to the UI manager.
 
 ```javascript
@@ -179,4 +180,4 @@ The UI Manager has three pre-defined conditions:
 ## Using custom components
 Presets can be created by using the player default library components, but you can also create and use your own components to define the layout.
 
-See example on how to create and use your own components [here](https://developer.kaltura.com/player/web/ui/components)
+See an example on how to create and use your own components [here](https://developer.kaltura.com/player/web/ui/components)

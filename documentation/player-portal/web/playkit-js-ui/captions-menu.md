@@ -9,16 +9,16 @@ weight: 110
 
 The player enables viewers to modify the captions style using the **advanced captions settings** in the language menu, and then clicking the **set custom caption** button.
 
-To prevent viewers from using these modifications, overload the style option's class with:
-```display:none```
+To prevent viewers from using these modifications, overload the style option's class with **display:none**. 
 
 For example, adding the line below will remove the ability to change the captions color:
 
-```
+{% highlight css %}
 .playkit-font-color {
   display: none
 }
-```
+{% endhighlight %}
+
 See this list of caption settings classes below for detailed information about each class.
 
 ## Captions settings class list

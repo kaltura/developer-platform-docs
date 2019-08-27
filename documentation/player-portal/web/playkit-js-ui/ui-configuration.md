@@ -15,7 +15,7 @@ var uiManager = new playkit.ui.UIManager(player, config);
 
 #### Configuration Structure
 
-```json
+```
 {
   targetId: string,
   debugActions: boolean, // optional
