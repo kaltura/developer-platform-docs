@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Player Configuration for Web Player
+title: Configuration for Web Player
 weight: 110
 ---
 
