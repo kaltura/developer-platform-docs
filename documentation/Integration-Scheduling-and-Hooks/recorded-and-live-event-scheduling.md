@@ -168,7 +168,7 @@ To upload the recording file, you can either submit a bulk upload or upload the 
 
 To enable the device to use an entry template that includes publishing to specific categories or channels, the device must use the correct entitlements when uploading the recording file.  The recommended way to securely provide each device the appropriate permissions is to use App Tokens. This requires that the account admin will prepare an App Token, and then share the app token with the device to be used when calling the upload API.
 
-To learn about App Tokens read the [Creating Kaltura Session with AppTokens Guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html).
+To learn about App Tokens read the [Creating Kaltura Session with AppTokens Guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html).
 
 To ensure that your device has the appropriate access, pass the following privilege: `setrole:CAPTURE_DEVICE_ROLE` in the `privileges` field.
 
@@ -178,7 +178,7 @@ After you've created an App Token for the device, configure the `id` and the `to
 
 To generate the upload session from the device, follow these steps:
 
-1. Generate a session using the appToken ([follow this API workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication) as reference).
+1. Generate a session using the appToken ([follow this API guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) as reference).
 2. Create a new Video Entry, and upload your video recording ([follow this guide](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html) as reference).
 
 ## Download / Sync the iCal Schedule from Kaltura 

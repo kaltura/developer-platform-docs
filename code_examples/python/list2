@@ -1,0 +1,6 @@
+filter = KalturaMediaEntryFilter()
+filter.createdAtGreaterThanOrEqual = 1561982373
+filter.createdAtLessThanOrEqual = 1564660773
+pager = KalturaFilterPager()
+
+result = client.media.list(filter, pager)

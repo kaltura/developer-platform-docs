@@ -4,7 +4,7 @@ title: Embedding the Player in Angular
 weight: 110
 ---
 
-If you've tried embedding the Kaltura Player in your Angular app, you may have come across [the issue](https://github.com/angular/angular/issues/4903) where Angular deletes javascript **script** tags. In the embed examples below, we add the player to the Typescript project by creating the embed script *after* the component has been created or initialize, as described in [this workaround](https://stackoverflow.com/questions/35570746/angular2-including-thirdparty-js-scripts-in-component0).
+If you've tried embedding the Kaltura Player in your Angular app, you may have come across [the issue](https://github.com/angular/angular/issues/4903) where Angular deletes javascript **script** tags. In the embed examples below, we add the player to the Typescript project dynamically, or by creating the embed script *after* the component has been created or initialize, as described in [this workaround](https://stackoverflow.com/questions/35570746/angular2-including-thirdparty-js-scripts-in-component0).
 
 If you are not looking for angular solutions, check out the Player embed-types [here](https://developer.kaltura.com/player/web/embed-types-web/). 
 

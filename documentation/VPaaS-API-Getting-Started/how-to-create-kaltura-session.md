@@ -11,7 +11,7 @@ The Kaltura API is representational state transfer [REST](http://en.wikipedia.or
 There are three methods for generating a Kaltura Session:
 
 * Calling the [session.start action](https://developer.kaltura.com/api-docs/Generate_API_Sessions/session/session_start): This method is recommended for scripts and applications to which you alone will have access.
-* Using the [appToken service](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-token-session-management.html): This method is recommended when providing access to scripts or applications that are managed by others; this method provides tools to manage API tokens per application provider, revoke access to specific applications, and more.
+* Using the [appToken service](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html): This method is recommended when providing access to scripts or applications that are managed by others; this method provides tools to manage API tokens per application provider, revoke access to specific applications, and more.
 * Calling the [user.loginByLoginId action](https://developer.kaltura.com/api-docs/Generate_API_Sessions/user_loginByLoginId): This method is recommended for managing registered users in Kaltura, and allowing users to log in using email and password. When you log in to the KMC, the KMC application calls the user.loginByLoginId action to authenticate you using your registered email and password. 
 
 ## Important Notes When Generating Kaltura Sessions

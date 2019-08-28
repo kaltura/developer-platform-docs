@@ -4,27 +4,6 @@ title: Player UI Events
 weight: 110
 ---
 
-| Events List                                                     |
-| --------------------------------------------------------------- |
-| [`UI_CLICKED`](#UI_CLICKED)                                     |
-| [`UI_VISIBILITY_CHANGED`](#UI_VISIBILITY_CHANGED)               |
-| [`USER_CLICKED_PLAY`](#USER_CLICKED_PLAY)                       |
-| [`USER_CLICKED_PAUSE`](#USER_CLICKED_PAUSE)                     |
-| [`USER_CLICKED_REWIND`](#USER_CLICKED_REWIND)                   |
-| [`USER_CLICKED_LIVE_TAG`](#USER_CLICKED_LIVE_TAG)               |
-| [`USER_CLICKED_MUTE`](#USER_CLICKED_MUTE)                       |
-| [`USER_CLICKED_UNMUTE`](#USER_CLICKED_UNMUTE)                   |
-| [`USER_CHANGED_VOLUME`](#USER_CHANGED_VOLUME)                   |
-| [`USER_SELECTED_CAPTION_TRACK`](#USER_SELECTED_CAPTION_TRACK)   |
-| [`USER_SELECTED_AUDIO_TRACK`](#USER_SELECTED_AUDIO_TRACK)       |
-| [`USER_SELECTED_QUALITY_TRACK`](#USER_SELECTED_QUALITY_TRACK)   |
-| [`USER_ENTERED_FULL_SCREEN`](#USER_ENTERED_FULL_SCREEN)         |
-| [`USER_EXITED_FULL_SCREEN`](#USER_EXITED_FULL_SCREEN)           |
-| [`USER_SELECTED_CAPTIONS_STYLE`](#USER_SELECTED_CAPTIONS_STYLE) |
-| [`USER_SELECTED_SPEED`](#USER_SELECTED_SPEED)                   |
-| [`USER_SEEKED`](#USER_SEEKED)                                   |
-
-
 ## UI_CLICKED
 
 Fires on any user interaction with the UI.
