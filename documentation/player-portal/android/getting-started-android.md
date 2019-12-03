@@ -28,7 +28,7 @@ The `FullScreenActivity.kt` comes pre-loaded with functions for showing and hidi
 
 ## Compile Options
 
-Depending on your Compile Settings, you might get an error about Invoke-customs or supported release versions. In that case should add java 1.8 to your compile options in `build.gradle``=
+Depending on your Compile Settings, you might get an error about Invoke-customs or supported release versions. In that case should add java 1.8 to your compile options in `build.gradle`
 
 {% highlight gradle %}
 android {
