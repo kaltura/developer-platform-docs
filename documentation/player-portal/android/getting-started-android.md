@@ -78,8 +78,8 @@ In our Companion Object, we'll declare the log-tag and Partner ID:
 {% highlight kotlin %}
 companion object {
     private const val TAG = "FullscreenActivity"
-    private const val OVP_SERVER_URL = "https://cdnapisec.kaltura.com"
-    private const val PARTNER_ID = 2215841
+    public const val OVP_SERVER_URL = "https://cdnapisec.kaltura.com"
+    public const val PARTNER_ID = 2215841
 }
 {% endhighlight %}
 
@@ -112,7 +112,7 @@ private fun loadPlaykitPlayer() {
     val playerInitOptions = PlayerInitOptions(PARTNER_ID) //player config/behavior
     playerInitOptions.setAutoPlay(true)
 
-    val player = KalturaPlayer.createOVPPlayer(this@FullscreenActivity, playerInitOptions) ?: return
+    val player = KalturaOvpPlayer.create(this@FullscreenActivity, playerInitOptions) ?: return
 
     player.setPlayerView(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
 
@@ -259,4 +259,9 @@ We made a few other changes to the activity XML, like turning the view into a `L
 
 </FrameLayout>
 {% endhighlight %}
+
+
+### Full Sample 
+
+[Download](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OVPSamples/GettingStarted)
 
