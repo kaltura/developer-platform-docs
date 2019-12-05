@@ -52,7 +52,7 @@ Once you have a PKMediaEntry ready, you can build the player configuration and p
 
 The PkMediaEntry holds information gathered from the media details and needed for the player, such as the URL to play, the DRM data, and duration.
 
-This object usually will be created using one of the media providers in case Kaltur's BE is used for hosting your media files.
+This object usually will be created using one of the media providers in case Kaltura's BE is used for hosting your media files.
 
 Additional information includes:
 
