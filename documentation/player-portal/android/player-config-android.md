@@ -50,16 +50,25 @@ Once you have a PKMediaEntry ready, you can build the player configuration and p
 
 ### About the PKMediaEntry  
 
-The PkMediaEntry holds information gathered from the media details and needed for the player, such as the URL to play, the DRM data, and duration.
+#### NOTE:
+
+* Building the `PKMediaEntry`  manullay is more relevant for customers which do not use Kaltura BE to store their content.
+ 
+* Once content is stored in Kaltura's BE you can use our `Media Providers` to fetch the PKMediaEntry 
+
+The PkMediaEntry holds information gathered from the media API's and needed for the player and plugins to function properly, such as the URL to play, the DRM data, duration and the type of the media.
 
 This object usually will be created using one of the media providers in case Kaltura's BE is used for hosting your media files.
 
 Additional information includes:
 
 * String id - correlates to the media/entry id
-* long duration - the media duration in seconds
+* String name - meida name
+* long duration - the media duration in ms.
 * MediaEntryType mediaType - indicates the type to be played (VOD, Live or Unknown)
 * List<PKMediaSource> sources - list of source objects
+* boolean isVRMediaType - property to flag if this is VR/360 media
+* List<PKExternalSubtitle> externalSubtitleList - it is optional to add external subtitles to the media
 
 The PKMediaEntry can be created with builder style instantiation, chain setters as follows:
 
@@ -78,7 +87,7 @@ The PKMediaEntry object contains a list of "PKMediaSources". All sources relate 
 
 To learn more, see [PKMediaSource](https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PKMediaSource.java)
 
-#### Manually a Create Media Source  
+#### Manually Create Media Source   
 
 PKMediaSource can be created with builder-like coding, by chaining setters:
 
@@ -147,8 +156,8 @@ PKDrmParams represents a single DRM license info object. PKDrmParams contains th
         //Set the id.
         mediaSource.setId("drmTestSource");
 
-        String DRM_SOURCE_URL =  "https://cdnapisec.kaltura.com/p/2222401/sp/222240100/playManifest/entryId/1_f93tepsn/protocol/https/format/mpegdash/flavorIds/1_7cgwjy2a,1_xc3jlgr7,1_cn83nztu,1_pgoeohrs/a.mpd";
-        String DRM_LICENSE_URL = "https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1qSXlNalF3TVh5czdLYlZZV0xaZURuWGpOTXR4LVBidWh4aDU4SUF6d3V2LW9MeHo3aUl4cmZGc3k4UUJ6VFR2ek1sS3JNRmFmV2FpQVNJWUFzYWZVWW5xcTNqQkltSXdwbGtSZFJsM1FiUnRmc3NTV0dXNXc9PSIsImFjY291bnRfaWQiOjIyMjI0MDEsImNvbnRlbnRfaWQiOiIxX2Y5M3RlcHNuIiwiZmlsZXMiOiIxXzdjZ3dqeTJhLDFfeGMzamxncjcsMV9jbjgzbnp0dSwxX3Bnb2VvaHJzIn0%3D&signature=nOnF%2FmHC0vO0j9OGKRgex8BlfMg%3D";
+        String DRM_SOURCE_URL =  "DRM CONTENT URL";
+        String DRM_LICENSE_URL = "DRM CONTENT LICENSE";
         mediaSource.setUrl(DRM_SOURCE_URL);
 
         // Add DRM data if required
