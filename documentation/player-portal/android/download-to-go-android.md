@@ -22,11 +22,11 @@ Download to Go (DTG) is an Android library that facilitates the download of vide
 
 ```groovy
 dependencies {
-	compile 'com.kaltura.dtg:dtglib:2.4.0'
+	compile 'com.kaltura.dtg:dtglib:2.4.4'
 }
 ```
 
-Replace `2.4.0` with the [latest release](https://bintray.com/kaltura/android/dtglib).
+Replace `2.4.4` with the [latest release](https://bintray.com/kaltura/android/dtglib).
 
 ## Download States
 
@@ -217,3 +217,10 @@ contentManager.getSettings().defaultHlsAudioBitrate = 128000;
 ```
 
 The default is 64000 bps.
+
+### Samples
+
+[dtg sample](https://github.com/kaltura/playkit-dtg-android/tree/current/dtgdemo)
+
+[offline manager sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OfflineDemo)
+

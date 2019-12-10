@@ -148,3 +148,8 @@ The IMA Plugin supports the following ad error events:
         INVALID_ARGUMENTS(2017),
         PLAYLIST_NO_CONTENT_TRACKING(2018);
 ```
+
+### Samples
+
+[IMA Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/IMASample)
+[IMA DAI Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/IMADAISample)

@@ -6,6 +6,21 @@ weight: 110
 
 Once you've created a player instance, you can make changes to its settings: 
 
+* In Kaltura Player the same settings api below are integrated inside `PlayerInitOptions` object
+
+#### Example
+```
+ playerInitOptions = PlayerInitOptions(mediaPartnerId)
+        playerInitOptions?.setAutoPlay(true)
+        playerInitOptions?.setPreload(true)
+        playerInitOptions?.setSecureSurface(false)
+        playerInitOptions?.setAdAutoPlayOnResume(true)
+        playerInitOptions?.setAllowCrossProtocolEnabled(true)
+        playerInitOptions?.setReferrer("app://MyApplicationDomain")
+ 
+ player = KalturaOvpPlayer.create(this@MainActivity, playerInitOptions)
+```
+
 ## setContentRequestAdapter
 
 {% highlight java %}
