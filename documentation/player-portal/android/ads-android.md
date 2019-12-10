@@ -151,5 +151,5 @@ The IMA Plugin supports the following ad error events:
 
 ### Samples
 
-[IMA Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/AdvancedSamples/IMASample)
-[IMA DAI Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/AdvancedSamples/IMADAISample)
+[IMA Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/IMASample)
+[IMA DAI Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/IMADAISample)

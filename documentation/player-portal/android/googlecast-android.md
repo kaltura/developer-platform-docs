@@ -223,5 +223,5 @@ class AdsChannel implements Cast.MessageReceivedCallback {
 
 ### Sample
 
-[Cast Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/AdvancedSamples/ChromecastCAFSample)
+[Cast Sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/ChromecastCAFSample)
 

@@ -222,5 +222,5 @@ The default is 64000 bps.
 
 [dtg sample](https://github.com/kaltura/playkit-dtg-android/tree/current/dtgdemo)
 
-[offline manager sample](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OfflineDemo)
+[offline manager sample](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OfflineDemo)
 

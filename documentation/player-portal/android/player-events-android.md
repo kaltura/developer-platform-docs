@@ -151,9 +151,9 @@ Defined in AdEvent class.
 
 ## Code Samples for v4.x.x
 
-- [Events Registration](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/AdvancedSamples/EventsRegistration)
-- [Youbora Analytics](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/AdvancedSamples/Youbora)
+- [Events Registration](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/EventsRegistration)
+- [Youbora Analytics](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/Youbora)
 
 Kava Analytics is turned on automatically in Kaltura player in the following sample it is configured manually
 
-- [Kava Analytics] (https://github.com/kaltura/playkit-android-samples/tree/develop/KavaAnalytics)
+- [Kava Analytics] (https://github.com/kaltura/playkit-android-samples/tree/master/KavaAnalytics)

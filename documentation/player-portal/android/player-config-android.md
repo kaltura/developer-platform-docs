@@ -19,7 +19,7 @@ The PKMediaEntry can be created using one of the following methods:
 
    #### Example:
 
-   [Basic Setup without provider](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/BasicSamples/BasicSetup)
+   [Basic Setup without provider](https://github.com/kaltura/kaltura-player-android-samples/tree/master/BasicSamples/BasicSetup)
 
 2. **Using a MockMediaProvider** - Create a PKMediaEntry from a JSON input file or JsonObject.
    
@@ -29,14 +29,14 @@ The PKMediaEntry can be created using one of the following methods:
     
     #### Example:
 
-   [OVP media provider]( https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OVPSamples/BasicSetupp)
+   [OVP media provider]( https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples/BasicSetupp)
    
     
     For OTT environments, use "PhoenixMediaProvider".
     
     #### Example:
 
-   [Phoenix media provider](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OTTSamples/BasicSetup)
+   [Phoenix media provider](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OTTSamples/BasicSetup)
 
     To use this method, you'll need to do the following:
    
@@ -52,18 +52,18 @@ Once you have a PKMediaEntry ready, you can build the player configuration and p
 
 #### NOTE:
 
-* Building the `PKMediaEntry`  manullay is more relevant for customers which do not use Kaltura BE to store their content.
+* Building the `PKMediaEntry`  manually is more relevant for customers which do not use Kaltura BE to store their content.
  
 * Once content is stored in Kaltura's BE you can use our `Media Providers` to fetch the PKMediaEntry 
 
-The PkMediaEntry holds information gathered from the media API's and needed for the player and plugins to function properly, such as the URL to play, the DRM data, duration and the type of the media.
+The `PKMediaEntry` holds information gathered from the OVP/Phoenix media providers. This information is used by the player and plugins like manifest url, DRM data, media duration and the type of the media.
 
 This object usually will be created using one of the media providers in case Kaltura's BE is used for hosting your media files.
 
 Additional information includes:
 
 * String id - correlates to the media/entry id
-* String name - meida name
+* String name - media name
 * long duration - the media duration in ms.
 * MediaEntryType mediaType - indicates the type to be played (VOD, Live or Unknown)
 * List<PKMediaSource> sources - list of source objects
@@ -87,7 +87,7 @@ The PKMediaEntry object contains a list of "PKMediaSources". All sources relate 
 
 To learn more, see [PKMediaSource](https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PKMediaSource.java)
 
-#### Manually Create Media Source   
+#### Manual creation of media source   
 
 PKMediaSource can be created with builder-like coding, by chaining setters:
 
@@ -176,5 +176,5 @@ PKDrmParams represents a single DRM license info object. PKDrmParams contains th
 
 ### Sample
 
-[Basic Setup](https://github.com/kaltura/playkit-android-samples/tree/Samples_v4.4.0/BasicSetup)  
+[Basic Setup](https://github.com/kaltura/playkit-android-samples/tree/master/BasicSetup)  
     
