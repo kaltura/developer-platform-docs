@@ -14,6 +14,38 @@ Call the following Player method, one or more times. `eventTypes` is the list of
   player.addEventListener(PKEvent.Listener listener, Enum... eventTypes)
 {% endhighlight %}
 
+#### Example
+
+```
+   private fun addPlayerStateListener() {
+        player!!.addListener(this, PlayerEvent.stateChanged) { event ->
+            Log.d(TAG, "State changed from " + event.oldState + " to " + event.newState)
+            playerState = event.newState
+        }
+    }
+
+    private fun addPlayerEventsListener() {
+        player!!.addListener(this, PlayerEvent.tracksAvailable) { event ->
+            Log.d(TAG, "TracksAvailable event")
+            val trackInfo = event.tracksInfo
+            for(videoTrack in trackInfo.videoTracks) {
+                Log.d(TAG, "video id = " + videoTrack.uniqueId + " track bitrate = " + videoTrack.bitrate)
+            }
+        }
+
+        player!!.addListener(this,  PlayerEvent.canPlay) { event ->
+            Log.d(TAG, "PlayerEvent " + event.eventType())
+        }
+
+        player!!.addListener(this,  PlayerEvent.playing) { event ->
+            Log.d(TAG, "PlayerEvent " + event.eventType())
+        }
+
+        player!!.addListener(this,  PlayerEvent.error) { event ->
+            Log.d(TAG, "Error PlayerEvent " + event.error.message + " isFatal = " + event.error.isFatal)
+        }
+    }
+```
 ## Removing Event Listeners from application (v3.6.2 and up)
 
 Starting with PlayKit v3.6.2, the addEventListener method returns the listener that was passed to it. This makes it easier to use it with listeners that are defined by anonymous classes, in the case the application wants to remove them later.
@@ -117,6 +149,11 @@ Defined in AdEvent class.
 - ERROR
 
 
-## Code Samples
-- [Events Registration](https://github.com/kaltura/playkit-android-samples/tree/master/EventsRegistration)
-- [App Analytics](https://github.com/kaltura/playkit-android-samples/tree/master/AppAnalyticsSample)
+## Code Samples for v4.x.x
+
+- [Events Registration](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/EventsRegistration)
+- [Youbora Analytics](https://github.com/kaltura/kaltura-player-android-samples/tree/master/AdvancedSamples/Youbora)
+
+Kava Analytics is turned on automatically in Kaltura player in the following sample it is configured manually
+
+- [Kava Analytics] (https://github.com/kaltura/playkit-android-samples/tree/master/KavaAnalytics)

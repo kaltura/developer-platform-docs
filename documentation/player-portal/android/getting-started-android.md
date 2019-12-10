@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Getting Started With the Player SDK for Android 
+title: Getting Started With the Player SDK for Android
 weight: 110
 ---
 
@@ -10,7 +10,6 @@ In this Kotlin tutorial,  you'll learn how to import the Kaltura Player SDK, fin
 
 If you prefer to see a Java sample, click [here](https://github.com/kaltura/kaltura-player-android-samples/tree/develop/OVPSamples).
 
-If you're looking for the iOS guide, click [here](https://developer.kaltura.com/player/ios/getting-started-ios/).
 
 ## Before You Begin
 
@@ -19,7 +18,7 @@ You'll need two things:
 1. Your Kaltura Partner ID, which can be found in the KMC under Settings>Integration Settings
 2. Any video entry, which can be found in the KMC as well.
 
-## Setting Up 
+## Setting Up OVP Player
 
 Begin by creating a new project in Android Studio. For this guide we chose the Fullscreen Activity Preset, to make it simpler to view the player in full-screen:
 
@@ -29,9 +28,9 @@ The `FullScreenActivity.kt` comes pre-loaded with functions for showing and hidi
 
 ## Compile Options
 
-Depending on your Compile Settings, you might get an error about Invoke-customs or supported release versions. In that case should add java 1.8 to your compile options in **build.gradle**
+Depending on your Compile Settings, you might get an error about Invoke-customs or supported release versions. In that case should add java 1.8 to your compile options in `build.gradle`
 
-{% highlight kotlin %}
+{% highlight gradle %}
 android {
     compileSdkVersion 28
     android {
@@ -44,11 +43,20 @@ android {
 
 ### Dependencies
 
-In your **build.gradle** add the Kaltura-Player dependency:
+In your `build.gradle` add the Kaltura-Player dependency:
 
-{% highlight kotlin %}
-implementation 'com.kaltura.player:tvplayer:4.0.0'
+{% highlight gradle %}
+implementation 'com.kaltura.player:tvplayer:4.x.x'
 {% endhighlight %}
+
+[tvplayer releases](https://github.com/kaltura/kaltura-player-android/releases)
+
+### Appication/Splash Activity
+KalturaOvpPlayer should be initialized in the application class or in a splash activity before using the player.
+
+```
+KalturaOvpPlayer.initialize(this, OVP_PARTNER_ID, OVP_SERVER_URL)
+``` 
 
 ### Imports 
 
@@ -61,17 +69,17 @@ import com.kaltura.tvplayer.OVPMediaOptions
 import com.kaltura.tvplayer.PlayerInitOptions
 {% endhighlight %}
 
-### Companion Objects 
+### Constants 
 
-Static variables in Kotlin are placed in the Companion Object, which acts as an inner singleton class that gives access to its members as direct members of the class. 
+Static variables in `Kotlin` are placed in the `Companion` Object, which acts as an inner singleton class that gives access to its members as direct members of the class. 
 
 In our Companion Object, we'll declare the log-tag and Partner ID:
 
 {% highlight kotlin %}
 companion object {
-
     private const val TAG = "FullscreenActivity"
-    private const val PARTNER_ID = 2215841
+    public const val OVP_SERVER_URL = "https://cdnapisec.kaltura.com"
+    public const val PARTNER_ID = 2215841
 }
 {% endhighlight %}
 
@@ -104,7 +112,7 @@ private fun loadPlaykitPlayer() {
     val playerInitOptions = PlayerInitOptions(PARTNER_ID) //player config/behavior
     playerInitOptions.setAutoPlay(true)
 
-    val player = KalturaPlayer.createOVPPlayer(this@FullscreenActivity, playerInitOptions) ?: return
+    val player = KalturaOvpPlayer.create(this@FullscreenActivity, playerInitOptions) ?: return
 
     player.setPlayerView(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
 
@@ -251,4 +259,9 @@ We made a few other changes to the activity XML, like turning the view into a `L
 
 </FrameLayout>
 {% endhighlight %}
+
+
+### Full Sample 
+
+[Download](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OVPSamples/GettingStarted)
 
