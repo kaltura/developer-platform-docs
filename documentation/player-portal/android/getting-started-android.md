@@ -8,7 +8,7 @@ This guide will walk you through the steps for adding a Kaltura video player to 
 
 In this Kotlin tutorial,  you'll learn how to import the Kaltura Player SDK, find the necessary credentials, and load the player with your Entry ID of choice. **Because the player is focused on performance and giving you the simplest integration possible, it does not contain a UI.** That being said, this guide will show you how to listen to events in order to manage the player state, as well as examples for adding play/pause buttons and a slider to the player.
 
-If you prefer to see a Java sample, click [here](https://github.com/kaltura/kaltura-player-android-samples/tree/develop/OVPSamples).
+If you prefer to see a Java sample, click [here](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples).
 
 
 ## Before You Begin
@@ -20,9 +20,7 @@ You'll need two things:
 
 ## Setting Up OVP Player
 
-Begin by creating a new project in Android Studio. For this guide we chose the Fullscreen Activity Preset, to make it simpler to view the player in full-screen:
-
-![Fullscreen Activity Project](../images/fullscreen-activity.png)
+Begin by creating a new project in Android Studio. For this guide we chose the Fullscreen Activity Preset, to make it simpler to view the player in full-screen.
 
 The `FullScreenActivity.kt` comes pre-loaded with functions for showing and hiding the Action Bar and the Controls menu, to achieve the full-screen functionality.
 
@@ -263,5 +261,5 @@ We made a few other changes to the activity XML, like turning the view into a `L
 
 ### Full Sample 
 
-[Download](https://github.com/kaltura/kaltura-player-android-samples/tree/release/v4.4.0/OVPSamples/GettingStarted)
+[Download](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples/GettingStarted)
 
