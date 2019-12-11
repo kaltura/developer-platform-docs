@@ -17,7 +17,7 @@ The PKMediaEntry can be created using one of the following methods:
 
 1. **Manually** - Instantiate a new PKMediaEntry instance and fill the fields. 
 
-   #### Example:
+#### Example:
 
    [Basic Setup without provider](https://github.com/kaltura/kaltura-player-android-samples/tree/master/BasicSamples/BasicSetup)
 
@@ -27,14 +27,14 @@ The PKMediaEntry can be created using one of the following methods:
     
     For OVP environments, use "KalturaOvpMediaProvider".
     
-    #### Example:
+#### Example:
 
    [OVP media provider]( https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples/BasicSetupp)
    
     
     For OTT environments, use "PhoenixMediaProvider".
     
-    #### Example:
+#### Example:
 
    [Phoenix media provider](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OTTSamples/BasicSetup)
 
