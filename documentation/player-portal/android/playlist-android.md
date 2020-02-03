@@ -54,11 +54,11 @@ To load a playlist by entryId list, use OVPMediaOptions & OVPPlaylistOptions whe
 <br>This method creates a playlist according to the given entries.
 
 ```java
-var OVPMediaOptions1 = buildOvpMediaOptions()
-var OVPMediaOptions2 = buildOvpMediaOptions()
-var OVPMediaOptions3 = buildOvpMediaOptions()
+var ovpMediaOptions1 = buildOvpMediaOptions()
+var ovpMediaOptions2 = buildOvpMediaOptions()
+var ovpMediaOptions3 = buildOvpMediaOptions()
 
-var mediaList = listOf(OVPMediaOptions1, OVPMediaOptions2, OVPMediaOptions3)
+var mediaList = listOf(ovpMediaOptions1, ovpMediaOptions2, ovpMediaOptions3)
 
 val ovpPlaylistOptions = OVPPlaylistOptions()
 ovpPlaylistOptions.playlistMetadata = PlaylistMetadata().setName("TestOVPPlayList").setId("2")
@@ -91,11 +91,11 @@ To load a playlist by entryId list, use OVPMediaOptions & OTTPlaylistOptions whe
 <br>This method creates a playlist according to the given entries.
 
 ```java
-var OTTMediaOptions1 = buildOttMediaOptions("548576", "Mobile_Main")
-val OTTMediaOptions2 = buildOttMediaOptions("548577", "STB_Main")
-var OTTMediaOptions3 = buildOttMediaOptions("548576","Mobile_Main")
+var ottMediaOptions1 = buildOttMediaOptions("548576", "Mobile_Main")
+val ottMediaOptions2 = buildOttMediaOptions("548577", "STB_Main")
+var ottMediaOptions3 = buildOttMediaOptions("548576","Mobile_Main")
 
-var mediaList = listOf(OTTMediaOptions1, OTTMediaOptions2, OTTMediaOptions3)
+var mediaList = listOf(ottMediaOptions1, ottMediaOptions2, ottMediaOptions3)
 
 val ottPlaylistIdOptions = OTTPlaylistOptions()
 ottPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
@@ -132,11 +132,11 @@ private fun buildOttMediaOptions(assetId : String, format : String): OTTMediaOpt
 You can load a Manual Basic playlist by configuring the playlist data and items explicitly using the [`configure`](./api.md#configure-3) method.
 
 ```java
-var BasicMediaOptions0 = createMediaEntry(0,"1_w9zx2eti1", SOURCE_URL)
-val BasicMediaOptions1 = createMediaEntry(1,"0_uka1msg4", SOURCE_URL2)
-var BasicMediaOptions2 = createMediaEntry(2,"1_w9zx2eti2", SOURCE_URL)
+var basicMediaOptions0 = createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(50000, 10000, true))
+val basicMediaOptions1 = createBasicMediaOptions(1,"0_uka1msg4", SOURCE_URL2, CountDownOptions(10000, true))
+var basicMediaOptions2 = createBasicMediaOptions(2,"1_w9zx2eti2", SOURCE_URL, CountDownOptions())
 
-var basicMediaOptionsList = listOf(BasicMediaOptions0, BasicMediaOptions1, BasicMediaOptions2)
+var basicMediaOptionsList = listOf(basicMediaOptions0, basicMediaOptions1, basicMediaOptions2)
         
 val basicPlaylistIdOptions = BasicPlaylistOptions()
 basicPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestBasicPlayList").setId("1")
@@ -151,19 +151,17 @@ player?.loadPlaylist(basicPlaylistIdOptions,
    }
 })
 
-private fun createMediaEntry(index: Int, id: String, url : String): BasicMediaOptions {
+private fun createBasicMediaOptions(index: Int, id: String, url : String, countdownOptions: CountDownOptions): BasicMediaOptions {
 
-    val mediaEntry = PKMediaEntry()
-    mediaEntry.id = id
+  val mediaEntry = PKMediaEntry()
+  mediaEntry.id = id
 
-    mediaEntry.mediaType = PKMediaEntry.MediaEntryType.Vod
-    val mediaSources = createMediaSources(id, url)
-    mediaEntry.sources = mediaSources
-    return BasicMediaOptions(index, mediaEntry, CountDownOptions())
+  mediaEntry.mediaType = PKMediaEntry.MediaEntryType.Vod
+  val mediaSources = createMediaSources(id, url)
+  mediaEntry.sources = mediaSources
+  return BasicMediaOptions(index, mediaEntry, countdownOptions)
 }
 ```
-
-
 
 ## Configure the Playlist
 
@@ -222,49 +220,55 @@ By default, once the current item is ended, the playlist continues to the next i
 ```
 
 > Note: The `autoContinue` property is relevant only for the second item onwards.
-> <br>To play the first entry automatically, use the [`autoplay`](https://github.com/kaltura/playkit-js/blob/master/docs/autoplay.md) configuration.
+> <br>To control the first entry playback, set the `autoPlay` property to the desired value (default = true).
 
-For full playlist options see [`KPPlaylistOptions`](./api.md#kpplaylistoptions).
 
 ### Countdown
 
-When the current item is about to end and the playlist is set to continue automatically, the user will see a countdown displayed. The user can then skip to the next item immediately or cancel the switching.
-![playlist-countdown](images/playlist-countdown.png)
+When the current item is about to end and the playlist is set to continue automatically `autoContinue	` = true, the app will get countdown start event. Then app can display next or watch credits view.
+once countdown is over countdown ended event will be fired app can cancel countdown not to execue the ended event that will trigger the playNext API. using the disableCountDown API.
 
-By default, the countdown is displayed for 10 seconds until the end.
-<br>To change this behavior, configure the [`countdown`](./api.md#kpplaylistcountdownoptions) under [`KPPlaylistConfigObject`](./api.md#kpplaylistconfigobject):
+
+
+By default, the countdown is fired for the last 10 seconds of the media.
+values are given in miliseconds.
+<br>To change this behavior, configure the `CountDownOptions`
 <br> For example, to show the countdown for 20 seconds until the end, configure:
 <br>Via the API:
 
-```javascript
-kalturaPlayer.loadPlaylist({playlistId: '123456'}, {countdown: {duration: 20}});
+for OVP by id exists only for playlist level
+
+```java
+ovpPlaylistIdOptions.countDownOptions = CountDownOptions(20000, true)
 ```
 
-```javascript
-kalturaPlayer.loadPlaylistByEntryList({entries: [{entryId: '01234'}, {entryId: '56789'}]}, {countdown: {duration: 20}});
+for OVP/OTT by entries list for playlist level or media level
+
+```java
+ovpPlaylistOptions.countDownOptions = CountDownOptions(10000, true)
+```
+
+```java
+ovpMediaOptions.countDownOptions = CountDownOptions(90000, 10000, true);
 ```
 
 By configuration:
 
-```javascript
-kalturaPlayer.configure({
-  playlist: {
-    countdown: {
-      duration: 20
-    }
-  }
-});
+available for playlist level or media level
+
+```java
+basicPlaylistIdOptions.countDownOptions = CountDownOptions(5000, true)
 ```
 
-To show the countdown in a specific moment (usually to enable the user to skip the end subtitles) configure:
-
-```javascript
-kalturaPlayer.loadPlaylist({playlistId: '123456'}, {countdown: {timeToShow: 600}});
+```java
+createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(60000, 10000, true))
 ```
 
-In this case the countdown will display at the 600th second for 10 seconds, and then will skip to the next item.
+Note.
 
-For full countdown options see [`KPPlaylistCountdownOptions`](./api.md#kpplaylistcountdownoptions).
+Once countdown is over next media will be triggered.
+
+
 
 ## Switching Items
 
@@ -316,3 +320,65 @@ kalturaPlayer.loadPlaylist({playlistId: '56789'}, {options: {autoContinue: true}
   console.log(kalturaPlayer.playlist.options.autoContinue); // true
 });
 ```
+
+
+## Playlist Events
+
+Application can add liseners to the follwing events
+using this events app can react in UI cahanges for example.
+
+These events are defined in PlaylistEvent class.
+Please check the class for the event payload.
+
+```
+    public enum Type {
+        	PLAYLIST_LOADED,
+        	PLAYLIST_STARTED,
+        	PLAYLIST_ENDED,
+        	PLAYLIST_COUNT_DOWN_START,
+        	PLAYLIST_COUNT_DOWN_END,
+        	PLAYLIST_LOOP_STATE_CHANGED,
+        	PLAYLIST_SUFFLE_STATE_CHANGED,
+        	PLAYLIST_ERROR,
+        	PLAYLIST_MEDIA_ERROR
+        }
+    
+        player?.addListener(this, PlaylistEvent.playListLoaded) { event ->
+            log.d("playListLoaded " + event.playlist.name)
+        }
+
+        player?.addListener(this, PlaylistEvent.playListStarted) { event ->
+            log.d("playListStarted " + event.playlist.name)
+        }
+
+
+        player?.addListener(this, PlaylistEvent.playListEnded) { event ->
+            log.d("PlaylistEnded " +  event.playlist.name)
+        }
+
+        player?.addListener(this, PlaylistEvent.playlistCountDownStart) { event ->
+            log.d("playlistCountDownStart currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.countDownOptions.durationMS);
+        }
+
+        player?.addListener(this, PlaylistEvent.playlistCountDownEnd) { event ->
+            log.d("playlistCountDownEnd currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.countDownOptions.durationMS);
+        }
+
+        player?.addListener(this, PlaylistEvent.playlistLoopStateChanged) { event ->
+            log.d("playlistLoopStateChanged " + event.mode);
+        }
+
+        player?.addListener(this, PlaylistEvent.playlistShuffleStateChanged) { event ->
+            log.d("playlistShuffleStateChangedk, " + event.mode);
+        }
+
+        player?.addListener(this, PlaylistEvent.playListError) { event ->
+            log.d("playListError = " + event.error.message);
+        }
+                player?.addListener(this, PlaylistEvent.playListMediaError) { event ->
+            log.d("XXX playListMediaError = " + event.error.message);
+        }
+```        
+    
+
+
