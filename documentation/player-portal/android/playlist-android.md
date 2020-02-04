@@ -164,10 +164,22 @@ private fun createBasicMediaOptions(index: Int, id: String, url : String, countd
 ```
 
 ## Configure the Playlist
+#### Playlist Metadata - playlistMetadata
+Should be used for all Playlists except the OVP by id configuration where this data is retrived from the BE.
+#### Start Index - startIndex
+The index that the playlist playbach should start from (default index = 0)
+#### Loop - loopEnabled
+The playlist will play the first media once lat media in the playlist is ended (default false)
+#### Shuffle - shuffleEnabled
+The playlist will be played randomly each media will be played once (default false)
+#### Auto Continue -autoContinue
+The next media in the playlist will be played automatically once the previous media ended (default true)
+#### Count Down Options - countDownOptions
+The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
+#### Use API Captions - useApiCaptions
+used only for OVP configuration can be configured on theplaylist level of media level
 
-### Auto Continue
 
-By default, once the current item is ended, the playlist continues to the next item automatically.
 <br>To change this behavior, configure the playlist options using one of the following methods:
 <br>Via the API:
 
@@ -192,7 +204,7 @@ By default, once the current item is ended, the playlist continues to the next i
         ovpPlaylistOptions.ks =  ""
         ovpPlaylistOptions.countDownOptions = CountDownOptions()
         ovpPlaylistOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
-        ovpPlaylistOptions.ovpMediaOptionsList = <ovpMediaOptionsList> //(useApiCaptions is configured for each media separetly)
+        ovpPlaylistOptions.ovpMediaOptionsList = ovpMediaOptionsList //(useApiCaptions is configured for each media separetly)
         ovpPlaylistOptions.loopEnabled = false
         ovpPlaylistOptions.shuffleEnabled = false
         ovpPlaylistOptions.autoContinue = true
@@ -202,7 +214,7 @@ By default, once the current item is ended, the playlist continues to the next i
         ottPlaylistIdOptions.startIndex = 0
         ottPlaylistIdOptions.countDownOptions = CountDownOptions()
         ottPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
-        ottPlaylistIdOptions.ottMediaOptionsList = <ottMediaOptionsList>
+        ottPlaylistIdOptions.ottMediaOptionsList = ottMediaOptionsList
         ottPlaylistIdOptions.loopEnabled = false
         ottPlaylistIdOptions.shuffleEnabled = false
         ottPlaylistIdOptions.autoContinue = true
