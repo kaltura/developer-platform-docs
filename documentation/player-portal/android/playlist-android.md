@@ -281,59 +281,96 @@ Note.
 Once countdown is over next media will be triggered.
 
 
+## Playlist Interface
+
+Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the app prespective.
+
+another option to get the controller after the playlist is loaded is to 
+call player?.playlistController + the required API
+
+```java
+public interface PlaylistController {
+
+    PKPlaylist getPlaylist();
+
+    PKPlaylistType getPlaylistType();
+
+    PKPlaylistMedia getCurrentPlaylistMedia();
+
+    int getCurrentMediaIndex();
+
+    CountDownOptions getCurrentCountDownOptions();
+
+    void disableCountDown();
+
+    void preloadNext();
+
+    void preloadItem(int index);
+
+    void playItem(int index);
+
+    void playItem(int index, boolean isAutoPlay);
+
+    void playNext();
+
+    void playPrev();
+
+    void replay();
+
+    boolean isMediaLoaded(int index);
+
+    void loop(boolean mode);
+
+    boolean isLoopEnabled();
+
+    void shuffle(boolean mode);
+
+    boolean isShuffleEnabled(boolean mode);
+
+    void setAutoContinue(boolean mode);
+
+    boolean isAutoContinueEnabled();
+
+    void release();
+
+    void setPlaylistOptions(PlaylistOptions playlistOptions);
+}
+```
 
 ## Switching Items
 
-Using the [`playlist`](./api.md#playlist) API, you can get the playlist data and then switch between the items.
+Using the PlaylistController API, you can get the playlist data and then switch between the items.
 
-```javascript
+```java
 // switch to the next item
-kalturaPlayer.playlist.playNext();
+player?.playlistController?.playNext()
 
 // switch to the previous item
-kalturaPlayer.playlist.playPrev();
+player?.playlistController?.playPrev()
 
 // switch to a specific item by index
-const lastItemIndex = kalturaPlayer.playlist.items.length - 1;
-kalturaPlayer.playlist.playItem(lastItemIndex);
+player?.playlistController?.playItem(2)
 ```
-
-For the complete `playlist` API, see [PlaylistManager](./api.md#playlistmanager).
 
 ## Change Playlist
 
-To clean the playlist data, you'll need to call the [`playlist.reset`](./api.md#reset-2) method.
-<br>Here is an example how to change the playlist using the [`playlist events`](./api.md#playlisteventtype) and [`playlist.reset`](./api.md#reset-2) method.
+To clean the playlist data, you'll need to call the playlist controller release() API
+<br>Here is an example for how it is possible to change the playlist using the release method when previous playlise ended.
 
-```javascript
-kalturaPlayer.loadPlaylist({playlistId: '01234'});
-kalturaPlayer.addEventListener(KalturaPlayer.playlist.PlaylistEventType.PLAYLIST_ENDED, () => {
-  kalturaPlayer.playlist.reset();
-  kalturaPlayer.loadPlaylist({playlistId: '56789'});
-});
+```java
+player?.addListener(this, PlaylistEvent.playListEnded) { event ->
+      log.d("PLAYLIST playListEnded")
+       ovpPlaylistIdOptions.playlistId = "0_jco198ds"
+       player?.loadPlaylistById(ovpPlaylistIdOptions) { playlistController, error ->
+       if (error != null) {
+            Snackbar.make(findViewById(android.R.id.content), error.message, Snackbar.LENGTH_LONG).show()
+        } else {
+              playbackControlsManager?.addChangeMediaImgButtonsListener(playlistController.playlist.mediaListSize)
+        }
+     }
+  }
+}
 ```
-
-> Note: The playlist [config](./api.md#KPPlaylistConfigObject) is not removed on reset.
-
-```javascript
-kalturaPlayer.loadPlaylist({playlistId: '01234'}, {options: {autoContinue: false}});
-kalturaPlayer.playlist.reset();
-kalturaPlayer.loadPlaylist({playlistId: '56789'}).then(() => {
-  console.log(kalturaPlayer.playlist.options.autoContinue); // false
-});
-```
-
-> To change this behavior, you'll need to override the configuration as follows:
-
-```javascript
-kalturaPlayer.loadPlaylist({playlistId: '01234'}, {options: {autoContinue: false}});
-kalturaPlayer.playlist.reset();
-kalturaPlayer.loadPlaylist({playlistId: '56789'}, {options: {autoContinue: true}}).then(() => {
-  console.log(kalturaPlayer.playlist.options.autoContinue); // true
-});
-```
-
-
 ## Playlist Events
 
 Application can add liseners to the follwing events
@@ -388,7 +425,7 @@ Please check the class for the event payload.
             log.d("playListError = " + event.error.message);
         }
                 player?.addListener(this, PlaylistEvent.playListMediaError) { event ->
-            log.d("XXX playListMediaError = " + event.error.message);
+            log.d("playListMediaError = " + event.error.message);
         }
 ```        
     
