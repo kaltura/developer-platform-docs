@@ -1,6 +1,6 @@
 # Playlist
 
-The Kaltura Player exposes several APIs that are used for loading, configuring, and manipulating playlists.
+Kaltura Player provides several APIs that are used for loading, configuring, and manipulating playlists.
 
 ## Table of Contents
 
@@ -15,8 +15,7 @@ The Kaltura Player exposes several APIs that are used for loading, configuring, 
 - [Playlist Events](#playlist-events)
 
 ### Load A Playlist
-
-Before loading a playlist, you'll need to set up a Kaltura Player instance as follows.
+Before loading a playlist, you'll need to set up a Kaltura Player instance:
 
 ```java
  val playerInitOptions = PlayerInitOptions(PARTNER_ID)
@@ -24,7 +23,7 @@ Before loading a playlist, you'll need to set up a Kaltura Player instance as fo
  player = KalturaOvpPlayer.create(this@MainActivity, playerInitOptions)
 ```
 
-To learn how to set up a Kaltura Player, see [getting-started-android](https://developer.kaltura.com/player/android/getting-started-android).
+To learn how to set up a Kaltura Player, please go over this document: [getting-started-android](https://developer.kaltura.com/player/android/getting-started-android).
 <br>Once you have a Kaltura Player instance, you can load a playlist using one of the following methods:
 
 #### By Playlist ID (OVP Only)
@@ -74,7 +73,6 @@ player?.loadPlaylist(ovpPlaylistOptions,
         log.d("OVPPlaylist Loaded  entry = ${playlistController.playlist.id}")
     }
 })
-
 
 private fun buildOvpMediaOptions(): OVPMediaOptions {
      val ovpMediaOptions = OVPMediaOptions()
@@ -165,6 +163,9 @@ private fun createBasicMediaOptions(index: Int, id: String, url : String, countd
 ```
 
 ## Configure the Playlist
+
+### Playlist Options
+-----------------------
 #### Playlist Metadata - playlistMetadata
 Should be used for all Playlists except the OVP by id configuration where this data is retrived from the BE.
 #### Start Index - startIndex
@@ -176,7 +177,7 @@ The playlist will be played randomly each media will be played once (default fal
 #### Auto Continue -autoContinue
 The next media in the playlist will be played automatically once the previous media ended (default true)
 #### Recover On Error - recoverOnError
-The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current meida is incorrect or it's url is broken. if auto continue is enabled it will be without uset intervention.
+The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current meida is incorrect or it's url is broken. if auto continue is enabled it will be auto play without uset intervention.
 #### Count Down Options - countDownOptions
 The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
 #### Use API Captions - useApiCaptions
@@ -186,6 +187,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
 <br>To change this behavior, configure the playlist options using one of the following methods:
 <br>Via the API:
 
+### Example:
 ```java
 
        // OVPPlaylistIdOptions
