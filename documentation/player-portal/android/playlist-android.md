@@ -4,13 +4,15 @@ The Kaltura Player exposes several APIs that are used for loading, configuring, 
 
 ## Table of Contents
 
-- [Load A Playlist](#load-a-playlist)
+- [Load Playlist](#load-playlist)
   - [By Playlist ID](#by-playlist-id-ovp-only)
   - [By Entry List](#by-entry-list)
   - [By Configuration](#by-configuration)
 - [Configure the Playlist](#configure-the-playlist)
-- [Switching Items](#switching-items)
+- [PlaylistController Interface](#playlistcontroller-interface)
+- [Playlist Navigation](#splaylist-navigation)
 - [Change Playlist](#change-playlist)
+- [Playlist Events](#playlist-events)
 
 ### Load A Playlist
 
@@ -46,7 +48,6 @@ KalturaPlayer.OnPlaylistControllerListener() { playlistController, error ->
 ```
 
 #### By Entry List
-
 
 ##### OVP
 
@@ -281,12 +282,12 @@ Note.
 Once countdown is over next media will be triggered.
 
 
-## Playlist Interface
+## PlaylistController Interface
 
 Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the app prespective.
 
-another option to get the controller after the playlist is loaded is to 
-call player?.playlistController + the required API
+another option to get a referance to the controller, after the playlist is loaded is to 
+call player?.playlistController with the required API from the inrterface
 
 ```java
 public interface PlaylistController {
@@ -429,6 +430,21 @@ public interface PlaylistController {
     boolean isAutoContinueEnabled();
 
     /**
+     * recoverOnError - ignore media playback errors and continue
+     *
+     * @param mode - enabled/disabled.
+     */
+    void recoverOnError(boolean mode);
+
+
+    /**
+     * isRecoverOnError - validation if playlist controller should recover on error.
+     *
+     * @return - boolean
+     */
+    boolean isRecoverOnError();
+
+    /**
      * release - should e called if we want to reuse the player for single media or for loading new play list.
      */
     void release();
@@ -442,7 +458,7 @@ public interface PlaylistController {
 }
 ```
 
-## Switching Items
+##Playlist Navigation
 
 Using the PlaylistController API, you can get the playlist data and then switch between the items.
 
@@ -486,17 +502,17 @@ Please check the class for the event payload.
 
 ```
     public enum Type {
-        	PLAYLIST_LOADED,
-        	PLAYLIST_STARTED,
-        	PLAYLIST_ENDED,
-        	PLAYLIST_COUNT_DOWN_START,
-        	PLAYLIST_COUNT_DOWN_END,
-        	PLAYLIST_LOOP_STATE_CHANGED,
-        	PLAYLIST_SUFFLE_STATE_CHANGED,
-        	PLAYLIST_ERROR,
-        	PLAYLIST_MEDIA_ERROR
-        }
-    
+        PLAYLIST_LOADED,
+        PLAYLIST_STARTED,
+        PLAYLIST_ENDED,
+        PLAYLIST_COUNT_DOWN_START,
+        PLAYLIST_COUNT_DOWN_END,
+        PLAYLIST_LOOP_STATE_CHANGED,
+        PLAYLIST_SUFFLE_STATE_CHANGED,
+        PLAYLIST_AUTO_CONTINUE_STATE_CHANGED,
+        PLAYLIST_ERROR,
+        PLAYLIST_LOAD_MEDIA_ERROR
+    }    
         player?.addListener(this, PlaylistEvent.playListLoaded) { event ->
             log.d("playListLoaded " + event.playlist.name)
         }
@@ -526,10 +542,14 @@ Please check the class for the event payload.
             log.d("playlistShuffleStateChangedk, " + event.mode);
         }
 
+       player?.addListener(this, PlaylistEvent.playlistAutoContinueStateChanged) { event ->
+            log.d("PLAYLIST playlistAutoContinueStateChanged " + event.mode)
+        }
+        
         player?.addListener(this, PlaylistEvent.playListError) { event ->
             log.d("playListError = " + event.error.message);
         }
-                player?.addListener(this, PlaylistEvent.playListMediaError) { event ->
+                player?.addListener(this, PlaylistEvent.playlistLoadMediaError) { event ->
             log.d("playListMediaError = " + event.error.message);
         }
 ```        
