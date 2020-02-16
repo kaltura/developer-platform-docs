@@ -175,6 +175,8 @@ The playlist will play the first media once lat media in the playlist is ended (
 The playlist will be played randomly each media will be played once (default false)
 #### Auto Continue -autoContinue
 The next media in the playlist will be played automatically once the previous media ended (default true)
+#### Recover On Error - recoverOnError
+The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current meida is incorrect or it's url is broken. if auto continue is enabled it will be without uset intervention.
 #### Count Down Options - countDownOptions
 The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
 #### Use API Captions - useApiCaptions
@@ -197,6 +199,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ovpPlaylistIdOptions.loopEnabled = false
         ovpPlaylistIdOptions.shuffleEnabled = false
         ovpPlaylistIdOptions.autoContinue =  true
+        ovpPlaylistIdOptions.recoverOnError = false
         
        // OVPPlaylistOptions
        
@@ -209,6 +212,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ovpPlaylistOptions.loopEnabled = false
         ovpPlaylistOptions.shuffleEnabled = false
         ovpPlaylistOptions.autoContinue = true
+        ovpPlaylistOptions.recoverOnError = false
         
        // OVPPlaylistOptions 
        val ottPlaylistIdOptions = OTTPlaylistOptions()
@@ -219,6 +223,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ottPlaylistIdOptions.loopEnabled = false
         ottPlaylistIdOptions.shuffleEnabled = false
         ottPlaylistIdOptions.autoContinue = true
+        ottPlaylistIdOptions.recoverOnError = false
         
        // BasicPlaylistOptions  
        val basicPlaylistIdOptions = BasicPlaylistOptions()
@@ -229,6 +234,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
         basicPlaylistIdOptions.loopEnabled = false
         basicPlaylistIdOptions.shuffleEnabled = false
         basicPlaylistIdOptions.autoContinue = true
+        basicPlaylistIdOptions.recoverOnError = false
         
 ```
 
