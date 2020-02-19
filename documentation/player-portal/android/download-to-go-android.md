@@ -127,7 +127,13 @@ List<DownloadItem.Track> tracks = trackSelector.getAvailableTracks(AUDIO);
 trackSelector.setSelectedTracks(AUDIO, filteredTracks)
 // Repeat for other track types (VIDEO, TEXT)
 
-trackSelector.apply();
+trackSelector.apply(new DownloadItem.OnTrackSelectionListener() {
+                                    @Override
+                                    public void onTrackSelectionComplete(Exception e) {
+                                        itemStateChanged(item);
+                                        notifyDataSetChanged();
+                                    }
+                                });
 ```
 
 ### Sequence Diagram  
