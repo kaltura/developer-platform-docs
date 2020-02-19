@@ -34,7 +34,6 @@ To load a playlist by ID, use OVPPlaylistIdOptions when calling `loadPlaylistByI
 val ovpPlaylistIdOptions = OVPPlaylistIdOptions()
 ovpPlaylistIdOptions.playlistId = "0_w0hpzdni"
 ovpPlaylistIdOptions.loopEnabled = true
-ovpPlaylistIdOptions.shuffleEnabled = false
 
 player?.loadPlaylistById(ovpPlaylistIdOptions,
 KalturaPlayer.OnPlaylistControllerListener() { playlistController, error ->
@@ -172,8 +171,6 @@ Should be used for all Playlists except the OVP by id configuration where this d
 The index that the playlist playbach should start from (default index = 0)
 #### Loop - loopEnabled
 The playlist will play the first media once lat media in the playlist is ended (default false)
-#### Shuffle - shuffleEnabled
-The playlist will be played randomly each media will be played once (default false)
 #### Auto Continue -autoContinue
 The next media in the playlist will be played automatically once the previous media ended (default true)
 #### Recover On Error - recoverOnError
@@ -199,7 +196,6 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ovpPlaylistIdOptions.countDownOptions = CountDownOptions()
         ovpPlaylistIdOptions.useApiCaptions = false
         ovpPlaylistIdOptions.loopEnabled = false
-        ovpPlaylistIdOptions.shuffleEnabled = false
         ovpPlaylistIdOptions.autoContinue =  true
         ovpPlaylistIdOptions.recoverOnError = false
         
@@ -212,7 +208,6 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ovpPlaylistOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
         ovpPlaylistOptions.ovpMediaOptionsList = ovpMediaOptionsList //(useApiCaptions is configured for each media separetly)
         ovpPlaylistOptions.loopEnabled = false
-        ovpPlaylistOptions.shuffleEnabled = false
         ovpPlaylistOptions.autoContinue = true
         ovpPlaylistOptions.recoverOnError = false
         
@@ -223,7 +218,6 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ottPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
         ottPlaylistIdOptions.ottMediaOptionsList = ottMediaOptionsList
         ottPlaylistIdOptions.loopEnabled = false
-        ottPlaylistIdOptions.shuffleEnabled = false
         ottPlaylistIdOptions.autoContinue = true
         ottPlaylistIdOptions.recoverOnError = false
         
@@ -234,7 +228,6 @@ used only for OVP configuration can be configured on theplaylist level of media 
         basicPlaylistIdOptions.countDownOptions = CountDownOptions()
         basicPlaylistIdOptions.basicMediaOptionsList = basicMediaOptionsList
         basicPlaylistIdOptions.loopEnabled = false
-        basicPlaylistIdOptions.shuffleEnabled = false
         basicPlaylistIdOptions.autoContinue = true
         basicPlaylistIdOptions.recoverOnError = false
         
@@ -410,20 +403,6 @@ public interface PlaylistController {
     boolean isLoopEnabled();
 
     /**
-     * shuffle - configure the controller to play the playlist in random mode
-     *
-     * @param mode - enabled/disabled.
-     */
-    void shuffle(boolean mode);
-
-    /**
-     * isShuffleEnabled - validation if playlist controller is configured to support shuffle mode.
-     *
-     * @return - boolean
-     */
-    boolean isShuffleEnabled();
-
-    /**
      * autoContinue - configure the controller to play the playlist in autoContinue mode
      *
      * @param mode - enabled/disabled.
@@ -546,11 +525,7 @@ Please check the class for the event payload.
             log.d("playlistLoopStateChanged " + event.mode);
         }
 
-        player?.addListener(this, PlaylistEvent.playlistShuffleStateChanged) { event ->
-            log.d("playlistShuffleStateChangedk, " + event.mode);
-        }
-
-       player?.addListener(this, PlaylistEvent.playlistAutoContinueStateChanged) { event ->
+        player?.addListener(this, PlaylistEvent.playlistAutoContinueStateChanged) { event ->
             log.d("PLAYLIST playlistAutoContinueStateChanged " + event.mode)
         }
         
