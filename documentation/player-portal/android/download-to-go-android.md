@@ -130,8 +130,7 @@ trackSelector.setSelectedTracks(AUDIO, filteredTracks)
 trackSelector.apply(new DownloadItem.OnTrackSelectionListener() {
                                     @Override
                                     public void onTrackSelectionComplete(Exception e) {
-                                        itemStateChanged(item);
-                                        notifyDataSetChanged();
+                                        
                                     }
                                 });
 ```
