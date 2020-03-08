@@ -62,7 +62,7 @@ var mediaList = listOf(ovpMediaOptions1, ovpMediaOptions2, ovpMediaOptions3)
 val ovpPlaylistOptions = OVPPlaylistOptions()
 ovpPlaylistOptions.playlistMetadata = PlaylistMetadata().setName("TestOVPPlayList").setId("2")
 ovpPlaylistOptions.ovpMediaOptionsList = mediaList
-ovpPlaylistOptions.countDownOptions = CountDownOptions()
+ovpPlaylistOptions.playlistCountDownOptions = CountDownOptions()
 
 player?.loadPlaylist(ovpPlaylistOptions, 
 	KalturaPlayer.OnPlaylistControllerListener() { playlistController, error ->
@@ -74,11 +74,13 @@ player?.loadPlaylist(ovpPlaylistOptions,
 })
 
 private fun buildOvpMediaOptions(): OVPMediaOptions {
-     val ovpMediaOptions = OVPMediaOptions()
-     ovpMediaOptions.entryId = ENTRY_ID
-     ovpMediaOptions.ks = null
-     ovpMediaOptions.startPosition = START_POSITION
-     ovpMediaOptions.countDownOptions = CountDownOptions();
+      var ovpMediaAsset = OVPMediaAsset()
+      ovpMediaAsset.entryId = ENTRY_ID
+      ovpMediaAsset.ks = null
+      val ovpMediaOptions = OVPMediaOptions(ovpMediaAsset)
+      ovpMediaOptions.startPosition = START_POSITION
+      ovpMediaOptions.playlistCountDownOptions = CountDownOptions();
+
      return ovpMediaOptions
 }
 ```
@@ -109,16 +111,18 @@ player?.loadPlaylist(ottPlaylistIdOptions,
 })
 
 private fun buildOttMediaOptions(assetId : String, format : String): OTTMediaOptions {
-    val ottMediaOptions = OTTMediaOptions()
-    ottMediaOptions.assetId = assetId
-    ottMediaOptions.assetType = APIDefines.KalturaAssetType.Media
-    ottMediaOptions.contextType = APIDefines.PlaybackContextType.Playback
-    ottMediaOptions.assetReferenceType = APIDefines.AssetReferenceType.Media
-    ottMediaOptions.protocol = PhoenixMediaProvider.HttpProtocol.Http
+	val ottMediaAsset = OTTMediaAsset()
+    ottMediaAsset.assetId = assetId
+    ottMediaAsset.assetType = APIDefines.KalturaAssetType.Media
+    ottMediaAsset.contextType = APIDefines.PlaybackContextType.Playback
+    ottMediaAsset.assetReferenceType = APIDefines.AssetReferenceType.Media
+    ottMediaAsset.protocol = PhoenixMediaProvider.HttpProtocol.Https
     ottMediaOptions.ks = null
     ottMediaOptions.referrer = "app://MyTestApp";
+    ottMediaOptions.formats = listOf(format)
+    
+    val ottMediaOptions = OTTMediaOptions(ottMediaAsset)
     ottMediaOptions.startPosition = START_POSITION
-    ottMediaOptions.formats = arrayOf(format)
     return ottMediaOptions
 }
 ```
@@ -130,9 +134,9 @@ private fun buildOttMediaOptions(assetId : String, format : String): OTTMediaOpt
 You can load a Manual Basic playlist by configuring the playlist data and items explicitly using the [`configure`](./api.md#configure-3) method.
 
 ```java
-var basicMediaOptions0 = createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(50000, 10000, true))
-val basicMediaOptions1 = createBasicMediaOptions(1,"0_uka1msg4", SOURCE_URL2, CountDownOptions(10000, true))
-var basicMediaOptions2 = createBasicMediaOptions(2,"1_w9zx2eti2", SOURCE_URL, CountDownOptions())
+var basicMediaOptions0 = createBasicMediaOptions("1_w9zx2eti1", SOURCE_URL, CountDownOptions(50000, 10000, true))
+val basicMediaOptions1 = createBasicMediaOptions("0_uka1msg4", SOURCE_URL2, CountDownOptions(10000, true))
+var basicMediaOptions2 = createBasicMediaOptions("1_w9zx2eti2", SOURCE_URL, CountDownOptions())
 
 var basicMediaOptionsList = listOf(basicMediaOptions0, basicMediaOptions1, basicMediaOptions2)
         
@@ -149,7 +153,7 @@ player?.loadPlaylist(basicPlaylistIdOptions,
    }
 })
 
-private fun createBasicMediaOptions(index: Int, id: String, url : String, countdownOptions: CountDownOptions): BasicMediaOptions {
+private fun createBasicMediaOptions(id: String, url : String, countdownOptions: CountDownOptions): BasicMediaOptions {
 
   val mediaEntry = PKMediaEntry()
   mediaEntry.id = id
@@ -157,7 +161,7 @@ private fun createBasicMediaOptions(index: Int, id: String, url : String, countd
   mediaEntry.mediaType = PKMediaEntry.MediaEntryType.Vod
   val mediaSources = createMediaSources(id, url)
   mediaEntry.sources = mediaSources
-  return BasicMediaOptions(index, mediaEntry, countdownOptions)
+  return BasicMediaOptions(mediaEntry, countdownOptions)
 }
 ```
 
@@ -175,7 +179,7 @@ The playlist will play the first media once lat media in the playlist is ended (
 The next media in the playlist will be played automatically once the previous media ended (default true)
 #### Recover On Error - recoverOnError
 The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current meida is incorrect or it's url is broken. if auto continue is enabled it will be auto play without uset intervention.
-#### Count Down Options - countDownOptions
+#### Count Down Options - playlistCountDownOptions
 The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
 #### Use API Captions - useApiCaptions
 used only for OVP configuration can be configured on theplaylist level of media level
@@ -193,7 +197,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
         ovpPlaylistIdOptions.playlistId = "zzzzzzz"
         ovpPlaylistIdOptions.startIndex = 0
         ovpPlaylistIdOptions.ks = ""
-        ovpPlaylistIdOptions.countDownOptions = CountDownOptions()
+        ovpPlaylistIdOptions.playlistCountDownOptions = CountDownOptions()
         ovpPlaylistIdOptions.useApiCaptions = false
         ovpPlaylistIdOptions.loopEnabled = false
         ovpPlaylistIdOptions.autoContinue =  true
@@ -204,7 +208,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
        val ovpPlaylistOptions = OVPPlaylistOptions()
         ovpPlaylistOptions.startIndex = 0
         ovpPlaylistOptions.ks =  ""
-        ovpPlaylistOptions.countDownOptions = CountDownOptions()
+        ovpPlaylistOptions.playlistCountDownOptions = CountDownOptions()
         ovpPlaylistOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
         ovpPlaylistOptions.ovpMediaOptionsList = ovpMediaOptionsList //(useApiCaptions is configured for each media separetly)
         ovpPlaylistOptions.loopEnabled = false
@@ -214,7 +218,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
        // OVPPlaylistOptions 
        val ottPlaylistIdOptions = OTTPlaylistOptions()
         ottPlaylistIdOptions.startIndex = 0
-        ottPlaylistIdOptions.countDownOptions = CountDownOptions()
+        ottPlaylistIdOptions.playlistCountDownOptions = CountDownOptions()
         ottPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestOTTPlayList").setId("1")
         ottPlaylistIdOptions.ottMediaOptionsList = ottMediaOptionsList
         ottPlaylistIdOptions.loopEnabled = false
@@ -225,7 +229,7 @@ used only for OVP configuration can be configured on theplaylist level of media 
        val basicPlaylistIdOptions = BasicPlaylistOptions()
         basicPlaylistIdOptions.startIndex =  0
         basicPlaylistIdOptions.playlistMetadata = PlaylistMetadata().setName("TestBasicPlayList").setId("1")
-        basicPlaylistIdOptions.countDownOptions = CountDownOptions()
+        basicPlaylistIdOptions.playlistCountDownOptions = CountDownOptions()
         basicPlaylistIdOptions.basicMediaOptionsList = basicMediaOptionsList
         basicPlaylistIdOptions.loopEnabled = false
         basicPlaylistIdOptions.autoContinue = true
@@ -253,17 +257,17 @@ values are given in miliseconds.
 for OVP by id exists only for playlist level
 
 ```java
-ovpPlaylistIdOptions.countDownOptions = CountDownOptions(20000, true)
+ovpPlaylistIdOptions.playlistCountDownOptions = CountDownOptions(20000, true)
 ```
 
 for OVP/OTT by entries list for playlist level or media level
 
 ```java
-ovpPlaylistOptions.countDownOptions = CountDownOptions(10000, true)
+ovpPlaylistOptions.playlistCountDownOptions = CountDownOptions(10000, true)
 ```
 
 ```java
-ovpMediaOptions.countDownOptions = CountDownOptions(90000, 10000, true);
+ovpMediaOptions.playlistCountDownOptions = CountDownOptions(90000, 10000, true);
 ```
 
 By configuration:
@@ -383,46 +387,46 @@ public interface PlaylistController {
     /**
      * isMediaLoaded - validation if media was fetched/played at least one time so the playback information is available.
      *
+     * @param mediaId - media id in playlist.
      * @return - boolean
      */
-    boolean isMediaLoaded(int index);
+    boolean isMediaLoaded(String mediaId);
 
     /**
-     * loop - configure the controller to play the playlist again
+     * setLoop - configure the controller to play the playlist again
      * when last playlist media is ended
      *
      * @param mode - enabled/disabled.
      */
-    void loop(boolean mode);
+    void setLoop(boolean mode);
 
     /**
-     * isLoopEnabled - validation if playlist controller is configured to support loop mode.
+     * isLoopEnabled - validation if playlist controller is configured to support setLoop mode.
      *
      * @return - boolean
      */
     boolean isLoopEnabled();
 
     /**
-     * autoContinue - configure the controller to play the playlist in autoContinue mode
+     * setAutoContinue - configure the controller to play the playlist in setAutoContinue mode
      *
      * @param mode - enabled/disabled.
      */
-    void autoContinue(boolean mode);
+    void setAutoContinue(boolean mode);
 
     /**
-     * isAutoContinueEnabled - validation if playlist controller is configured to support autoContinue mode.
+     * isAutoContinueEnabled - validation if playlist controller is configured to support setAutoContinue mode.
      *
      * @return - boolean
      */
     boolean isAutoContinueEnabled();
 
     /**
-     * recoverOnError - ignore media playback errors and continue
+     * setRecoverOnError - ignore media playback errors and continue
      *
      * @param mode - enabled/disabled.
      */
-    void recoverOnError(boolean mode);
-
+    void setRecoverOnError(boolean mode);
 
     /**
      * isRecoverOnError - validation if playlist controller should recover on error.
@@ -442,6 +446,13 @@ public interface PlaylistController {
      * @param playlistOptions - playlist initial configuration.
      */
     void setPlaylistOptions(PlaylistOptions playlistOptions);
+
+    /**
+     * setPlaylistCountDownOptions - update the current playlist countdown configuration
+     *
+     * @param playlistCountDownOptions - playlist countdown.
+     */
+    void setPlaylistCountDownOptions(@Nullable CountDownOptions playlistCountDownOptions);
 }
 ```
 
@@ -514,11 +525,11 @@ Please check the class for the event payload.
         }
 
         player?.addListener(this, PlaylistEvent.playlistCountDownStart) { event ->
-            log.d("playlistCountDownStart currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.countDownOptions.durationMS);
+            log.d("playlistCountDownStart currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.playlistCountDownOptions.durationMS);
         }
 
         player?.addListener(this, PlaylistEvent.playlistCountDownEnd) { event ->
-            log.d("playlistCountDownEnd currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.countDownOptions.durationMS);
+            log.d("playlistCountDownEnd currentPlayingIndex = " + event.currentPlayingIndex + " durationMS = " + event.playlistCountDownOptions.durationMS);
         }
 
         player?.addListener(this, PlaylistEvent.playlistLoopStateChanged) { event ->
