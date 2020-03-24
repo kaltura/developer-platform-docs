@@ -10,7 +10,7 @@ Kaltura Player provides several APIs that are used for loading, configuring, and
   - [By Configuration](#by-configuration)
 - [Configure the Playlist](#configure-the-playlist)
 - [PlaylistController Interface](#playlistcontroller-interface)
-- [Playlist Navigation](#splaylist-navigation)
+- [Playlist Navigation](#playlist-navigation)
 - [Change Playlist](#change-playlist)
 - [Playlist Events](#playlist-events)
 
@@ -87,13 +87,13 @@ private fun buildOvpMediaOptions(): OVPMediaOptions {
 
 ##### OTT
 
-To load a playlist by entryId list, use OVPMediaOptions & OTTPlaylistOptions when calling loadPlaylist method.
+To load a playlist by entryId list, use `OVPMediaOptions` & `OTTPlaylistOptions` when calling `loadPlaylist` method.
 <br>This method creates a playlist according to the given entries.
 
 ```java
-var ottMediaOptions1 = buildOttMediaOptions("548576", "Mobile_Main")
-val ottMediaOptions2 = buildOttMediaOptions("548577", "STB_Main")
-var ottMediaOptions3 = buildOttMediaOptions("548576","Mobile_Main")
+var ottMediaOptions1 = buildOttMediaOptions("111111", "XXX_Main")
+val ottMediaOptions2 = buildOttMediaOptions("222222", "YYY_Main")
+var ottMediaOptions3 = buildOttMediaOptions("333333", "ZZZ_Main")
 
 var mediaList = listOf(ottMediaOptions1, ottMediaOptions2, ottMediaOptions3)
 
@@ -169,26 +169,27 @@ private fun createBasicMediaOptions(id: String, url : String, countdownOptions: 
 
 ### Playlist Options
 -----------------------
-#### Playlist Metadata - playlistMetadata
-Should be used for all Playlists except the OVP by id configuration where this data is retrived from the BE.
-#### Start Index - startIndex
-The index that the playlist playbach should start from (default index = 0)
-#### Loop - loopEnabled
-The playlist will play the first media once lat media in the playlist is ended (default false)
-#### Auto Continue -autoContinue
+#### Playlist Metadata - `playlistMetadata`
+Should be used for all Playlists except the OVP by id configuration where this data is retrieved from the BE.
+#### Start Index - `startIndex`
+The index that the playlist playback should start from (default index = 0)
+#### Loop - `loopEnabled`
+The playlist will play the first media in the playlist once the last media in the playlist has ended (default false)
+#### Auto Continue -`autoContinue`
 The next media in the playlist will be played automatically once the previous media ended (default true)
-#### Recover On Error - recoverOnError
-The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current meida is incorrect or it's url is broken. if auto continue is enabled it will be auto play without uset intervention.
-#### Count Down Options - playlistCountDownOptions
+#### Recover On Error - `recoverOnError`
+The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current media is incorrect or it's URL is broken. if auto continue is enabled it will auto play without user intervention.
+#### Count Down Options - `playlistCountDownOptions`
 The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
-#### Use API Captions - useApiCaptions
-used only for OVP configuration can be configured on theplaylist level of media level
+#### Use API Captions - `useApiCaptions`
+used only for OVP configuration this can be configured on the playlist level or media level
 
 
 <br>To change this behavior, configure the playlist options using one of the following methods:
 <br>Via the API:
 
-### Example:
+#### Example:
+
 ```java
 
        // OVPPlaylistIdOptions
@@ -241,15 +242,15 @@ used only for OVP configuration can be configured on theplaylist level of media 
 > <br>To control the first entry playback, set the `autoPlay` property to the desired value (default = true).
 
 
-### Countdown
+### Playlist Count Countdown Options
 
-When the current item is about to end and the playlist is set to continue automatically `autoContinue	` = true, the app will get countdown start event. Then app can display next or watch credits view.
-once countdown is over countdown ended event will be fired app can cancel countdown not to execue the ended event that will trigger the playNext API. using the disableCountDown API.
+When the current item is about to end and the playlist is set to continue automatically  by setting `autoContinue	 = true`, the app will get countdown start event. Then app can display up next or watch credits pop up.
+Once countdown is over, countdown ended event will be fired.
+App can cancel current countdown so it will not be executed at the ended event that will not trigger the playNext API. using the disableCountDown API `player?.playlistController?.disableCountDown()`.
 
 
-
-By default, the countdown is fired for the last 10 seconds of the media.
-values are given in miliseconds.
+By default, the countdown is fired at the last 10 media seconds for the last 10 seconds of the media.
+values are given in milliseconds.
 <br>To change this behavior, configure the `CountDownOptions`
 <br> For example, to show the countdown for 20 seconds until the end, configure:
 <br>Via the API:
@@ -289,10 +290,10 @@ Once countdown is over next media will be triggered.
 
 ## PlaylistController Interface
 
-Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the app prespective.
+Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the app perspective.
 
-another option to get a referance to the controller, after the playlist is loaded is to 
-call player?.playlistController with the required API from the inrterface
+another option to get a reference to the controller, is to 
+call `player?.playlistController` with the required API from the interface after the playlist is loaded. 
 
 ```java
 public interface PlaylistController {
@@ -319,21 +320,21 @@ public interface PlaylistController {
     PKPlaylistMedia getCurrentPlaylistMedia();
 
     /**
-     * getCurrentMediaIndex for current playing madia.
+     * getCurrentMediaIndex for current playing media.
      *
      * @return - int
      */
     int getCurrentMediaIndex();
 
     /**
-     * GetCurrentCountDownOptions for current madia.
+     * GetCurrentCountDownOptions for current media.
      *
      * @return - CountDownOptions
      */
     CountDownOptions getCurrentCountDownOptions();
 
     /**
-     * DisableCountDown for current madia.
+     * DisableCountDown for current media.
      *
      */
     void disableCountDown();
@@ -473,7 +474,7 @@ player?.playlistController?.playItem(2)
 
 ## Change Playlist
 
-To clean the playlist data, you'll need to call the playlist controller release() API
+To clean the playlist data, you'll need to call the playlist controller `release()` API
 <br>Here is an example for how it is possible to change the playlist using the release method when previous playlise ended.
 
 ```java
@@ -493,9 +494,9 @@ player?.addListener(this, PlaylistEvent.playListEnded) { event ->
 ## Playlist Events
 
 Application can add liseners to the follwing events
-using this events app can react in UI cahanges for example.
+using these events app can react to UI cahanges for example.
 
-These events are defined in PlaylistEvent class.
+These events are defined in `PlaylistEvent` class.
 Please check the class for the event payload.
 
 ```
