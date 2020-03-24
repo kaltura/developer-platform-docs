@@ -258,7 +258,8 @@ player?.playlistController?.disableCountDown()
 ```
 
 By default, the countdown is fired at the last 10 media seconds for the last 10 seconds of the media.
-values are given in milliseconds.
+The `CountDownOptions` `timeToShow` and `duration` values are presented in milliseconds.
+
 <br>To change this behavior, configure the `CountDownOptions`
 <br> For example, to show the countdown for 20 seconds until the end, configure:
 <br>Via the API:
@@ -292,14 +293,14 @@ createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(60000, 100
 ```
 
 Note:
-Once countdown is eded event id fired, next media will be triggered.
+Once countdown ended event is fired the next media in the playlist a will be played.
 
 
 ## PlaylistController Interface
 
 Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the application perspective.
 
-another option to get a reference to the controller, is to 
+Another option to get a reference to the controller, is to 
 call `player?.playlistController` with the required API from the interface after the playlist is loaded. 
 
 ```java
