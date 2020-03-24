@@ -498,7 +498,7 @@ setMaxVideoBitrate(3000000).
 setInitialBitrateEstimate(100000));
 {% endhighlight %}
 
-Inorder to reset these values in Change Media if needed:
+In order to reset these values in Change Media if needed:
 
 {% highlight java %}
 player.getSettings().setABRSettings(new ABRSettings());
