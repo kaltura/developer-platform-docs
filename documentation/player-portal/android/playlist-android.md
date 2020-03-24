@@ -178,9 +178,11 @@ The playlist will play the first media in the playlist once the last media in th
 #### Auto Continue -`autoContinue`
 The next media in the playlist will be played automatically once the previous media ended (default true)
 #### Recover On Error - `recoverOnError`
-The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current media is incorrect or it's URL is broken. if auto continue is enabled it will auto play without user intervention.
+The playlist manager is able to recover from errors once that flag is enabled, so it will continue to the next media whether the current media is incorrect or it's URL is broken. If auto continue is enabled it will auto play without user intervention.
 #### Count Down Options - `playlistCountDownOptions`
-The logic by which count down start event will be fired (default is 10 last sec for 10 sec after that the auto continue will be activated. if auto continue = false countdown is not activated.
+The logic by which count down start event will be fired (default is 10 last sec for 10 sec).
+if `autoContinue` feature is enabled  at the end of the count down the `PlaylistController` will trigger auto continue feature to play next media. If auto continue == false countdown will events will not be fired.
+If `loop` is disabled the events will not be fired for last media.
 #### Use API Captions - `useApiCaptions`
 used only for OVP configuration this can be configured on the playlist level or media level
 
@@ -244,10 +246,16 @@ used only for OVP configuration this can be configured on the playlist level or 
 
 ### Playlist Count Countdown Options
 
-When the current item is about to end and the playlist is set to continue automatically  by setting `autoContinue	 = true`, the app will get countdown start event. Then app can display up next or watch credits pop up.
+When the current item is about to end and the playlist is set to continue automatically  by setting `autoContinue	 = true`, the application will get countdown start event. Then the application can display up next or watch credits pop up.
 Once countdown is over, countdown ended event will be fired.
-App can cancel current countdown so it will not be executed at the ended event that will not trigger the playNext API. using the disableCountDown API `player?.playlistController?.disableCountDown()`.
+Using the `disableCountDown` API, application can cancel the current countdown configuration, so it will not be executed and the `PlaylistController` will not trigger the `playNext` API. 
 
+
+##### Example:
+
+```java
+player?.playlistController?.disableCountDown()
+```
 
 By default, the countdown is fired at the last 10 media seconds for the last 10 seconds of the media.
 values are given in milliseconds.
@@ -255,13 +263,13 @@ values are given in milliseconds.
 <br> For example, to show the countdown for 20 seconds until the end, configure:
 <br>Via the API:
 
-for OVP by id exists only for playlist level
+OVP by id - exists only for the playlist level.
 
 ```java
 ovpPlaylistIdOptions.playlistCountDownOptions = CountDownOptions(20000, true)
 ```
 
-for OVP/OTT by entries list for playlist level or media level
+ OVP/OTT by entries list - exists both on playlist level or media level.
 
 ```java
 ovpPlaylistOptions.playlistCountDownOptions = CountDownOptions(10000, true)
@@ -273,7 +281,7 @@ ovpMediaOptions.playlistCountDownOptions = CountDownOptions(90000, 10000, true);
 
 By configuration:
 
-available for playlist level or media level
+Available for playlist level or media level
 
 ```java
 basicPlaylistIdOptions.countDownOptions = CountDownOptions(5000, true)
@@ -283,14 +291,13 @@ basicPlaylistIdOptions.countDownOptions = CountDownOptions(5000, true)
 createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(60000, 10000, true))
 ```
 
-Note.
-
-Once countdown is over next media will be triggered.
+Note:
+Once countdown is eded event id fired, next media will be triggered.
 
 
 ## PlaylistController Interface
 
-Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the app perspective.
+Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the application perspective.
 
 another option to get a reference to the controller, is to 
 call `player?.playlistController` with the required API from the interface after the playlist is loaded. 
@@ -459,7 +466,7 @@ public interface PlaylistController {
 
 ##Playlist Navigation
 
-Using the PlaylistController API, you can get the playlist data and then switch between the items.
+Using the `PlaylistController` API, you can get the playlist data and then switch between the items.
 
 ```java
 // switch to the next item
@@ -475,7 +482,7 @@ player?.playlistController?.playItem(2)
 ## Change Playlist
 
 To clean the playlist data, you'll need to call the playlist controller `release()` API
-<br>Here is an example for how it is possible to change the playlist using the release method when previous playlise ended.
+<br>Here is an example for how it is possible to change the playlist using the `release` method when previous playlist ended.
 
 ```java
 player?.addListener(this, PlaylistEvent.playListEnded) { event ->
@@ -493,8 +500,8 @@ player?.addListener(this, PlaylistEvent.playListEnded) { event ->
 ```
 ## Playlist Events
 
-Application can add liseners to the follwing events
-using these events app can react to UI cahanges for example.
+Application can add listeners to the following events
+using these events application can react to UI changes for example.
 
 These events are defined in `PlaylistEvent` class.
 Please check the class for the event payload.
