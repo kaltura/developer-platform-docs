@@ -293,7 +293,7 @@ createBasicMediaOptions(0,"1_w9zx2eti1", SOURCE_URL, CountDownOptions(60000, 100
 ```
 
 Note:
-Once  the `playlistCountDownEnd` event is fired, the next media entry in the playlist a will be played.
+Once the `playlistCountDownEnd` event is fired, the next media entry in the playlist a will be played.
 
 
 ## PlaylistController Interface
