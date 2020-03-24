@@ -1,3 +1,8 @@
+---
+layout: page
+title: Playlist for Android
+weight: 110
+---
 # Playlist
 
 Kaltura Player provides several APIs that are used for loading, configuring, and manipulating playlists.
