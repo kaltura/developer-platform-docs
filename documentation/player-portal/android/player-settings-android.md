@@ -538,8 +538,8 @@ Use forceSinglePlayerEngine for Ads playback to achieve preperContentAfterAd beh
 
 To can tell the player not to prepare the content player when Ad starts(if exists); 
 instead content player will be prepared when content_resume_requested is called.
-so low end devices with lack of enough decoders will be able to play ads + codntent
-Default value is set to 'false'.
+so low end devices with lack of enough decoders will be able to play ads + content seperatly.
+Default value for this configuration is set to 'false'.
 
 ##### Example:
         
