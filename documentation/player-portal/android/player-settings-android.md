@@ -6,7 +6,7 @@ weight: 110
 
 Once you've created a player instance, you can make changes to its settings: 
 
-* In Kaltura Player the same settings api below are integrated inside `PlayerInitOptions` object
+* In Kaltura Player the same settings API below are integrated inside `PlayerInitOptions` object
 
 ##### Example:
 
@@ -556,7 +556,7 @@ Note:  `player.getSettings().setHideVideoViews(true)` should be called before ca
 
 In case there is change media between audio and video, app should call `player.getSettings().setHideVideoViews(false)` in order to make the video surface visible again.
 
-Default value for this api is false and `player.getSettings().setHideVideoViews(false)` should be called again if changing media between audio only and video.
+Default value for this API is false and `player.getSettings().setHideVideoViews(false)` should be called again if changing media between audio only and video.
 
 ##### Example:
 
@@ -602,7 +602,7 @@ player.getSettings().setVRSettings(new VRSettings().setInteractionMode(VRInterac
             }
 {% endhighlight %}
 
-For more VR settings and it defaults explore `VRSettings` apis and 
+For more VR settings and it defaults explore `VRSettings` APIs
 
 ### Set Custom Load Control Strategy
 
