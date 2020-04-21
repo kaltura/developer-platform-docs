@@ -7,7 +7,8 @@ weight: 110
 
 Kaltura Player provides several APIs that are used for loading, configuring, and manipulating playlists.
 
-## Table of Contents
+## Table of contents
+
 
 - [Load Playlist](#load-playlist)
   - [By Playlist ID](#by-playlist-id-ovp-only)
@@ -19,7 +20,7 @@ Kaltura Player provides several APIs that are used for loading, configuring, and
 - [Change Playlist](#change-playlist)
 - [Playlist Events](#playlist-events)
 
-### Load A Playlist
+### Load A Playlist <a name="load-playlist"></a>
 Before loading a playlist, you'll need to set up a Kaltura Player instance:
 
 ```java
@@ -31,7 +32,7 @@ Before loading a playlist, you'll need to set up a Kaltura Player instance:
 To learn how to set up a Kaltura Player, please go over this document: [getting-started-android](https://developer.kaltura.com/player/android/getting-started-android).
 <br>Once you have a Kaltura Player instance, you can load a playlist using one of the following methods:
 
-#### By Playlist ID (OVP Only)
+#### By Playlist ID (OVP Only) <a name="by-playlist-id-ovp-only"></a>
 
 To load a playlist by ID, use OVPPlaylistIdOptions when calling `loadPlaylistById` method.
 
@@ -50,7 +51,7 @@ KalturaPlayer.OnPlaylistControllerListener() { playlistController, error ->
 })
 ```
 
-#### By Entry List
+#### By Entry List <a name="by-entry-list"></a>
 
 ##### OVP
 
@@ -132,7 +133,7 @@ private fun buildOttMediaOptions(assetId : String, format : String): OTTMediaOpt
 }
 ```
 
-#### By Configuration
+### By Configuration <a name="by-configuration"></a>
 
 #### Basic
 
@@ -170,7 +171,7 @@ private fun createBasicMediaOptions(id: String, url : String, countdownOptions: 
 }
 ```
 
-## Configure the Playlist
+## Configure the Playlist <a name="configure-the-playlist"></a>
 
 ### Playlist Options
 -----------------------
@@ -301,7 +302,7 @@ Note:
 Once the `playlistCountDownEnd` event is fired, the next media entry in the playlist a will be played.
 
 
-## PlaylistController Interface
+## PlaylistController Interface <a name="playlistcontroller-interface"></a>
 
 Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the application perspective.
 
@@ -470,7 +471,7 @@ public interface PlaylistController {
 }
 ```
 
-##Playlist Navigation
+##Playlist Navigation <a name="playlist-navigation"></a>
 
 Using the `PlaylistController` API, you can get the playlist data and then switch between the items.
 
@@ -485,7 +486,7 @@ player?.playlistController?.playPrev()
 player?.playlistController?.playItem(2)
 ```
 
-## Change Playlist
+## Change Playlist <a name="change-playlist"></a>
 
 To clean the playlist data, you'll need to call the playlist controller `release()` API
 <br>Here is an example for how it is possible to change the playlist using the `release` method when previous playlist ended.
@@ -504,7 +505,7 @@ player?.addListener(this, PlaylistEvent.playListEnded) { event ->
   }
 }
 ```
-## Playlist Events
+## Playlist Events <a name="playlist-events"></a>
 
 Application can add listeners to the following events
 using these events application can react to UI changes for example.
