@@ -292,6 +292,7 @@ Once the `playlistCountDownEnd` event is fired, the next media entry in the play
 
 
 ## PlaylistController Interface
+
 Once playlist is loaded the callback will return a controller object the can be used to control the playlist life cycle from the application perspective.
 
 Another option to get a reference to the controller, is to 
