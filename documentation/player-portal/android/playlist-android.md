@@ -7,17 +7,7 @@ weight: 110
 
 Kaltura Player provides several APIs that are used for loading, configuring, and manipulating playlists.
 
-## Table of Contents
 
-- [Load Playlist](#load-playlist)
-  - [By Playlist ID](#by-playlist-id-ovp-only)
-  - [By Entry List](#by-entry-list)
-  - [By Configuration](#by-configuration)
-- [Configure the Playlist](#configure-the-playlist)
-- [PlaylistController Interface](#playlistcontroller-interface)
-- [Playlist Navigation](#playlist-navigation)
-- [Change Playlist](#change-playlist)
-- [Playlist Events](#playlist-events)
 
 ### Load A Playlist
 Before loading a playlist, you'll need to set up a Kaltura Player instance:
@@ -132,7 +122,7 @@ private fun buildOttMediaOptions(assetId : String, format : String): OTTMediaOpt
 }
 ```
 
-#### By Configuration
+### By Configuration
 
 #### Basic
 

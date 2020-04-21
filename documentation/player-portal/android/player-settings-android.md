@@ -722,4 +722,50 @@ player.getSettings().setTunneledAudioPlayback(true);
 {% endhighlight %}
 
 
+### Handle Audio Becoming Noisy
+
+Sets whether the player should pause automatically
+when audio is rerouted from a headset to device speakers.
+default=false
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().handleAudioBecomingNoisyEnabled(true);
+{% endhighlight %}
+
+### Set Max Video Size
+
+Sets the maximum allowed video width and height.
+to set the maximum allowed video bitrate to sd resolution call: 
+`setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(1279).setMaxVideoHeight(719)`
+to reset call:
+`setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(Integer.MAX_VALUE).setMaxVideoHeight(Integer.MAX_VALUE)`
+
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(640).setMaxVideoHeight(360));
+{% endhighlight %}
+
+### Set Max Audio Bitrate
+
+Sets the maximum allowed Audio bitrate 
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxAudioBitrate(65000); // input in bps
+{% endhighlight %}
+
+### Set Max Audio Channel Count
+
+Sets maximum allowed audio channel count. default max = Integer.MAX_VALUE
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxAudioChannelCount(6); // channels allowed
+{% endhighlight %}
 
