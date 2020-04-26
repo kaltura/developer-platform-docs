@@ -38,7 +38,7 @@ player.addObserver(self, events: [PlayerEvent.playing, PlayerEvent.durationChang
 
 ### Listening to events from plugin code
 
-Plugins can't call `addObserver` on the player, instead, an identical function exists on the `MessageBus` object that is passed to the plugin.
+Plugins can't call `addObserver` on the player; instead, an identical function exists on the `MessageBus` object that is passed to the plugin.
 
 ## Core Player Events
 
