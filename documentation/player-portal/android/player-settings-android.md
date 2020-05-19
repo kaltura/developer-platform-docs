@@ -516,7 +516,7 @@ player.updateSubtitleStyle(subtitleStyleSettings);
 ##### Note: Horizontal / Vertical position percentage limit is between 10% to 100%.
 
 ##### Vertical   - 10% Top to 100% Bottom
-##### Horizontal - 10% Center to 100% screen edge usually (ALIGN_NORMAL - LEFT, ALIGN_OPPOSITE - RIGHT)
+##### Horizontal - 10% Center to 100% Screen Edge - usually (ALIGN_NORMAL - LEFT, ALIGN_OPPOSITE - RIGHT)
      
 #### Example
 
