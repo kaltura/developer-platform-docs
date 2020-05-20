@@ -484,7 +484,7 @@ player.updateSubtitleStyle(subtitleStyleSettings);
 
 {% endhighlight %}
 
-### Subtitle View Positioning Configuration
+### Subtitle View Postioning Configuration
 > Since Playkit version 4.8.0
 
 * {% highlight java %}PKSubtitlePosition pkSubtitlePosition = PKSubtitlePosition(boolean overrideInlineCueConfig){% endhighlight %}
@@ -525,7 +525,7 @@ To set the subtitle position, it is part of `SubtitleStyleSettings`
 {% highlight java %}
 SubtitleStyleSettings subtitleStyleSettings = new SubtitleStyleSettings("MyCustomSubtitleStyle");
 PKSubtitlePosition pkSubtitlePosition = new PKSubtitlePosition(true);
-pkSubtitlePosition.setPosition(70, 30, Layout.Alignment.ALIGN_NORMALR);
+pkSubtitlePosition.setPosition(70, 30, Layout.Alignment.ALIGN_NORMAL);
  subtitleStyleSettings.setSubtitlePosition(pkSubtitlePosition);
  player.getSettings().setSubtitleStyle(subtitleStyleSettings);
 {% endhighlight %} 
