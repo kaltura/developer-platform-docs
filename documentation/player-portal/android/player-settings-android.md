@@ -513,10 +513,10 @@ player.updateSubtitleStyle(subtitleStyleSettings);
 
 	If `overrideInlineCueConfig` is set to true then player will use the given Cue Settings to override the values coming in Cue Settings.
 
-##### Note: Horizontal / Vertical position percentage limit is between 10% to 100%.
+##### Note: Horizontal / Vertical position percentage limit is between 10% up to 100%.
 
-##### Vertical   - 10% Top to 100% Bottom
-##### Horizontal - 10% Center to 100% Screen Edge - usually (ALIGN_NORMAL - LEFT, ALIGN_OPPOSITE - RIGHT)
+##### Vertical positioning  - 100% Top to 10% Bottom
+##### Horizontal positioning- 10% Center to 100% Screen Edge - (ALIGN_NORMAL - LEFT, ALIGN_OPPOSITE - RIGHT) in RTL languages it will be the oposite
      
 #### Example
 
