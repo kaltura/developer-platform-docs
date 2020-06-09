@@ -35,12 +35,12 @@ textStyle: TextStyle
 {% endhighlight %}
 
 The following flow-chart diagram shows a high-level workflow of this scenario:
-![setup-flow-local-storage](../images/setup-flow-local-storage.jpg)
+![setup-flow-local-storage](./setup-flow-local-storage.jpg)
 
 After the player starts to to play, the `StorageManager` will track any user interaction with the UI and update the storage value accordingly, as you can see in the following sequence diagram:
 
 
-![save-value-flow-local-storage](../images/save-value-flow-local-storage.png)
+![save-value-flow-local-storage](./save-value-flow-local-storage.png)
 
 ## View and Edit Values
 
@@ -55,7 +55,7 @@ Let's look at an example based on a Chrome browser (this can be done on any supp
 You'll be able to see your saved player values in the local storage:
 
 
-![chrome-local-storage](../images/chrome-local-storage.png)
+![chrome-local-storage](./chrome-local-storage.png)
 
 - To clear the values, click the **Clear** button
 - To edit the values, click any value in the right column and edit it.
