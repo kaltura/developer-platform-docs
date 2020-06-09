@@ -127,7 +127,7 @@ When the player builds its runtime configuration, it will need to know how to bu
 3.  **Server**
 4.  **Default Player Configuration**
 
-![configuration-strength](./configuration-strength.jpg)
+![configuration-strength](/assets/images/configuration-strength.jpg)
 
 #### Example
 

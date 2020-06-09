@@ -117,7 +117,7 @@ For full playlist options see [`KPPlaylistOptions`](https://developer.kaltura.co
 ### Countdown
 
 When the current item is about to end and the playlist is set to continue automatically, the user will see a countdown displayed. The user can then skip to the next item immediately or cancel the switching.
-![playlist-countdown](./playlist-countdown.png)
+![playlist-countdown](/assets/images/playlist-countdown.png)
 
 By default, the countdown is displayed for 10 seconds until the end.
 
