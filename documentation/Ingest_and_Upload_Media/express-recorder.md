@@ -1,4 +1,8 @@
-# Kaltura Recorder Express Component 
+---
+layout: page
+title: Kaltura Recorder Express Component
+weight: 110
+---
 
 The Express Recorder is a Kaltura component that can be easily embedded into any webpage. It allows for on-the-fly video recording via webcam, and an automatic upload to your Kaltura account.  
 
