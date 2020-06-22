@@ -14,7 +14,7 @@ The Kaltura Player eliminates all of the headache around implementing video, giv
 
 The docs will help you quickly get started with embedding the player into your web, iOS, or Android application! 
 
-[Web Player Button](hhttp://developer.kaltura.com/player/web)
+[Web Player Button](http://developer.kaltura.com/player/web)
 
 [iOS Player Button](http://developer.kaltura.com/player/ios)
 
