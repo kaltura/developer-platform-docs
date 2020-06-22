@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Building Plugins for Web Player
+title: Building Plugins  for Web Player
 weight: 110
 ---
 

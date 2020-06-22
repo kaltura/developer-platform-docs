@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Casting for iOS
-weight: 110
 ---
 
 The following casting schemes are supported on iOS devices:
@@ -169,7 +168,7 @@ private func customData(mediaMetaData: MediaMetadataData?) ->  GCKMediaMetadata 
 
 ```
 	
-##  Adding Support for Advertisements on Casted Media    
+##  Adding Support for Advertisements on Cast Media    
 
 To add support for advertisements:
 

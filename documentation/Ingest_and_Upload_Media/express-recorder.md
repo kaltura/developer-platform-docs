@@ -6,11 +6,11 @@ weight: 110
 
 The Express Recorder is a Kaltura component that can be easily embedded into any webpage. It allows for on-the-fly video recording via webcam, and an automatic upload to your Kaltura account.  
 
-![](../images/express-recorder-1.png)
+![](./express-recorder-1.png)
 
 The Recorder Express features an iconic big red button. Once clicked, there is a three second countdown before recording begins. When the recording is stopped, the user is faced with three options: Download a Copy, Record Again, or Use This. Much like the Kaltura Player, the express recorder can be customized to fit your needs. 
 
-![](../images/express-recorder-2.png)
+![](./express-recorder-2.png)
 
 This guide will show you how to embed the component in your webpage. The complete sample code can be found [here](https://github.com/tzubeli/vpaas-sample-code/blob/master/express-recorder.php)
 
@@ -34,7 +34,7 @@ You'll need three bits of code to embed the express recorder:
 ```html 
 <div id="recorder" style="width: 560px; height: 316px;"></div>
 ```
-3. The script that contains the "props" or values that are being passed to the recorder. Make sure that the ID matches the ID of the div in #2 (ie. `recorder`). 
+3. The script that contains the "props" or values that are being passed to the recorder. Make sure that the ID matches the ID of the div in #2 (i.e. `recorder`). 
 
 <script type="text/javascript">
     var component = Kaltura.ExpressRecorder.create('recorder', {
@@ -54,9 +54,9 @@ This is the complete list of values that can be used in the recorder properties:
 | name | description | type | required | default | 
 | ------ | -------------------- | ------- | ------ | ------- |
 | ks | kaltura session key | string | yes | --- | 
-| serviceUrl | kaltura service url | string | yes | --- | 
+| serviceUrl | kaltura service URL | string | yes | --- | 
 | app | client tag | string | yes | --- | 
-| playerUrl | kaltura player service url | string | yes |--- |
+| playerUrl | kaltura player service URL | string | yes |--- |
 | partnerId | kaltura partner id | number | yes | --- | 
 | uiConfId | kaltura player id (player v3 required) | number | yes | --- | 
 | conversionProfileId | the conversion profile id to be used on the created | entry	number | no	| 1 | 
