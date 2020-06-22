@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Google Cast V3 Setup for Android Devices
+title: Casting for Android
 weight: 110
 ---
 
