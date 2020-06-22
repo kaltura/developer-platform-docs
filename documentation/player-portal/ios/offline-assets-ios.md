@@ -25,7 +25,7 @@ In most cases, **DTG** should be used. The only case in which `AVAssetDownloadTa
 
 Kaltura's DTG library can download HLS assets, with and without FairPlay protection. Please look at [DTG's guide](https://developer.kaltura.com/player/ios/download-to-go-ios) for detailed usage instructions - the following focuses on PlayKit+DTG integration.
 
-![](../images/offline-dtg.svg)
+![](./offline-dtg.svg)
 
 <div hidden>
  {% plantuml %}
@@ -66,7 +66,7 @@ AVAssetDownloadTask is a facility added to iOS in version 10.0. It can download 
 
 > NOTE: As mentioned above, the only case in which `AVAssetDownloadTask` must be used, is when downloading **FairPlay** on iOS 10.0-10.2. We recommend avoiding FairPlay downloads on those iOS versions.
 
-![](../images/offline-AVAssetDownloadTask.svg)
+![](./offline-AVAssetDownloadTask.svg)
 
 <div hidden>
 {% plantuml %}

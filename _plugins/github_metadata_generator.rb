@@ -35,6 +35,7 @@ module Jekyll
         #return if relative_path && !tracked_files.include?(relative_path)
         authors = self.authors(relative_path)
         lines = self.lines(relative_path)
+	#puts lines
 	current_branch =  %x{ git rev-parse --abbrev-ref HEAD }
 	github_baseurl = %x{ git config --get remote.origin.url }
 	if relative_path
@@ -74,14 +75,14 @@ module Jekyll
         cmd << " -- #{file}" if file
         result = %x{ #{cmd} }
         results = result.scan(/(.*)\n\n((?:.*\t.*\t.*\n)*)/)
-        results.map do |line|
-          files = line[1].scan(/(.*)\t(.*)\t(.*)\n/)
-          line[1] = files.inject(0){|s,a| s+=a[0].to_i}
-          line[2] = files.inject(0){|s,a| s+=a[1].to_i}
-        end
-        results.map do |line|
-          { 'sha' => line[0], 'additions' => line[1], 'subtractions' => line[2] }
-        end
+	results.map do |line|
+	  files = line[1].scan(/(.*)\t(.*)\t(.*)\n/)
+	  line[1] = files.inject(0){|s,a| s+=a[0].to_i}
+	  line[2] = files.inject(0){|s,a| s+=a[1].to_i}
+	end
+	results.map do |line|
+		  { 'sha' => line[0], 'additions' => line[1], 'subtractions' => line[2] }
+	end
       end
 
       def commit(sha)

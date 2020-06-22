@@ -6,10 +6,11 @@ weight: 110
 
 Once you've created a player instance, you can make changes to its settings: 
 
-* In Kaltura Player the same settings api below are integrated inside `PlayerInitOptions` object
+* In Kaltura Player the same settings API below are integrated inside `PlayerInitOptions` object
 
-#### Example
-```
+##### Example:
+
+{% highlight java %}
  playerInitOptions = PlayerInitOptions(mediaPartnerId)
         playerInitOptions?.setAutoPlay(true)
         playerInitOptions?.setPreload(true)
@@ -19,7 +20,7 @@ Once you've created a player instance, you can make changes to its settings:
         playerInitOptions?.setReferrer("app://MyApplicationDomain")
  
  player = KalturaOvpPlayer.create(this@MainActivity, playerInitOptions)
-```
+{% endhighlight %}
 
 ## setContentRequestAdapter
 
@@ -416,6 +417,7 @@ mList.add(pkExternalSubtitle);
 {% highlight java %}
 mediaEntry.setExternalSubtitleList(mList);
 {% endhighlight %}
+
 Use `setDefault()` while creating `PKExternalSubtitle` to make it default subtitle.
 `TEXT_VTT` and `APPLICATION_SUBRIP` mime-types are supported for subtitles.
 
@@ -449,7 +451,7 @@ Using builder pattern for setters in `subtitleStyleSettings`, Following Styles c
 
 - `setTypeface` - Change subtitle typeface using `enum SubtitleStyleTypeface` with the values {% highlight java %}DEFAULT, DEFAULT_BOLD, MONOSPACE, SERIF, SANS_SERIF {% endhighlight %}
 
-#### Example
+##### Example:
 
 To set the Subtitles,
 
@@ -481,3 +483,289 @@ SubtitleStyleSettings subtitleStyleSettings = new SubtitleStyleSettings("MyNewCu
 player.updateSubtitleStyle(subtitleStyleSettings);
 
 {% endhighlight %}
+
+
+### Set ABR Settings
+
+To enable track selection to select subset of tracks that participate in the ABR values are expected in bits
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setABRSettings(new ABRSettings().
+setMinVideoBitrate(900000).
+setMaxVideoBitrate(3000000).
+setInitialBitrateEstimate(100000));
+{% endhighlight %}
+
+In order to reset these values in Change Media if needed:
+
+{% highlight java %}
+player.getSettings().setABRSettings(new ABRSettings());
+{% endhighlight %}
+
+### Set Surface Aspect Ratio Resize Mode
+ 
+ To configure Full screen Fit/Fill/Zoom support for devices with special resolution like 18:9 in order to prevent letter-boxing of video playback
+
+##### New enum added to support this functionality
+
+{% highlight java %}
+enum PKAspectRatioResizeMode {
+    fit, // common aspect ratio 
+    fixedWidth,
+    fixedHeight,
+    fill, // 18:9 aspect ratio
+    zoom
+}
+{% endhighlight %}
+
+##### Example for updating the ratio resize mode for playback start time: 
+
+{% highlight java %}
+player.getSettings().setSurfaceAspectRatioResizeMode(PKAspectRatioResizeMode.fill);
+{% endhighlight %}
+
+##### Example for updating the ratio settings during the playback: 
+
+{% highlight java %}
+player.updateSurfaceAspectRatioResizeMode(PKAspectRatioResizeMode.zoom)
+{% endhighlight %}
+
+### Force Single Player Engine
+ 
+Use forceSinglePlayerEngine for Ads playback to achieve preperContentAfterAd behaviour 
+
+To can tell the player not to prepare the content player when Ad starts(if exists); 
+instead content player will be prepared when content_resume_requested is called.
+so low end devices with lack of enough decoders will be able to play ads + content separately.
+Default value for this configuration is set to 'false'.
+
+##### Example:
+        
+{% highlight java %}
+player.getSettings().useSinglePlayerInstance(true);
+{% endhighlight %}
+
+### Set Hide Video Views
+
+Used to enable video thumbnail to be displayed for Audio Entries
+This config enable apps to hide the video surface to for audio only medias it will be able to put behind the player thumbnail and still captions will be available.
+
+Note:  `player.getSettings().setHideVideoViews(true)` should be called before calling player prepare.
+
+In case there is change media between audio and video, app should call `player.getSettings().setHideVideoViews(false)` in order to make the video surface visible again.
+
+Default value for this API is false and `player.getSettings().setHideVideoViews(false)` should be called again if changing media between audio only and video.
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setHideVideoViews(true);
+player.prepare(config);
+{% endhighlight %}
+
+AudioOnlyBasicSetupSample Sample can be found in the samples repository
+
+
+Note: It is application's responsibility for hiding/showing the artwork by its own logic.
+
+### Set VR Settings
+
+For VR and 360 medias, `PKMediaEntry` has now new member `isVRMediaType` that signs media as VR media
+
+In case media provider is used, `PKMediaEntry` will be populated automatically on the MediaEntry which is returned from the callback.
+
+if `VRsettings` is not configured, default values will be used (only touch will be available) 
+take in account that not all devices support motion so make sure you verify that motion is supported using hte API `VRUtil.isModeSupported`
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setVRSettings(new VRSettings().setInteractionMode(VRInteractionMode.MotionWithTouch).setFlingEnabled(true));
+{% endhighlight %}
+
+##### Example
+
+{% highlight java %}
+    if (mediaEntry.isVRMediaType()) {
+                VRSettings vrSettings = new VRSettings();
+                vrSettings.setFlingEnabled(true);
+                vrSettings.setVrModeEnabled(false);
+
+                vrSettings.setZoomWithPinchEnabled(true);
+                VRInteractionMode interactionMode = vrSettings.getInteractionMode();
+                if (VRUtil.isModeSupported(MainActivity.this, VRInteractionMode.MotionWithTouch)) {
+                    vrSettings.setInteractionMode(VRInteractionMode.MotionWithTouch); // DEFAULT is Touch only!
+                }
+                player.getSettings().setVRSettings(vrSettings);
+            }
+{% endhighlight %}
+
+For more VR settings and it defaults explore `VRSettings` APIs
+
+### Set Custom Load Control Strategy
+
+To change the LoadControl and the Bandwidth Meter that is being used by ExoPlayer 
+    `ExoPlayerWrapper.LoadControlStrategy` interface has to be implemented and to be passed to the `setCustomLoadControlStrategy` API 
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setCustomLoadControlStrategy(new PlaykitLoadControlStrategy(this));
+{% endhighlight %}
+
+##### The class code
+
+
+```
+package com.kaltura.playkitdemo;
+
+import android.content.Context;
+import android.os.Handler;
+
+import com.kaltura.android.exoplayer2.DefaultLoadControl;
+import com.kaltura.android.exoplayer2.LoadControl;
+import com.kaltura.android.exoplayer2.upstream.BandwidthMeter;
+import com.kaltura.android.exoplayer2.upstream.DataSource;
+import com.kaltura.android.exoplayer2.upstream.DataSpec;
+import com.kaltura.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.kaltura.android.exoplayer2.upstream.TransferListener;
+import com.kaltura.playkit.player.ExoPlayerWrapper;
+
+import androidx.annotation.Nullable;
+
+public class PlaykitLoadControlStrategy implements ExoPlayerWrapper.LoadControlStrategy {
+
+    private Context context;
+
+    public PlaykitLoadControlStrategy(Context context) {
+        this.context = context;
+    }
+
+    @Override
+    public LoadControl getCustomLoadControl() {
+        return new DefaultLoadControl();
+    }
+
+    @Override
+    public BandwidthMeter getCustomBandwidthMeter() {
+        //return new DefaultBandwidthMeter.Builder(context).build();
+
+        TransferListener tl = new TransferListener() {
+            @Override
+            public void onTransferInitializing(DataSource source, DataSpec dataSpec, boolean isNetwork) {
+
+            }
+
+            @Override
+            public void onTransferStart(DataSource source, DataSpec dataSpec, boolean isNetwork) {
+
+            }
+
+            @Override
+            public void onBytesTransferred(DataSource source, DataSpec dataSpec, boolean isNetwork, int bytesTransferred) {
+
+            }
+
+            @Override
+            public void onTransferEnd(DataSource source, DataSpec dataSpec, boolean isNetwork) {
+
+            }
+        };
+
+        return new BandwidthMeter() {
+            private EventListener listener;
+
+            @Override
+            public long getBitrateEstimate() {
+                return 1500000;
+            }
+
+            @Nullable
+            @Override
+            public TransferListener getTransferListener() {
+                return tl;
+            }
+
+            @Override
+            public void addEventListener(Handler eventHandler, EventListener eventListener) {
+                this.listener = eventListener;
+
+                eventHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        eventListener.onBandwidthSample(1000, 1000000/8, 1500000);
+                        eventHandler.postDelayed(this, 1000);
+
+                    }
+                });
+            }
+
+            @Override
+            public void removeEventListener(EventListener eventListener) {
+                this.listener = null;
+            }
+        };
+    }
+}
+```
+
+### Set Tunneled Audio Playback
+
+Used to enable/disable audio tunneling.
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setTunneledAudioPlayback(true);
+{% endhighlight %}
+
+
+### Handle Audio Becoming Noisy
+
+Sets whether the player should pause automatically
+when audio is rerouted from a headset to device speakers.
+default=false
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().handleAudioBecomingNoisyEnabled(true);
+{% endhighlight %}
+
+### Set Max Video Size
+
+Sets the maximum allowed video width and height.
+to set the maximum allowed video bitrate to sd resolution call: 
+`setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(1279).setMaxVideoHeight(719)`
+to reset call:
+`setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(Integer.MAX_VALUE).setMaxVideoHeight(Integer.MAX_VALUE)`
+
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxVideoSize(new PKMaxVideoSize().setMaxVideoWidth(640).setMaxVideoHeight(360));
+{% endhighlight %}
+
+### Set Max Audio Bitrate
+
+Sets the maximum allowed Audio bitrate 
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxAudioBitrate(65000); // input in bps
+{% endhighlight %}
+
+### Set Max Audio Channel Count
+
+Sets maximum allowed audio channel count. default max = Integer.MAX_VALUE
+
+##### Example:
+
+{% highlight java %}
+player.getSettings().setMaxAudioChannelCount(6); // channels allowed
+{% endhighlight %}
+
