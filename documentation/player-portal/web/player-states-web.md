@@ -34,7 +34,7 @@ When the player moves from one state to another, this is defined as a **transiti
 ## Player State Machine
 
 This figure illustrates the functionality of the player state machine:
-![player-state-machine](./player-state-machine.jpg)
+![player-state-machine](/assets/images/player-state-machine.jpg)
 
 The code snippets below show examples of how a state change appears in the player code:
 

@@ -6,11 +6,11 @@ weight: 110
 
 The Express Recorder is a Kaltura component that can be easily embedded into any webpage. It allows for on-the-fly video recording via webcam, and an automatic upload to your Kaltura account.  
 
-![](./express-recorder-1.png)
+![express](/assets/images/express-recorder-1.png)
 
 The Recorder Express features an iconic big red button. Once clicked, there is a three second countdown before recording begins. When the recording is stopped, the user is faced with three options: Download a Copy, Record Again, or Use This. Much like the Kaltura Player, the express recorder can be customized to fit your needs. 
 
-![](./express-recorder-2.png)
+![express2](/assets/images/express-recorder-2.png)
 
 This guide will show you how to embed the component in your webpage. The complete sample code can be found [here](https://github.com/tzubeli/vpaas-sample-code/blob/master/express-recorder.php)
 
