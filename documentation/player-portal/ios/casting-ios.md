@@ -8,8 +8,8 @@ The following casting schemes are supported on iOS devices:
 
 |                                         |      About      | Sample |
 |:---------------------------------------:|:---------------:|:------:|
-| ![help](./airPlay.png)    | [AirPlay](https://developer.kaltura.com/player/ios/casting-ios#airplay)     | [x]()  |
-| ![help](./chromecast.png) | [Google Cast](https://developer.kaltura.com/player/ios/casting-ios#google-cast) | [Cast basic sample](https://github.com/kaltura/playkit-ios-samples/tree/master/ChromecastSample)  |            |
+| ![help](/assets/images/airPlay.png)    | [AirPlay](https://developer.kaltura.com/player/ios/casting-ios#airplay)     | [x]()  |
+| ![help](/assets/images/chromecast.png) | [Google Cast](https://developer.kaltura.com/player/ios/casting-ios#google-cast) | [Cast basic sample](https://github.com/kaltura/playkit-ios-samples/tree/master/ChromecastSample)  |            |
 
 
 ## Airplay  
@@ -21,7 +21,7 @@ This article describes the steps required for adding support for the AirPlay fun
 1. Enable the Audio, Airplay, and Picture in the Picture background mode. 
 2. In Xcode 8, select a target, and then under Capabilities > Background Modes, enable **Audio, Airplay and Picture in Picture**. 
 
-	![AirPlay Functionality](./EnableAirPlay.png) 
+	![AirPlay Functionality](/assets/images/EnableAirPlay.png) 
 
 3. Import MediaPlayer, create an `MPVolumeView`, and then add it to your view as follows: 
 
