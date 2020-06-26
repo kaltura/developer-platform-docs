@@ -192,7 +192,7 @@ Possible values: `'top-left', 'top-right', 'bottom-left', 'bottom-right'`
 ##### Description: The width of each preview thumbnail slice.
 
 
-### config.components.watermark.thumbsSlices
+### config.components.seekbar.thumbsSlices
 
 ##### Type: `number`
 
