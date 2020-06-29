@@ -17,8 +17,8 @@ Use the following naming conventions:
 | Class      | `ClassNamesLikeThis`                                                                            |
 | Enum       | `EnumNamesLikeThis`                                                                             |
 | Constant   | `CONSTANT_VALUES_LIKE_THIS`                                                                     |
-| Private    | Private properties and methods should be named **with** a trailing underscore: `_myPrivateVar`  |
-| Public     | Public properties and methods should be named **without** a trailing underscore: `myPublicVar`. |
+| Private    | Private properties and methods should be named **with** a leading underscore: `_myPrivateVar`  |
+| Public     | Public properties and methods should be named **without** a leading underscore: `myPublicVar`. |
 
 ## Strings
 
