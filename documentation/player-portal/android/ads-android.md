@@ -5,16 +5,26 @@ weight: 110
 ---
 This article describes the steps required for adding support for the IMA Plugin functionality on Android devices. IMA (Interactive Media Ads) was developed by Google to enable you to display ads in your application's video, audio, and game content.
 
+### Add imaplugin depandancy in `build.gradle` 
+
+```
+implementation 'com.kaltura.playkit:imaplugin:4.x.x'
+```
 ### Configure the Plugin Configuration Object  
 
 To configure the plugin, add the following configuration to your `pluginConfig` file as follows:
 
 ```java
-private void configureIMAPlugin(PlayerConfig pluginConfig) {
-    String adTagUrl = VIOAdUtil.getCastAdTag(mVideoDetailsModel);
+private IMAConfig getIMAPluginConfig() {
+    String adTagUrl = adUtil.getAdTag(mVideoDetailsModel);
     List<String> videoMimeTypes = new ArrayList<>();
-    IMAConfig adsConfig = new IMAConfig("en", false, true, -1, videoMimeTypes, adTagUrl, true, true);
+    videoMimeTypes.add(PKMediaFormat.mp4.mimeType);
+    videoMimeTypes.add(PKMediaFormat.hls.mimeType);
+    IMAConfig adsConfig = new IMAConfig().setAdTagUrl(adTagUrl).enableDebugMode(false).setVideoMimeTypes(videoMimeTypes);
 ```
+
+for more configuration option check IMAConfig API.
+
 ### IMConfig Constructor  
 
 ```java
@@ -26,24 +36,36 @@ IMAConfig(String language, boolean enableBackgroundPlayback, boolean autoPlayAdB
 For the IMA Plugin to start loading, you'll need to set the plugin configuration you created as follows:
 
 ```java
-PlayerConfig config = new PlayerConfig();
-PlayerConfig.Plugins plugins = config.plugins;
-pluginConfig.plugins.setPluginConfig(IMAPlugin.factory.getName(), adsConfig.toJSONObject());
+
+PlayKitManager.registerPlugins(getActivity(), IMAPlugin.factory);
+
+PKPluginConfigs pluginConfig = new PKPluginConfigs();
+
+pluginConfig.setPluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
+
+
+ player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
+
 ```
+
+### Chanage media with new adTag requiores updating. the plugin on player level before calling `player.prepare`
+
+```java
+player.updatePluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
+
+```
+
+
 
 ### Register to the Ad Started Event  
 
 The Ad Started event includes the `AdInfo` payload. You can fetch this data in the following way:
 
 ```java 
-player.addEventListener(new PKEvent.Listener() {
-            @Override
-            public void onEvent(PKEvent event) {
-                log.d("AD_STARTED");
-                mAdStartedEventInfo = (AdEvent.AdStartedEvent) event;
-                appProgressBar.setVisibility(View.INVISIBLE);
-            }
-        }, AdEvent.Type.STARTED);
+player.addListener(this, AdEvent.started, event -> {
+      log("AD STARTED adInfo AdPositionType =" + event.adInfo.getAdPositionType());
+});
+        
 ```
 
 ### AdInfo API  
@@ -67,35 +89,49 @@ player.addEventListener(new PKEvent.Listener() {
 
 
 ```java
-        public void onEvent(PKEvent event) {
-                log.d("AD_CONTENT_PAUSE_REQUESTED");
-                PKAdInfo adInfo = player.getAdInfo();
-                appProgressBar.setVisibility(View.VISIBLE);
+        player.addListener(this, AdEvent.cuepointsChanged, event -> {
+            adCuePoints = event.cuePoints;
+            if (adCuePoints != null) {
+                log.d("Has Postroll = " + adCuePoints.hasPostRoll());
             }
-        }, AdEvent.Type.CONTENT_PAUSE_REQUESTED);
+        });
         
-        player.addEventListener(new PKEvent.Listener() {
-            @Override
-            public void onEvent(PKEvent event) {
-                log.d("Ad Event AD_RESUMED");
-                nowPlaying = true;
-                appProgressBar.setVisibility(View.INVISIBLE);
-            }
-        }, AdEvent.Type.RESUMED);
-        player.addEventListener(new PKEvent.Listener() {
-            @Override
-            public void onEvent(PKEvent event) {
-                log.d("Ad Event AD_ALL_ADS_COMPLETED");
-                appProgressBar.setVisibility(View.INVISIBLE);
-            }
-        }, AdEvent.Type.ALL_ADS_COMPLETED);
-        player.addEventListener(new PKEvent.Listener() {
-            @Override
-            public void onEvent(PKEvent event) {
-                log.d("Ad Error Event VAST_LOAD_TIMEOUT");
-            }
-        }, AdError.Type.VAST_LOAD_TIMEOUT);
+        player.addListener(this, AdEvent.adRequested, event -> {
+            AdEvent.AdRequestedEvent adRequestEvent = event;
+            log("AD_REQUESTED adtag = " + adRequestEvent.adTagUrl);
+        });
+        
+        player.addListener(this, AdEvent.contentPauseRequested, event -> {
+            log("ADS_PLAYBACK_START");
+        });
+
+        player.addListener(this, AdEvent.contentResumeRequested, event -> {
+            log("ADS_PLAYBACK_ENDE");
+        });
+        
+         player.addListener(this, AdEvent.resumed, event -> {
+            log("ADS_PLAYBACK_RESUMED");
+        });
+        
+        player.addListener(this, AdEvent.allAdsCompleted, event -> {
+            log("ALL_ADS_COMPLETED");
+        });
+        
+        player.addListener(this, AdEvent.error, event -> {
+            AdEvent.Error adError = event;
+            Log.d(TAG, "AD_ERROR " + adError.type + " "  + adError.error.message);
+            appProgressBar.setVisibility(View.INVISIBLE);
+            log("AD_ERROR");
+        });
 ```
+
+#### Please unregister all the events on player destroy stage
+
+```java
+player.removeListeners(this);
+player.destroy()
+```
+
 ### Ad Events  
 
 The IMA Plugin supports the following ad events:
