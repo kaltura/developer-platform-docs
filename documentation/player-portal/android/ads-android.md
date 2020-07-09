@@ -23,7 +23,7 @@ private IMAConfig getIMAPluginConfig() {
     IMAConfig adsConfig = new IMAConfig().setAdTagUrl(adTagUrl).enableDebugMode(false).setVideoMimeTypes(videoMimeTypes);
 ```
 
-for more configuration option check IMAConfig API.
+for more configuration options check IMAConfig API.
 
 ### IMConfig Constructor  
 
@@ -43,8 +43,7 @@ PKPluginConfigs pluginConfig = new PKPluginConfigs();
 
 pluginConfig.setPluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
 
-
- player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
+player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
 
 ```
 
@@ -54,8 +53,6 @@ pluginConfig.setPluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
 player.updatePluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
 
 ```
-
-
 
 ### Register to the Ad Started Event  
 
