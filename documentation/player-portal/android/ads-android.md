@@ -5,7 +5,7 @@ weight: 110
 ---
 This article describes the steps required for adding support for the IMA Plugin functionality on Android devices. IMA (Interactive Media Ads) was developed by Google to enable you to display ads in your application's video, audio, and game content.
 
-### Add imaplugin depandancy in `build.gradle` 
+### Add imaplugin dependency in `build.gradle` 
 
 ```
 implementation 'com.kaltura.playkit:imaplugin:4.x.x'
@@ -47,7 +47,7 @@ player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
 
 ```
 
-### Chanage media with new adTag requiores updating. the plugin on player level before calling `player.prepare`
+### Chanage media with new adTag requires updating the plugin. This is done using player api `player.updatePluginConfig` before calling `player.prepare`
 
 ```java
 player.updatePluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
