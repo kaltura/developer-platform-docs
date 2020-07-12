@@ -122,7 +122,7 @@ player.addListener(this, AdEvent.started, event -> {
         });
 ```
 
-#### Please unregister all the events on player destroy stage
+#### Please deregister all the events on player destroy phase
 
 ```java
 player.removeListeners(this);
