@@ -47,8 +47,14 @@ player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
 
 ```
 
-### Chanage media with new adTag requires updating the plugin. This is done using player api `player.updatePluginConfig` before calling `player.prepare`
+### Chanage media 
 
+Change media scenario involves also a new adTag url within new `IMAPluginConfig`.
+This requires the application to update the `IMAPlugin` with this new information.
+To apply an update, you have to call player API  `player.updatePluginConfig` before calling `player.prepare`
+
+##### Example
+ 
 ```java
 player.updatePluginConfig(IMAPlugin.factory.getName(), getIMAPluginConfig());
 
