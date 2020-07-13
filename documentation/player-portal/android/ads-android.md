@@ -47,7 +47,7 @@ player = PlayKitManager.loadPlayer(this.getActivity(), pluginConfig);
 
 ```
 
-### Chanage media 
+### Change media 
 
 Change media scenario involves also a new adTag url within new `IMAPluginConfig`.
 This requires the application to update the `IMAPlugin` with this new information.
