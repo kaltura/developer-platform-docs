@@ -29,7 +29,7 @@ pod "DownloadToGo"
 
 ### Simple Flow
 
-![](../images/simple-flow.svg)
+![](/assets/images/simple-flow.svg)
 
 <div hidden>
 {% plantuml %}
@@ -64,7 +64,7 @@ pod "DownloadToGo"
 
 ### Download Sequence
 
-![](../images/download-sequence.svg)
+![](/assets/images/download-sequence.svg)
 
 <div hidden>
 {% plantuml %}
@@ -128,7 +128,7 @@ pod "DownloadToGo"
 
 ### Simple Playing Sequence (Using PlayKit Player)
 
-![](../images/playing-sequence.svg)
+![](/assets/images/playing-sequence.svg)
 
 <div hidden>
 {% plantuml %}

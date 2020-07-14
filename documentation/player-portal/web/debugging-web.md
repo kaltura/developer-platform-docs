@@ -41,7 +41,7 @@ var player = KalturaPlayer.setup(config);
 
 After implementing one of the options above, open your browser developer tools and look at the player logs, for example:
 
-![player console logs](./console-logs-example.png)
+![player console logs](/assets/images/console-logs-example.png)
 
 ### Log Conventions
 

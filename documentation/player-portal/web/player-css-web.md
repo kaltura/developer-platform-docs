@@ -9,7 +9,7 @@ The Player user interface (UI) is created using HTML and CSS, which means that y
 This [demo](https://codepen.io/odedhutzler/pen/wNwRbm?editors=1100) demonstrates an example of customizing the UI using the CSS.
 
 These are some of the classes you can override: 
-![classes you can override](../images/css-class-override.png)
+![classes you can override](/assets/images/css-class-override.png)
 
 **Things To Note**
 - The namespace for the default skin must be `playkit`.
