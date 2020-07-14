@@ -497,13 +497,13 @@ player.updateSubtitleStyle(subtitleStyleSettings);
 
 * {% highlight java %}setPosition(int horizontalPositionPercentage, int verticalPositionPercentage, Layout.Alignment horizontalAlignment){% endhighlight %}
 
-	Set the subtitle position any where on the video frame. This method allows to move in X-Y coordinates.
+	Set the subtitle position anywhere on the video frame. This method allows moving in X-Y coordinates.
 
 * {% highlight java %}setToDefaultPosition(boolean overrideInlineCueConfig){% endhighlight %}
 
 	If `overrideInlineCueConfig` is `false` that means; app does not want to override the inline Cue configuration. App wants to go with Cue configuration.
 
-	Note! if `setOverrideInlineCueConfig(boolean)` is called with `false` value means after that in next call, app needs to `setOverrideInlineCueConfig(boolean)` with the required value.
+	Note! If `setOverrideInlineCueConfig(boolean)` is called with `false` value means after that in next call, app needs to `setOverrideInlineCueConfig(boolean)` with the required value.
 
 	Otherwise
 
