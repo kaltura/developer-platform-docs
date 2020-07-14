@@ -263,3 +263,63 @@ We made a few other changes to the activity XML, like turning the view into a `L
 
 [Download](https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples/GettingStarted)
 
+
+### Gradle Dependencies for Playkit SDK 
+
+##### A. Kaltura Player: 
+This dependency can be used on client app side. If client app use this then *there is no need to use Playkit, Kava, DTG and Providers dependency separately*. Because it is inbuilt in Kaltura Player.
+Find more [here](https://github.com/kaltura/kaltura-player-android/blob/develop/README.md)
+
+`implementation 'com.kaltura.player:tvplayer:kaltura_player_version'`
+
+Please check our [Kaltura Player samples](https://github.com/kaltura/kaltura-player-android-samples/blob/8c743c7083ec2848cc0db979a194b9c92ce1a36b/AdvancedSamples/FullDemo/playkitdemo/build.gradle#L34)
+
+#####B. Use Player components standalone: 
+If client app wants to use player and its plugins standalone then other dependecies should be added.Find more [here](https://kaltura.github.io/playkit/guide/android/)
+
+Please check our [Playkit Samples](https://github.com/kaltura/playkit-android-samples/blob/fd33d9709396fce6c4df983fc5efe7652fd1427b/FullDemo/app/build.gradle#L29)
+
+##### 1. Playkit: 
+Core Player which handles Non-DRM/Clear and DRM content playback.
+`implementation 'com.kaltura.playkit:playkit:latest_version'`
+##### 2. DTG (Download To Go):
+Plugin which handles download of dash(including DRM) and hls streams(clear streams)
+`implementation 'com.kaltura.dtg:dtglib:dtg_latest_version'`
+##### 3. Phoenix Provider Plugin: 
+If you are Kaltura customer then this plugin which handles Kaltura OTT and OVP BE api calls.
+`implementation 'com.kaltura.playkit:playkitproviders:latest_version'`
+##### 4. IMA Ads Plugin: 
+Plugin which handles ads playback. 
+`implementation 'com.kaltura.playkit:imaplugin:latest_version'`
+##### 5. Kava Analytics Plugin: 
+Plugin for analytics.
+`implementation 'com.kaltura.playkit:kavaplugin:latest_version'`
+##### 6. Youbora Analytics Plugin: 
+Plugin for Youbora analytics.
+`implementation 'com.kaltura.playkit:youboraplugin:latest_version'`
+##### 7. Googlecast Plugin: 
+Plugin for content playback on Googlecast.
+`implementation 'com.kaltura.playkit:googlecast:latest_version'`
+##### 8. VR Plugin: 
+Plugin for 360 or VR content playback.
+`implementation 'com.kaltura.playkit:vrplugin:latest_version'`
+
+If client apps want to exclude the playkit from other plugins in case they find any cyclic dependency issue on app side then simply it can exclude the tree from the relavant dependency.
+
+######Example
+```
+implementation 'com.kaltura.playkit:anyPlugin:latest_version', {
+exclude group: 'com.kaltura.playkit', module: 'playkit'
+}
+
+```
+
+######Note
+> `latest_version` can be picked up from [here](https://github.com/kaltura/playkit-android/releases).
+> 
+> `dtg_latest_version ` can be picked from [here](https://github.com/kaltura/playkit-dtg-android/releases)
+> 
+> `kaltura_player_version` can be picked from [here](https://github.com/kaltura/kaltura-player-android/releases)
+
+
+
