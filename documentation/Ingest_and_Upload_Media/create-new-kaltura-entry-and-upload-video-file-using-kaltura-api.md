@@ -15,7 +15,7 @@ Handshake to create a Kaltura Session:
 {% highlight csharp %}
 KalturaConfiguration config = new KalturaConfiguration(PARTNER_ID);
 config.ServiceUrl = SERVICE_URL;
-KalturaClient client = new KalturaClient(config);
+Client client = new Client(config);
 client.KS = client.GenerateSession(ADMIN_SECRET, USER_ID, KalturaSessionType.ADMIN, PARTNER_ID, 86400, "");
 {% endhighlight %}
 
