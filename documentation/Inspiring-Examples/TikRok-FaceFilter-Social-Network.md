@@ -161,6 +161,8 @@ in `deform.js`
 
 In `views/record.ejs` We use the [Kaltura Express Recorder](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html), which has the option to record a canvas element and combine it with your webcam's audio. 
 
+**Note**: Included in the github for tikrok is a special "canvas" version of express recorder named `kaltura-canvas-express-recorder.js`
+
  And `<div id="controls"` is where the [Kaltura Express Recorder](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html) controls will be injected. All of these elements must have the same video size to render properly. So now to instantiate the express recorder:
 
 ```javascript
