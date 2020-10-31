@@ -215,7 +215,7 @@ We are taking a very mvp approach to displaying the gallery with a simplifying a
 
 The express recorder creates a [Kaltura Media Entry](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaMediaEntry) for your video and associates it with your user id. Our approach will simply list all media in our account via the [Media.list](https://developer.kaltura.com/console/service/media/action/list) API call 
 
-### Kaltura Api Console
+### Kaltura API Console
 
 When you look at [Media.list](https://developer.kaltura.com/console/service/media/action/list) in the console: 
 
@@ -312,9 +312,9 @@ And in `routes/user/post.ejs` we load the player with:
 
 `<a href="#" onclick="player.loadMedia({entryId: '<%= entry.id %>'})"><img src="<%= entry.thumbnailUrl %>"></a>`
 
-## Wrapping Up
+# Wrapping Up
 
-I hope this has inspired you to see how easy it can be to create a canvas based application using the Kaltura VPaaS API and its extensive documentation. 
+I hope this tutorial has inspired you to see how easy it can be to create a canvas based application using the Kaltura VPaaS API and its extensive documentation. 
 
 # How you can help (guidelines for contributors)
 
