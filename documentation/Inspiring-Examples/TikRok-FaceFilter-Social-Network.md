@@ -14,7 +14,7 @@ https://tik-rok.herokuapp.com/
 
 ## Design Choices
 
-Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry accross any platform. While recording does not work on all mobile browsers, the facefilters do, and a more robust implementation could make use of Kaltura's many [Client Libraries](https://developer.kaltura.com/api-docs/Client_Libraries) 
+Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry across any platform. While recording does not work on all mobile browsers, the facefilters do, and a more robust implementation could make use of Kaltura's many [Client Libraries](https://developer.kaltura.com/api-docs/Client_Libraries) 
 
 ## This is just a kernel...
 
@@ -142,11 +142,11 @@ function loadFilter(filter) {
   window.location = "/record?filter="+filter
 ```
 
-And the filter is loaded through a query paramater:
+And the filter is loaded through a query parameter:
 
 `<script src='facefilter/filters/<%=filter%>/<%=filter%>.js'></script>`
 
-Nothing is stopping you from doing away with this technique and swithching filters entirely in javascript, just some code refactoring would be necessary. 
+Nothing is stopping you from doing away with this technique and switching filters entirely in javascript, just some code refactoring would be necessary. 
 
 And if you are wondering about the loading animated png...it displays by default on page load, and then is hidden by each of the four filters by calling
 
@@ -213,7 +213,7 @@ Go ahead and try a **Live Demo** which will upload to your [Kaltura Management C
 
 ## The Gallery :
 
-We are taking a very mvp approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out [Playlists](https://developer.kaltura.com/api-docs/service/playlist)
+We are taking a very MVP approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out [Playlists](https://developer.kaltura.com/api-docs/service/playlist)
 
 The express recorder creates a [Kaltura Media Entry](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaMediaEntry) for your video and associates it with your user id. Our approach will simply list all media in our account via the [Media.list](https://developer.kaltura.com/console/service/media/action/list) API call 
 
@@ -223,7 +223,7 @@ When you look at [Media.list](https://developer.kaltura.com/console/service/medi
 
 ![MEDIALIST](/assets/images/tikrok/MEDIALIST.png)
 
-On the left, we can send the request and add parameters to the request. Also pay close attention to the right side where you can choose from all supported languages to autogenerate sample code corresponding to the exact request on the left. 
+On the left, we can send the request and add parameters to the request. Also pay close attention to the right side where you can choose from all supported languages to auto-generate sample code corresponding to the exact request on the left. 
 
 And you will see...it is very close to what `gallery.js` is using:
 
@@ -247,7 +247,7 @@ function getMedia(client) {
 
 ### Animated thumbnails
 
-We are using https://github.com/kaltura/VideoThumbnailAnimator in `views/gallery.ejs` to provide animted thumbnails for the gallery
+We are using https://github.com/kaltura/VideoThumbnailAnimator in `views/gallery.ejs` to provide animated thumbnails for the gallery
 
 ```html
     <div id="thumbnails">
