@@ -20,7 +20,7 @@ Many shortcuts were taken in order to give you the barebones, simplest implement
 
 ## This is just a kernel...
 
-Don’t limit yourself to copying TikRok, the purpose of this tutorial is to ignite your creativity. There are so many directions you **could** go in, for example, there are open source emotion-recogition engines. Why not make an app that detects if someone is sad or angry and notify their friends they need cheering up? Food for thought. And it doesn’t have to be entertaining, think healthcare/covid-19, think education, think business, think food, fashion, music, finance, holidays, think what can I do with face detection, an augmented reality canvas or just something creative with video?
+Don’t limit yourself to copying TikRok, the purpose of this tutorial is to ignite your creativity. There are so many directions you **could** go in, for example, there are open source emotion recognition engines. Why not make an app that detects if someone is sad or angry and notify their friends they need cheering up? Food for thought. And it doesn’t have to be entertaining, think healthcare/covid-19, think education, think business, think food, fashion, music, finance, holidays, think what can I do with face detection, an augmented reality canvas or just something creative with video?
 
 <img src="/assets/images/tikrok/HAPPY.jpg" alt="HAPPY" style="zoom:30%;" />
 
@@ -48,7 +48,7 @@ This sample, fully functional social network lets you use a funny face filter to
 
    
 
-   We need to get your Kaltura Partner Id and API Admin Secret so lets head over to [Integration Settings tab](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings)
+   We need to get your Kaltura Partner Id and API Admin Secret so let's head over to [Integration Settings tab](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings)
 
    <img src="/assets/images/tikrok/KMC_CODES.png" alt="KMC_CODES" style="zoom:45%;" />
 
@@ -107,7 +107,7 @@ By itself, the face filter demo displays to a canvas element. Some of the demo's
 
 ### Loading and Switching Filters
 
- First, lets set up the filter:
+ First, let's set up the filter:
 
 ```html
 <style type="text/css">
