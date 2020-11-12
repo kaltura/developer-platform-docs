@@ -1,3 +1,9 @@
+---
+layout: page
+title: Create a Video Social Network in 20 Minutes
+weight: 106
+---
+
 ## Creating Your Own Video Social Network in Under 20 Minutes!
 
 In this tutorial, you will build an MVP of a social network (aka TikRok) powered by Kaltura. Tikrok is a fully functional social network. Users can record videos using a built-in face filter, upload them, and browse other users’ videos.
@@ -12,7 +18,7 @@ https://tik-rok.herokuapp.com/
 
 ## Video Code Walkthrough:
 
-{%onebox http://www.kaltura.com/tiny/qqfsk }
+{% onebox http://www.kaltura.com/tiny/qqfsk %}
 
 ## Design Choices
 
