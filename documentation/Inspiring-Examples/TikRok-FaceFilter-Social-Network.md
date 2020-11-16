@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Create a Video Social Network in 20 Minutes
-weight: 106
+weight: 1666
 ---
 
 ## Creating Your Own Video Social Network in Under 20 Minutes!
@@ -44,7 +44,7 @@ This sample, fully functional social network lets you use a funny face filter to
 
 3. Let's take a look at .env.template:
 
-   ```json
+   ```ini
    ADMIN_SECRET=   //obtain from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings
    PARTNER_ID=     //obtain from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings
    PLAYER_ID=      //obtain from https://kmc.kaltura.com/index.php/kmcng/studio/v3
@@ -121,7 +121,7 @@ By itself, the face filter demo displays to a canvas element. Some of the demo's
     width:600px;
     height:600px;
 }
-</style
+</style>
 </head>
 <body onload="init_filter()">
     <div class="vidsize" style="margin:0 auto;position: relative;">
@@ -257,7 +257,7 @@ function getMedia(client) {
 
 We are using https://github.com/kaltura/VideoThumbnailAnimator in `views/gallery.ejs` to provide animated thumbnails for the gallery
 
-```html
+```ejs
     <div id="thumbnails">
         <%- include('gallery/entries.ejs', {entries: entries}) %>
     </div>
@@ -294,7 +294,7 @@ in `views/user.ejs`
 
 We will be following the steps to set up a player from https://developer.kaltura.com/player/web/getting-started-web 
 
-```javascript
+```ejs
 <script type="text/javascript" 
 src="https://cdnapisec.kaltura.com/p/<%=partnerId %>/embedPlaykitJs/uiconf_id/<%=playerId%>">
 </script>
