@@ -20,9 +20,8 @@ weight: 106
 ### Prerequisites
 
 1. [Nodejs](https://nodejs.org/en/) 
-2. MongoDB consider the easy to use [free, hosted cloud Mongo service](https://www.mongodb.com/) or feel free to install Mongo yourself.
-3. A Kaltura VPaaS account, which you can create [here](https://corp.kaltura.com/video-paas/registration?utm_campaign=Meetabout&utm_medium=affiliates&utm_source=GitHub) (it's free)
-4. Once you've opened an account, send an email to <vpaas@kaltura.com> to activate Meetings.
+2. [MongoDB](https://www.mongodb.com/)
+3. [Kaltura VPaaS account](https://corp.kaltura.com/video-paas/registration?utm_campaign=Meetabout&utm_medium=affiliates&utm_source=GitHub). Once you've opened an account, send an email to <VPaaS@kaltura.com> to activate Meetings.
 
 ### Install and Run
 
@@ -30,16 +29,15 @@ weight: 106
 2. Run `npm install`
 3. Copy `.env.template` to `.env` and populate the following required fields (other fields in the file are not required to run this app):
 
+```env
+SESSION_SECRET= #Key used for encrypting session cookies 
+SERVER_HOST_URL=http://localhost:3000 
+MONGO_URI= #mongodb+srv:// 
+KALTURA_SERVICE_URL=https://www.kaltura.com 
+KALTURA_ADMIN_SECRET= #obtained from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings 
+KALTURA_PARTNER_ID=#obtained from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings 
+KALTURA_USER_ID=#set it to the Kaltura user designated as admin. This is usually the email address you used to create your Kaltura account 
 ```
-SESSION_SECRET= #Key used for encrypting session cookies
-SERVER_HOST_URL=http://localhost:3000
-MONGO_URI= #mongodb+srv://
-KALTURA_SERVICE_URL=https://www.kaltura.com
-KALTURA_ADMIN_SECRET= #obtained from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings
-KALTURA_PARTNER_ID=#obtained from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings
-KALTURA_USER_ID=#set it to the Kaltura user designated as admin. This is usually the email address you used to create your Kaltura account
-```
-
 4. Run the app: `npm start`
 
 ### Logging In
@@ -139,7 +137,8 @@ let roomUrl = "https://" + partnerId + ".kaf.kaltura.com/virtualEvent/launch?ks=
 
 The `ks` is a string representing the `Kaltura Session` for the user for this meeting room. And the `partnerId` is your Kaltura VPaaS account's partner ID. 
 
-And that is it! The URL is ready to use to join the room! It is passed back to the meeting webpage and into the *href* of the "Join Meeting" button!
+And that is it! The URL is ready to use to join the room! It is passed back to the meeting webpage and into the *href* of the "Join Meeting" button!  
+And btw, you can also embed this link in an iframe, so in your own app, the room can be embedded inside your application (and in future time we can 
 
 #### Email Setup
 
@@ -147,12 +146,9 @@ Note: this step is unrelated to the usage of the Kaltura Virtual Room API
 
 A production app would use an SMTP server at a company, or an SMTP service. For testing purposes, you can sign up for a free account at [ethereal](https://ethereal.email/) and fill out the following fields in `.env`:
 
-```
+```env
 SMTP_HOST=smtp.ethereal.email
 SMTP_USER=
 SMTP_PASS=
 SMTP_PORT=587
 ```
-
-
-
