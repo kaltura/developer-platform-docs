@@ -137,8 +137,8 @@ let roomUrl = "https://" + partnerId + ".kaf.kaltura.com/virtualEvent/launch?ks=
 
 The `ks` is a string representing the `Kaltura Session` for the user for this meeting room. And the `partnerId` is your Kaltura VPaaS account's partner ID. 
 
-And that is it! The URL is ready to use to join the room! It is passed back to the meeting webpage and into the *href* of the "Join Meeting" button!  
-And btw, you can also embed this link in an iframe, so in your own app, the room can be embedded inside your application (and in future time we can 
+And that is it! The URL is ready to use to join the room! It is passed back to the meeting webpage and into the *href* of the "Join Meeting" button! 
+And by the way, this link can also be embedded in an iframe inside your own application for a fully integrated experience!
 
 #### Email Setup
 
