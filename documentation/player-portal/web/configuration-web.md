@@ -17,7 +17,7 @@ var player = KalturaPlayer.setup(config);
 
 The configuration uses the following structure:
 
-```
+```js
 {
   targetId: string,
   logLevel: string,
@@ -135,7 +135,7 @@ In this example, we'll use the following configuration from each source to see h
 
 Local Storage
 
-```
+```js
 {
 	muted: true,
 	audioLanguage: 'spa'
@@ -144,7 +144,7 @@ Local Storage
 
 Application
 
-```
+```js
 {
 	muted: false,
 	volume: 0.7
@@ -153,7 +153,7 @@ Application
 
 Server
 
-```
+```js
 {
   audioLanguage: 'eng',
   autoplay: true
@@ -162,7 +162,7 @@ Server
 
 Default Player Configuration
 
-```
+```js
 {
 	audioLanguage: '',
 	textLanguage: '',
@@ -174,7 +174,7 @@ Default Player Configuration
 
 **The resulting runtime configuration will, therefore, be as follows:**
 
-```
+```js
 {
 	audioLanguage: 'spa',
 	textLanguage: '',
