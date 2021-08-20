@@ -19,7 +19,7 @@ The **privileges string** that could be included in the appToken is made up of `
 - `setrole`: When assigning App Tokens to your apps, the easiest way to configure the permitted actions is with User Roles. Roles are created [in the KMC](https://kmc.kaltura.com/index.php/kmcng/administration/roles/list), and give you the option of adding and removing specific actions available to the app. The ID of the Role is then mapped to the `setrole` privilege key in the permissions string. This allows you to easily manage the permitted actions by editing the role at any time after.
 - `privacycontext`: If you want to limit the app to the content of a specific category, you could [set entitlements](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings) on that category and map it to the `privacycontext` key (examples below). Keep in mind however, that if you set the category's Content Privacy to Private, all end users who will need to access the content in this category must be added as members of the category.
 
-> Note: While a user ID *can* be added to an App Token during session generation (if no user ID was specified in the App Token creation), privileges can NOT be added during session generation. 
+> Note: A user ID *can* be added to an App Token during session generation, but if no user ID was specified in the App Token creation, then privileges can NOT be added during session generation. 
 
 
 ## Creating the App Token 
