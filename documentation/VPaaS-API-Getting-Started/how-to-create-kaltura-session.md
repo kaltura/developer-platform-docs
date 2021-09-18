@@ -4,7 +4,18 @@ title: How to Create a Kaltura Session
 weight: 103
 ---
 
-The Kaltura API is representational state transfer [REST](http://en.wikipedia.org/wiki/Representational_state_transfer), which is a style of software architecture for distributed systems such as the World Wide Web. REST has emerged over the past few years as a predominant Web service design model. REST has increasingly displaced other design models such as SOAP and WSDL due to its simpler style and [statelessness](http://en.wikipedia.org/wiki/Stateless_protocol). Every call (request) made to the Kaltura API requires an authentication key, the Kaltura Session (aka KS), identifying the account on which the action to be carried, the authenticated user and its role.
+
+
+Because the Kaltura API is stateless aka [REST](http://en.wikipedia.org/wiki/Representational_state_transfer), every request made to the API requires an authentication session the Kaltura Session (aka KS), identifying the account on which the action is to be carried, the authenticated user and its role.
+
+With the client library, it’s easy to set it once using the [`session.start`](https://developer.kaltura.com/console/service/session/action/start) API action, like this:
+
+{% code_example session %}
+&nbsp;
+
+*Specifying an `app id` which contains the name and domain of the app allows you to get specific analytics per application, for cases where you’re running your application on various domains.*
+
+Try it interactively [with this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/Authentication). 
 
 ### Methods for Generating a Kaltura Session  
 
