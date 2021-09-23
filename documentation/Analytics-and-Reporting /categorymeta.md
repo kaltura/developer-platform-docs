@@ -1,5 +1,5 @@
 ---
 layout: nil
-catname: Enrich and Organize Media
+catname: Analytics and Reporting
 catweight: "07"
 ---

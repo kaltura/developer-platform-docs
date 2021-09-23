@@ -23,14 +23,72 @@ The "source flavor", is the original file that was uploaded to Kaltura. The sour
 
 When a video is uploaded to Kaltura, the video is associated with a [conversionProfile](https://developer.kaltura.com/api-docs/#/conversionProfile), also known as a Transcoding Profile. A Conversion Profile may be comprised of a single or multiple flavors. For each upload session, you can select the Conversion Profile you'd like apply with the uploaded videos. You can also set a default Conversion Profile to be executed automatically when videos are uploaded to your account.  
 
-### Default Account Conversion Profiles   
+
+
+## Add a New Conversion Profile
+
+To add a conversion profile, call the [conversionProfile.add](https://developer.kaltura.com/api-docs/#/conversionProfile.add) API action:
+
+```php
+<?php 
+require_once('lib/KalturaClient.php'); 
+$config = new KalturaConfiguration($partnerId); 
+$config->serviceUrl = 'https://www.kaltura.com/'; 
+$client = new KalturaClient($config); 
+$client->setKs('AddYourKS'); 
+$conversionProfile = new KalturaConversionProfile(); 
+$conversionProfile->status = KalturaConversionProfileStatus::ENABLED; 
+$conversionProfile->name = 'YourConversionProfileName'; 
+$conversionProfile->isDefault = KalturaNullableBoolean::TRUE_VALUE; 
+$results = $client-> conversionProfile ->add($conversionProfile);
+```
+
+## Add New Flavor Params
+
+> Note: Kaltura.com SaaS users - Please contact your Kaltura Account Manager to add new flavor params to your account. Configuration of the transcoding layer requires specialized encoding expertise.
+>  
+
+To add flavor params, call the [flavorParams.add](https://developer.kaltura.com/api-docs/#/flavorParams.add) API action:
+
+```php
+<?php
+require_once('lib/KalturaClient.php');
+$config = new KalturaConfiguration($partnerId);
+$config->serviceUrl = 'https://www.kaltura.com/';
+$client = new KalturaClient($config);
+$client->setKs('AddYourKS');
+$flavorParams = new KalturaFlavorParams();
+$flavorParams->name = 'YourflavorParamsName';
+$flavorParams->systemName = 'YourflavorParamssystemName';
+$flavorParams->description = 'YourflavorParamsDescription';
+$flavorParams->tags = 'YourflavorParamsTag1, YourflavorParamsTag2';
+$flavorParams->videoCodec = KalturaVideoCodec::FLV;
+$results = $client->flavorParams->add($flavorParams);
+```
+
+## Create a New Flavor Asset for an Existing Entry
+
+To create a new flavor asset for an existing entry, call the [flavorAsset.convert](https://developer.kaltura.com/api-docs/#/flavorAsset.convert) API action.
+
+```php
+<?php require_once('lib/KalturaClient.php'); 
+$config = new KalturaConfiguration($partnerId); 
+$config->serviceUrl = 'https://www.kaltura.com/'; 
+$client = new KalturaClient($config); 
+$client->setKs('AddYourKS'); 
+$entryId = '1_entryIdString'; 
+$flavorParamsId = 11111; 
+$results = $client->flavorAsset->convert($entryId, $flavorParamsId); 
+```
+
+## Default Account Conversion Profiles   
 
 There are three transcoding profiles that are automatically created for new accounts:
 * Default - The flavors included in the default transcoding profile of the account. 
 * Source Only - Does not execute transcoding for the uploaded file. 
 * All Flavors - Transcodes uploaded files into all of the flavors defined in the account by default.
 
-### Default Account Flavors   
+## Default Account Flavors   
 
 There are nine flavors that are defined automatically for every new account. These flavors are optimized for the delivery of video across all devices and browsers to ensure that you can reach your users on any device they use without having to manually configure the flavors yourself.  
 
@@ -59,3 +117,18 @@ Kaltura measures and bills only for output transcoding usage; the input file is 
 Failed transcoding jobs are not counted or billed. 
 
 You can track your transcoding usage on the [Usage Dashboard](https://kmc.kaltura.com/index.php/kmc/kmc4#usageDashboard) in the Kaltura Management Console.
+
+## See Also
+
+[flavorAsset](https://developer.kaltura.com/api-docs/service/flavorAsset)
+
+[flavorParams](https://developer.kaltura.com/api-docs/service/flavorParams)
+
+[flavorParamsOutput](https://developer.kaltura.com/api-docs/service/flavorParamsOutput)
+
+[conversionProfile](https://developer.kaltura.com/api-docs/service/conversionProfile)
+
+[conversionProfileAssetParams](https://developer.kaltura.com/api-docs/service/conversionProfileAssetParams)
+
+[mediaInfo](https://developer.kaltura.com/api-docs/service/mediaInfo)
+

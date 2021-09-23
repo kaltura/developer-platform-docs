@@ -1,3 +1,5 @@
+# Creating & Managing Custom Metadata Fields 
+
 Used to overload new fields on: Entries, Categories,Accounts, Users and Cue Points
 
 XSD schema Profiles of XMLs
@@ -5,6 +7,8 @@ XSD schema Profiles of XMLs
 https://developer.kaltura.com/workflows/Enrich_and_Organize_Metadata/Working_with_metadata
 
 
+
+https://knowledge.kaltura.com/help/custom-data
 
 https://learning.kaltura.com/media/How+to+reate+and+pply+a+ustom+Metadata+Schema/1_8gofc71k
 

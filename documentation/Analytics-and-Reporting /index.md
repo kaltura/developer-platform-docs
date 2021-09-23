@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Convert and Transcode Media 
+title: Analytics and Reporting
 ---
 
 {% capture html %}
@@ -17,4 +17,3 @@ title: Convert and Transcode Media
     {% endfor %}
 </ul>
 {% endcapture %} {{ html | strip_newlines | replace:'    ','' | replace:'    ','' | replace:'  ',' ' }}
-
