@@ -1,7 +1,7 @@
 # Kaltura VPaaS
 
 The Kaltura VPaaS Developer Site makes use of [Jekyll](http://jekyllrb.com/) to generate the HTML docs out of MD files. For MarkDown basics, please refer to: [GitHub markdown basics](https://help.github.com/articles/markdown-basics). 
-Visit the site at: https://vpaas.kaltura.com
+Visit the VPaaS site at: https://vpaas.kaltura.com
 
 
 # Documentation and guides
