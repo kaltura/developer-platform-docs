@@ -6,7 +6,7 @@ weight: 110
 
 ## Introduction to Scheduling and Managing Resources  
 
-The Kaltura's Video Scheduling API enables Encoding and Capture devices to leverage the Kaltura platform to schedule events for devices, and to use information from those events to trigger live events, and ingest recorded content back to Kaltura with related metadata. Scheduling of events and retrieving the scheduled events calendar via the API is discussed in this article. 
+The Kaltura Video Scheduling API enables Encoding and Capture devices to leverage the Kaltura platform to schedule events for devices, and to use information from those events to trigger live events, and ingest recorded content back to Kaltura with related metadata. Scheduling of events and retrieving the scheduled events calendar via the API is discussed in this article. 
 
 > The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the [`scheduleEvent.getConflicts`](https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts) action.
 
@@ -25,7 +25,7 @@ The Kaltura Scheduled Events API support 3 types of Events (see [`KalturaSchedul
 ### On the Kaltura Platform
 
 1. Create an event for a future date (`scheduleEvent.add` API action or via BulkUpload/DropFolder sync).
-2. Set recording / encoding device as a resource for the scheduled event (`scheduleResource.add` and `scheduleEventResource.add`).
+2. Set recording / encoding device as a resource for the scheduled event 
 3. Define a Kaltura Entry as template entry for the event that includes the desired metadata for the recorded or live entry resulting from the scheduled event (including any information on how to publish the entry; co-editors, description/title, etc.).
 
 ### On the device
@@ -37,9 +37,7 @@ Configure the device to sync its internal calendar with the Kaltura scheduled Ev
 The schedule can be updated using different methods: 
 
 1. Making REST API calls to the `scheduleEvent`, `scheduleResource` and `scheduleEventResource` services. 
-2. As an iCal file synced over a Kaltura hosted Drop-folders (FTP, SFTP or Aspera). 
-3. As an iCal file synced form a third-party hosted Drop-Folders over FTP, SFTP or S3. 
-4. The iCal file format may also be ingested using the [`scheduleEvent.addFromBulkUpload`](https://developer.kaltura.com/api-docs/service/scheduleEvent/action/addFromBulkUpload) API action.
+2. Via an [iCal file](iCal-API-and-Calendar-Integrations.html) 
 
 ## Using the Event Scheduling API
 
@@ -119,34 +117,6 @@ if ($testForSchedulingConflicts->totalCount == 0) {
 }
 ```
 
-
-
-## The Kaltura iCal Format  
-
-The Kaltura iCal Format follows the standard iCal format definitions, and adds Kaltura specific parameters. The additional parameters are described in the table below:
-
-| Name                              	| Description                                                                                                                                                                	| Format                                                                                                                      	|
-|-----------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------	|
-| X-KALTURA-ID                      	| The ID of the Scheduled Event in Kaltura                                                                                                                                   	| int                                                                                                                         	|
-| X-KALTURA-PARTNER-ID              	| The Kaltura Account ID ([Partner ID](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings))                                                                	| int                                                                                                                         	|
-| X-KALTURA-PARENT-ID               	| If a single occurrence as part of a series (recurring event), the parent ID will be the ID of the recurring event.                                                         	| int                                                                                                                         	|
-| X-KALTURA-STATUS                  	| Status of the event in Kaltura                                                                                                                                             	| int ([KalturaScheduleEventStatus](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventStatus)) 	|
-| X-KALTURA-CATEGORY-IDS            	| The list of categories to which the event belongs                                                                                                                          	| Unlimited, comma-separated IDs (Integers)                                                                                   	|
-| X-KALTURA-ENTRY-IDS               	| The Entry IDs related to this event                                                                                                                                        	| Unlimited, comma separated String IDs; each string is exactly 10 ASCII characters (0-1, a-z and underscore).                	|
-| X-KALTURA-RESOURCE-IDS            	| The Kaltura resource ID for the resources used in the event                                                                                                                	| Unlimited, comma-separated integers                                                                                         	|
-| X-KALTURA-TAGS                    	| Metadata tags for the event                                                                                                                                                	| Unlimited, comma-separated Strings; all tags combined, including the commas, should be less than 65k.                       	|
-| X-KALTURA-TEMPLATE-ENTRY-ID       	| Template entry to be used for entries created based on this event. The template entry will define the recording owner, categories for the recorded entry, co-editors, etc. 	| Exactly 10 ASCII characters (0-1, a-z and underscore)                                                                       	|
-| X-KALTURA-TYPE                    	| Defines the type of entry required by this event: live or VOD.                                                                                                             	| 1 – recording; 2 – live-stream                                                                                              	|
-| X-KALTURA-PRIMARY-RTMP-ENDPOINT   	| The Primary RTMP endpoint to send the live stream to                                                                                                                       	| String; RTMP Url                                                                                                            	|
-| X-KALTURA-SECONDARY-RTMP-ENDPOINT 	| The Secondary (backup) RTMP endpoint to send the live stream to                                                                                                            	| String; RTMP Url                                                                                                            	|
-| X-KALTURA-PRIMARY-RTSP-ENDPOINT   	| The Primary RTSP endpoint to send the live stream to                                                                                                                       	| String; RTSP Url                                                                                                            	|
-| X-KALTURA-SECONDARY-RTSP-ENDPOINT 	| The Secondary (backup) RTSP endpoint to send the live stream to                                                                                                            	| String; RTSP Url                                                                                                            	|
-| X-KALTURA-LIVE-STREAM-NAME        	| The name of the live stream                                                                                                                                                	| String                                                                                                                      	|
-| X-KALTURA-LIVE-STREAM-USERNAME    	| The user-name of the live stream (if authentication is required)                                                                                                           	| String                                                                                                                      	|
-| X-KALTURA-LIVE-STREAM-PASSWORD    	| The password of the live stream (if authentication is required)                                                                                                            	| String                                                                                                                      	|
-
-
-
 ### Publishing Permissions  
 
 To enable the device to use an entry template that includes publishing to specific categories or channels, the device must use the correct entitlements when uploading the recording file.  The recommended way to securely provide each device the appropriate permissions is to use App Tokens. This requires that the account admin will prepare an App Token, and then share the app token with the device to be used when calling the upload API.
@@ -164,10 +134,7 @@ To generate the upload session from the device, follow these steps:
 1. Generate a session using the appToken ([follow this API guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) as reference).
 2. Create a new Video Entry, and upload your video recording ([follow this guide](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html) as reference).
 
-## Download / Sync the iCal Schedule from Kaltura 
 
-iCal provides a standardized method for syncing calendar events from Kaltura. 
-To retrieving an iCal file format, add `format/ical` to the `scheduleEvent.list` API action.
 
 ### Filtering and Pagination of Results  
 
@@ -190,7 +157,7 @@ http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/
 * To get the next 30 events from now, set `startDateGreaterThanOrEqual` to 0 (now):
 
 ```
-http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventBaseFilter/filter[startDateGreaterThanOrEqual]/0
+http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/filter[objectType]/KalturaScheduleEventBaseFilter/filter[startDateGreaterThanOrEqual]/0
 ```
 
 * To page through the results, and increase the page size to 500 results per page, set the `pager` object's `pageSize` and `pageIndex` parameters:
@@ -253,5 +220,4 @@ For example:
 
 * Conflicting events: At present, Kaltura does not prevent conflicting events. The user will need to ensure that there is no resource conflict when scheduling the event. Devices should be able to handle resource conflicts and ensure operations in such case. To retrieve and handle conflicting events call the [`scheduleEvent.getConflicts`](https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts) action.
 * Recurring events: When retrieving a recurring event via the API, both the series and the breakdown of each occurrence will be provided. Devices can filter based on  [KalturaScheduleEventRecurrenceType](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventRecurrenceType) to receive only the series (`RECURRING`) or single events (`RECURRENCE`), or to receive single events and breakdown of series. The choice between the options depends on the capability of the device. 
-* To avoid returning multiple live stream endpoints in the iCal - For Live Stream Events, the iCal format will return the RTMP/RTSP endpoints and credentials as defined in the `templateEntryId`. To avoid confusion, always set the template entry id to be the same as the Live Stream Entry resource assigned to the event. 
 * There’s only one schedule per Kaltura account managed. Multiple scheduling systems will need to be merged into one Kaltura schedule.

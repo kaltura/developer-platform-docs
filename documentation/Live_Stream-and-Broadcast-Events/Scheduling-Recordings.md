@@ -6,6 +6,8 @@ weight: 303
 
 # Scheduling Recordings
 
+(`scheduleResource.add` and `scheduleEventResource.add`).
+
 #### For Recorded Entries
 
 1. The device will start recording at the pre-set time. The recording should be stored locally.
