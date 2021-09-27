@@ -1,9 +1,3 @@
----
-layout: page
-title: The playManifest Service: Streaming API for Videos and Playlists
-weight: 601
----
-
 The Kaltura Player abstracts the need to retrieve direct access to the video file, and handles the various aspects of the video playback including multi-bitrate, choosing the correct codec and streaming protocols, DRM, Access Control and more.  
 However, on occasion, your applications may need a direct access to stream or download media outside of the Kaltura Player.   
 In cases where you need to access the playback stream directly, or just a link to download the video file, you will need to consider the target playback devices, the delivery profiles and security protocols applied to your Kaltura account and video entry, and then call the suitable API methods.  
@@ -31,7 +25,7 @@ To use the `playManifest` API action, consider the following steps:
 > `[serviceUrl]/p/[yourPartnerId]/sp/[yourPartnerId]00/playManifest/entryId/[entryId]/format/[format]/protocol/[protocol]/ks/[ks]/[paramN]/[valueN]/desiredFileName.[fileExtension]`
 
 > Note that `/[paramN]/[valueN]/` designates any extra (optional) parameters. See below for a complete list of optional parameters. The structure for including these parameters in the url is similar to the required params, `/paramName/paramValue`. For example: `clipTo/10000` will designate chopping the video to the 10th second (clipTo is in milliseconds).
-  
+
 2.  Replace the desired **`serviceUrl`**:
 
 
@@ -114,55 +108,6 @@ To use the `playManifest` API action, consider the following steps:
 
 * If the flavorIds for the specific entry are known (e.g., the application is doing a flavorAsset.list with entryIdEqual), then use flavorId/flavorIds.
 * If the flavorIds are not known (e.g., the application would like to build a URL to the HD flavor, but does not want to perform flavorAsset.list) use flavorParamId/flavorParamIds.
-
-
-### Downloading a Video File
-
-It is important to note that Kaltura entries can be set for private or protected modes, where access is only allowed when providing a valid admin [Kaltura Session](/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html). 
-
-For best practice, to retrieve a **download** URL (instead of streaming manifest) for a video entry, use the following steps:
-
-1.  Locate the ID of the desired video flavor (see below Video Flavor Id).
-2.  Call the `flavorAsset.geturl` API action.
-
-Below is a PHP code sample for retrieving the download URL of a web-playable flavor for a desired entry ID:
-
-```php
-<?php
-//Client library configuration and instantiation...
- 
-//when creating the Kaltura Session it is important to specify that this KS should bypass entitlements restrictions:
-$ks = $client->session->start($secret, $userId, KalturaSessionType::ADMIN, $partnerId, 86400, 'disableentitlement');
-$client->setKs($ks);
- 
-$client->startMultiRequest();
-$entryId = '1_u7aj9kasw'; //replace this with your entry Id
-$client->flavorAsset->getwebplayablebyentryid($entryId);
-$req1ResultFlavorId = '{1:result:0:id}'; //get the first flavor from the result of getwebplayablebyentryid
-$client->flavorAsset->geturl($req1ResultFlavorId); //this action will return a valid download URL
-$multiRequestResults = $client->doMultiRequest();
-$downloadUrl = $multiRequestResults[1];
-echo 'The entry download URL is: '.$downloadUrl;
-```
-
-### Video Flavor ID  
-
-The VideoFlavorId parameter determines which video flavor the API will return as download. This parameter has various options, depending on the Kaltura server deployment and publisher account.
-
-The following lists few of the conventional flavor IDs:
-
->Note: Only flavor id 0 (zero) is static and the same across all Kaltura editions and accounts. The following list are common flavor Ids on the Kaltura VPaaS Cloud edition, but note flavors change and upgraded often (improved quality, new codecs, etc.) - Use this list for example purposes, but make sure to check your KMC > Settings > Transcoding Settings tab for the ids of your transcoding profile flavors.
-
-* The original uploaded video (before transcoding) = 0
-* iPhone / Android (mp4) = 301951
-* iPad (mp4) = 301971
-* Nokia/Blackberry (3gp) = 301991
-* Other devices (mp4) = 301961
-
-The correct flavor IDs (per account and Kaltura edition) can be retrieved using one of the following ways:
-
-1. Visiting the KMC Settings > [Transcoding Profiles](http://knowledge.kaltura.com/faq/how-create-transcoding-profile).
-2. Making an API call to the [ConversionProfile.list action](https://developer.kaltura.com/api-docs/#/conversionProfile.list).
 
 ### Retrieving Streaming URL for Mobile Applications  
 

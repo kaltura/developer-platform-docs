@@ -1,4 +1,4 @@
-# Scheduling Live Stream Sessions 
+# Creating and Managing Live Webcasts 
 
 The Kaltura Webcasting suite provides a set of tools to broadcast live events on the web, including interactive video and slides-sync, in-stream audience polls, moderated Q&A chat and live announcements. [Kaltura Webcasting](https://corp.kaltura.com/video-collaboration-communication/townhalls-live-webcasting/) currently supports the following live source ingest protocols: RTMP, RTSP, SIP or WebRTC. 
 
@@ -10,6 +10,12 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 To get started, you'll need a Kaltura account, which you can sign up for [here](https://vpaas.kaltura.com/reg/index.php). You'll also need the webcasting module enabled on your account. Speak to your account manager or email us at vpaas@kaltura.com to get your account configured. 
 
 For a better understanding of this integration, check out the [Python sample app](https://github.com/kaltura-vpaas/webcasting-app-python) that demonstrates everything explained in this guide. 
+
+## Webcasting Analytics
+
+See the https://github.com/kaltura-vpaas/embeddable_analytics project which has an entry for webcasting under the "livestream" tab
+
+Kaltura also has a rich Analytics API that can allow you to generate your own reports for your webcasts. You can get started with https://developer.kaltura.com/console/service/report/action/getTable and selecting LIVE in the reportType dropdown. 
 
 ## Creating a LiveStream Object 
 
