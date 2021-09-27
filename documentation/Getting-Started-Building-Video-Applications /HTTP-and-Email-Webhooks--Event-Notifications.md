@@ -1,8 +1,4 @@
----
-layout: page
-title: How To Handle Kaltura Server Notifications in PHP
-weight: 101
----
+# HTTP and Email Webhooks / Event Notifications 
 
 Often applications require the ability to respond to asynchronous events that occurred on the Kaltura server. For example, when a Media Entry was uploaded, finished transcoding or any other status update. This guide will take you through the steps of listening to these events, called [Event Notifications](https://developer.kaltura.com/api-docs/#/eventNotificationTemplate), how to parse the data carried in these notifications, and how to respond properly in your applications.
 
@@ -32,6 +28,8 @@ Other notifications will not be sent twice in general, however the following sce
 
 This package is an example of using Kaltura notifications, you may implement your own handler classes following our example.
 
+Obtain [source code](https://github.com/kaltura/http-notification-handler)
+
 To use the API notifications client in your application, follow these steps:
 
 1 . Unpack the zip file on a "public" web server accessible from the internet.
@@ -41,10 +39,10 @@ To use the API notifications client in your application, follow these steps:
 3 . Set up the special synchronization Metadata field:
 
  a. Access the KMC, under settings/custom data add a new schema called apinotifications_sync_data
- 
+
  b. Add the following field to the profile:
 
- ![Profile Field](assets/images/custom-metadata-field.PNG)
+ ![Profile Field](/Users/hunterp/Documents/GitHub/developer-platform-docs/documentation/Integration-Scheduling-and-Hooks/assets/images/custom-metadata-field.PNG)
 
 4 . Make sure the configuration settings are properly populated:
 
@@ -66,7 +64,7 @@ Access the KMC and set up notifications under Settings>Integration Settings>Noti
 1. Open the following file: lib/Kaltura/Notification/Handler/SyncEntry.php.
 2. Find line 190 and add your code inline:
 
- ![Code inline](assets/images/codeline.png)
+ ![Code inline](/Users/hunterp/Documents/GitHub/developer-platform-docs/documentation/Integration-Scheduling-and-Hooks/assets/images/codeline.png)
 
 ### Set up the Notifications Handler Endpoint  
 
@@ -75,10 +73,10 @@ The last step in this process is to indicate the endpoint URL that will listen t
 To setup the Notifications endpoint, follow these steps:
 
 1.  In the [Kaltura Management Console](http://www.kaltura.com/index.php/kmc), go to the Settings tab.
-3.  Enter the Integration Settings sub-tab.
-4.  In the "Enter Notification URL" field, paste the URL to your notifications handler script.
+2.  Enter the Integration Settings sub-tab.
+3.  In the "Enter Notification URL" field, paste the URL to your notifications handler script.
 
- ![Notification URL](assets/images/notifications.jpg)
+ ![Notification URL](/Users/hunterp/Documents/GitHub/developer-platform-docs/documentation/Integration-Scheduling-and-Hooks/assets/images/notifications.jpg)
 
 
 
