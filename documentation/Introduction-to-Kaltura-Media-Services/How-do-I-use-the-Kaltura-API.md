@@ -79,26 +79,18 @@ Another way to find the entry is by date. Using epoch timestamp, this code lists
 
 >Note that Kaltura Sessions with limited privileges might get limited results when making a `media.list` API call. 
 
-To conduct a more thorough search, for example, **if you want to search within captions or metadata**, use the [Kaltura Search API](https://developer.kaltura.com/console/service/eSearch/action/searchEntry). Read about it [here](https://developer.kaltura.com/api-docs/Search--Discover-and-Personalize/esearch.html). 
+To conduct a more thorough search, for example, **if you want to search within captions or metadata**, use the [Kaltura Search API](https://developer.kaltura.com/console/service/eSearch/action/searchEntry). Read about it [here](../Video-On-Demand-and-Digital-Assets-Management/Searching-for-Media-Entries.html) 
 
 Learn about other embed types [here.](https://developer.kaltura.com/player/web/embed-types-web/)
-
-
 
 ## Wrapping Up 
 
 Including a Kaltura Session allows you to keep track of user analytics for each entry and set permissions and privileges. Notice that in this case, the KS is created on the server side of the app. 
 
-**Congrats! You’ve learned how to:**
-- Create a kaltura session 
-- Upload media to your Kaltura account 
-- Search for your media
-- Show your media in a Kaltura Player 
-
 **Next steps:** 
-- Read the eSearch [blog post](https://corp.kaltura.com/blog/introducing-esearch-the-new-kaltura-search-api/)
-- Learn how to create and handle [thumbnails](https://developer.kaltura.com/api-docs/Engage_and_Publish/kaltura-thumbnail-api.html/)
-- Analyze Engagement [Analytics](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html)
+
+- Learn how to create and handle [thumbnails](../Video-On-Demand-and-Digital-Assets-Management/Image-Transformations-and-On-the-fly-Video-Thumbnails.html) 
+- Analyze Engagement [Analytics](../Analytics-and-Reporting /Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html) 
 
 You can find more API resources in our [docs](https://developer.kaltura.com/api-docs/), play around in the [console](https://developer.kaltura.com/console), or enjoy full interactive experiences with our [workflows](https://developer.kaltura.com/workflows). 
 

@@ -6,7 +6,7 @@ weight: 110
 
 # Enriching Player Analytics with Custom Event Data
 
-While Kaltura [collects](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html) most of the highly requested and common [analytics](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html) data points, sometimes you may require information that is not already collected. Kaltura provides a convenient way for you to collect any kind of data you want with the `customVar` feature. 
+While Kaltura [collects](Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md) most of the highly requested and common analytics data points, sometimes you may require information that is not already collected. Kaltura provides a convenient way for you to collect any kind of data you want with the `customVar` feature. 
 
 ## Configuring the player
 
@@ -69,7 +69,7 @@ Refer to the [android player setup page](https://developer.kaltura.com/player/an
 
 Now that you have supplied `customVar` to your player, and users are interacting with your players, you will want to see how your `customVar` data is performing. 
 
-Using the [Kaltura analytics API](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html) you will be able to create different kinds of reports for your customVar. 
+Using the [analytics API](Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md)  you will be able to create different kinds of reports for your customVar. 
 
 ### TOP_CONTENT report
 

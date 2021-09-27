@@ -55,7 +55,7 @@ var config = {
 };
 ```
 
-See this [article](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html) to learn more about how to create a KS.
+See [Authenticating-and-Using-Kaltura-Sessions](../../Getting-Started-Building-Video-Applications /Authenticating-and-Using-Kaltura-Sessions.html) to learn more about how to create a KS.
 
 #### Example: Using Server Configuration
 

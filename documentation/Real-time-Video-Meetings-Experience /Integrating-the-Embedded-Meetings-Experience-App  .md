@@ -354,7 +354,7 @@ As a best practice, we recommend you embed the URL in an iFrame in the webpage, 
 It is the responsibility of your application to manage the security and permissions for each meeting room. As mentioned, it is encouraged to embed the URLs within iFrames in your application, to ensure that users are authenticated before arriving at the given webpage. 
 
 **How can I ensure that users are not accessing the room outside of the event time?**
-A [Kaltura Session](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html#the-kaltura-session) can be given an expiry of one day, one hour, even one minute. When the KS expires, that link will no longer be valid. 
+A  [Kaltura Session](Kaltura_API_Authentication_and_Security.html#the-kaltura-session) can be given an expiry of one day, one hour, even one minute. When the KS expires, that link will no longer be valid. 
 
 **Can somebody use and share the room URL by viewing the source of the page?**
 Reminder that userIds must be unique - meaning that a user who copies and shares an embed link would be kicked out of the room once somebody with an identical link joins the room. 

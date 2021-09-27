@@ -25,7 +25,7 @@ Securing application content is done by leveraging one or more of the following 
 * Video Delivery:
   * Delivery methods and obfuscation (segmentation, URL obfuscation, expired URLs)
   * DRM
- 
+
 ## Media Access Control  
 
 There are many possible layers of security that can be deployed within Kaltura's system. 
@@ -107,7 +107,7 @@ To see an implementation of the KS generation algorithm, refer to the **Generate
 *   **Call user.loginByLoginId - **This method is using Kaltura Users and their Password instead of partner id and secret key. 
 
 >Note: This method is should be preferred in most cases because a) It is easier to remember a user name and password, b) users can be limited to specific roles and permissions (e.g. enabling only upload), and c) users can be deleted, passwords changed or demoted in permissions, while the secret keys can't be modified easily.
-*   **Using an Application Token - **This method is described in full in [this article](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html). 
+*   **Using an Application Token - **This method is described in full in [this article](Application-Tokens.html) 
 
 ###  KS Types  
 
@@ -188,7 +188,7 @@ Multiple parameters in a single value are separated by a slash: *key:1_value/0_v
 
 Some privileges support a wildcard (*) value (for example, *edit:**). A wildcard permits the action for any object.
 
- 
+
 [List of available privileges](https://github.com/kaltura/server/blob/master/alpha/apps/kaltura/lib/request/kSessionBase.class.php#L26)
 
 
@@ -215,14 +215,14 @@ Some privileges support a wildcard (*) value (for example, *edit:**). A wildcar
 | preview                    | A limit (in bytes) on the size of the file that is returned from the flavor download action                                                                                                                                                                                                      | Used internally by the server when flavorAsset.getUrl is called on an entry whose access control has preview restrictions.                                                                                                                                     | size in bytes                                                                                                                    |
 | sessionid                  | Can be used to group a set of KS's together for invalidation purposes - when session.end is called.With a ks that has sessionid=X, all other KS's that have sessionId=X become invalid as well.                                                                                                  | Applications that create multiple KS's for different uses can use this privilege to terminate all KS's upon user logoff, without the need to keep track of them.                                                                                               | An arbitrary string identifying the session                                                                                      |
 | apptoken                   | For a KS that was created with appToken.startSession, this privilege will contain the app token through which the KS was created.                                                                                                                                                                | Used mainly for investigation/tracking purposes.                                                                                                                                                                                                               | The apptoken id                                                                                                                  |
-     
+
 #### PHP Examples Using the PHP Kaltura Client Library  
 
 > Important! Never use a KalturaSessionType ADMIN in a KS generated for end users.
 
 **Allow access to a specific entry ID (limitation is set via the Access Control)**  
 Example: Allow access to entry id 0_iuasd7 (this [blog post](http://blog.kaltura.org/create-ks-protected-videos-with-free-preview) shows an example of a use case.
- 
+
 ```
  $ks = $client->session->start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "sview:0_iuasd7"
 ```

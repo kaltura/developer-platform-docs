@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Authenticating and Using Kaltura Sessions 
+title: Authenticating and Using Kaltura Sessions
 weight: 103
 ---
 
@@ -21,12 +21,12 @@ Try it interactively [with this workflow](https://developer.kaltura.com/workflow
 There are three methods for generating a Kaltura Session:
 
 * Calling the [session.start action](https://developer.kaltura.com/api-docs/Generate_API_Sessions/session/session_start): This method is recommended for scripts and applications to which you alone will have access.
-* Using the [appToken service](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html): This method is recommended when providing access to scripts or applications that are managed by others; this method provides tools to manage API tokens per application provider, revoke access to specific applications, and more.
+* Using the [apptoken service](Application-Tokens.html): This method is recommended when providing access to scripts or applications that are managed by others; this method provides tools to manage API tokens per application provider, revoke access to specific applications, and more.
 * Calling the [user.loginByLoginId action](https://developer.kaltura.com/api-docs/Generate_API_Sessions/user_loginByLoginId): This method is recommended for managing registered users in Kaltura, and allowing users to log in using email and password. When you log in to the KMC, the KMC application calls the user.loginByLoginId action to authenticate you using your registered email and password. 
 
 ## Important Notes When Generating Kaltura Sessions
 
-1.  Familiarize yourself with the concepts of user roles, privileges, access control and entitlements by reading the [Kaltura API Authentication and Security guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) to ensure that your application is secured. 
+1.  Familiarize yourself with the concepts of user roles, privileges, access control and entitlements by reading the  [Kaltura API Authentication and Security Guide](Kaltura_API_Authentication_and_Security.html)  to ensure that your application is secured. 
 2.  Sharing the account API secret keys with 3rd party vendors should be avoided, as secret keys can not be regenerated or blocked for access. Kaltura API based application developers and 3rd party application vendors should build their application to leverage the appToken API to manage (create and revoke access) application tokens.
 3.  To ensure best security and analytics tracking during playback, always pass a Kaltura Session to the player embed.
 4.  To ensure tracking of end-user analytics, always pass a value to the userId field that is truly unique and represents a unique user in your system. 
@@ -36,7 +36,7 @@ There are three methods for generating a Kaltura Session:
 
 ## The Kaltura Media Access Control Model
 
-An [Access Control Profile](https://developer.kaltura.com/api-docs/Secure_Control_and_Govern/kaltura-media-access-control-model.html) defines authorized and restricted domains where your content can or cannot be displayed, countries from which it can or cannot be viewed, white and black lists of IP addresses and authorized and unauthorized domains and devices in which your media can be embedded.
+An [Access Control Profile](../Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html) defines authorized and restricted domains where your content can or cannot be displayed, countries from which it can or cannot be viewed, white and black lists of IP addresses and authorized and unauthorized domains and devices in which your media can be embedded.
 
 For information on Kaltura session-based restrictions, refer to [Kaltura’s API Authentication and Security](http://knowledge.kaltura.com/node/229). 
 

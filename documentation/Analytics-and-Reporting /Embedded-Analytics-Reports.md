@@ -16,7 +16,7 @@ https://github.com/kaltura-vpaas/embeddable_analytics
 
 ## Intro
 
-Kaltura has a rich and comprehensive [Analytics API](https://developer.kaltura.com/api-docs/Video-Analytics-and-Insights/media-analytics.html) that you can use to generate your own reports and analyses. You can also implement Kaltura's ready made Analytics javascript widget which provides some of the most frequently requested insights.
+Kaltura has a rich and comprehensive [Analytics API](Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html) that you can use to generate your own reports and analyses. You can also implement Kaltura's ready made Analytics javascript widget which provides some of the most frequently requested insights.
 
 [![analytics_screen](https://github.com/kaltura-vpaas/embeddable_analytics/raw/main/readme_assets/analytics_screen.png)](https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/readme_assets/analytics_screen.png)
 

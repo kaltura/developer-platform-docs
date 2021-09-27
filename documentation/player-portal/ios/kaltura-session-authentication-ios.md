@@ -17,7 +17,7 @@ There are a few steps to creating a KS with an appToken.
 1. **Generate a basic kaltura session:** because all calls to the API *must* include a Kaltura Session, we first use the session API to create what is called a **widget session**, which has limited functionality and is used in the following steps 
 2. **Create a Token Hash** of the appToken token and the widget session, combined. 
 3. **Call the appToken.startSession API** with the widget session, the appToken ID, and the hash string. 
-You can see all these steps interactively with [this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication), or read the guide [here](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html), but examples below are written for client-side swift code. 
+You can see all these steps interactively with [this workflow](https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication), or read the guide [here](../../Getting-Started-Building-Video-Applications /Application-Tokens.html) but examples below are written for client-side swift code. 
 
 Let's get started. If you're already creating a Kaltura Session on the server side, you can skip these steps. 
 
@@ -38,11 +38,11 @@ func generateWidgetSession() -> String {
     let widgetPartnerId = "_\(PARTNER_ID)"
 
     let widgetKsURL = NSString(format:"https://www.kaltura.com/api_v3/service/session/action/startWidgetSession?widgetId=%@&format=1",widgetPartnerId)
-
+    
     let widgetKsData = try! Data(contentsOf: URL(string: widgetKsURL as String)!)
-
+    
     let widgetKsDict = try! JSONSerialization.jsonObject(with: widgetKsData, options: []) as! [String:Any]
-
+    
     return (widgetKsDict["ks"] as! String)
     }
 {% endhighlight %}
@@ -91,14 +91,14 @@ func generateSession() {
     let appTokenId = "0_xeu31jy5"
 
     let widgetKs: String = generateWidgetSession()
-
+    
     let tokenHash: String = Hash.SHA256("\(widgetKs)\(appToken)")!
-
+    
     let URLString = NSString(format:"https://www.kaltura.com/api_v3/service/apptoken/action/startsession?ks=%@&userId=%@&id=%@&tokenHash=%@&format=1",widgetKs,userId,appTokenId,tokenHash)
-
+    
     let ksData = try! Data(contentsOf: URL(string: URLString as String)!)
     let ksDict = try! JSONSerialization.jsonObject(with: ksData, options: []) as! [String:Any]
-
+    
     self.ks = (ksDict["ks"] as! String)
 }
 {% endhighlight %}

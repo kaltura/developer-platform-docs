@@ -153,8 +153,4 @@ We'll use the [`App Token.startSession`](https://developer.kaltura.com/console/s
 
 You'll notice that the response contains any existing configurations from the App Token creation, regardless of what was passed in during the startSession. The expiry is set to an hour (although you can change this), meaning that after that time has passed, a new session will need to be generated. So if you wish to change permissions on this App Token, you can make those changes to the Role, User, or Privacy Context associated with the App Token. 
 
-To learn more about Kaltura Security, read the [Authentication and Security](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) guide.
-
-If you're only just getting started with the Kaltura API, check out the [Getting Starting Guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html/). 
-
-
+To learn more about Kaltura Security, read the [Kaltura API Authentication and Security Guide](Kaltura_API_Authentication_and_Security.html) 

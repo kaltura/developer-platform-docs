@@ -22,7 +22,7 @@ weight: 303
 
 To upload the recording file, you can either submit a bulk upload or upload the file via the REST API:
 
-* To submit an import job (where Kaltura will download the file from your HTTP/s/FTP accessible URL), follow the [Bulk Content Ingestion Guide](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html).
+* To submit an import job (where Kaltura will download the file from your HTTP/s/FTP accessible URL), follow the [Bulk-Content-Ingestion Guide](../Video-On-Demand-and-Digital-Assets-Management/Bulk-Content-Ingestion.html) 
 * To upload the recording files using the REST API, follow [the upload workflow](https://developer.kaltura.com/workflows/Ingest_and_Upload_Media).
 
 > Remember to submit the `templateEntryId` accordingly and to set any other important metadata on the newly created Entry.
