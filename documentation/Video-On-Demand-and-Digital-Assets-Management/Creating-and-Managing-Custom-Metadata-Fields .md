@@ -1,26 +1,24 @@
-# Creating & Managing Custom Metadata Fields 
+---
+layout: page
+title: Creating & Managing Custom Metadata Fields 
+weight: 110
+---
 
-Used to overload new fields on: Entries, Categories,Accounts, Users and Cue Points
+Kaltura supports three types of [metadata](https://knowledge.kaltura.com/help/what-types-of-metadata-can-be-used-in-the-kmc) for its media assets.
 
-XSD schema Profiles of XMLs
+1. Technical metadata (read only) – includes the technical attributes of the media file. For example, the file type, duration, file format.
+2. Basic metadata – includes Name, Description, Tags, and Categories’ fields. In addition, Kaltura allows referencing the media entry using an external identifier which can be stored in the Reference ID field.
+3. Custom metadata – includes custom fields, defined under one or more schemas, which allow enhancing any media object into a custom business object.
 
-https://developer.kaltura.com/workflows/Enrich_and_Organize_Metadata/Working_with_metadata
+#### See Also
 
+1. https://developer.kaltura.com/workflows/Enrich_and_Organize_Metadata/Working_with_metadata
+2. https://knowledge.kaltura.com/help/custom-data
+3. https://learning.kaltura.com/media/How+to+reate+and+pply+a+ustom+Metadata+Schema/1_8gofc71k
+4. https://knowledge.kaltura.com/help/how-to-add-a-kaltura-custom-metadata-schema-profile
+5. https://knowledge.kaltura.com/help/what-fields-can-be-configured-in-kaltura-custom-metadata-profiles
+6. See an [example app](https://github.com/kaltura/Kaltura-Paid-Content-Gallery-With-PayPal-Sample-App/blob/master/AccountWizard/setupAccount.php) that uses the metadata API 
 
-
-https://knowledge.kaltura.com/help/custom-data
-
-https://learning.kaltura.com/media/How+to+reate+and+pply+a+ustom+Metadata+Schema/1_8gofc71k
-
-https://knowledge.kaltura.com/help/how-to-add-a-kaltura-custom-metadata-schema-profile
-
-https://knowledge.kaltura.com/help/what-fields-can-be-configured-in-kaltura-custom-metadata-profiles
-
-
-
-Fields can be set to be indexed, and thus searchable
-
-See an [example app](https://github.com/kaltura/Kaltura-Paid-Content-Gallery-With-PayPal-Sample-App/blob/master/AccountWizard/setupAccount.php) that uses the metadata API 
 
 
 

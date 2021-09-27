@@ -1,5 +1,8 @@
-
-# Webcasting Analytics 
+---
+layout: page
+title: Webcasting Analytics 
+weight: 110
+---
 
 Analytics for the livestream event can be retrieved via the [reporting](https://developer.kaltura.com/console/service/report/) API. The API actions are split between `getTable`, `getGraph`, `getTotal`, etc - depending on the format in which you'd like to receive the data. 
 

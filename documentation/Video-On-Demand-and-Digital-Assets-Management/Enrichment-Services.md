@@ -1,14 +1,18 @@
-# Kaltura Enrichment Services API
+---
+layout: page
+title: Kaltura Enrichment Services API
+weight: 110
+---
 
 Kaltura has a vast selection of [enrichment services](https://corp.kaltura.com/video-content-management-system/reach-automatic-captioning/) available. Please contact your account manager at EMAIL to activate the services for your account. These services are also available via the Kaltura API.
 
 To understand the kinds of services, and user experience flow surround these services you can access them under "Captions & Enrich" in the [KMC](https://kmc.kaltura.com/index.php/kmcng/login)
 
-<img src="img/enrich_meta.png" alt="enrich_meta" style="zoom:20%;" />
+<img src="/assets/images/enrich_meta.png" alt="enrich_meta" style="zoom:20%;" />
 
 Which opens to the enrichment services screen:
 
-<img src="img/enrichment.png" alt="enrichment" style="zoom:67%;" />
+<img src="/assets/images/enrichment.png" alt="enrichment" style="zoom:67%;" />
 
 This example will show you how to initiate a machine based caption request:
 

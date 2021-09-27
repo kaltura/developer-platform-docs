@@ -4,9 +4,6 @@ title: How do I use the Kaltura API?
 weight: 101
 ---
 
-
-# How do I use the Kaltura API? 
-
 This guide will enable you to quickly get started building your own media experiences and exploring the platform’s basic capabilities. The following topics are 
 
 1. [The Kaltura API](#The Kaltura API) 

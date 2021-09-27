@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Bulk Content Ingestion API
-weight: 302
+weight: 110
 ---
 
 Kaltura offers bulk content ingestion to support scenarios where you need to ingest a significant number of Internet accessible files - from more than a few to many files. Bulk upload presents a great advantage for consolidating large amounts of video content in different locations from remote sites. 

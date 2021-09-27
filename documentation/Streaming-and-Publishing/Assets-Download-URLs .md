@@ -1,4 +1,8 @@
-# Downloading a Video File
+---
+layout: page
+title: Downloading a Video File
+weight: 110
+---
 
 It is important to note that Kaltura entries can be set for private or protected modes, where access is only allowed when providing a valid admin [Kaltura Session](/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html). 
 

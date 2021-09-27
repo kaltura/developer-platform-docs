@@ -1,4 +1,8 @@
-# Syndication
+---
+layout: page
+title: Working with Syndication Feeds
+weight: 110
+---
 
 Kaltura offers a powerful UI to create, customize and edit [syndication](https://knowledge.kaltura.com/help/content-distribution-and-syndication) feeds. However, you may also want to take advantage of the API to programmatically take advantage of the syndication system.
 
@@ -41,7 +45,7 @@ Kaltura provides the ability to supply your own custom [XSLT feed](https://knowl
 
 Using the API you could update the XSLT via code whenever needed by calling [syndicationFeed.update](https://developer.kaltura.com/api-docs/service/syndicationFeed/action/update)  selecting the `KalturaGenericXsltSyndicationFeed`  and updating the `xslt` field.
 
-![xslt](img/xslt.png)
+![xslt](/assets/images/xslt.png)
 
 
 

@@ -1,12 +1,8 @@
 ---
 layout: page
 title: Manage Blackout Events
-weight: 303
+weight: 110
 ---
-
-
-
-# Manage Blackout Events
 
 A blackout event is a construct that informs the [Kaltura events scheduling API](/Introduction-to-Scheduling-and-Managing-Resources.html) there should be no scheduled events during that time period.
 

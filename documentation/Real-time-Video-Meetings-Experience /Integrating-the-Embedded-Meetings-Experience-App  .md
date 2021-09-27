@@ -1,4 +1,8 @@
-# Kaltura Meetings Integration Guide
+---
+layout: page
+title: Kaltura Meetings Integration Guide
+weight: 110
+---
 
 Kaltura Meetings, via the acquisition of Newrow, allows for live video collaboration tools, such as classrooms, events, and webinars, to be built directly into your applications, using components of the Kaltura API. 
 

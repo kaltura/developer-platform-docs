@@ -1,3 +1,9 @@
+---
+layout: page
+title: Searching for Media Entries
+weight: 110
+---
+
 If you’ve had experience building search capabilities into your video applications, you know that indexing and searching video content is complex - not only due to the time dimension, but because it also requires searching through many objects and related metadata. You’ve had to write multiple queries that are time consuming, fragile at scale and hard to optimize for performance.
 
 We’re excited to introduce a new Kaltura search API that will revolutionize how video search is done. Leveraging the Elastic Search engine, eSearch exposes a set of API actions that unlock a variety of search capabilities and simplify how video search is done.

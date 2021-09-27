@@ -16,7 +16,7 @@ Kaltura players accept a `customVar` argument through the [KAVA](https://github.
 
 First check in the [KMC](https://kmc.kaltura.com/index.php/kmcng/studio/v3) to make sure the KAVA plugin is enabled on your [player](https://developer.kaltura.com/player/web/getting-started-web): it is enabled by default. 
 
-<img src="img/kmc_kava.png" alt="kmc_kava" style="zoom:65%;" />
+<img src="/assets/images/kmc_kava.png" alt="kmc_kava" style="zoom:65%;" />
 
 Next configure the player to accept customVar1 via KAVA:
 
@@ -75,7 +75,7 @@ Using the [analytics API](Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md
 
 Using the [report.getTable](https://developer.kaltura.com/console/service/report/action/getTable) API call, as shown below, a `reportType` of `TOP_CONTENT` is produced and it allows you to filter by string via the `customVar1In` field of `reportInputFilter` 
 
-<img src="img/customVar_topContent.png" alt="customVar_topContent" style="zoom:40%;" />
+<img src="/assets/images/customVar_topContent.png" alt="customVar_topContent" style="zoom:40%;" />
 
 Which will return a tab-delimited report like:
 
@@ -97,7 +97,7 @@ As you can see, a `;` delimited list of all the entryIds that matched "hello" we
 
 If you wanted to query all of the customVar data for your account, this is also possible using a `reportType` of `TOP_CUSTOM_VAR1`, `TOP_CUSTOM_VAR2`, or `TOP_CUSTOM_VAR3` 
 
-<img src="img/TOP_CUSTOMVAR_REPORT.png" alt="TOP_CUSTOMVAR_REPORT" style="zoom:40%;" />
+<img src="/assets/images/TOP_CUSTOMVAR_REPORT.png" alt="TOP_CUSTOMVAR_REPORT" style="zoom:40%;" />
 
 Which returns the following result:
 

@@ -1,4 +1,8 @@
-## Working with Sub Accounts
+---
+layout: page
+title: Working with Sub Accounts
+weight: 110
+---
 
 Kaltura’s Multi Account Management feature allows you to configure and edit multiple content accounts in Kaltura (AKA KMC accounts, partner accounts) from a central location. Multi Account Management is suitable for Kaltura’s customers that manage multiple content accounts in Kaltura. For example:
 

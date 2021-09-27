@@ -1,6 +1,8 @@
-# Creating and Managing Playlists 
-
-
+---
+layout: page
+title: Creating and Managing Playlists
+weight: 110
+---
 
 Kaltura supports a rich variety of playlists for your content. Read the Kaltura [playlist guide](https://knowledge.kaltura.com/help/creating-and-configuring-playlists) for a step-by-step overview of the concepts covered here. 
 

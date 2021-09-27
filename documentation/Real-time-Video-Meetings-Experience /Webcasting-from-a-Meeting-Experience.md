@@ -1,4 +1,8 @@
-# Webcasting from a Meeting Experience 
+---
+layout: page
+title: Webcasting from a Meeting Experience 
+weight: 110
+---
 
 In order to scale meetings even further, Kaltura offers the ability to stream a meeting into a webcast. Think of meetings as multi-way interactive video, and webcast as a more unidirectional broadcast. Refer to [this guide](https://learning.kaltura.com/media/How+To+Launch+Webcasting+Through+Kaltura+Meetings/1_7xvdelh8) for how this can be accomplished without the API.
 

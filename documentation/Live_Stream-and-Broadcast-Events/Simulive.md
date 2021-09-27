@@ -1,4 +1,8 @@
-# Kaltura Simulive API
+---
+layout: page
+title: Kaltura Simulive API
+weight: 110
+---
 
 Kaltura offers the ability to stream pre-recorded video via the actual Kaltura live stream infrastructure. Here is a diagram illustrating the structure of a kaltura simulive event:
 

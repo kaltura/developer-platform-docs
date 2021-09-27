@@ -4,8 +4,6 @@ title: Introduction to Scheduling and Managing Resources
 weight: 110
 ---
 
-## Introduction to Scheduling and Managing Resources  
-
 The Kaltura Video Scheduling API enables Encoding and Capture devices to leverage the Kaltura platform to schedule events for devices, and to use information from those events to trigger live events, and ingest recorded content back to Kaltura with related metadata. Scheduling of events and retrieving the scheduled events calendar via the API is discussed in this article. 
 
 > The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the [`scheduleEvent.getConflicts`](https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts) action.

@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Scheduling Recordings
-weight: 303
+weight: 110
 ---
-
-# Scheduling Recordings
 
 (`scheduleResource.add` and `scheduleEventResource.add`).
 

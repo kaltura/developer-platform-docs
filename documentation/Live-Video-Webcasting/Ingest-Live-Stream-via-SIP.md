@@ -1,4 +1,8 @@
-# Connecting to a Webcasting Stream via SIP
+---
+layout: page
+title: Connecting to a Webcasting Stream via SIP
+weight: 110
+---
 
 Kaltura offers [SIP integration](https://knowledge.kaltura.com/help/kaltura-video-conference-integration-v1#activatevcikmsusers) for services like Zoom and Skype. As mentioned previously, webcasting and SIP integration aka VCI must be enabled for your account. Here are API calls to work with SIP and the Kaltura API:
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kaltura's Media Analytics
+title: Intro to Kaltura Video Analytics and Best Practices
 weight: 110
 ---
 

@@ -1,4 +1,9 @@
-# Creating and Managing Live Webcasts 
+---
+layout: page
+title: Creating and Managing Live Webcasts
+weight: 110
+---
+
 
 The Kaltura Webcasting suite provides a set of tools to broadcast live events on the web, including interactive video and slides-sync, in-stream audience polls, moderated Q&A chat and live announcements. [Kaltura Webcasting](https://corp.kaltura.com/video-collaboration-communication/townhalls-live-webcasting/) currently supports the following live source ingest protocols: RTMP, RTSP, SIP or WebRTC. 
 

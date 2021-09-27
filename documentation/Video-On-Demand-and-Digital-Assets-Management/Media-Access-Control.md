@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Media Access Control
-weight: 104
+weight: 110
 ---
-
-# Media Access Control
 
 Kaltura has two different mechanisms for enforcing access control without requiring cross-dependency that are effective for all connected devices:
 

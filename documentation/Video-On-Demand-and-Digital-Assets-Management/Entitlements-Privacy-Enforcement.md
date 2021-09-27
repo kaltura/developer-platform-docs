@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Content Entitlements and Privacy Enforcement
-weight: 103
+title: Entitlements and Privacy Enforcement
+weight: 110
 ---
 
 Content Entitlements is a method for governing access of end-users to groups of content items (entries) using categories.  
@@ -14,11 +14,10 @@ Example use-cases based on content entitlements:
 * Group collaboration based on channel membership
 * Premium content - get access to channels/categories based on a paid subscription 
 
-To learn about how to configure and work with Content Entitlements read the [Categories and Content Entitlements article](/api-docs/Secure_Control_and_Govern/Content-Categories-Management.html).  
+To learn about how to configure and work with Content Entitlements read the [Categories and Content Entitlements article](Content-Categories-Management.html).  
 
 
 The following diagram outlines the rules on which Kaltura bases and enforces content entitlements.  
 You can configure the Kaltura system to be more restrictive or open in allowing access to your assets.  
 
 {% include images/entitlements.svg %}
-

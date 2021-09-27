@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Authenticating and Using Kaltura Sessions
-weight: 103
+weight: 110
 ---
 
 # Authenticating and Using Kaltura Sessions 

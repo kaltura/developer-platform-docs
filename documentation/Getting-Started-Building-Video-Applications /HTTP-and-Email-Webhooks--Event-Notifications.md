@@ -1,4 +1,9 @@
-# HTTP and Email Webhooks / Event Notifications 
+---
+layout: page
+title: HTTP and Email Webhooks / Event Notifications
+weight: 303
+---
+
 
 Often applications require the ability to respond to asynchronous events that occurred on the Kaltura server. For example, when a Media Entry was uploaded, finished transcoding or any other status update. This guide will take you through the steps of listening to these events, called [Event Notifications](https://developer.kaltura.com/api-docs/#/eventNotificationTemplate), how to parse the data carried in these notifications, and how to respond properly in your applications.
 

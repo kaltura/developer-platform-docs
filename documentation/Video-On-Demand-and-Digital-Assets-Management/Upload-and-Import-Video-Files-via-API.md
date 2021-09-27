@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Upload and Import Video Files via API
-weight: 103
+weight: 110
 ---
-
-# Upload and Import Video Files via API 
 
 ### Media Ingestion APIs and Tools  
 

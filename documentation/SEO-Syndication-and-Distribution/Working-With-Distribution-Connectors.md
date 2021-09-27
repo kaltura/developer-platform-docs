@@ -1,6 +1,8 @@
-# Distributing to Social Networks
-
-
+---
+layout: page
+title: Distributing to Social Networks
+weight: 110
+---
 
 Kaltura has a [rich system](https://knowledge.kaltura.com/help/content-distribution-and-syndication#content-syndication) for integrating with many social networks. The Kaltura API is also capable of extracting data from or editing the distribution system. 
 

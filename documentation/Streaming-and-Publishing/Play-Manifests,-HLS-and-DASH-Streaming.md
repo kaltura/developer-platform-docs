@@ -1,3 +1,9 @@
+---
+layout: page
+title: Play Manifests,HLS and DASH Streaming
+weight: 110
+---
+
 The Kaltura Player abstracts the need to retrieve direct access to the video file, and handles the various aspects of the video playback including multi-bitrate, choosing the correct codec and streaming protocols, DRM, Access Control and more.  
 However, on occasion, your applications may need a direct access to stream or download media outside of the Kaltura Player.   
 In cases where you need to access the playback stream directly, or just a link to download the video file, you will need to consider the target playback devices, the delivery profiles and security protocols applied to your Kaltura account and video entry, and then call the suitable API methods.  

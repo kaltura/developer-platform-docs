@@ -1,7 +1,7 @@
 ---
 layout: page
 title: iCal API and Calendar Integrations 
-weight: 303
+weight: 110
 ---
 
 The Scheduled Events API is also exposed as a standard [iCal format](https://en.wikipedia.org/wiki/ICalendar). This provides backend support for calendar definition, including importing and exporting using the iCal standard. Importing into the Kaltura platform is done either though bulk-upload or drop-folders. 

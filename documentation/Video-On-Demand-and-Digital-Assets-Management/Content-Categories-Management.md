@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Content Categories Management
-weight: 102
+weight: 110
 ---
 
 Media entries can be organized in categories. Categories are structured in a tree-like hierarchy where each category can include multiple sub-categories.  
