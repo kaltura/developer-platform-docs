@@ -1,12 +1,10 @@
 ---
 layout: page
-title: How to Create a Kaltura Session
+title: Authenticating and Using Kaltura Sessions 
 weight: 103
 ---
 
-
-
-# How to Create a Kaltura Session
+# Authenticating and Using Kaltura Sessions 
 
 Because the Kaltura API is stateless aka [REST](http://en.wikipedia.org/wiki/Representational_state_transfer), every request requires an authentication session aka the Kaltura Session (KS), identifying the account on which the action is to be carried, the authenticated user and its role.
 
@@ -26,8 +24,6 @@ There are three methods for generating a Kaltura Session:
 * Using the [appToken service](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html): This method is recommended when providing access to scripts or applications that are managed by others; this method provides tools to manage API tokens per application provider, revoke access to specific applications, and more.
 * Calling the [user.loginByLoginId action](https://developer.kaltura.com/api-docs/Generate_API_Sessions/user_loginByLoginId): This method is recommended for managing registered users in Kaltura, and allowing users to log in using email and password. When you log in to the KMC, the KMC application calls the user.loginByLoginId action to authenticate you using your registered email and password. 
 
-
-
 ## Important Notes When Generating Kaltura Sessions
 
 1.  Familiarize yourself with the concepts of user roles, privileges, access control and entitlements by reading the [Kaltura API Authentication and Security guide](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) to ensure that your application is secured. 
@@ -38,15 +34,11 @@ There are three methods for generating a Kaltura Session:
 
  > Note: To use the Kaltura API, you will need a Publisher Account with API access. [Get a free Kaltura VPaaS trial](https://vpaas.kaltura.com/register.html).
 
-
-
 ## The Kaltura Media Access Control Model
 
 An [Access Control Profile](https://developer.kaltura.com/api-docs/Secure_Control_and_Govern/kaltura-media-access-control-model.html) defines authorized and restricted domains where your content can or cannot be displayed, countries from which it can or cannot be viewed, white and black lists of IP addresses and authorized and unauthorized domains and devices in which your media can be embedded.
 
 For information on Kaltura session-based restrictions, refer to [Kaltura’s API Authentication and Security](http://knowledge.kaltura.com/node/229). 
-
-
 
 ## Managing End-User Content Entitlements
 

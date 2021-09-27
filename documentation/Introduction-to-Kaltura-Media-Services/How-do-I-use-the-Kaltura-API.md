@@ -1,8 +1,11 @@
+---
 layout: page
-title: Get Started with Kaltura VPaaS
+title: How do I use the Kaltura API? 
 weight: 101
+---
 
-# Getting Started 
+
+# How do I use the Kaltura API? 
 
 This guide will enable you to quickly get started building your own media experiences and exploring the platform’s basic capabilities. The following topics are 
 
@@ -79,8 +82,6 @@ Another way to find the entry is by date. Using epoch timestamp, this code lists
 To conduct a more thorough search, for example, **if you want to search within captions or metadata**, use the [Kaltura Search API](https://developer.kaltura.com/console/service/eSearch/action/searchEntry). Read about it [here](https://developer.kaltura.com/api-docs/Search--Discover-and-Personalize/esearch.html). 
 
 Learn about other embed types [here.](https://developer.kaltura.com/player/web/embed-types-web/)
-
-
 
 
 
