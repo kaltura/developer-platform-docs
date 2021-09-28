@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Bulk Content Ingestion API
+title: Import Video Files via Bulk Upload
 weight: 110
 ---
 

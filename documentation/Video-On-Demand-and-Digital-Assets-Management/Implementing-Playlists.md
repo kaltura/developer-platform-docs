@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Creating and Managing Playlists
+title: Implementing Playlists
 weight: 110
 ---
 

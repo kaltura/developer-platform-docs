@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kaltura Simulive API
+title: Scheduling Simulive Sessions
 weight: 110
 ---
 

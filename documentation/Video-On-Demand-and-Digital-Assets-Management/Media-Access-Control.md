@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Media Access Control
+title: Hardening Security with Media Access Control Rules
 weight: 110
 ---
 

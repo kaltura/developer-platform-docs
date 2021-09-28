@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Downloading a Video File
+title: Asset Download Urls
 weight: 110
 ---
 

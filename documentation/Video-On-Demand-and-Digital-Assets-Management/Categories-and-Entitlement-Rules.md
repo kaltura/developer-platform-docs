@@ -1,9 +1,34 @@
+---
+layout: page
+title: Categories & Entitlement Rules
+weight: 110
+---
+
+Content Entitlements is a method for governing access of end-users to groups of content items (entries) using categories.  
+Entitlements are configured at the category level, by setting a unique key to identify the applicative context in which to allow access to the category's entries.  
+
+Applications such as [Kaltura MediaSpace](http://corp.kaltura.com/Products/Video-Applications/Kaltura-Mediaspace-Video-Portal) implement entitlements to achieve the concept of "Authenticated Content Channels".
+
+Example use-cases based on content entitlements:
+
+* Group collaboration based on channel membership
+* Premium content - get access to channels/categories based on a paid subscription 
+
+The following diagram outlines the rules on which Kaltura bases and enforces content entitlements.  
+You can configure the Kaltura system to be more restrictive or open in allowing access to your assets.  
+
+{% include images/entitlements.svg %}
+
+
+
+## Categories 
+
 Media entries can be organized in categories. Categories are structured in a tree-like hierarchy where each category can include multiple sub-categories.  
 You can add, remove and edit categories using the [category service](https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/category). You can assign a media entry to a specific category using the [categoryEntry service](https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry).   
 Categories provide a logical structure for your site and assist with content management. You can assign custom metadata to categories. Then, using filters you can create robust search and discovery workflows, playlists and more.  
 Categories may also be used to set content entitlements for end-users in various applications using the [categoryUser service](https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser).  
 
-### Quick Summary - Categories     
+### Quick Summary    
 
 * A category is a metadata that groups content. 
 * Media entries can be added into categories. Each entry can be associated with up to 32 categories (If you need more, please [contact us](mailto:vpaas@kaltura.com)).
@@ -44,10 +69,11 @@ Moderation is governed with the [categoryEntry.activate](https://developer.kaltu
 The [`contributionPolicy`](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory) determines if users are required to have a contributor level permission to be allowed to add or even suggest entries to the category. By default, all users are allowed to contribute (suggest) entries to be added. By setting the `contributionPolicy` to [`KalturaContributionPolicyType.MEMBERS_WITH_CONTRIBUTION_PERMISSION`](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaContributionPolicyType), only users that are given a contributor role or above will be allowed to suggest entries.  
 
 Use the [`userJoinPolicy`](https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory) and [`KalturaUserJoinPolicyType`](https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaUserJoinPolicyType) to set whether users:
+
 * can add themselves to the category (`AUTO_JOIN`)
 * can request to be added and wait for the moderator's approval (`REQUEST_TO_JOIN`) 
 * or if it's a by-invitation only list and users are not allowed to ask to be added (`NOT_ALLOWED`).  
-If the category is set to moderated membership approval (`REQUEST_TO_JOIN`), use the `activate` action to approve the moderated request to join. If a user should not be allowed join, use `deactivate` action to reject a user's request to join the category.
+  If the category is set to moderated membership approval (`REQUEST_TO_JOIN`), use the `activate` action to approve the moderated request to join. If a user should not be allowed join, use `deactivate` action to reject a user's request to join the category.
 
 ## Managing End-User Content Entitlements
 
@@ -56,6 +82,7 @@ Entitlements are configured on the category level by setting a special unique ke
 
 Applications such as [Kaltura MediaSpace](http://corp.kaltura.com/Products/Video-Applications/Kaltura-Mediaspace-Video-Portal) implement entitlements to achieve the concept of "Authenticated Content Channels".
 Example use-cases based on content entitlements:
+
 - group collaboration based on channel membership
 - premium content - get access to channels/categories based on a paid subscription 
 
@@ -116,8 +143,8 @@ To allow access to an entitled category, follow these steps:
 2. The privacy context should be passed in the application session (KS) whenever making API requests in the [`privacycontext` KS privileges](https://knowledge.kaltura.com/node/229#privacycontext).  
 
 > `privacyContexts` provides a means to set multiple entitlement application contexts per category with comma-separated list of unique keys.
-The Privacy Context configuration for an application guarantees the following:
-User’s entitlements to content in the application are determined based on the specific categories the application is integrated with. 
-Categories that are not directly integrated with the application can be used for any content organization and applicative classification purposes. A content item can be shared with such categories with no impact on their visibility to end-users through the application.
-In the common case, a single Privacy Context should be set to an entire ‘branch’ within the category-tree, and indicate the application integrated with it. In more complex scenarios, multiple privacy contexts can be set to categories to enable access to content shared between multiple applications within the account, and under the same organizational context.
+> The Privacy Context configuration for an application guarantees the following:
+> User’s entitlements to content in the application are determined based on the specific categories the application is integrated with. 
+> Categories that are not directly integrated with the application can be used for any content organization and applicative classification purposes. A content item can be shared with such categories with no impact on their visibility to end-users through the application.
+> In the common case, a single Privacy Context should be set to an entire ‘branch’ within the category-tree, and indicate the application integrated with it. In more complex scenarios, multiple privacy contexts can be set to categories to enable access to content shared between multiple applications within the account, and under the same organizational context.
 

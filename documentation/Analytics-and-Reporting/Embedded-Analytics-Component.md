@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Embedded Analytics Reports 
+title: Embedded Analytics Component 
 weight: 110
 ---
 

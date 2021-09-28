@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Working with Sub Accounts
+title: Manage Kaltura Sub-Accounts
 weight: 110
 ---
 

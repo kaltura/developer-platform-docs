@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kaltura Enrichment Services API
+title: On-the-fly Video Thumbnails and Image Transformations
 weight: 110
 ---
 

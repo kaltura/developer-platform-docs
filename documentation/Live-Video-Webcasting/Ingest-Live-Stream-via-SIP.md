@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Connecting to a Webcasting Stream via SIP
+title: Connecting to a Webcast Stream via SIP
 weight: 110
 ---
 

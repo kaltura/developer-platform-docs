@@ -1,6 +1,6 @@
 ---
 layout: page
-title: The Multi-request API
+title: Working with Multi Request
 weight: 110
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Kaltura Meetings Integration Guide
+title: Integrating the Embedded Meetings Experience App
 weight: 110
 ---
 
