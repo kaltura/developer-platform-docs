@@ -93,7 +93,7 @@ var user = await getOrCreateUser(client, req.body.userId);
 var userKs = await KalturaClientFactory.getKS(user.id,{privileges: 'editadmintags:*'});
 ```
 
-Take a look at `lib/KalturaClientFactory.js` to see how the [Kaltura Session](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html) is created
+Take a look at `lib/KalturaClientFactory.js` to see how the [session](../../Getting-Started-Building-Video-Applications /Authenticating-and-Using-Kaltura-Sessions.html) is created
 
 We first create an admin session `adminks` which is required to create a user. Then we create a user session `userKs`  and store the `userKs` to the node session so it can be used later.
 

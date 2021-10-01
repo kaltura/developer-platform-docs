@@ -4,7 +4,7 @@ title: VPaaS Overview
 weight: 101
 ---
 
-# Welcome to the Kaltura API Docs
+# This is the overview page
 
 {% onebox http://www.kaltura.com/tiny/obey1 %}
 

@@ -54,7 +54,7 @@ KalturaOvpPlayer should be initialized in the application class or in a splash a
 
 ```
 KalturaOvpPlayer.initialize(this, OVP_PARTNER_ID, OVP_SERVER_URL)
-``` 
+```
 
 ### Imports 
 
@@ -104,18 +104,19 @@ Create a new function called `loadPlaykitPlayer`. This function will:
 6. Set the global Player to the new one if nothing fails 
 7. Call `addPlayerStateListener` function
    
+
 {% highlight kotlin %}
 private fun loadPlaykitPlayer() {
 
     val playerInitOptions = PlayerInitOptions(PARTNER_ID) //player config/behavior
     playerInitOptions.setAutoPlay(true)
-
+    
     val player = KalturaOvpPlayer.create(this@FullscreenActivity, playerInitOptions) ?: return
-
+    
     player.setPlayerView(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
-
+    
     fullscreen_content.addView(player.playerView)
-
+    
     val ovpMediaOptions = buildOvpMediaOptions()
     player.loadMedia(ovpMediaOptions) { entry, loadError ->
         if (loadError != null) {
@@ -131,7 +132,7 @@ private fun loadPlaykitPlayer() {
 
 ### Provider Options 
 
-The provider helps the player access the Kaltura backend. The entryId is checked against the API, and there is an option to pass a Kaltura Session, which is always recommended when creating a player. If your application doesn't already generate a Kaltura Session, read [this](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html) to learn more. 
+The provider helps the player access the Kaltura backend. The entryId is checked against the API, and there is an option to pass a Kaltura Session, which is always recommended when creating a player. If your application doesn't already generate a Kaltura Session, read [Authenticating-and-Using-Kaltura-Sessions](../../Getting-Started-Building-Video-Applications /Authenticating-and-Using-Kaltura-Sessions.html) to learn more. 
 
 Create a function called `buildOvpMediaOptions`. The `apply` keyword in Kotlin will run the code block and pass the *receiver*, or in this case, `mediaOptions` as **`this`**. 
 
@@ -173,9 +174,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     setContentView(R.layout.activity_fullscreen)
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
+    
     mVisible = true
-
+    
     loadPlaykitPlayer()
     addPlayPauseButton()
     
@@ -247,7 +248,7 @@ We made a few other changes to the activity XML, like turning the view into a `L
                     android:background="@color/black_overlay"
                     android:orientation="horizontal"
                     tools:ignore="UselessParent">
-
+    
         <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" app:srcCompat="@drawable/exo_controls_play"
