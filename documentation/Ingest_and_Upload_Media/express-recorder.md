@@ -12,7 +12,7 @@ The Recorder Express features an iconic big red button. Once clicked, there is a
 
 ![express2](/assets/images/express-recorder-2.png)
 
-This guide will show you how to embed the component in your webpage. The complete sample code can be found [here](https://github.com/tzubeli/vpaas-sample-code/blob/master/express-recorder.php)
+This guide will show you how to embed the component in your webpage. The complete sample code can be found [here](https://github.com/kaltura-vpaas/express-recorder)
 
 ## Setting Up 
 
