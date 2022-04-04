@@ -4,8 +4,6 @@ title: Authenticating and Using Kaltura Sessions
 weight: 110
 ---
 
-# Authenticating and Using Kaltura Sessions 
-
 Because the Kaltura API is stateless aka [REST](http://en.wikipedia.org/wiki/Representational_state_transfer), every request requires an authentication session aka the Kaltura Session (KS), identifying the account on which the action is to be carried, the authenticated user and its role.
 
 With the client library, it’s easy to set using the [`session.start`](https://developer.kaltura.com/console/service/session/action/start) API action, like this:
