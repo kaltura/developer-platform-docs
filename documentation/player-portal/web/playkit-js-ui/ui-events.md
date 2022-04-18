@@ -21,12 +21,12 @@ Fires when the UI visibility state changes from visible to hidden or from hidden
 ## USER_CLICKED_PLAY
 
 Fires when the user initiated play by the UI.
-It will fires neither by clicking the play button or by clicking the video area.
+It will fires either by clicking the play button or by clicking the video area.
 
 ## USER_CLICKED_PAUSE
 
 Fires when the user initiated pause by the UI.
-It will fires neither by clicking the pause button or by clicking the video area.
+It will fires either by clicking the pause button or by clicking the video area.
 
 ## USER_CLICKED_REWIND
 
@@ -89,12 +89,12 @@ Fires when the user selected quality from the Quality dropdown.
 ## USER_ENTERED_FULL_SCREEN
 
 Fires when the UI is entered to full screen mode due to user gesture.<br>
-This can be done neither by clicking the full screen button or by double clicking the video area.
+This can be done either by clicking the full screen button or by double clicking the video area.
 
 ## USER_EXITED_FULL_SCREEN
 
 Fires when the UI is exited from full screen mode due to user gesture.<br>
-This can be done neither by clicking the full screen button or by double clicking the video area.
+This can be done either by clicking the full screen button or by double clicking the video area.
 
 ## USER_SELECTED_CAPTIONS_STYLE
 
