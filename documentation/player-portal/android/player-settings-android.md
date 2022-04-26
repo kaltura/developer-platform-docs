@@ -484,6 +484,67 @@ player.updateSubtitleStyle(subtitleStyleSettings);
 
 {% endhighlight %}
 
+### Subtitle View Positioning Configuration
+> Since Playkit version 4.8.0
+
+* {% highlight java %}PKSubtitlePosition pkSubtitlePosition = PKSubtitlePosition(boolean overrideInlineCueConfig){% endhighlight %}
+
+	If `overrideInlineCueConfig` is set to `true` then player will use the given Cue Settings to override the values coming in Cue Settings.
+
+* {% highlight java %}setVerticalPosition(int verticalPositionPercentage){% endhighlight %}  
+
+	Set the subtitle position only in Vertical direction (Up or Down) on the video frame. This method only allows to move in Y - coordinate.
+
+* {% highlight java %}setPosition(int horizontalPositionPercentage, int verticalPositionPercentage, Layout.Alignment horizontalAlignment){% endhighlight %}
+
+	Set the subtitle position anywhere on the video frame. This method allows moving in X-Y coordinates.
+
+* {% highlight java %}setToDefaultPosition(boolean overrideInlineCueConfig){% endhighlight %}
+
+	If `overrideInlineCueConfig` is `false` that means; app does not want to override the inline Cue configuration. App wants to go with Cue configuration.
+
+	Note! If `setOverrideInlineCueConfig(boolean)` is called with `false` value means after that in next call, app needs to `setOverrideInlineCueConfig(boolean)` with the required value.
+
+	Otherwise
+
+	If `overrideInlineCueConfig` is `true` then it will move subtitle to Bottom-Center which is a standard position for it.
+
+* {% highlight java %}setOverrideInlineCueConfig(boolean overrideInlineCueConfig){% endhighlight %} 
+
+	If `overrideInlineCueConfig` is set to true then player will use the given Cue Settings to override the values coming in Cue Settings.
+
+##### Note: Horizontal / Vertical position percentage limit is between 10% up to 100%.
+
+##### Vertical positioning  - 100% Top to 10% Bottom
+##### Horizontal positioning- 10% Center to 100% Screen Edge - (ALIGN_NORMAL - LEFT, ALIGN_OPPOSITE - RIGHT) in RTL languages it will be the oposite
+     
+#### Example
+
+Subtitle position configuration is done by updating the `SubtitleStyleSettings` object
+
+{% highlight java %}
+SubtitleStyleSettings subtitleStyleSettings = new SubtitleStyleSettings("MyCustomSubtitleStyle");
+PKSubtitlePosition pkSubtitlePosition = new PKSubtitlePosition(true);
+pkSubtitlePosition.setPosition(70, 30, Layout.Alignment.ALIGN_NORMAL);
+subtitleStyleSettings.setSubtitlePosition(pkSubtitlePosition);
+player.getSettings().setSubtitleStyle(subtitleStyleSettings);
+{% endhighlight %} 
+
+#### To update the subtitle position, use a new `PKSubtitlePosition` configuration or call `setToDefault` API
+
+{% highlight java %}
+pkSubtitlePosition.setToDefaultPosition(true);
+subtitleStyleSettings.setSubtitlePosition(pkSubtitlePosition);
+player.updateSubtitleStyle(subtitleStyleSettings);
+{% endhighlight %}
+
+{% highlight java %}
+SubtitleStyleSettings subtitleStyleSettings = new SubtitleStyleSettings("MyCustomSubtitleStyle");
+PKSubtitlePosition pkSubtitlePosition = new PKSubtitlePosition(true);
+pkSubtitlePosition.setVerticalPosition(80);
+subtitleStyleSettings.setSubtitlePosition(pkSubtitlePosition);
+player.getSettings().setSubtitleStyle(subtitleStyleSettings);
+{% endhighlight %}
 
 ### Set ABR Settings
 
@@ -493,9 +554,9 @@ To enable track selection to select subset of tracks that participate in the ABR
 
 {% highlight java %}
 player.getSettings().setABRSettings(new ABRSettings().
-setMinVideoBitrate(900000).
-setMaxVideoBitrate(3000000).
-setInitialBitrateEstimate(100000));
+setMinVideoBitrate(500000).
+setMaxVideoBitrate(1500000).
+setInitialBitrateEstimate(400000));
 {% endhighlight %}
 
 In order to reset these values in Change Media if needed:
@@ -592,7 +653,6 @@ player.getSettings().setVRSettings(new VRSettings().setInteractionMode(VRInterac
                 VRSettings vrSettings = new VRSettings();
                 vrSettings.setFlingEnabled(true);
                 vrSettings.setVrModeEnabled(false);
-
                 vrSettings.setZoomWithPinchEnabled(true);
                 VRInteractionMode interactionMode = vrSettings.getInteractionMode();
                 if (VRUtil.isModeSupported(MainActivity.this, VRInteractionMode.MotionWithTouch)) {
