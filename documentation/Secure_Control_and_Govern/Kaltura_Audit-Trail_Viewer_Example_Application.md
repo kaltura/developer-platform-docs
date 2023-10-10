@@ -16,12 +16,6 @@ The object that is created for each event is the [KalturaAuditTrail](https://dev
 * DELETED - Object status changed to deleted (in fact this object wasn't deleted from the database)
 * FILE_SYNC_CREATED - File saved to the disc, related to the object
 
-Additional events that could be reported using the API (not automatically) and as such could be triggered when the customer think it’s relevant:
-* CONTENT_VIEWED
-* RELATION_ADDED
-* RELATION_REMOVED
-* VIEWED
-
 ## Usage  
 
 The purpose of this API is to add and list events using the [Audit Trail](https://developer.kaltura.com/api-docs/#/auditTrail) service.
